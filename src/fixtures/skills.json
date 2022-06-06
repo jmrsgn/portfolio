@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Figma",
+        "src": "../images/tech/figma.png"
+    },
+
+    {
+        "id": 2,
+        "name": "Kotlin",
+        "src": "../images/tech/kotlin.png"
+    },
+
+    {
+        "id": 3,
+        "name": "React",
+        "src": "../images/tech/react.png"
+    },
+
+    {
+        "id": 4,
+        "name": "Java",
+        "src": "../images/tech/java.png"
+    }
+]

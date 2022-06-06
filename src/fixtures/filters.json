@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "name": "Mobile App"
+    },
+
+    {
+        "id": 2,
+        "name": "Web App"
+    },
+
+    {
+        "id": 3,
+        "name": "UI / UX"
+    },
+
+    {
+        "id": 4,
+        "name": "All"
+    }
+]
