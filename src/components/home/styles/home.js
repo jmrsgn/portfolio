@@ -1,90 +1,104 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../styles';
+import * as STYLES from '../../../constants/styles';
+import { VIEWPORT } from '../../../constants/viewports';
 
 export const Container = styled.div`
     min-height: 100vh;
     background-color: ${STYLES.COLOR_BG1};
     display: flex;
-    justify-content: space-around;
-`;
+    flex-direction: column;
 
-export const Box = styled.div`
-    flex: 1;
-    padding: 5rem;
-    position: relative;
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        flex-direction: row;
+    }
 `;
 
 export const SubBox = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin: auto;
-
+    flex-direction: ${({ flexDirection }) => (flexDirection)};
+    justify-content: space-between;
+    padding: 2rem;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
+    transform: translateY(-50%);
+    width: 100%;
 
-export const SocialContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    min-width: 200px;
-    margin-top: 24px;
-`;
-
-export const SocialIcon = styled.a`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    transition: all 0.3s ease-in-out;
-
-    svg {
-        width: 15px;
-        height: 15px;
-        color: ${STYLES.COLOR_ON_SURFACE};
+    @media ${VIEWPORT.tabletUp} {
+        padding: 5rem;
+        margin-top: 5rem;
     }
 
-    &:hover {
-        background-color: ${STYLES.COLOR_SURFACE1};
-        border-color: ${STYLES.COLOR_SURFACE1};
-  
-        svg {
-          color: ${STYLES.COLOR_ON_SURFACE};
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        margin-top: 0;
+        padding: 8rem;
+        flex-direction: column;
+    }
+`;
+
+export const Box = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        &:last-of-type {
+            ${SubBox} {
+                padding: 5rem 2rem 5rem 2rem;
+            }
         }
     }
 `;
 
+export const GreetingsContainer = styled.div``;
+
+export const SocialContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media ${VIEWPORT.tabletUp} {
+        margin-top: 2rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        flex-direction: row;
+    }
+`;
+
 export const Image = styled.img`
-    width: 300px;
+    width: 200px;
     height: auto;
     margin: auto;
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-top: 2rem;
+    z-index: 99;
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 300px;
+    }
 `;
 
 export const TechBubbleContainer= styled.div`
+    min-width: 275px;
     display: flex;
+    margin: auto;
     justify-content: space-between;
-    min-width: 500px;
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 400px;
+    }
 `;
 
 export const TechBubble = styled.div`
-    width: 75px;
+    width: 75px !important;
     height: 75px;
     border-radius: 50%;
     position: relative;
     background-color: ${STYLES.COLOR_SURFACE3};
     transition: .2s ease-in;
 
-    &:first-of-type,
-    &:last-of-type {
-        transform: translateY(50%);
+    @media ${VIEWPORT.tabletUp} {
+        width: 90px !important;
+        height: 90px;
     }
 `;
 
@@ -95,4 +109,8 @@ export const TechImage = styled.img`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 40px;
+    }
 `;

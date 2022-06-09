@@ -1,7 +1,9 @@
 import React from "react";
+import { motion } from 'framer-motion';
 
 import { Title, Divider } from "../globalComponents";
 import { SkillsExp } from "../components";
+import MotionWrap from "../wrapper/motion-wrap";
 
 import skillsData from '../fixtures/skills.json';
 import experiencesData from '../fixtures/experiences.json';
@@ -9,30 +11,44 @@ import experiencesData from '../fixtures/experiences.json';
 export function SkillsExpContainer() {
     return (
         <SkillsExp id="skills-&-experiences">
-            <SkillsExp.Box>
-                <Title>Skills & Experiences</Title>
-                <Divider />
+            <MotionWrap>
+                <SkillsExp.Box>
+                    <Title>Skills & Experiences</Title>
+                    <Divider />
 
-                <SkillsExp.SkillsContainer>
-                    {skillsData.map(( item ) => (
-                        <SkillsExp.SkillCell key={item.id}>
-                            <SkillsExp.SkillImage src={item.src} />
-                        </SkillsExp.SkillCell>
-                    ))}
+                    <SkillsExp.SkillsContainer>
+                        {skillsData.map(( item ) => (
+                            <motion.div
+                                whileInView={{ opacity: [0, 1] }}
+                                transition={{ duration: 0.5 }}
+                                key={item.id}
+                            >
+                                <SkillsExp.SkillCell>
+                                    <SkillsExp.SkillImage src={item.src} />
+                                </SkillsExp.SkillCell>
+                            </motion.div>
+                        ))}
 
-                </SkillsExp.SkillsContainer>
+                    </SkillsExp.SkillsContainer>
 
-                <SkillsExp.ExperiencesContainer>
-                    {experiencesData.map(( item ) => (
-                        <SkillsExp.ExperienceCell key={item.id}>
-                            <SkillsExp.Date>{item.date}</SkillsExp.Date>
-                            <SkillsExp.Position>{item.position}</SkillsExp.Position>
-                            <SkillsExp.Company>at {item.company}</SkillsExp.Company>
-                            <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
-                        </SkillsExp.ExperienceCell>
-                    ))}
-                </SkillsExp.ExperiencesContainer>
-            </SkillsExp.Box>
+                    <SkillsExp.ExperiencesContainer>
+                        {experiencesData.map(( item ) => (
+                            <motion.div
+                                whileInView={{ opacity: [0, 1] }}
+                                transition={{ duration: 0.5 }}
+                                key={item.id}
+                            >
+                                <SkillsExp.ExperienceCell>
+                                    <SkillsExp.Date>{item.date}</SkillsExp.Date>
+                                    <SkillsExp.Position>{item.position}</SkillsExp.Position>
+                                    <SkillsExp.Company>at {item.company}</SkillsExp.Company>
+                                    <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
+                                </SkillsExp.ExperienceCell>
+                            </motion.div>   
+                        ))}
+                    </SkillsExp.ExperiencesContainer>
+                </SkillsExp.Box>
+            </MotionWrap>
         </SkillsExp>
     )
 }

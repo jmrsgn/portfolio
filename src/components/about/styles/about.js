@@ -1,10 +1,15 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../styles';
+import * as STYLES from '../../../constants/styles';
+import { VIEWPORT } from '../../../constants/viewports';
 
 export const Container = styled.div`
     min-height: 100vh;
     background-color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_BG1}` : `${STYLES.COLOR_BG2}`)};
-    padding: 5rem 10rem;
+    padding: 4rem 2rem;
+
+    @media ${VIEWPORT.tabletUp} {
+        padding: 5rem
+    }
 `;
 
 export const Box = styled.div`
@@ -12,47 +17,77 @@ export const Box = styled.div`
 `;
 
 export const SubBox = styled.div`
-    width: 50%;
+    width: 100%;
 `;
 
 export const SkillsContainer = styled.div`
-    margin-top: 48px;
-    width: 100%;
+    margin-top: 2rem;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media ${VIEWPORT.tabletUp} {
+        margin-top: 5rem;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 `;
 
 export const Skill = styled.div`
-    padding: 2rem 2rem 5rem 2rem;
     background-color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_SURFACE2}` : `${STYLES.COLOR_SURFACE3}`)};
-    border-radius: 15px;
+    border-radius: 10px;
     display: flex;
-    width: 350px;
-    min-width: 350px;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+    width: 300px;
+    min-width: 300px;
     flex-direction: column;
     align-items: left;
+    margin: 1rem 0 1rem 0;
     box-shadow: 0px 5px 5px #161C24;
+
+    @media ${VIEWPORT.tabletUp} {
+        border-radius: 15px;
+        width: 500px;
+        min-width: 500px;
+        padding: 2rem 2rem 4rem 2rem;
+    }
 `;
 
 export const SkillTitle = styled.p`
     font-family: 'Poppins', sans-serif;
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
+
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 2.5rem;
+    }
 `;
 
 export const Image = styled.img`
-    height: 30px;
-    width: 33px;
+    height: 20px;
+    width: 23px;
+
+    @media ${VIEWPORT.tabletUp} {
+        height: 35px;
+        width: 38px;
+        margin-bottom: 1rem;
+    }
 `;
 
 export const SkillDescription = styled.p`
-    margin-top: 12px;
+    margin-top: .75rem;
     font-family: Arial, Helvetica, sans-serif;
     font-size: .75rem;
-    line-height: 16px;
+    line-height: 20px;
     color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
+
+    @media ${VIEWPORT.tabletUp} { 
+        font-size: 1.15rem;
+        line-height: 28px;
+        margin-top: 1rem;
+    }
 `;
 
 export const QuoteContainer = styled.div`

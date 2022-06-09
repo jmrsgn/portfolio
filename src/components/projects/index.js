@@ -3,8 +3,6 @@ import { Container,
          Box,
          SubBox,
          FilterContainer,
-         FilterCell,
-         FilterText,
          ProjectsContainer,
          ProjectCell,
          ProjectTitle,
@@ -32,14 +30,6 @@ Projects.FiltersContainer = function ProjectsFilterContainer({ children, ...rest
     return <FilterContainer {...restProps}>{children}</FilterContainer>
 }
 
-Projects.FilterCell = function ProjectsFilterCell({ children, ...restProps }) {
-    return <FilterCell {...restProps}>{children}</FilterCell>
-}
-
-Projects.FilterText = function ProjectsFilterText({ children, ...restProps }) {
-    return <FilterText {...restProps}>{children}</FilterText>
-}
-
 Projects.ProjectsContainer = function ProjectsProjectsContainer({ children, ...restProps}) {
     return <ProjectsContainer {...restProps}>{children}</ProjectsContainer>
 }
@@ -54,10 +44,6 @@ Projects.ProjectTitle = function ProjectsProjectTitle({ children, ...restProps }
 
 Projects.ProjectDescription = function ProjectsProjectDescription({ children, ...restProps }) {
     return <ProjectDescription {...restProps}>{children}</ProjectDescription>
-}
-
-Projects.ProjectImage = function ProjectsProjectImage({ src, ...restProps }) {
-    return <ProjectImage {...restProps} src={src} />
 }
 
 Projects.TagsContainer = function ProjectsTagsContainer({ children, ...restProps }) {

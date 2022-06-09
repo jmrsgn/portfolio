@@ -1,47 +1,20 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-
-import * as STYLES from '../../../styles';
+import * as STYLES from '../../../constants/styles';
+import { VIEWPORT } from '../../../constants/viewports';
 
 export const Container = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     position: fixed;
     z-index: 2;
     top: 0;
-    transition: top 0.5s;
-    /* backdrop-filter: blur(4px); */
-    /* background-color: ${STYLES.COLOR_BG2};
-    border: 1px solid ${STYLES.COLOR_SURFACE3}; */
-`;
-
-export const Image = styled.img`
-    cursor: pointer;
-    width: 30px;
-    height: auto;
-`;
-
-export const ImageLink = styled(Link)`
-    padding: .2rem;
-`;
-
-export const Menu = styled.div`
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     svg {
-        width: 70%;
-        height: 70%;
-        color: ${STYLES.COLOR_ON_BACKGROUND};
+        width: 25px;
+        height: 25px;
         cursor: pointer;
     }
 
@@ -51,12 +24,9 @@ export const Menu = styled.div`
         bottom: 0;
         right: 0;
         z-index: 5;
-
-        padding: 1rem;
-
-        width: 30%;
+        padding: 1rem 2rem;
+        width: 80%;
         height: 100vh;
-
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
@@ -91,7 +61,6 @@ export const Menu = styled.div`
                     text-decoration: none;
                     font-size: 1rem;
                     font-weight: 500;
-
                     transition: all 0.3s ease-in-out;
 
                     &:hover {
@@ -101,5 +70,55 @@ export const Menu = styled.div`
             }
         }
     }
+
+    @media ${VIEWPORT.tabletUp} {
+        padding: 2rem;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        div {
+            width: 60%;
+            padding: 2rem;
+
+            ul {
+                li { 
+                    margin: 1.25rem;
+                    
+                    a {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        div {
+            width: 40%;
+
+            ul {
+                li {
+                    a {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const Image = styled.img`
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 30px;
+        height: 30px;
+    } 
 `;
 

@@ -13,5 +13,4 @@ app.render(
 );
 
 // TODO: 
-// ? use framer-motion for the icon and sidebar menu
-// ? fix projects issue
+// make | starting from about | response to tablet landscape

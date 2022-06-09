@@ -1,10 +1,15 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../styles';
+import * as STYLES from '../../../constants/styles';
+import { VIEWPORT } from '../../../constants/viewports';
 
 export const Container = styled.div`
     min-height: 100vh;
     background-color: ${STYLES.COLOR_BG2};
-    padding: 5rem 10rem;
+    padding: 4rem 2rem;
+
+    @media ${VIEWPORT.tabletUp} {
+        padding: 5rem;
+    }
 `;
 
 export const Box = styled.div`
@@ -12,54 +17,73 @@ export const Box = styled.div`
 `;
 
 export const SkillsContainer = styled.div`
-    margin-top: 48px;
+    margin: auto;
     display: flex;
-    align-items: center;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    @media ${VIEWPORT.tabletUp} {
+        margin-top: 3rem;
+    }
 `;
 
 export const SkillCell = styled.div`
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
     background-color: ${STYLES.COLOR_SURFACE3};
     transition: .2s ease-in;
-    cursor: pointer;
+    margin: 1rem;
 
-    &:not(:first-child) {
-        margin-left: 24px;
-    }
-
-    &:hover {
-        background-color: ${STYLES.COLOR_BG1};
+    @media ${VIEWPORT.tabletUp} {
+        width: 80px;
+        height: 80px;
     }
 `;
 
 export const SkillImage = styled.img`
-    width: 30px;
+    width: 20px;
     height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-`;
 
+    @media ${VIEWPORT.tabletUp} {
+        width: 30px;
+    }
+`;
 export const ExperiencesContainer = styled.div`
+    margin: auto;
     display: flex;
-    margin-top: 64px;
-    flex-direction: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    @media ${VIEWPORT.tabletUp} {
+        margin-top: 5rem;
+    }
 `;
 
 export const ExperienceCell = styled.div`
     background-color: ${STYLES.COLOR_SURFACE3};
     display: flex;
     flex-direction: column;
-    border-radius: 15px;
-    padding: 2rem 2rem 5rem 2rem;
-    width: 30%;
+    border-radius: 10px;
+    min-width: 300px; 
+    min-height: 200px;
+    width: 300px;
+    padding: 2rem 2rem 4rem 2rem;
     box-shadow: 0px 5px 5px #161C24;
+
+    @media ${VIEWPORT.tabletUp} {
+        border-radius: 15px;
+        width: 500px;
+        min-width: 500px;
+        padding: 2rem 2rem 4rem 2rem;
+    }
 `;
 
 export const Date = styled.p`
@@ -67,25 +91,44 @@ export const Date = styled.p`
     color: ${STYLES.COLOR_SURFACE2};
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
+
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 1rem;
+    }
 `;
 
 export const Position = styled.p`
     margin-top: 3rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: ${STYLES.COLOR_ON_SURFACE};
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
+
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 2.5rem;
+    }
 `;
 
 export const Company = styled.p`
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: ${STYLES.COLOR_SURFACE2};
     font-family: 'Poppins', sans-serif;
+
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 1.75rem;
+    }
 `;
 
 export const Learnings = styled.p`
     margin-top: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     color: ${STYLES.COLOR_LIGHT_GRAY};
-    font-size: .85rem;
+    font-size: .75rem;
+    line-height: 20px;
+
+    @media ${VIEWPORT.tabletUp} { 
+        font-size: 1.15rem;
+        line-height: 28px;
+        margin-top: 3rem;
+    }
 `;

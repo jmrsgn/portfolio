@@ -3,10 +3,10 @@ import { Container,
          Box, 
          SubBox, 
          SocialContainer,
-         SocialIcon,
          Image,
          TechBubble,
          TechBubbleContainer,
+         GreetingsContainer,
          TechImage } from './styles/home';
 
 export default function Home({ children, ...restProps }) {
@@ -25,10 +25,6 @@ Home.SocialContainer = function HomeSocialContainer({ children, ...restProps }) 
     return <SocialContainer {...restProps}>{children}</SocialContainer>
 }
 
-Home.SocialIcon = function HomeSocialIcon({ children, ...restProps }) {
-    return <SocialIcon {...restProps}>{children}</SocialIcon>
-}
-
 Home.Image = function HomeImage({ src, ...restProps }) {
     return <Image {...restProps} src={src} />
 }
@@ -43,4 +39,8 @@ Home.TechBubbleContainer = function HomeTechBubbleContainer({ children, ...restP
 
 Home.TechImage = function HomeTechImage({ src, ...restProps }) {
     return <TechImage {...restProps} src={src} />
+}
+
+Home.GreetingsContainer = function HomeGreetingsContainer({ children, ...restProps }) {
+    return <GreetingsContainer {...restProps}>{children}</GreetingsContainer>
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from 'framer-motion'
-
 import { HiMenuAlt4, HiX  } from 'react-icons/hi'
 
 import { NavBar } from "../components";
@@ -36,33 +35,27 @@ export function NavBarContainer() {
     return ( 
         <>
             <NavBar showNavBar={showNavBar}>
-                <NavBar.ImageLink to="/">
-                    <NavBar.Image src="../images/other/logo.png" />
-                </NavBar.ImageLink>
+                {!toggle && (
+                    <HiMenuAlt4 onClick={() => setToggle(!toggle)}/>
+                )}
 
-                <NavBar.Menu>
-                    {!toggle && (
-                        <HiMenuAlt4 onClick={() => setToggle(!toggle)}/>
-                    )}
+                {toggle && (
+                    <motion.div
+                        whileInView={{ x: [300, 0] }}
+                        transition={{ duration: 0.3, ease: 'easeIn' }}
+                    >
 
-                    {toggle && (
-                        <motion.div
-                            whileInView={{ x: [300, 0] }}
-                            transition={{ duration: 0.3, ease: 'easeIn' }}
-                        >
+                        <HiX onClick={() => setToggle(!toggle)}/>
 
-                            <HiX onClick={() => setToggle(!toggle)}/>
-
-                            <ul>
-                                {NavigationData.map((item) => (
-                                    <li key={item.id}>
-                                        <a href={`${item.navigateTo}`} onClick={() => setToggle(!toggle)}>{item.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    )}      
-                </NavBar.Menu>
+                        <ul>
+                            {NavigationData.map((item) => (
+                                <li key={item.id}>
+                                    <a href={`${item.navigateTo}`} onClick={() => setToggle(!toggle)}>{item.name}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}      
             </NavBar>
         </>
     )
