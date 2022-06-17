@@ -109,6 +109,20 @@ export const Container = styled.div`
             }
         }
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        div {
+            width: 30%;
+
+            ul {
+                li {
+                    a {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
 `;
 
 export const Image = styled.img`

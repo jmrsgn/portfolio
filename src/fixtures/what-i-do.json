@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Web Development",
-        "description": "I have minimal experience in doing Web Development. I have a basic knowledge of React JS in doing UI, basic CSS skills for designing, and basic implementation of features. I am planning to study the MERN stack for future project use.",
+        "description": "I have minimal experience in doing Web Development. I have a basic knowledge of React JS in doing UI, basic CSS skills for designing, and basic implementation of features.",
         "src": "./images/other/web-dev-purple.png",
         "popOut": false
     },
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "title": "Android Development",
-        "description": "My biggest interest of all. I have already built 2 small applications with Java, one is our capstone project. Now, I am currently studying Jetpack Compose and Ktor with proper architecture, to get my skills to the industry level of development.",
+        "description": "My biggest interest of all. I have already built 2 small applications with Java. Now, I am currently studying Jetpack Compose and Ktor with proper architecture, to get my skills in to the industry level of development.",
         "src": "./images/other/android-dev.png",
         "popOut": true
     }

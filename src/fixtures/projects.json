@@ -23,17 +23,6 @@
 
     {
         "id": 3,
-        "title": "Axie Quiz (Prototype)",
-        "description": "Axie Quiz is an Android application that I will be building soon; that is capable of helping Axie Infinity players to find their respective managers with ease. It has the majority of the things needed in order to get hired.",
-        "tech": ["Figma"],
-        "filter": "UI / UX",
-        "development": false,
-        "src": "../images/projects/axie-quiz-1.png",
-        "link": "/projects/axie-quiz"
-    },
-
-    {
-        "id": 4,
         "title": "Axie Helper",
         "description": "Axie Helper is a Web application that provides convenience for Axie Infinity players. It provides some helpful things you need while playing the game including the energy counter, list of debuffs and buffs, and more.",
         "tech": ["React", "Firebase"],

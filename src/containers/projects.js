@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 
 import { Title, 
          Divider, 
@@ -23,6 +23,8 @@ export function ProjectsContainer() {
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
     function loadProjects(filter) {
+        console.log(animateCard);
+
         setTimeout(() => {
             setAnimateCard([{ y: 0, opacity: 1 }]);
 
@@ -37,6 +39,7 @@ export function ProjectsContainer() {
     function handleProjectFilter(filter) {
         setActiveFilter(filter);
         setAnimateCard([{ y: 100, opacity: 0 }]);
+        loadProjects(filter);
     }
 
     useEffect(() => {
@@ -47,10 +50,6 @@ export function ProjectsContainer() {
         setProjects(projects);
         setFilterProjects(projects);
     }, []);
-
-    useEffect(() => {
-        loadProjects(activeFilter);
-    }, [activeFilter]);
 
     return (
         <Projects id="projects">
@@ -75,10 +74,9 @@ export function ProjectsContainer() {
                         {filterProjects.map((item) => (
                             <motion.div
                                 animate={animateCard}
-                                transition={{ duration: 0.5, delayChildren: 0.5 }}
-                                key={item.id}
+                                transition={{ duration: 0.5 }}
                             >
-                                <Projects.SubBox>
+                                <Projects.SubBox key={item.id}>
                                     <Projects.ProjectCell>
                                         <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
                                         <Projects.ProjectDescription>{item.description}</Projects.ProjectDescription>

@@ -48,6 +48,15 @@ export const Box = styled.div`
             }
         }
     }
+
+    
+    @media ${VIEWPORT.desktopUp} {
+        &:first-of-type {
+            ${SubBox} {
+                padding-left: 10rem;
+            }
+        }   
+    }
 `;
 
 export const GreetingsContainer = styled.div``;

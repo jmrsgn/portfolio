@@ -10,6 +10,10 @@ export const Container = styled.div`
     @media ${VIEWPORT.tabletUp} {
         padding: 5rem
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 5rem 10rem;
+    }
 `;
 
 export const Box = styled.div`
@@ -18,6 +22,14 @@ export const Box = styled.div`
 
 export const SubBox = styled.div`
     width: 100%;
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        width: 70%;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 50%;
+    }
 `;
 
 export const SkillsContainer = styled.div`
@@ -28,9 +40,14 @@ export const SkillsContainer = styled.div`
     align-items: center;
 
     @media ${VIEWPORT.tabletUp} {
-        margin-top: 5rem;
+        margin-top: 3rem;
         width: 100%;
         flex-wrap: wrap;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        flex-direction: row;
+        justify-content: center;
     }
 `;
 
@@ -41,16 +58,32 @@ export const Skill = styled.div`
     padding: 1.5rem 1.5rem 2.5rem 1.5rem;
     width: 300px;
     min-width: 300px;
+    min-height: 300px;
+    height: 300px;
     flex-direction: column;
     align-items: left;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem;
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
         border-radius: 15px;
         width: 500px;
         min-width: 500px;
+        min-height: 450px;
         padding: 2rem 2rem 4rem 2rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        min-width: 400px;
+        width: 400px;
+        height: 450px;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        min-width: 350px;
+        width: 350px;
+        height: 400px;
+        min-height: 400px;
     }
 `;
 
@@ -62,6 +95,14 @@ export const SkillTitle = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 2.25rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2rem;
     }
 `;
 
@@ -87,6 +128,15 @@ export const SkillDescription = styled.p`
         font-size: 1.15rem;
         line-height: 28px;
         margin-top: 1rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .8rem;
+        line-height: 22px;
     }
 `;
 

@@ -1,22 +1,41 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+
 import * as STYLES from './constants/styles';
 import { VIEWPORT } from './constants/viewports';
+import { FONT } from './constants/fonts';
 
-export const Text = styled.p`
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.75rem;
+// ======
+
+export const MainText = styled.p`
+    font-family: ${FONT.main};
+    color: ${STYLES.COLOR_ON_BACKGROUND};
+`;
+
+export const SecondaryText = styled.p`
+    font-family: ${FONT.secondary};
+    color: ${STYLES.COLOR_LIGHT_GRAY};
+`;
+
+// ======
+
+export const Text = styled(MainText)`
+    font-size: 1.5rem;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2.25rem;
     }
 `;
 
-export const BigText = styled(Text)`
+export const BigText = styled(MainText)`
     font-size: 3rem;
 
     @media ${VIEWPORT.tabletUp} {
@@ -28,12 +47,10 @@ export const BigText = styled(Text)`
     }
 `;
 
-export const SmallText = styled.p`
-    font-family: Arial, Helvetica, sans-serif;
-    color: ${STYLES.COLOR_LIGHT_GRAY};
-    font-size: .85rem;
+export const SmallText = styled(SecondaryText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
+    font-size: .85rem;
     line-height: 24px;
 
     @media ${VIEWPORT.tabletUp} {
@@ -45,6 +62,10 @@ export const SmallText = styled.p`
         font-size: 1.15rem;
         line-height: 30px;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
 `;
 
 export const Title = styled(Text)`
@@ -53,6 +74,10 @@ export const Title = styled(Text)`
     @media ${VIEWPORT.tabletUp} {
         font-size: 3rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2.5rem;
+    }
 `;
 
 export const SubTitle = styled(Title)`
@@ -60,18 +85,21 @@ export const SubTitle = styled(Title)`
     font-size: 2rem;
 `
 
-export const Button = styled.button`
-    background-color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
-    margin-top: 2rem;
+export const Button = styled.a`
+    display: block;
+    text-decoration: none;
+    background-color: ${STYLES.COLOR_SURFACE1};
     font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
     border: none;
     outline: none;
-    width: 130px;
-    font-size: 1rem;
-    padding: .65rem;
+    text-align: center;
     color: ${STYLES.COLOR_ON_SURFACE};
     cursor: pointer;
+    transition: .3s ease-in;
+    font-size: 1rem;
+    padding: .75rem;
+    margin-top: 2rem;
+    border-radius: 10px;
 
     @media ${VIEWPORT.tabletUp} {
         width: 200px;
@@ -85,6 +113,11 @@ export const Button = styled.button`
         width: 180px;
         font-size: 1.25rem;
         padding: .8rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
+        font-size: 1.15rem;
     }
 `;
 
@@ -141,6 +174,14 @@ export const FilterCell = styled.div`
         border-radius: 15px;
         padding: 1.35rem 1.65rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        padding: 1.15rem 1.45rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 1rem 1.2rem;
+    }
 `;
 
 export const FilterText = styled.p`
@@ -150,6 +191,14 @@ export const FilterText = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1.25rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1.15rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
     }
 `;
 
@@ -203,6 +252,16 @@ export const SocialIcon = styled.a`
             height: 30px;
         }
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 45px;
+        height: 45px;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
 `;
 
 export const ProjectMobileAppImage = styled.img`
@@ -221,7 +280,7 @@ export const ProjectWebAppImage = styled.img`
 
     @media ${VIEWPORT.tabletUp} {
         height: 320px;
-        margin: 1rem 0 1rem 0;
+        margin: 1rem 2rem 1rem 2rem;
     }
 `
 

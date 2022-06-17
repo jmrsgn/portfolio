@@ -33,6 +33,10 @@ export const ImagesContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 60%;
+    }
 `;
 
 export const Image = styled.img`
@@ -41,7 +45,14 @@ export const Image = styled.img`
 
     @media ${VIEWPORT.tabletUp} {
         height: 60px;
-        width: auto;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        height: 50px;
+    }
+    
+    @media ${VIEWPORT.desktopUp} {
+        height: 40px;
     }
 `;
 
@@ -74,5 +85,16 @@ export const Button = styled.a`
         border-radius: 15px;
         margin-top: 4rem;
     } 
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        width: 180px;
+        font-size: 1.25rem;
+        padding: .8rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
+        font-size: 1.15rem;
+    }
 `;
 

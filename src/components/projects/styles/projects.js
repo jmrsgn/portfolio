@@ -10,6 +10,10 @@ export const Container = styled.div`
     @media ${VIEWPORT.tabletUp} {
         padding: 5rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 5rem 10rem;
+    }
 `;
 
 export const Box = styled.div`
@@ -21,6 +25,16 @@ export const SubBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        flex-direction: row;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        margin: 0;
+    }
 `;
 
 export const FilterContainer = styled.div`
@@ -42,6 +56,20 @@ export const ProjectsContainer = styled.div`
     @media ${VIEWPORT.tabletUp} {
         margin-top: 3rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        div {
+            &:nth-child(even) {
+                ${SubBox} {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 0;
+    }
 `;
 
 export const ProjectCell = styled.div`
@@ -52,11 +80,11 @@ export const ProjectCell = styled.div`
     background-color: ${STYLES.COLOR_SURFACE3};
     padding: 1.5rem;
     position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     min-width: 300px; 
     min-height: 200px;
     width: 300px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
@@ -64,6 +92,11 @@ export const ProjectCell = styled.div`
         width: 500px;
         min-width: 500px;
         padding: 2rem 2rem 4rem 2rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 700px;
+        min-width: 700px;
     }
 `;
 
@@ -74,6 +107,14 @@ export const ProjectTitle = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 2.25rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2rem;
     }
 `;
 
@@ -88,6 +129,15 @@ export const ProjectDescription = styled.p`
         font-size: 1.15rem;
         line-height: 28px;
         margin-top: 1rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .9rem;
+        line-height: 24px;
     }
 `;
 
@@ -105,9 +155,7 @@ export const TagsContainer = styled.div`
 `;
 
 export const TagCell = styled.div`
-    /* border-radius: 10px; */
     background-color: ${STYLES.COLOR_LIGHT_RED};
-    /* padding: 0.25rem 0.5rem; */
     margin: 0.25rem;
 
     border-radius: 5px;
@@ -118,10 +166,9 @@ export const TagCell = styled.div`
         padding: 0.3rem 0.75rem;
     }
 
-    /* @media (max-width: 600px) {
-        border-radius: 7.5px;
-        padding: 0.15rem 0.3rem;
-    } */
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        padding: 0.1rem 0.5rem;
+    }
 `;
 
 export const TagText = styled.p`
@@ -131,6 +178,10 @@ export const TagText = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .75rem;
     }
 `;
 

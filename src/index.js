@@ -13,4 +13,4 @@ app.render(
 );
 
 // TODO: 
-// make | starting from about | response to tablet landscape
+// ? refactor codes

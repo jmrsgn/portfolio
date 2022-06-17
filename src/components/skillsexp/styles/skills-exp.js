@@ -10,6 +10,10 @@ export const Container = styled.div`
     @media ${VIEWPORT.tabletUp} {
         padding: 5rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 5rem 10rem;
+    }
 `;
 
 export const Box = styled.div`
@@ -26,6 +30,15 @@ export const SkillsContainer = styled.div`
     @media ${VIEWPORT.tabletUp} {
         margin-top: 3rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        justify-content: center;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 50%;
+        flex-direction: flex-start;
+    }
 `;
 
 export const SkillCell = styled.div`
@@ -40,6 +53,10 @@ export const SkillCell = styled.div`
     @media ${VIEWPORT.tabletUp} {
         width: 80px;
         height: 80px;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        margin: 2rem;
     }
 `;
 
@@ -84,6 +101,11 @@ export const ExperienceCell = styled.div`
         min-width: 500px;
         padding: 2rem 2rem 4rem 2rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        min-width: 400px;
+        width: 400px;
+    }
 `;
 
 export const Date = styled.p`
@@ -94,6 +116,10 @@ export const Date = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .8rem;
     }
 `;
 
@@ -107,6 +133,14 @@ export const Position = styled.p`
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 2.25rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2rem;
+    }
 `;
 
 export const Company = styled.p`
@@ -116,6 +150,14 @@ export const Company = styled.p`
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1.75rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1.5rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.25rem;
     }
 `;
 
@@ -130,5 +172,14 @@ export const Learnings = styled.p`
         font-size: 1.15rem;
         line-height: 28px;
         margin-top: 3rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .9rem;
+        line-height: 24px;
     }
 `;

@@ -10,6 +10,10 @@ export const Container = styled.div`
     @media ${VIEWPORT.tabletUp} {
         padding: 5rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 5rem 10rem;
+    }
 `;
 
 export const Box = styled.div`
@@ -22,6 +26,11 @@ export const CertificatesContainer = styled.div`
     margin-top: 4rem;
     align-items: center;
     display: flex;
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        flex-direction: row;
+        justify-content: center;
+    }
 `;
 
 export const Certificate = styled.div`
@@ -38,6 +47,12 @@ export const Certificate = styled.div`
     @media ${VIEWPORT.tabletUp} {
         min-width: 500px;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        min-width: 450px;
+        min-height: 450px;
+        margin: 2rem;
+    }
 `;
 
 export const CertificateTitle = styled.p`
@@ -50,6 +65,10 @@ export const CertificateTitle = styled.p`
         font-size: 1.25rem;
         margin-top: 1rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
 `;
 
 export const CertificateDate = styled.p`
@@ -61,6 +80,10 @@ export const CertificateDate = styled.p`
     @media ${VIEWPORT.tabletUp} {
         font-size: 1.25rem;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
 `;
 
 export const CertificateImage = styled.img`
@@ -70,6 +93,10 @@ export const CertificateImage = styled.img`
 
     @media ${VIEWPORT.tabletUp} {
         width: 460px;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        width: 420px;
     }
 `;
 
@@ -83,6 +110,10 @@ export const BadgesContainer = styled.div`
 
     @media ${VIEWPORT.tabletUp} {
         margin-top: 4rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        justify-content: center;
     }
 `;
 

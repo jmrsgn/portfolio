@@ -25,8 +25,14 @@ export function HomeContainer() {
                         <Home.GreetingsContainer>
                             <Text>Hello,</Text>
                             <BigText>I'm <SpanBoldText color="#FFFFFF">JM</SpanBoldText></BigText>
-                            <SmallText>An aspiring Developer.</SmallText>
-                            <Button type="1">Resume</Button>
+                            <SmallText marginBottom="2rem">An aspiring Developer.</SmallText>
+                            <Button 
+                                type="1"
+                                href="../resume/Resume.pdf"
+                                target="_blank"
+                            >
+                                Resume
+                            </Button>
                         </Home.GreetingsContainer>
                     </motion.div>
 
@@ -71,7 +77,7 @@ export function HomeContainer() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/figma.png" />
+                                <Home.TechImage src="./images/tech/kotlin.png" />
                             </Home.TechBubble>
                         </motion.div>
 
@@ -80,7 +86,7 @@ export function HomeContainer() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/kotlin.png" />
+                                <Home.TechImage src="./images/tech/java.png" />
                             </Home.TechBubble>
                         </motion.div>
                                 

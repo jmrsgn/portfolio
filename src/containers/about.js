@@ -20,17 +20,17 @@ export function AboutContainer() {
                             I am John Martin Marasigan, a simple person who has a deep interest in doing Programming.
                         </SmallText>
 
-                        <SmallText marginTop="1rem" marginBottom="1rem">
+                        <SmallText marginTop="1rem">
                             I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development. I also have a basic knowledge of doing Web Development using React JS.
                         </SmallText>
 
-                        <TextLink 
+                        {/* <TextLink 
                             marginTop="2rem" 
                             to='/about/more'
                             target="_blank"
                         >
                             Read more
-                        </TextLink>
+                        </TextLink> */}
                     </About.SubBox>
                 
                     <About.SkillsContainer>
