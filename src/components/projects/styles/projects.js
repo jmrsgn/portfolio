@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
+import { MainText, SecondaryText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -72,7 +73,7 @@ export const ProjectsContainer = styled.div`
     }
 `;
 
-export const ProjectCell = styled.div`
+export const Project = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -91,7 +92,7 @@ export const ProjectCell = styled.div`
         border-radius: 15px;
         width: 500px;
         min-width: 500px;
-        padding: 2rem 2rem 4rem 2rem;
+        padding: 2rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -100,8 +101,7 @@ export const ProjectCell = styled.div`
     }
 `;
 
-export const ProjectTitle = styled.p`
-    font-family: 'Poppins', sans-serif;
+export const ProjectTitle = styled(MainText)`
     color: ${STYLES.COLOR_ON_SURFACE};
     font-size: 1.5rem;
 
@@ -118,25 +118,25 @@ export const ProjectTitle = styled.p`
     }
 `;
 
-export const ProjectDescription = styled.p`
-    font-family: Arial, Helvetica, sans-serif;
+export const ProjectDescription = styled(SecondaryText)`
     margin-top: .75rem;
     line-height: 20px;
     color: ${STYLES.COLOR_LIGHT_GRAY};
     font-size: .75rem;
 
     @media ${VIEWPORT.tabletUp} { 
-        font-size: 1.15rem;
-        line-height: 28px;
+        font-size: 1.25rem;
+        line-height: 32px;
         margin-top: 1rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1rem;
+        font-size: 1.15rem;
+        line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .9rem;
+        font-size: .95rem;
         line-height: 24px;
     }
 `;
@@ -154,7 +154,7 @@ export const TagsContainer = styled.div`
     }
 `;
 
-export const TagCell = styled.div`
+export const Tag = styled.div`
     background-color: ${STYLES.COLOR_LIGHT_RED};
     margin: 0.25rem;
 
@@ -171,13 +171,16 @@ export const TagCell = styled.div`
     }
 `;
 
-export const TagText = styled.p`
+export const TagText = styled(SecondaryText)`
     color: ${STYLES.COLOR_RED};
-    font-family: 'Poppins', sans-serif;
-    font-size: .65rem;
+    font-size: .55rem;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: .85rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -204,10 +207,9 @@ export const DevelopmentTag = styled.div`
     }
 `;
 
-export const DevelopmentText = styled.p`
+export const DevelopmentText = styled(SecondaryText)`
     font-size: .65rem;
     color: ${STYLES.COLOR_ON_SURFACE};
-    font-family: 'Poppins', sans-serif;
     position: absolute;
     margin: auto;
 

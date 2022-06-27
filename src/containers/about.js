@@ -16,13 +16,12 @@ export function AboutContainer() {
                         <Title>Get to know me</Title>
                         <Divider />
 
-                        <SmallText marginTop="2rem">
-                            I am John Martin Marasigan, a simple person who has a deep interest in doing Programming.
-                        </SmallText>
+                        <About.DescriptionContainer>
+                            <SmallText>
+                                I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development. I also have a basic knowledge of doing Web Development using React JS.
+                            </SmallText>
+                        </About.DescriptionContainer>
 
-                        <SmallText marginTop="1rem">
-                            I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development. I also have a basic knowledge of doing Web Development using React JS.
-                        </SmallText>
 
                         {/* <TextLink 
                             marginTop="2rem" 
@@ -32,23 +31,20 @@ export function AboutContainer() {
                             Read more
                         </TextLink> */}
                     </About.SubBox>
-                
+                    
                     <About.SkillsContainer>
                         {whatIDoData.map((item) => (
-                            <motion.div
-                                whileInView={{ opacity: 1 }}
-                                transition={{ duration: 0.5, type: 'tween' }}
-                                key={item.id} 
-                            >
-                                <About.Skill type={item.popOut? "1" : "0"}>
-                                    <About.Image src={item.src} />
-                                    <About.SkillTitle marginTop="24px">{item.title.split(" ")[0]}</About.SkillTitle>
-                                    <About.SkillTitle>{item.title.split(" ")[1]}</About.SkillTitle>
-                                    <About.SkillDescription type={item.popOut? "1" : "0"}>
-                                        {item.description}
-                                    </About.SkillDescription>
-                                </About.Skill>  
-                            </motion.div> 
+                            <About.Skill 
+                                type={item.popOut? "1" : "0"} 
+                                key={item.id}>
+                                    
+                                <About.Image src={item.src} />
+                                <About.SkillTitle marginTop="24px">{item.title.split(" ")[0]}</About.SkillTitle>
+                                <About.SkillTitle>{item.title.split(" ")[1]}</About.SkillTitle>
+                                <About.SkillDescription type={item.popOut? "1" : "0"}>
+                                    {item.description}
+                                </About.SkillDescription>
+                            </About.Skill>  
                         ))}
                     </About.SkillsContainer>
                 </About.Box>

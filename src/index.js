@@ -14,3 +14,4 @@ app.render(
 
 // TODO: 
 // ? refactor codes
+// ? done with mobile responsive

@@ -23,9 +23,9 @@ export function SkillsExpContainer() {
                                 transition={{ duration: 0.5 }}
                                 key={item.id}
                             >
-                                <SkillsExp.SkillCell>
+                                <SkillsExp.Skill>
                                     <SkillsExp.SkillImage src={item.src} />
-                                </SkillsExp.SkillCell>
+                                </SkillsExp.Skill>
                             </motion.div>
                         ))}
 
@@ -38,12 +38,12 @@ export function SkillsExpContainer() {
                                 transition={{ duration: 0.5 }}
                                 key={item.id}
                             >
-                                <SkillsExp.ExperienceCell>
+                                <SkillsExp.Experience>
                                     <SkillsExp.Date>{item.date}</SkillsExp.Date>
                                     <SkillsExp.Position>{item.position}</SkillsExp.Position>
                                     <SkillsExp.Company>at {item.company}</SkillsExp.Company>
                                     <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
-                                </SkillsExp.ExperienceCell>
+                                </SkillsExp.Experience>
                             </motion.div>   
                         ))}
                     </SkillsExp.ExperiencesContainer>

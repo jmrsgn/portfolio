@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Expresso",
-        "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool, developed by our team Code Brewers.",
+        "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool.",
         "tech": ["Java", "Php", "PlantUML", "Microsoft Personalizer"],
         "filter": "Mobile App",
         "development": false,
@@ -13,22 +13,11 @@
     {
         "id": 2,
         "title": "Carkilahan",
-        "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey, developed by our team Code Brewers.",
+        "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey.",
         "tech": ["Java", "Firebase"],
         "filter": "Mobile App",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
         "link": "/projects/carkilahan"
-    },
-
-    {
-        "id": 3,
-        "title": "Axie Helper",
-        "description": "Axie Helper is a Web application that provides convenience for Axie Infinity players. It provides some helpful things you need while playing the game including the energy counter, list of debuffs and buffs, and more.",
-        "tech": ["React", "Firebase"],
-        "filter": "Web App",
-        "development": true,
-        "src": "../images/projects/axie-helper-1.png",
-        "link": "/projects/axie-helper"
     }
 ]

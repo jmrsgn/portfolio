@@ -34,8 +34,8 @@ export const Container = styled.div`
         background-color: ${STYLES.COLOR_SURFACE3};
 
         svg {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             color: ${STYLES.COLOR_ON_BACKGROUND};
             cursor: pointer;
             z-index: 5;
@@ -75,17 +75,22 @@ export const Container = styled.div`
         padding: 2rem;
 
         svg {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
         }
 
         div {
             width: 60%;
             padding: 2rem;
 
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+
             ul {
                 li { 
-                    margin: 1.25rem;
+                    margin: 1.5rem;
                     
                     a {
                         font-size: 1.5rem;
@@ -111,11 +116,23 @@ export const Container = styled.div`
     }
 
     @media ${VIEWPORT.desktopUp} {
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+
         div {
             width: 30%;
 
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+
             ul {
                 li {
+                    margin: 1.25rem;
+
                     a {
                         font-size: 1rem;
                     }
@@ -123,16 +140,5 @@ export const Container = styled.div`
             }
         }
     }
-`;
-
-export const Image = styled.img`
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-
-    @media ${VIEWPORT.tabletUp} {
-        width: 30px;
-        height: 30px;
-    } 
 `;
 

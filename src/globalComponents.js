@@ -23,11 +23,11 @@ export const Text = styled(MainText)`
     font-size: 1.5rem;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -39,10 +39,14 @@ export const BigText = styled(MainText)`
     font-size: 3rem;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 5rem;
+        font-size: 6rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 5rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
         font-size: 4rem;
     }
 `;
@@ -54,25 +58,28 @@ export const SmallText = styled(SecondaryText)`
     line-height: 24px;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-        line-height: 32px;
+        font-size: 1.5rem;
+        line-height: 40px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.15rem;
-        line-height: 30px;
+        font-size: 1.25rem;
+        line-height: 36px;
     }
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1rem;
+        line-height: 32px;
     }
 `;
 
-export const Title = styled(Text)`
+// ======
+
+export const Title = styled(MainText)`
     font-size: 2rem;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 3rem;
+        font-size: 3.25rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -80,7 +87,7 @@ export const Title = styled(Text)`
     }
 `;
 
-export const SubTitle = styled(Title)`
+export const SubTitle = styled(MainText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     font-size: 2rem;
 `
@@ -98,24 +105,25 @@ export const Button = styled.a`
     transition: .3s ease-in;
     font-size: 1rem;
     padding: .75rem;
-    margin-top: 2rem;
     border-radius: 10px;
+    width: 150px;
 
     @media ${VIEWPORT.tabletUp} {
-        width: 200px;
+        width: 250px;
         font-size: 1.5rem;
-        padding: 1rem;
+        padding: 1.25rem;
         border-radius: 15px;
         margin-top: 4rem;
     } 
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        width: 180px;
+        width: 230px;
         font-size: 1.25rem;
-        padding: .8rem;
+        padding: 1rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
+        width: 200px;
         margin-top: 3rem;
         font-size: 1.15rem;
     }
@@ -123,13 +131,13 @@ export const Button = styled.a`
 
 export const Divider = styled.div`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    width: 60px;
+    width: 30px;
     height: 7px;
     border-radius: 50px;
     background-color: ${({ type }) => (type === '1'? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
 
     @media ${VIEWPORT.tabletUp} {
-        width: 90px;
+        width: 50px;
         height: 9px;
     }
 `;
@@ -158,7 +166,7 @@ export const TextLink = styled(Link)`
     }
 `;
 
-export const FilterCell = styled.div`
+export const Filter = styled.div`
     border-radius: 10px;
     background-color: ${({ type }) => (type === '1'? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE3}`)};
     padding: .75rem .95rem;
@@ -184,8 +192,7 @@ export const FilterCell = styled.div`
     }
 `;
 
-export const FilterText = styled.p`
-    font-family: 'Poppins', sans-serif;
+export const FilterText = styled(MainText)`
     font-size: .85rem;
     color: ${STYLES.COLOR_ON_SURFACE};
 
@@ -210,7 +217,7 @@ export const SocialIcon = styled.a`
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-in-out;
-    margin: .5rem 0 .5rem 0;
+    margin: .25rem 0 .25rem 0;
 
     svg {
         width: 20px;
@@ -230,7 +237,7 @@ export const SocialIcon = styled.a`
     @media ${VIEWPORT.tabletUp} {
         width: 55px;
         height: 55px;
-        margin: .5rem 0 .5rem 0;
+        margin: 1rem 0 1rem 0;
 
         svg {
             width: 35px;

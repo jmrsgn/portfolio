@@ -26,11 +26,10 @@ export const Box = styled.div`
 `;
 
 export const ImagesContainer = styled.div`
-    margin-top: 2rem;
-    margin-bottom: 3rem;
     width: 100%;
     margin: auto;
     display: flex;
+    padding: 1rem;
     justify-content: space-between;
     align-items: center;
 
@@ -40,7 +39,7 @@ export const ImagesContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    height: 40px;
+    height: 35px;
     width: auto;
 
     @media ${VIEWPORT.tabletUp} {
@@ -61,14 +60,13 @@ export const Button = styled.a`
     margin: auto;
     background-color: ${STYLES.COLOR_SURFACE2};
     font-family: 'Poppins', sans-serif;
-    width: 200px;
+    width: 150px;
     border: none;
     outline: none;
     text-align: center;
     color: ${STYLES.COLOR_ON_SURFACE};
     cursor: pointer;
     transition: .3s ease-in;
-    width: 40%;
     font-size: 1rem;
     padding: .75rem;
     margin-top: 2rem;
@@ -79,20 +77,21 @@ export const Button = styled.a`
     }
 
     @media ${VIEWPORT.tabletUp} {
-        width: 200px;
+        width: 250px;
         font-size: 1.5rem;
-        padding: 1rem;
+        padding: 1.25rem;
         border-radius: 15px;
         margin-top: 4rem;
     } 
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        width: 180px;
+        width: 230px;
         font-size: 1.25rem;
-        padding: .8rem;
+        padding: 1rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
+        width: 200px;
         margin-top: 3rem;
         font-size: 1.15rem;
     }

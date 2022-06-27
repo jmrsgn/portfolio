@@ -50,7 +50,7 @@ export function HomeContainer() {
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.2}}
                         >
-                            <SocialIcon href="https://www.linkedin.com/in/john-martin-marasigan/" target={"_blank"}>
+                            <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
                                 <AiFillLinkedin />
                             </SocialIcon>
                         </motion.div>

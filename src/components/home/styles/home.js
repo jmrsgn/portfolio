@@ -48,7 +48,6 @@ export const Box = styled.div`
             }
         }
     }
-
     
     @media ${VIEWPORT.desktopUp} {
         &:first-of-type {
@@ -87,7 +86,7 @@ export const Image = styled.img`
 `;
 
 export const TechBubbleContainer= styled.div`
-    min-width: 275px;
+    width: 300px;
     display: flex;
     margin: auto;
     justify-content: space-between;

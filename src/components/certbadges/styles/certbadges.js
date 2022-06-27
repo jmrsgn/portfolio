@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
+import { MainText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -55,9 +56,8 @@ export const Certificate = styled.div`
     }
 `;
 
-export const CertificateTitle = styled.p`
+export const CertificateTitle = styled(MainText)`
     margin-top: .5rem;
-    font-family: 'Poppins', sans-serif;
     font-size: .75rem;
     color: ${STYLES.COLOR_ON_SURFACE};
 
@@ -71,8 +71,7 @@ export const CertificateTitle = styled.p`
     }
 `;
 
-export const CertificateDate = styled.p`
-    font-family: 'Poppins', sans-serif;
+export const CertificateDate = styled(MainText)`
     font-weight: bold;
     font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE1};
@@ -130,7 +129,7 @@ export const Badge = styled.img`
     }
 
     @media ${VIEWPORT.tabletUp} {
-        height: 90px;
+        height: 120px;
     }
 
     @media ${VIEWPORT.desktopUp} {

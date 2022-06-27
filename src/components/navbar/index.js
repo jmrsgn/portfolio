@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Image } from "./styles/navbar";
+import { Container } from "./styles/navbar";
 
 export default function NavBar({ showNavBar, children, ...restProps }) {
     return (
@@ -11,8 +11,4 @@ export default function NavBar({ showNavBar, children, ...restProps }) {
             }
         </>
     )
-}
-
-NavBar.Image = function NavBarImage({ src, ...restProps }) {
-    return <Image {...restProps} src={src} />
 }

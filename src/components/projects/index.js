@@ -4,12 +4,11 @@ import { Container,
          SubBox,
          FilterContainer,
          ProjectsContainer,
-         ProjectCell,
+         Project,
          ProjectTitle,
          ProjectDescription,
-         ProjectImage,
          TagsContainer,
-         TagCell,
+         Tag,
          TagText,
          DevelopmentTag, 
          DevelopmentText } from './styles/projects';
@@ -34,8 +33,8 @@ Projects.ProjectsContainer = function ProjectsProjectsContainer({ children, ...r
     return <ProjectsContainer {...restProps}>{children}</ProjectsContainer>
 }
 
-Projects.ProjectCell = function ProjectsProjectCell({ children, ...restProps }) {
-    return <ProjectCell {...restProps}>{children}</ProjectCell>
+Projects.Project = function ProjectsProject({ children, ...restProps }) {
+    return <Project {...restProps}>{children}</Project>
 }
 
 Projects.ProjectTitle = function ProjectsProjectTitle({ children, ...restProps }) {
@@ -50,8 +49,8 @@ Projects.TagsContainer = function ProjectsTagsContainer({ children, ...restProps
     return <TagsContainer {...restProps}>{children}</TagsContainer>
 }
 
-Projects.TagCell = function ProjectsTagCell({ children, ...restProps }) {
-    return <TagCell {...restProps}>{children}</TagCell>
+Projects.Tag = function ProjectsTag({ children, ...restProps }) {
+    return <Tag {...restProps}>{children}</Tag>
 }
 
 Projects.TagText = function ProjectsTagText({ children, ...restProps }) {

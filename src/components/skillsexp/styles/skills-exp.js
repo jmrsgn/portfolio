@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
+import { MainText, SecondaryText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -41,7 +42,7 @@ export const SkillsContainer = styled.div`
     }
 `;
 
-export const SkillCell = styled.div`
+export const Skill = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -51,8 +52,8 @@ export const SkillCell = styled.div`
     margin: 1rem;
 
     @media ${VIEWPORT.tabletUp} {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -69,7 +70,7 @@ export const SkillImage = styled.img`
     transform: translate(-50%, -50%);
 
     @media ${VIEWPORT.tabletUp} {
-        width: 30px;
+        width: 40px;
     }
 `;
 export const ExperiencesContainer = styled.div`
@@ -84,7 +85,7 @@ export const ExperiencesContainer = styled.div`
     }
 `;
 
-export const ExperienceCell = styled.div`
+export const Experience = styled.div`
     background-color: ${STYLES.COLOR_SURFACE3};
     display: flex;
     flex-direction: column;
@@ -92,7 +93,7 @@ export const ExperienceCell = styled.div`
     min-width: 300px; 
     min-height: 200px;
     width: 300px;
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
@@ -108,30 +109,33 @@ export const ExperienceCell = styled.div`
     }
 `;
 
-export const Date = styled.p`
-    font-size: .85rem;
+export const Date = styled(SecondaryText)`
+    font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE2};
-    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 1rem;
+        font-size: 1.25rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1.1rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .8rem;
+        font-size: 1rem;
     }
 `;
 
-export const Position = styled.p`
-    margin-top: 3rem;
+export const Position = styled(MainText)`
+    margin-top: 2rem;
     font-size: 1.5rem;
     color: ${STYLES.COLOR_ON_SURFACE};
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
+        margin-top: 3rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -143,10 +147,9 @@ export const Position = styled.p`
     }
 `;
 
-export const Company = styled.p`
+export const Company = styled(SecondaryText)`
     font-size: 1rem;
     color: ${STYLES.COLOR_SURFACE2};
-    font-family: 'Poppins', sans-serif;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1.75rem;
@@ -161,25 +164,25 @@ export const Company = styled.p`
     }
 `;
 
-export const Learnings = styled.p`
-    margin-top: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
+export const Learnings = styled(SecondaryText)`
+    margin-top: 1.5rem;
     color: ${STYLES.COLOR_LIGHT_GRAY};
     font-size: .75rem;
     line-height: 20px;
 
     @media ${VIEWPORT.tabletUp} { 
-        font-size: 1.15rem;
-        line-height: 28px;
+        font-size: 1.25rem;
+        line-height: 32px;
         margin-top: 3rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1rem;
+        font-size: 1.15rem;
+        line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .9rem;
+        font-size: .95rem;
         line-height: 24px;
     }
 `;

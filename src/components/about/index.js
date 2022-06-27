@@ -3,13 +3,14 @@ import { Container,
          Box,
          SubBox,
          SkillsContainer,
+         DescriptionContainer,
          Skill,
          Image,
          SkillTitle,
          Quote,
          QuoteContainer,
          SkillDescription, 
-         MiniDivider} from './styles/about';
+         MiniDivider } from './styles/about';
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -25,6 +26,10 @@ About.SubBox = function AboutSubBox({ children, ...restProps }) {
 
 About.SkillsContainer = function AboutSkillsContainer({ children, ...restProps }) {
     return <SkillsContainer {...restProps}>{children}</SkillsContainer>
+}
+
+About.DescriptionContainer = function AboutDescriptionContainer({ children, ...restProps }) {
+    return <DescriptionContainer {...restProps}>{children}</DescriptionContainer>
 }
 
 About.Skill = function AboutSkill({ children, ...restProps }) {

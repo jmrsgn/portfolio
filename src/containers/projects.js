@@ -4,7 +4,7 @@ import { animate, motion } from 'framer-motion';
 import { Title, 
          Divider, 
          TextLink, 
-         FilterCell, 
+         Filter, 
          FilterText, 
          ProjectMobileAppImage, 
          ProjectWebAppImage } from "../globalComponents";
@@ -23,8 +23,6 @@ export function ProjectsContainer() {
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
     function loadProjects(filter) {
-        console.log(animateCard);
-
         setTimeout(() => {
             setAnimateCard([{ y: 0, opacity: 1 }]);
 
@@ -55,20 +53,20 @@ export function ProjectsContainer() {
         <Projects id="projects">
             <MotionWrap>
                 <Projects.Box>
-                    <Title>Stuffs I’ve already built / will build</Title>
+                    <Title>Stuffs I’ve already built</Title>
                     <Divider type="1" />
-
+{/* 
                     <Projects.FiltersContainer>
                         {FiltersData.map((item) => (
-                            <FilterCell 
+                            <Filter
                                 key={item.id} 
                                 type={activeFilter === item.name ? '1' : ''}
                                 onClick={() => handleProjectFilter(item.name)}    
                             >
                                 <FilterText>{item.name}</FilterText>
-                            </FilterCell>
+                            </Filter>
                         ))}
-                    </Projects.FiltersContainer>
+                    </Projects.FiltersContainer> */}
 
                     <Projects.ProjectsContainer>
                         {filterProjects.map((item) => (
@@ -77,7 +75,7 @@ export function ProjectsContainer() {
                                 transition={{ duration: 0.5 }}
                             >
                                 <Projects.SubBox key={item.id}>
-                                    <Projects.ProjectCell>
+                                    <Projects.Project>
                                         <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
                                         <Projects.ProjectDescription>{item.description}</Projects.ProjectDescription>
                                             
@@ -91,9 +89,9 @@ export function ProjectsContainer() {
 
                                         <Projects.TagsContainer>
                                             {item.tech.map(( tag ) => (
-                                                <Projects.TagCell>
+                                                <Projects.Tag>
                                                     <Projects.TagText>{tag}</Projects.TagText>
-                                                </Projects.TagCell>
+                                                </Projects.Tag>
                                             ))}
                                         </Projects.TagsContainer>
 
@@ -102,7 +100,7 @@ export function ProjectsContainer() {
                                                 <Projects.DevelopmentText>Development</Projects.DevelopmentText>
                                             </Projects.DevelopmentTag>
                                         )}
-                                    </Projects.ProjectCell>
+                                    </Projects.Project>
 
                                     {item.filter === 'Web App'? <ProjectWebAppImage src={item.src} /> : <ProjectMobileAppImage src={item.src} />}
                                 </Projects.SubBox>  

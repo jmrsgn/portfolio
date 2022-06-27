@@ -2,10 +2,10 @@ import React from "react";
 import { Container,
          Box,
          SkillsContainer,
-         SkillCell,
+         Skill,
          SkillImage,
          ExperiencesContainer,
-         ExperienceCell,
+         Experience,
          Date,
          Position,
          Company,
@@ -23,8 +23,8 @@ SkillsExp.SkillsContainer = function SkillsExpSkillsContainer({ children, ...res
     return <SkillsContainer {...restProps}>{children}</SkillsContainer>
 }
 
-SkillsExp.SkillCell = function SkillsExpSkillCell({ children, ...restProps }) {
-    return <SkillCell {...restProps}>{children}</SkillCell>
+SkillsExp.Skill = function SkillsExpSkill({ children, ...restProps }) {
+    return <Skill {...restProps}>{children}</Skill>
 }
 
 SkillsExp.SkillImage = function SkillsExpSkillImage({ src, ...restProps }) {
@@ -35,8 +35,8 @@ SkillsExp.ExperiencesContainer = function SkillsExpExperiencesContainer({ childr
     return <ExperiencesContainer {...restProps}>{children}</ExperiencesContainer>
 }
 
-SkillsExp.ExperienceCell = function SkillsExpExperienceCell({ children, ...restProps }) {
-    return <ExperienceCell {...restProps}>{children}</ExperienceCell>
+SkillsExp.Experience = function SkillsExpExperience({ children, ...restProps }) {
+    return <Experience {...restProps}>{children}</Experience>
 }
 
 SkillsExp.Date = function SkillsExpDate({ children, ...restProps }) {
