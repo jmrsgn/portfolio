@@ -21,67 +21,81 @@ export const Box = styled.div`
     width: ${({ width }) => (width? width : '100%')};
 `;
 
-export const SkillsContainer = styled.div`
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 2rem;
-
+export const Arrow = styled.div`
+    margin-left: 1rem;
+    border-top: 10px solid ${STYLES.COLOR_SURFACE2};
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 15px;
+    width: 15px;
+    
     @media ${VIEWPORT.tabletUp} {
-        margin-top: 3rem;
+        border-top: 10px solid transparent;
+        border-left: 10px solid ${STYLES.COLOR_SURFACE2};;
+        border-bottom: 10px solid transparent;
     }
+`
 
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        justify-content: center;
-    }
+export const SkillsContainer = styled.div`
+    margin: 0 auto;
+    max-width: 30rem;
+    gap: .5rem;
 
-    @media ${VIEWPORT.desktopUp} {
-        width: 50%;
-        flex-direction: flex-start;
+    display: column;
+    columns: 3;
+
+    * {
+        break-inside: avoid;
+        margin-bottom: 0.5rem;
     }
 `;
 
-export const Skill = styled.div`
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: relative;
+export const Skill = styled.div`   
+    border-radius: 10%;
+    padding: 2rem .25rem .75rem .25rem;
     background-color: ${STYLES.COLOR_SURFACE3};
+    align-items: center;
+    text-align: center;
     transition: .2s ease-in;
-    margin: 1rem;
 
-    @media ${VIEWPORT.tabletUp} {
+    /* @media ${VIEWPORT.tabletUp} {
         width: 100px;
-        height: 100px;
+        height: 50px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
         margin: 2rem;
-    }
+    } */
 `;
 
 export const SkillImage = styled.img`
-    width: 20px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    @media ${VIEWPORT.tabletUp} {
-        width: 40px;
-    }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 `;
+
+export const SkillTitle = styled(MainText)`
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: ${STYLES.COLOR_ON_SURFACE};
+`
+
 export const ExperiencesContainer = styled.div`
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     margin-top: 2rem;
 
     @media ${VIEWPORT.tabletUp} {
         margin-top: 5rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
     }
 `;
 
@@ -90,22 +104,16 @@ export const Experience = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    min-width: 300px; 
-    min-height: 200px;
-    width: 300px;
-    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    max-width: 30rem;
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
         border-radius: 15px;
         width: 500px;
-        min-width: 500px;
-        padding: 2rem 2rem 4rem 2rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        min-width: 400px;
-        width: 400px;
+        padding: 2rem;
     }
 `;
 
@@ -143,7 +151,7 @@ export const Position = styled(MainText)`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 2rem;
+        font-size: 1.85rem;
     }
 `;
 
@@ -160,7 +168,8 @@ export const Company = styled(SecondaryText)`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1.25rem;
+        font-size: 1.05rem;
+        letter-spacing: 2px;
     }
 `;
 
@@ -184,5 +193,6 @@ export const Learnings = styled(SecondaryText)`
     @media ${VIEWPORT.desktopUp} {
         font-size: .95rem;
         line-height: 24px;
+        margin-top: 32px;
     }
 `;

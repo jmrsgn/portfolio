@@ -4,11 +4,13 @@ import { Container,
          SkillsContainer,
          Skill,
          SkillImage,
+         SkillTitle,
          ExperiencesContainer,
          Experience,
          Date,
          Position,
          Company,
+         Arrow,
          Learnings } from './styles/skills-exp';
 
 export default function SkillsExp({ children, ...restProps }) {
@@ -29,6 +31,10 @@ SkillsExp.Skill = function SkillsExpSkill({ children, ...restProps }) {
 
 SkillsExp.SkillImage = function SkillsExpSkillImage({ src, ...restProps }) {
     return <SkillImage {...restProps} src={src} />
+}
+
+SkillsExp.SkillTitle = function SkillsExpSkillTitle({ children, ...restProps }) {
+    return <SkillTitle {...restProps}>{children}</SkillTitle>
 }
 
 SkillsExp.ExperiencesContainer = function SkillsExpExperiencesContainer({ children, ...restProps }) {
@@ -53,5 +59,9 @@ SkillsExp.Company = function SkillsExpCompany({ children, ...restProps }) {
 
 SkillsExp.Learnings = function SkillsExpLearnings({ children, ...restProps }) {
     return <Learnings {...restProps}>{children}</Learnings>
+}
+
+SkillsExp.Arrow = function SkillsExpArrow({ ...restProps }) {
+    return <Arrow {...restProps} />
 }
 

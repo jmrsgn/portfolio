@@ -18,7 +18,7 @@ export function AboutContainer() {
 
                         <About.DescriptionContainer>
                             <SmallText>
-                                I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development. I also have a basic knowledge of doing Web Development using React JS.
+                                I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development.
                             </SmallText>
                         </About.DescriptionContainer>
 
@@ -40,7 +40,7 @@ export function AboutContainer() {
                                     
                                 <About.Image src={item.src} />
                                 <About.SkillTitle marginTop="24px">{item.title.split(" ")[0]}</About.SkillTitle>
-                                <About.SkillTitle>{item.title.split(" ")[1]}</About.SkillTitle>
+                                <About.SkillTitle marginTop="0px">{item.title.split(" ")[1]}</About.SkillTitle>
                                 <About.SkillDescription type={item.popOut? "1" : "0"}>
                                     {item.description}
                                 </About.SkillDescription>

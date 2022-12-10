@@ -131,6 +131,7 @@ export const Button = styled.a`
 
 export const Divider = styled.div`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
     width: 30px;
     height: 7px;
     border-radius: 50px;

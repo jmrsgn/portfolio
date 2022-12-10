@@ -4,5 +4,12 @@
         "title": "CompTIA IT Fundamentals Certification",
         "date": "2018",
         "src": "../images/certificates/comptia.png"
+    },
+
+    {
+        "id": 2,
+        "title": "AWS Academy Graduate",
+        "date": "2022",
+        "src": "../images/certificates/aws.png"
     }
 ]

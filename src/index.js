@@ -11,7 +11,3 @@ app.render(
     <App />
   </>
 );
-
-// TODO: 
-// ? refactor codes
-// ? done with mobile responsive

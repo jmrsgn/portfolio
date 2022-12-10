@@ -114,7 +114,7 @@ export const ProjectTitle = styled(MainText)`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 2rem;
+        font-size: 1.85rem;
     }
 `;
 

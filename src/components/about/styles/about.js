@@ -38,7 +38,7 @@ export const Skill = styled.div`
     background-color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_SURFACE2}` : `${STYLES.COLOR_SURFACE3}`)};
     border-radius: 10px;
     display: flex;
-    padding: 1.5rem 1.5rem 4.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
     width: 300px;
     min-width: 300px;
     min-height: 300px;
@@ -103,6 +103,7 @@ export const SkillsContainer = styled.div`
 
 export const DescriptionContainer = styled.div`
     margin-top: 2rem;
+    margin-bottom: 2rem;
 
     @media ${VIEWPORT.tabletUp} {
         margin-top: 3rem;
@@ -124,7 +125,8 @@ export const SkillTitle = styled(MainText)`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 2rem;
+        font-size: 1.85rem;
+        line-height: 36px;
     }
 `;
 

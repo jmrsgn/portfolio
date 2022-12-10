@@ -7,5 +7,10 @@
     {
         "id": 2,
         "src": "../images/badges/mta.png"
+    },
+
+    {
+        "id": 3,
+        "src": "../images/badges/aws.png"
     }
 ]

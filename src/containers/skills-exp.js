@@ -14,7 +14,7 @@ export function SkillsExpContainer() {
             <MotionWrap>
                 <SkillsExp.Box>
                     <Title>Skills & Experiences</Title>
-                    <Divider />
+                    <Divider marginBottom='4rem' />
 
                     <SkillsExp.SkillsContainer>
                         {skillsData.map(( item ) => (
@@ -25,6 +25,7 @@ export function SkillsExpContainer() {
                             >
                                 <SkillsExp.Skill>
                                     <SkillsExp.SkillImage src={item.src} />
+                                    <SkillsExp.SkillTitle>{item.title}</SkillsExp.SkillTitle>
                                 </SkillsExp.Skill>
                             </motion.div>
                         ))}
@@ -37,13 +38,17 @@ export function SkillsExpContainer() {
                                 whileInView={{ opacity: [0, 1] }}
                                 transition={{ duration: 0.5 }}
                                 key={item.id}
+                                style={{display: 'flex', alignItems: 'center'}}
                             >
+
                                 <SkillsExp.Experience>
                                     <SkillsExp.Date>{item.date}</SkillsExp.Date>
                                     <SkillsExp.Position>{item.position}</SkillsExp.Position>
-                                    <SkillsExp.Company>at {item.company}</SkillsExp.Company>
+                                    <SkillsExp.Company>{item.company}</SkillsExp.Company>
                                     <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
                                 </SkillsExp.Experience>
+
+                                <SkillsExp.Arrow />                    
                             </motion.div>   
                         ))}
                     </SkillsExp.ExperiencesContainer>

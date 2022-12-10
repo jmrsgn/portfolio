@@ -25,7 +25,7 @@ export function HomeContainer() {
                         <Home.GreetingsContainer>
                             <Text>Hello,</Text>
                             <BigText>I'm <SpanBoldText color="#FFFFFF">JM</SpanBoldText></BigText>
-                            <SmallText marginBottom="2rem">An aspiring Developer.</SmallText>
+                            <SmallText marginBottom="2rem">I'm a Developer</SmallText>
                             <Button 
                                 type="1"
                                 href="../resume/Resume.pdf"
