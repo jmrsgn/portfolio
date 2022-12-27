@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Expresso",
         "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool.",
-        "tech": ["Java", "Php", "PlantUML", "Microsoft Personalizer"],
+        "tech": ["Java", "Php", "PlantUML", "Microsoft Personalizer", "Material Design"],
         "filter": "Mobile App",
         "development": false,
         "src": "../images/projects/expresso-1.png",

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from 'framer-motion';
 
-import { Title, Divider, SmallText, TextLink } from "../globalComponents";
+import { Title, Divider, TextLink } from "../globalComponents";
 import { About } from '../components';
 import MotionWrap from "../wrapper/motion-wrap";
 
@@ -17,9 +17,10 @@ export function AboutContainer() {
                         <Divider />
 
                         <About.DescriptionContainer>
-                            <SmallText>
+                            <About.Avatar src="../../images/jm.jpeg" />
+                            <About.AvatarDescription>
                                 I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development.
-                            </SmallText>
+                            </About.AvatarDescription>
                         </About.DescriptionContainer>
 
 
@@ -40,7 +41,7 @@ export function AboutContainer() {
                                     
                                 <About.Image src={item.src} />
                                 <About.SkillTitle marginTop="24px">{item.title.split(" ")[0]}</About.SkillTitle>
-                                <About.SkillTitle marginTop="0px">{item.title.split(" ")[1]}</About.SkillTitle>
+                                <About.SkillTitle>{item.title.split(" ")[1]}</About.SkillTitle>
                                 <About.SkillDescription type={item.popOut? "1" : "0"}>
                                     {item.description}
                                 </About.SkillDescription>

@@ -71,6 +71,7 @@ export function ProjectsContainer() {
                     <Projects.ProjectsContainer>
                         {filterProjects.map((item) => (
                             <motion.div
+                                key={item.id}
                                 animate={animateCard}
                                 transition={{ duration: 0.5 }}
                             >
@@ -89,7 +90,7 @@ export function ProjectsContainer() {
 
                                         <Projects.TagsContainer>
                                             {item.tech.map(( tag ) => (
-                                                <Projects.Tag>
+                                                <Projects.Tag key={tag.id}>
                                                     <Projects.TagText>{tag}</Projects.TagText>
                                                 </Projects.Tag>
                                             ))}

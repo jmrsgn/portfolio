@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { MainText } from '../../../globalComponents';
+import { BigText, SmallText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -37,7 +37,7 @@ export const CertificatesContainer = styled.div`
 export const Certificate = styled.div`
     background-color: ${STYLES.COLOR_SURFACE3};
     box-shadow: 0px 5px 5px #161C24;
-    padding: 2rem .5rem 1rem .5rem;
+    padding: 2rem .5rem .5rem .5rem;
     border-radius: 15px;
     text-align: center;
     min-width: 300px; 
@@ -56,7 +56,7 @@ export const Certificate = styled.div`
     }
 `;
 
-export const CertificateTitle = styled(MainText)`
+export const CertificateTitle = styled(BigText)`
     margin-top: .5rem;
     font-size: .75rem;
     color: ${STYLES.COLOR_ON_SURFACE};
@@ -71,7 +71,7 @@ export const CertificateTitle = styled(MainText)`
     }
 `;
 
-export const CertificateDate = styled(MainText)`
+export const CertificateDate = styled(SmallText)`
     font-weight: bold;
     font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE1};

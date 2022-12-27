@@ -10,10 +10,10 @@ export function NavBarContainer() {
     const [toggle, setToggle] = useState(false);
     const [showNavBar, setshowNavBar] = useState(true);
 
-    var prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset;
   
     const controlNavBar = () => {
-      var currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.pageYOffset;
       
       if (prevScrollpos > currentScrollPos) {
         setshowNavBar(true);

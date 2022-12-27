@@ -1,8 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { MainText, SecondaryText } from '../../../globalComponents';
-// continue
+import { BigText, SmallText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -23,17 +22,31 @@ export const Box = styled.div`
 `;
 
 export const Arrow = styled.div`
-    margin-left: 1rem;
     border-top: 10px solid ${STYLES.COLOR_SURFACE2};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     height: 15px;
     width: 15px;
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
     
     @media ${VIEWPORT.tabletUp} {
+        border-top: 15px solid ${STYLES.COLOR_SURFACE2};
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        height: 25px;
+        width: 25px;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
         border-top: 10px solid transparent;
-        border-left: 10px solid ${STYLES.COLOR_SURFACE2};;
+        border-left: 10px solid ${STYLES.COLOR_SURFACE2};
         border-bottom: 10px solid transparent;
+        height: 20px;
+        width: 20px;
+        margin-left: 1rem;
     }
 `
 
@@ -52,36 +65,75 @@ export const SkillsContainer = styled.div`
 `;
 
 export const Skill = styled.div`   
-    border-radius: 10%;
-    padding: 2rem .25rem .75rem .25rem;
+    border-radius: 10px;
+    padding: 1rem .15rem .15rem .15rem;
     background-color: ${STYLES.COLOR_SURFACE3};
     align-items: center;
     text-align: center;
     transition: .2s ease-in;
 
-    /* @media ${VIEWPORT.tabletUp} {
-        width: 100px;
-        height: 50px;
+    @media ${VIEWPORT.tabletUp} {
+        border-radius: 20px;
+        padding: 1.5rem .25rem .25rem .25rem;
     }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        margin: 2rem;
-    } */
 `;
 
 export const SkillImage = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 35%;
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 50%;
+    }
 `;
 
-export const SkillTitle = styled(MainText)`
+export const SkillTitle = styled(BigText)`
     font-weight: bold;
-    font-size: 1rem;
+    font-size: .90rem;
     margin-top: 1rem;
     color: ${STYLES.COLOR_ON_SURFACE};
+
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+    }
 `
+
+export const Experience = styled.div`
+    background-color: ${STYLES.COLOR_SURFACE3};
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 30rem;
+    padding: 1.5rem;
+    width: 100%;
+    box-shadow: 0px 5px 5px #161C24;
+
+    @media ${VIEWPORT.tabletUp} {
+        border-radius: 20px;
+        width: 500px;
+        padding: 2rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        padding: 2rem;
+    }
+`;
+
+export const ExperienceContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+`;
 
 export const ExperiencesContainer = styled.div`
     margin: auto;
@@ -90,6 +142,12 @@ export const ExperiencesContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
+    
+    &:first-of-type {
+        ${ExperienceContainer} {
+            margin-top: 0rem;
+        }
+    };
 
     @media ${VIEWPORT.tabletUp} {
         margin-top: 5rem;
@@ -100,25 +158,7 @@ export const ExperiencesContainer = styled.div`
     }
 `;
 
-export const Experience = styled.div`
-    background-color: ${STYLES.COLOR_SURFACE3};
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    max-width: 30rem;
-    box-shadow: 0px 5px 5px #161C24;
-
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 15px;
-        width: 500px;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        padding: 2rem;
-    }
-`;
-
-export const Date = styled(SecondaryText)`
+export const Date = styled(SmallText)`
     font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE2};
     letter-spacing: 2px;
@@ -128,7 +168,7 @@ export const Date = styled(SecondaryText)`
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.1rem;
+        font-size: 1.20rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -136,7 +176,7 @@ export const Date = styled(SecondaryText)`
     }
 `;
 
-export const Position = styled(MainText)`
+export const Position = styled(BigText)`
     margin-top: 2rem;
     font-size: 1.5rem;
     color: ${STYLES.COLOR_ON_SURFACE};
@@ -156,43 +196,41 @@ export const Position = styled(MainText)`
     }
 `;
 
-export const Company = styled(SecondaryText)`
-    font-size: 1rem;
+export const Company = styled(SmallText)`
+    font-size: .90rem;
+    letter-spacing: 2px;
     color: ${STYLES.COLOR_SURFACE2};
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        letter-spacing: 4px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.05rem;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
     }
 `;
 
-export const Learnings = styled(SecondaryText)`
+export const Learnings = styled(SmallText)`
     margin-top: 1.5rem;
     color: ${STYLES.COLOR_LIGHT_GRAY};
-    font-size: .75rem;
     line-height: 20px;
 
-    @media ${VIEWPORT.tabletUp} { 
-        font-size: 1.25rem;
+    @media ${VIEWPORT.tabletUp} {
         line-height: 32px;
         margin-top: 3rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.15rem;
         line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .95rem;
         line-height: 24px;
         margin-top: 32px;
     }

@@ -6,6 +6,7 @@ import { Container,
          SkillImage,
          SkillTitle,
          ExperiencesContainer,
+         ExperienceContainer,
          Experience,
          Date,
          Position,
@@ -39,6 +40,10 @@ SkillsExp.SkillTitle = function SkillsExpSkillTitle({ children, ...restProps }) 
 
 SkillsExp.ExperiencesContainer = function SkillsExpExperiencesContainer({ children, ...restProps }) {
     return <ExperiencesContainer {...restProps}>{children}</ExperiencesContainer>
+}
+
+SkillsExp.ExperienceContainer = function SkillsExpExperienceContainer({ children, ...restProps }) {
+    return <ExperienceContainer {...restProps}>{children}</ExperienceContainer>
 }
 
 SkillsExp.Experience = function SkillsExpExperience({ children, ...restProps }) {

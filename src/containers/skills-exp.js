@@ -41,14 +41,16 @@ export function SkillsExpContainer() {
                                 style={{display: 'flex', alignItems: 'center'}}
                             >
 
-                                <SkillsExp.Experience>
-                                    <SkillsExp.Date>{item.date}</SkillsExp.Date>
-                                    <SkillsExp.Position>{item.position}</SkillsExp.Position>
-                                    <SkillsExp.Company>{item.company}</SkillsExp.Company>
-                                    <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
-                                </SkillsExp.Experience>
+                                <SkillsExp.ExperienceContainer>
+                                    <SkillsExp.Experience>
+                                        <SkillsExp.Date>{item.date}</SkillsExp.Date>
+                                        <SkillsExp.Position>{item.position}</SkillsExp.Position>
+                                        <SkillsExp.Company>{item.company}</SkillsExp.Company>
+                                        <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
+                                    </SkillsExp.Experience>
 
-                                <SkillsExp.Arrow />                    
+                                    <SkillsExp.Arrow />
+                                </SkillsExp.ExperienceContainer>                    
                             </motion.div>   
                         ))}
                     </SkillsExp.ExperiencesContainer>

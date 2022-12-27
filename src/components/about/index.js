@@ -7,6 +7,8 @@ import { Container,
          Skill,
          Image,
          SkillTitle,
+         Avatar,
+         AvatarDescription,
          Quote,
          QuoteContainer,
          SkillDescription, 
@@ -26,6 +28,14 @@ About.SubBox = function AboutSubBox({ children, ...restProps }) {
 
 About.SkillsContainer = function AboutSkillsContainer({ children, ...restProps }) {
     return <SkillsContainer {...restProps}>{children}</SkillsContainer>
+}
+
+About.Avatar = function AboutAvatar({ src, ...restProps }) {
+    return <Avatar {...restProps} src={src} />
+}
+
+About.AvatarDescription = function AboutAvatarDescription({ children, ...restProps }) {
+    return <AvatarDescription {...restProps}>{children}</AvatarDescription>
 }
 
 About.DescriptionContainer = function AboutDescriptionContainer({ children, ...restProps }) {

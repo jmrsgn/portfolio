@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { MainText, SecondaryText } from '../../../globalComponents';
+import { SmallText, BigText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -23,22 +23,31 @@ export const Box = styled.div`
 
 export const SubBox = styled.div`
     width: 100%;
+`;
 
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        width: 70%;
+export const Avatar = styled.img`
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: solid 3px ${STYLES.COLOR_SURFACE2};
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 300px;
+        height: 300px
     }
 
     @media ${VIEWPORT.desktopUp} {
-        width: 50%;
+        width: 250px;
+        height: 250px;
     }
 `;
-
 
 export const Skill = styled.div`
     background-color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_SURFACE2}` : `${STYLES.COLOR_SURFACE3}`)};
     border-radius: 10px;
     display: flex;
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    padding: 1.5rem;
     width: 300px;
     min-width: 300px;
     min-height: 300px;
@@ -55,10 +64,10 @@ export const Skill = styled.div`
     }
  
     @media ${VIEWPORT.tabletUp} {
-        border-radius: 15px;
+        border-radius: 20px;
         width: 500px;
         min-width: 500px;
-        min-height: 480px;
+        min-height: 450px;
         padding: 2rem;
 
         &:last-of-type {
@@ -104,20 +113,40 @@ export const SkillsContainer = styled.div`
 export const DescriptionContainer = styled.div`
     margin-top: 2rem;
     margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
 
     @media ${VIEWPORT.tabletUp} {
         margin-top: 3rem;
     }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+`
+
+export const AvatarDescription = styled(SmallText)`
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        width: 60%;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 70%;
+    }
 `
 
 
-export const SkillTitle = styled(MainText)`
+export const SkillTitle = styled(BigText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     font-size: 1.5rem;
+    line-height: 36px;
     font-weight: bold;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
+        line-height: 56px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -126,7 +155,7 @@ export const SkillTitle = styled(MainText)`
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.85rem;
-        line-height: 36px;
+        line-height: 42px;
     }
 `;
 
@@ -141,25 +170,21 @@ export const Image = styled.img`
     }
 `;
 
-export const SkillDescription = styled(SecondaryText)`
+export const SkillDescription = styled(SmallText)`
     margin-top: .75rem;
-    font-size: .75rem;
     line-height: 20px;
     color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
 
     @media ${VIEWPORT.tabletUp} { 
-        font-size: 1.25rem;
         line-height: 32px;
         margin-top: 1rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.15rem;
         line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .95rem;
         line-height: 24px;
     }
 `;

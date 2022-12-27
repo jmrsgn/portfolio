@@ -13,9 +13,12 @@ export const Container = styled.div`
     top: 0;
 
     svg {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
         cursor: pointer;
+        padding: .15rem;
+        border-radius: 50%;
+        background-color: ${STYLES.COLOR_SURFACE1};
     }
 
     div {
@@ -34,8 +37,8 @@ export const Container = styled.div`
         background-color: ${STYLES.COLOR_SURFACE3};
 
         svg {
-            width: 25px;
-            height: 25px;
+            width: 35px;
+            height: 35px;
             color: ${STYLES.COLOR_ON_BACKGROUND};
             cursor: pointer;
             z-index: 5;
@@ -75,9 +78,9 @@ export const Container = styled.div`
         padding: 2rem;
 
         svg {
-            width: 40px;
-            height: 40px;
-        }
+            width: 50px;
+            height: 50px;
+        } 
 
         div {
             width: 60%;

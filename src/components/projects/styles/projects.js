@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { MainText, SecondaryText } from '../../../globalComponents';
+import { SmallText, BigText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -89,7 +89,7 @@ export const Project = styled.div`
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
-        border-radius: 15px;
+        border-radius: 20px;
         width: 500px;
         min-width: 500px;
         padding: 2rem;
@@ -101,7 +101,7 @@ export const Project = styled.div`
     }
 `;
 
-export const ProjectTitle = styled(MainText)`
+export const ProjectTitle = styled(BigText)`
     color: ${STYLES.COLOR_ON_SURFACE};
     font-size: 1.5rem;
 
@@ -118,25 +118,21 @@ export const ProjectTitle = styled(MainText)`
     }
 `;
 
-export const ProjectDescription = styled(SecondaryText)`
+export const ProjectDescription = styled(SmallText)`
     margin-top: .75rem;
     line-height: 20px;
     color: ${STYLES.COLOR_LIGHT_GRAY};
-    font-size: .75rem;
 
     @media ${VIEWPORT.tabletUp} { 
-        font-size: 1.25rem;
         line-height: 32px;
         margin-top: 1rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.15rem;
         line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: .95rem;
         line-height: 24px;
     }
 `;
@@ -156,14 +152,13 @@ export const TagsContainer = styled.div`
 
 export const Tag = styled.div`
     background-color: ${STYLES.COLOR_LIGHT_RED};
-    margin: 0.25rem;
-
+    margin: 0.15rem;
     border-radius: 5px;
-    padding: 0.15rem 0.3rem;
+    padding: .01rem .5rem;
 
     @media ${VIEWPORT.tabletUp} {
         border-radius: 7px;
-        padding: 0.3rem 0.75rem;
+        padding: .05rem .75rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -171,7 +166,7 @@ export const Tag = styled.div`
     }
 `;
 
-export const TagText = styled(SecondaryText)`
+export const TagText = styled(SmallText)`
     color: ${STYLES.COLOR_RED};
     font-size: .55rem;
 
@@ -180,7 +175,7 @@ export const TagText = styled(SecondaryText)`
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: .85rem;
+        font-size: .80rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -207,7 +202,7 @@ export const DevelopmentTag = styled.div`
     }
 `;
 
-export const DevelopmentText = styled(SecondaryText)`
+export const DevelopmentText = styled(SmallText)`
     font-size: .65rem;
     color: ${STYLES.COLOR_ON_SURFACE};
     position: absolute;

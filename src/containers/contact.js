@@ -12,6 +12,7 @@ export function ContactContainer() {
             <Contact.ImagesContainer>
                 {techData.map(( item ) => (
                     <motion.div
+                        key={item.id}
                         whileInView={{ scale: [0, 1 ] }}
                         transition={{ duration: 0.5, delay: `0.${(item.id - 1) + 2}` }}
                     >

@@ -39,11 +39,11 @@ export const BigText = styled(MainText)`
     font-size: 3rem;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     @media ${VIEWPORT.desktopUp} {
@@ -54,21 +54,22 @@ export const BigText = styled(MainText)`
 export const SmallText = styled(SecondaryText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
-    font-size: .85rem;
+    width: ${({ width }) => (width)};
+    font-size: .75rem;
     line-height: 24px;
 
     @media ${VIEWPORT.tabletUp} {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         line-height: 40px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.25rem;
+        font-size: 1.10rem;
         line-height: 36px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
+        font-size: .97rem;
         line-height: 32px;
     }
 `;
