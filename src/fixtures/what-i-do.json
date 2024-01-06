@@ -18,7 +18,7 @@
     {
         "id": 3,
         "title": "Android Development",
-        "description": "My biggest interest of all. I have already built 2 applications with Java. Now, I am currently studying Jetpack Compose and Ktor with proper code architecture, to get my skills in to the industry level of development.",
+        "description": "My biggest interest of all. I have already built 2 applications with Java. Now, I am currently studying Jetpack Compose and Ktor with proper code architecture, to get my skills into the industry level of development.",
         "src": "./images/other/android-dev.png",
         "popOut": true
     }

@@ -13,7 +13,7 @@
     {
         "id": 2,
         "title": "Carkilahan",
-        "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey.",
+        "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey, and also my first applicaton ever built.",
         "tech": ["Java", "Firebase"],
         "filter": "Mobile App",
         "development": false,
