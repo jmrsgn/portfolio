@@ -133,6 +133,7 @@ export function ProjectExpressoContainer() {
                 </Project.ScreenshotContainer>
 
                 <IoCaretBack 
+                    style={{ cursor: 'pointer' }}
                     size={40}
                     onClick={ window.close.bind(this) }
                 />
