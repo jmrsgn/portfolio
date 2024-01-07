@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 
 import { Title, Divider } from "../globalComponents";
 import { SkillsExp } from "../components";
-import MotionWrap from "../wrapper/motion-wrap";
 
 import skillsData from '../fixtures/skills.json';
 import experiencesData from '../fixtures/experiences.json';
@@ -11,7 +10,9 @@ import experiencesData from '../fixtures/experiences.json';
 export function SkillsExpContainer() {
     return (
         <SkillsExp id="skills-&-experiences">
-            <MotionWrap>
+            <motion.div
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
+            >
                 <SkillsExp.Box>
                     <Title>Skills & Experiences</Title>
                     <Divider marginBottom='4rem' />
@@ -55,7 +56,7 @@ export function SkillsExpContainer() {
                         ))}
                     </SkillsExp.ExperiencesContainer>
                 </SkillsExp.Box>
-            </MotionWrap>
+            </motion.div>
         </SkillsExp>
     )
 }

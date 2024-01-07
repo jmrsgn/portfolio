@@ -19,7 +19,7 @@ export function HomeContainer() {
             <Home.Box>
                 <Home.SubBox>
                     <motion.div
-                        animate={{ x: [-100, 0], opacity: [0, 1] }}
+                        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                         transition={{ duration: 0.5 }}
                     >
                         <Home.GreetingsContainer>
@@ -38,7 +38,7 @@ export function HomeContainer() {
 
                     <Home.SocialContainer>
                         <motion.div
-                            animate={{ scale: [0, 1 ]}}
+                            whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5 }}
                         >
                             <SocialIcon href="https://github.com/jmrsgn" target={"_blank"}> 
@@ -47,7 +47,7 @@ export function HomeContainer() {
                         </motion.div>
                         
                         <motion.div
-                            animate={{ scale: [0, 1 ]}}
+                            whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.2}}
                         >
                             <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
@@ -56,7 +56,7 @@ export function HomeContainer() {
                         </motion.div>
                         
                         <motion.div
-                            animate={{ scale: [0, 1 ]}}
+                            whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.4}}
                         >
                             <SocialIcon href="https://www.instagram.com/jmrsgn_/" target={"_blank"}>
@@ -73,7 +73,7 @@ export function HomeContainer() {
                 >
                     <Home.TechBubbleContainer>
                         <motion.div
-                            animate={{ x: [100, 0], y: [150, 0] }}
+                            whileInView={{ x: [100, 0], y: [150, 0] }}
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
@@ -82,7 +82,7 @@ export function HomeContainer() {
                         </motion.div>
 
                         <motion.div
-                            animate={{ y: [150, 0] }}
+                            whileInView={{ y: [150, 0] }}
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
@@ -92,7 +92,7 @@ export function HomeContainer() {
                                 
 
                         <motion.div
-                            animate={{ y: [150, 0], x: [-100, 0] }}
+                            whileInView={{ y: [150, 0], x: [-100, 0] }}
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>

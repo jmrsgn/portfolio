@@ -23,7 +23,7 @@ export function ContactContainer() {
             </Contact.ImagesContainer>
 
             <motion.div
-                animate={{ opacity: [0, 1] }}
+                whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.5, delay: 0.8 }}
             >
                 <Contact.Box>

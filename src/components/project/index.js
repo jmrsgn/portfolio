@@ -5,8 +5,10 @@ import { Container,
          TextDiv,
          Tech,
          TechContainer,
+         ProjectImage,
          Screenshot,
          ScreenshotContainer,
+         NavigationContainer,
          ActionContainer } from './styles/project';
 
 export default function Project({ children, ...restProps }) {
@@ -43,4 +45,12 @@ Project.ScreenshotContainer = function ProjectScreenshotContainer({ children, ..
 
 Project.Screenshot = function ProjectScreenshot({ src, ...restProps }) {
     return <Screenshot {...restProps} src={src} />
+}
+
+Project.ProjectImage = function ProjectProjectImage({ src, ...restProps }) {
+    return <ProjectImage {...restProps} src={src} />
+}
+
+Project.NavigationContainer = function ProjectNavigationContainer({ children, ...restProps }) {
+    return <NavigationContainer {...restProps}>{children}</NavigationContainer>
 }

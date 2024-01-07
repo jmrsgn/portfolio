@@ -51,7 +51,9 @@ export function ProjectsContainer() {
 
     return (
         <Projects id="projects">
-            <MotionWrap>
+            <motion.div
+                whileInView={{ y: [100, 0], opacity: [0, 1]}}
+            >
                 <Projects.Box>
                     <Title>Stuffs I’ve already built</Title>
                     <Divider type="1" />
@@ -79,19 +81,20 @@ export function ProjectsContainer() {
                                     <Projects.Project>
                                         <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
                                         <Projects.ProjectDescription>{item.description}</Projects.ProjectDescription>
-                                            
-                                            {/* <TextLink 
-                                                type='1' 
-                                                to={item.link}
-                                                target={"_blank"}
-                                            >
-                                                Read more
-                                            </TextLink> */}
-
+                                            {item.link !== "" && 
+                                                <TextLink  
+                                                    marginTop="24px"
+                                                    type='1' 
+                                                    to={item.link}
+                                                    target={"_blank"}
+                                                >
+                                                    Read more
+                                                </TextLink> 
+                                            }
                                         <Projects.TagsContainer>
                                             {item.tech.map(( tag ) => (
-                                                <Projects.Tag key={tag.id}>
-                                                    <Projects.TagText>{tag}</Projects.TagText>
+                                                <Projects.Tag>
+                                                    <Projects.TagText>{tag.name}</Projects.TagText>
                                                 </Projects.Tag>
                                             ))}
                                         </Projects.TagsContainer>
@@ -109,7 +112,7 @@ export function ProjectsContainer() {
                         ))}
                     </Projects.ProjectsContainer>
                 </Projects.Box>
-            </MotionWrap>
+            </motion.div>
         </Projects>
     )
 }

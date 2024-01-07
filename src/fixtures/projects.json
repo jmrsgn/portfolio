@@ -3,21 +3,58 @@
         "id": 1,
         "title": "Expresso",
         "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool.",
-        "tech": ["Java", "Php", "PlantUML", "Microsoft Personalizer", "Material Design"],
         "filter": "Mobile App",
         "development": false,
         "src": "../images/projects/expresso-1.png",
-        "link": "/projects/expresso"
+        "link": "/projects/expresso",
+        "tech": [
+            {
+                "name": "Java",
+                "src": "../images/tech/java.png" 
+            },
+            {
+                "name": "PHP",
+                "src": "../images/tech/php.png"
+            },
+            {
+                "name": "PlantUML",
+                "src": "../images/tech/plantuml.png"
+            },
+            {
+                "name": "Microsoft Personalizer",
+                "src": "../images/tech/microsoft-personalizer.png"
+            },
+            {
+                "name": "Material Design",
+                "src": "../images/tech/material-design.png"
+            }
+        ],
+        "screenshots": [
+            "../images/projects/expresso-1.png",
+            "../images/projects/expresso-2.png",
+            "../images/projects/expresso-3.png",
+            "../images/projects/expresso-4.png"
+        ]
     },
 
     {
         "id": 2,
         "title": "Carkilahan",
         "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey, and also my first applicaton ever built.",
-        "tech": ["Java", "Firebase"],
         "filter": "Mobile App",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
-        "link": "/projects/carkilahan"
+        "link": "",
+        "tech": [
+            {
+                "name": "Java",
+                "src": "../images/tech/java.png"
+            },
+            {
+                "name": "Firebase",
+                "src": "../images/tech/java.png"
+            }
+        ],
+        "screenshots": []
     }
 ]

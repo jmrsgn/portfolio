@@ -11,7 +11,9 @@ import badgesData from '../fixtures/badges.json';
 export function CertBadgesContainer() {
     return (
         <CertBadges id="certificates-&-badges">
-            <MotionWrap>
+            <motion.div
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
+            >
                 <CertBadges.Box>
                     <Title>Certificates & Badges</Title>
                     <Divider type="1" />
@@ -38,7 +40,7 @@ export function CertBadgesContainer() {
                         ))}
                     </CertBadges.BadgesContainer>
                 </CertBadges.Box>
-            </MotionWrap>
+            </motion.div>
         </CertBadges>
     )
 }

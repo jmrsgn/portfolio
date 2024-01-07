@@ -77,6 +77,7 @@ export const SmallText = styled(SecondaryText)`
 // ======
 
 export const Title = styled(MainText)`
+    margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
     font-size: 2rem;
 
     @media ${VIEWPORT.tabletUp} {
@@ -131,6 +132,7 @@ export const Button = styled.a`
 `;
 
 export const Divider = styled.div`
+    margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
     width: 30px;
@@ -164,7 +166,7 @@ export const TextLink = styled(Link)`
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 `;
 
