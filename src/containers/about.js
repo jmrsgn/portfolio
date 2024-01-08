@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 
 import { Title, Divider, TextLink } from "../globalComponents";
 import { About } from '../components';
-import MotionWrap from "../wrapper/motion-wrap";
 
 import whatIDoData from "../fixtures/what-i-do.json";
 
@@ -21,19 +20,19 @@ export function AboutContainer() {
 
                         <About.DescriptionContainer>
                             <About.Avatar src="../../images/jm.jpeg" />
-                            <About.AvatarDescription>
-                                I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development.
-                            </About.AvatarDescription>
+                            <About.AvatarDescriptionContainer>
+                                <About.AvatarDescription>
+                                    I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development.
+                                </About.AvatarDescription>
+                                <TextLink 
+                                    marginTop="2rem"
+                                    to='/about/more'
+                                    target="_blank"
+                                >
+                                    Read more
+                                </TextLink>
+                            </About.AvatarDescriptionContainer>
                         </About.DescriptionContainer>
-
-
-                        {/* <TextLink 
-                            marginTop="2rem" 
-                            to='/about/more'
-                            target="_blank"
-                        >
-                            Read more
-                        </TextLink> */}
                     </About.SubBox>
                     
                     <About.SkillsContainer>

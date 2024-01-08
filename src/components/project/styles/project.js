@@ -41,9 +41,9 @@ export const SubBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
     @media ${VIEWPORT.desktopUp} {
-        margin-top: 2rem;
         flex-direction: row;
     }
 `;
@@ -71,11 +71,12 @@ export const TechContainer = styled.div`
         margin-bottom: 0.5rem;
     }
 
-    @media ${VIEWPORT.desktopUp} {
+    @media ${VIEWPORT.tabletUp} {
+        max-width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: normal;
         align-items: center;
+        /* justify-content: center */
     }
 `;
 
@@ -96,11 +97,16 @@ export const ScreenshotContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     overflow-x: scroll;
 `;
 
 export const ProjectImage = styled.img`
-    height: 500px;
-    width: ${({ width }) => (width? width : 'auto')};
+    height: auto;
+    margin-top: 2rem;
+    width: 300px; 
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 500px;
+        margin-top: 0rem;
+    }
 `;

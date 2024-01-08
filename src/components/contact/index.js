@@ -2,6 +2,7 @@ import React from "react";
 import { Container,
          Box,
          ImagesContainer,
+         ButtonText,
          Image,
          Button } from './styles/contact';
 
@@ -24,3 +25,7 @@ Contact.ImagesContainer = function ContactImagesContainer({ children, ...restPro
 Contact.Button = function ContactButton({ children, ...restProps }) {
     return <Button {...restProps}>{children}</Button>
 }   
+
+Contact.ButtonText = function ContactButtonText({ children, ...restProps }) {
+    return <ButtonText {...restProps}>{children}</ButtonText>
+}

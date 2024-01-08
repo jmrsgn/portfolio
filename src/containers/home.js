@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 import { Text, 
@@ -24,8 +24,8 @@ export function HomeContainer() {
                     >
                         <Home.GreetingsContainer>
                             <Text>Hello,</Text>
-                            <BigText>I'm <SpanBoldText color="#FFFFFF">JM</SpanBoldText></BigText>
-                            <SmallText marginBottom="2rem">I'm a Developer</SmallText>
+                            <BigText>I'm <SpanBoldText color="#FFFFFF">(Em)</SpanBoldText></BigText>
+                            <SmallText marginBottom="2rem">I'm a Developer.</SmallText>
                             <Button 
                                 type="1"
                                 href="../resume/Resume.pdf"
@@ -77,7 +77,7 @@ export function HomeContainer() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/kotlin.png" />
+                                <Home.TechImage src="./images/tech/kotlin.svg" />
                             </Home.TechBubble>
                         </motion.div>
 
@@ -86,7 +86,7 @@ export function HomeContainer() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/java.png" />
+                                <Home.TechImage src="./images/tech/java.svg" />
                             </Home.TechBubble>
                         </motion.div>
                                 
@@ -96,7 +96,7 @@ export function HomeContainer() {
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
                             <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/react.png" />
+                                <Home.TechImage src="./images/tech/react.svg" />
                             </Home.TechBubble>
                         </motion.div>
                                 

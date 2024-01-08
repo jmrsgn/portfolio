@@ -1,147 +1,126 @@
-// import React from 'react';
+import React from 'react';
 
-// import { Project } from '../components';
-// import { Title, 
-//          Divider, 
-//          TextLink, 
-//          FilterCell, 
-//          FilterText, 
-//          SocialIcon, 
-//          SmallText, 
-//          SpanBoldText,
-//          BoxFlex, 
-//          MiniDivider,
-//          SubTitle} from "../globalComponents";
+import { Project } from '../components';
+import { Title, 
+         Divider, 
+         SocialIcon, 
+         SmallText, 
+         SpanBoldText,
+         BoxFlex, 
+         SubTitle } from "../globalComponents";
 
-// import { AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
+import { IoCaretBack } from "react-icons/io5";
+import ProjectsData from '../fixtures/projects.json';
 
-// export function ProjectCarkilahanContainer() {
-//     return (
-//         <Project>
-//             <Project.Box>
-//                 <Title>Carkilahan</Title>
-//                 <Divider type="1"/>
-
-//                 <Project.ActionContainer>
-//                     <FilterCell type="1" cursor="default">
-//                         <FilterText>Mobile App</FilterText>
-//                     </FilterCell>
-
-//                     <SocialIcon href="#" target={"_blank"}> 
-//                         <AiFillGithub />
-//                     </SocialIcon>
-//                 </Project.ActionContainer>
-
-//                 <Project.SubBox>
-//                     <BoxFlex flexDirection="column">
-//                         <Project.TextDiv>
-//                             <SmallText>
-//                                 Carkilahan is an Android application created by <SpanBoldText color="#3AAFC9">Java</SpanBoldText>, and used <SpanBoldText color="#3AAFC9">Firebase</SpanBoldText> for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey, developed by our team Code Brewers. 
-//                             </SmallText>
-
-//                             <SmallText marginTop="1rem">
-//                                 This is our mini-project and this is the first Android application I have ever made.
-//                             </SmallText>
-
-//                             <SmallText marginTop="1rem">
-//                                 It is actually done by accident, we don’t have any idea about Mobile Development and we are tasked to do a Mobile App as our project, so we are forced to learn it ourselves.
-//                             </SmallText>
-
-//                             <SmallText marginTop="1rem">
-//                                 Carkilahan is a very small app, nothing special. It compose of basic implementation of features such as renting a car, and notify the users about it.
-//                             </SmallText>
-
-//                             <BoxFlex marginTop="4rem" alignItems="center">
-//                                 <SubTitle>What I did</SubTitle>
-//                                 <MiniDivider type="1" marginLeft="1rem"/>
-//                             </BoxFlex>
-//                             <SmallText>
-//                                 I was the one assigned to make the Mobile application.  I used Java to make the Android application and Firebase for the backend. This is the first application I made and I suddenly fell in love with Mobile Development. 
-//                             </SmallText>
-//                         </Project.TextDiv>
-//                     </BoxFlex>
-
-//                     {/* <ProjectImage 
-//                         height="500px"
-//                         src="../images/projects/carkilahan-1.png"
-//                      /> */}
-//                 </Project.SubBox>
-
-//                 <BoxFlex alignItems="center">
-//                     <SubTitle>Tech used</SubTitle>
-//                     <MiniDivider type="1" marginLeft="1rem"/>
-//                 </BoxFlex>
+export function ProjectCarkilahanContainer() {
+    return (
+        <Project>
+            <Project.Box>
+                <Project.NavigationContainer>
+                    <IoCaretBack 
+                        size={40}
+                        onClick={ window.close.bind(this) }
+                    />
+                    <Title marginLeft="30px">Carkilahan</Title>
+                </Project.NavigationContainer>
                 
-//                 <Project.TechContainer>
-//                     <BoxFlex
-//                         margin=".5rem" 
-//                         flexDirection="column"
-//                         textAlign="center"
-//                         width="100px"
-//                         alignItems="center"
-//                     >
-//                         <Project.Tech 
-//                             src="../images/tech/java.png"
-//                             width="40px"
-//                         />
-//                         <SmallText marginTop="1rem">Java</SmallText>
-//                     </BoxFlex>
+                <Divider  
+                    marginTop="10px"
+                    marginLeft="70px"
+                    type="1"
+                />
 
-//                     <BoxFlex
-//                         margin=".5rem" 
-//                         marginLeft="1rem"
-//                         flexDirection="column"
-//                         textAlign="center"
-//                         width="100px"
-//                         alignItems="center"
-//                     >
-//                         <Project.Tech 
-//                             src="../images/tech/firebase.png" 
-//                             width="40px"
-//                         />
-//                         <SmallText marginTop="1rem">Firebase</SmallText>
-//                     </BoxFlex>
+                <Project.ActionContainer>
+                    {/* <FilterCell type="1" cursor="default">
+                        <FilterText>Mobile App</FilterText>
+                    </FilterCell> */}
 
-//                     <BoxFlex
-//                         margin=".5rem" 
-//                         marginLeft="1rem"
-//                         flexDirection="column"
-//                         textAlign="center"
-//                         width="100px"
-//                         alignItems="center"
-//                     >
-//                         <Project.Tech 
-//                             src="../images/tech/material-design.png" 
-//                             width="40px"
-//                         />
-//                         <SmallText marginTop="1rem">Material Design</SmallText>
-//                     </BoxFlex>
-//                 </Project.TechContainer>
+                    <SocialIcon href="#" target={"_blank"}> 
+                        <AiFillGithub />
+                    </SocialIcon>
+                </Project.ActionContainer>
 
-//                 <BoxFlex marginTop="3rem" alignItems="center">
-//                     <SubTitle>Some screenshots</SubTitle>
-//                     <MiniDivider type="1" marginLeft="1rem"/>
-//                 </BoxFlex>
+                <Project.SubBox>
+                    <BoxFlex flexDirection="column">
+                        <Project.TextDiv>
+                            <SmallText>
+                                Carkilahan is an Android application created by <SpanBoldText color="#3AAFC9">Java</SpanBoldText>, and used <SpanBoldText color="#3AAFC9">Firebase</SpanBoldText> for the back-end side. It is an application that helps user to book a car for their journey, and also my first application ever built.
+                            </SmallText>
 
-//                 <Project.ScreenshotContainer>
-//                     <Project.Screenshot 
-//                         height="500px"
-//                         width="auto"
-//                         src="../images/projects/expresso-2.png" />
+                            <SmallText marginTop="1rem">
+                                This is our mini-project in College, and this is also the reason why I fell in love with Android Development. 
+                            </SmallText>
 
-//                 <Project.Screenshot 
-//                         height="500px"
-//                         width="auto"
-//                         src="../images/projects/expresso-3.png" />
+                            <SmallText marginTop="1rem">
+                                I have 0% knowledge before our professor gave this task to us, so I have no choice but to study how to make a simple Android application using Java. After hours of studying and searching for solutions online. I didn't notice that I have created my very first Java application with minimal features and connect it to the back-end.
+                            </SmallText>
+                        </Project.TextDiv>
+                    </BoxFlex>
 
-//                 <Project.Screenshot 
-//                         height="500px"
-//                         width="auto"
-//                         src="../images/projects/expresso-4.png" />
-//                 </Project.ScreenshotContainer>
+                    <Project.ProjectImage 
+                        src="../images/projects/carkilahan-1.png"
+                    />
+                </Project.SubBox>
 
-//                 <TextLink type="1" to="/">Return to Home</TextLink>
-//             </Project.Box>
-//         </Project>
-//     )
-// }
+                <BoxFlex marginTop="4rem" alignItems="center">
+                    <SubTitle>What I did</SubTitle>
+                </BoxFlex>
+                <SmallText marginTop="1rem">
+                    I built the Mobile Application without using any third-party libraries for the UI, so the UI might be a little bit sore in the eyes of other Devs, but I am very happy about the outcome and how it saves me from the semester. It's just a simple Application, nothing special. 
+                </SmallText>
+
+                <BoxFlex marginTop="4rem" alignItems="center">
+                    <SubTitle>Tech Used</SubTitle>
+                </BoxFlex>
+                
+                <Project.TechContainer>
+                    {ProjectsData.map((item) => (
+                        (item.title === "Carkilahan" && 
+                            (item.tech.map((tech) => (
+                                <BoxFlex
+                                    margin=".5rem" 
+                                    flexDirection="column"
+                                    textAlign="center"
+                                    width="100px"
+                                    alignItems="center"
+                                >
+                                    <Project.Tech 
+                                        src={tech.src}
+                                        height="40px"
+                                    />
+                                    <SmallText marginTop="1rem">{tech.name}</SmallText>
+                                </BoxFlex>
+                            )))
+                        )
+                    ))}
+                </Project.TechContainer>
+
+                <BoxFlex marginTop="3rem" alignItems="center">
+                    <SubTitle>Some screenshots</SubTitle>
+                </BoxFlex>
+
+                <Project.ScreenshotContainer>
+                    {ProjectsData.map((item) => (
+                        (item.title === "Carkilahan" && 
+                            (item.screenshots.map((screenshot, i) => (
+                                (i !== 0 && 
+                                    <Project.Screenshot 
+                                        height="500px"
+                                        width="auto"
+                                        src={screenshot} />  
+                                )
+                            )))
+                        )
+                    ))}
+                </Project.ScreenshotContainer>
+
+                <IoCaretBack 
+                    style={{ cursor: 'pointer' }}
+                    size={40}
+                    onClick={ window.close.bind(this) }
+                />
+            </Project.Box>
+        </Project>
+    )
+}

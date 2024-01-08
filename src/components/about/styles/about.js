@@ -113,6 +113,8 @@ export const SkillsContainer = styled.div`
 export const DescriptionContainer = styled.div`
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     text-align: center;
 
@@ -125,6 +127,10 @@ export const DescriptionContainer = styled.div`
         flex-direction: row-reverse;
         justify-content: space-between;
     }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 80%;
+    }
 `
 
 export const AvatarDescription = styled(SmallText)`
@@ -136,6 +142,13 @@ export const AvatarDescription = styled(SmallText)`
         width: 70%;
     }
 `
+
+export const AvatarDescriptionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+`; 
 
 
 export const SkillTitle = styled(BigText)`

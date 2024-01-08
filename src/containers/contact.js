@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { GiHand } from "react-icons/gi";
 
 import { Title, Divider } from '../globalComponents';
 import { Contact } from '../components';
@@ -31,7 +32,10 @@ export function ContactContainer() {
                     <Divider marginTop="2rem"/>
                     <Divider type="1" />
 
-                    <Contact.Button href="mailto:marasiganjohnmartin@gmail.com">Say hello</Contact.Button>
+                    <Contact.Button href="mailto:marasiganjohnmartin@gmail.com">
+                        <Contact.ButtonText>Say "Hello"</Contact.ButtonText>
+                        <GiHand />
+                    </Contact.Button>
                 </Contact.Box>
             </motion.div>  
         </Contact>

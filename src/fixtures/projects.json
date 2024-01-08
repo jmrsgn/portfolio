@@ -10,23 +10,23 @@
         "tech": [
             {
                 "name": "Java",
-                "src": "../images/tech/java.png" 
+                "src": "../images/tech/java.svg" 
             },
             {
                 "name": "PHP",
-                "src": "../images/tech/php.png"
+                "src": "../images/tech/php.svg"
             },
             {
                 "name": "PlantUML",
-                "src": "../images/tech/plantuml.png"
+                "src": "../images/tech/plantuml.svg"
             },
             {
                 "name": "Microsoft Personalizer",
-                "src": "../images/tech/microsoft-personalizer.png"
+                "src": "../images/tech/microsoft.svg"
             },
             {
                 "name": "Material Design",
-                "src": "../images/tech/material-design.png"
+                "src": "../images/tech/material-design.svg"
             }
         ],
         "screenshots": [
@@ -40,19 +40,19 @@
     {
         "id": 2,
         "title": "Carkilahan",
-        "description": "Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is our mini-project which capable of helping users to book their ride for their journey, and also my first applicaton ever built.",
+        "description": "Carkilahan is an Android application created by Java, and Firebase for the back-end side. It is our mini-project which capable of helping users to book a car for their journey, and also my first applicaton ever built.",
         "filter": "Mobile App",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
-        "link": "",
+        "link": "/projects/carkilahan",
         "tech": [
             {
                 "name": "Java",
-                "src": "../images/tech/java.png"
+                "src": "../images/tech/java.svg"
             },
             {
                 "name": "Firebase",
-                "src": "../images/tech/java.png"
+                "src": "../images/tech/firebase.svg"
             }
         ],
         "screenshots": []

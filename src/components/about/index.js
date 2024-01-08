@@ -9,6 +9,7 @@ import { Container,
          SkillTitle,
          Avatar,
          AvatarDescription,
+         AvatarDescriptionContainer,
          Quote,
          QuoteContainer,
          SkillDescription, 
@@ -33,6 +34,10 @@ About.SkillsContainer = function AboutSkillsContainer({ children, ...restProps }
 About.Avatar = function AboutAvatar({ src, ...restProps }) {
     return <Avatar {...restProps} src={src} />
 }
+
+About.AvatarDescriptionContainer = function AboutAvatarDescriptionContainer({ children, ...restProps }) {
+    return <AvatarDescriptionContainer {...restProps}>{children}</AvatarDescriptionContainer>
+} 
 
 About.AvatarDescription = function AboutAvatarDescription({ children, ...restProps }) {
     return <AvatarDescription {...restProps}>{children}</AvatarDescription>

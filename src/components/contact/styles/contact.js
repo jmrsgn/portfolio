@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
+import { Text } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -55,22 +56,51 @@ export const Image = styled.img`
     }
 `;
 
+export const ButtonText = styled(Text)`
+    font-size: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.25rem;
+    }
+`
+
 export const Button = styled.a`
     text-decoration: none;
     margin: auto;
     background-color: ${STYLES.COLOR_SURFACE2};
     font-family: 'Poppins', sans-serif;
-    width: 150px;
     border: none;
     outline: none;
     text-align: center;
     color: ${STYLES.COLOR_ON_SURFACE};
     cursor: pointer;
     transition: .3s ease-in;
-    font-size: 1rem;
     padding: .75rem;
     margin-top: 2rem;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+
+    svg {
+        animation: wave;
+        animation-duration: 2.5s;        /* Change to speed up or slow down */
+        animation-iteration-count: infinite;  /* Never stop waving :) */            
+        transform-origin: 70% 70%; 
+    }
+
+    @keyframes wave {
+        0% { transform: rotate( 0.0deg) }
+        10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+        20% { transform: rotate(-8.0deg) }
+        30% { transform: rotate(14.0deg) }
+        40% { transform: rotate(-4.0deg) }
+        50% { transform: rotate(10.0deg) }
+        60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+        100% { transform: rotate( 0.0deg) }
+    }
 
     &:hover {
         background-color: ${STYLES.COLOR_SURFACE1};
@@ -91,7 +121,7 @@ export const Button = styled.a`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        width: 200px;
+        width: 190px;
         margin-top: 3rem;
         font-size: 1.15rem;
     }

@@ -2,15 +2,17 @@ import React from "react";
 import { About } from "../components";
 import { Title, Divider, SmallText, TextLink } from '../globalComponents';
 
+import { IoCaretBack } from "react-icons/io5";
+
 export function AboutMoreContainer() {
     return (
         <About type="1">
             <About.Box>
                 <About.SubBox>
-                    <Title>Greetings</Title>
+                    <Title>Nothing to see yet!</Title>
                     <Divider type="1"/>
 
-                    <SmallText marginTop="48px">
+                    {/* <SmallText marginTop="48px">
                         Hello! I am John Martin Marasigan, you can call me JM for short, 21 years old from Mandaluyong City.
                     </SmallText>
 
@@ -42,9 +44,13 @@ export function AboutMoreContainer() {
                         </About.Quote>
 
                         <About.MiniDivider />
-                    </About.QuoteContainer>
+                    </About.QuoteContainer> */}
 
-                    <TextLink type="1" marginTop="48px" to='/'>Return to Home</TextLink>
+                    <IoCaretBack 
+                        style={{ cursor: 'pointer', marginTop: '2rem' }}
+                        size={40}
+                        onClick={ window.close.bind(this) }
+                    />
                 </About.SubBox>
             </About.Box>
         </About>

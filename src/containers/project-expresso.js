@@ -7,8 +7,7 @@ import { Title,
          SmallText, 
          SpanBoldText,
          BoxFlex, 
-         SubTitle,
-         Button} from "../globalComponents";
+         SubTitle } from "../globalComponents";
 
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCaretBack } from "react-icons/io5";
@@ -46,15 +45,15 @@ export function ProjectExpressoContainer() {
                     <BoxFlex flexDirection="column">
                         <Project.TextDiv>
                             <SmallText>
-                                Expresso is an Android application created by <SpanBoldText color="#3AAFC9">Java</SpanBoldText>, and <SpanBoldText color="#3AAFC9">Php</SpanBoldText> for the fetching of data. It provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool, developed by our team, Code Brewers.
+                                Expresso is an Android application created by <SpanBoldText color="#3AAFC9">Java</SpanBoldText>, and <SpanBoldText color="#3AAFC9">PHP</SpanBoldText>. It provides a friendly interface and uses Machine Learning to help students learn OOP using Java as a tool, developed by our team, Code Brewers.
                             </SmallText>
 
                             <SmallText marginTop="1rem">
-                                This project is also our capstone project in our 4th year College. We decided to make this system for students to learn how to code OOP using Java. 
+                                This project is also our capstone project in College. We decided to make this system for students to learn how to code OOP using Java. We got the name Expresso as to "Express" your thoughts and skills to the model in the app you are interacting to, and it will guide you to learn in return. 
                             </SmallText>
 
                             <SmallText marginTop="1rem">
-                                According to our research results, a lot of students are struggling to learn OOP with Java due to its code complexity and syntax. Expresso works by testing first the student’s current knowledge about the language to know what part of the module will be given to the student. Once the fitted module is given, each topic has a short quiz that will be recorded, and the student must have a passing mark in order to proceed. After the student passed the topics’ quizzes and the summative test, exercises will be generated.
+                                According to our research results, a lot of students are struggling to learn OOP with Java due to its code complexity and syntax. Expresso works by testing first the student’s current knowledge about the language to know what part of the module will be given. Once the module is given, each topic has a short quiz that will be recorded, and the student must have a passing mark in order to proceed. After the student passed the topics’, quizzes and the summative tests, exercises will be generated for them to answer.
                             </SmallText>
                             
                             <SmallText marginTop="1rem">
@@ -62,11 +61,11 @@ export function ProjectExpressoContainer() {
                             </SmallText>
 
                             <SmallText marginTop="1rem">
-                                Making our own AI model is far too advanced for us, so we decided to use some of the pre-built tools. Microsoft Personalizer uses machine learning that uses all the data you give and will present the most fitted content for you. 
+                                Making our own AI model is not possible to given time frame, so we decided to use some of the pre-built tools online. Microsoft Personalizer uses machine learning that uses all the data you give and will present the most relatable content for you. 
                             </SmallText>
 
                             <SmallText marginTop="1rem">
-                                So based on the quiz results that the student gave, the machine learning will do it’s work to provide the best exercise prior to the student’s performance.
+                                So based on the quiz results from the student, the model will do it’s work to provide the best exercise prior to the student’s performance.
                             </SmallText>
 
                             <SmallText marginTop="1rem">
@@ -77,14 +76,14 @@ export function ProjectExpressoContainer() {
 
                     <Project.ProjectImage 
                         src="../images/projects/expresso-1.png"
-                     />
+                    />
                 </Project.SubBox>
 
                 <BoxFlex marginTop="4rem" alignItems="center">
                     <SubTitle>What I did</SubTitle>
                 </BoxFlex>
-                <SmallText>
-                    I was the one assigned to make the Mobile application. I used Java to build the Android application itself, and php for the fecthing of data from the database. I used several API’s to make the application have enough features for the user, including the Youtube player API. Expresso also have a Web app version and my friend is the one who built it. The two other members are working with our papers. 
+                <SmallText marginTop="1rem">
+                    I built the Mobile Application. I used Java to build the Android application itself, and PHP for the fecthing of data from the database. I used several API’s to make the application have enough features for the user, including the Youtube Player API, and Material Design for a nice interface. Expresso also have a Web Application version that was developed by the other member and also my friend. The two other members are working with our papers. 
                 </SmallText>
 
                 <BoxFlex marginTop="4rem" alignItems="center">
