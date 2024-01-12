@@ -6,7 +6,6 @@ import { Container,
          ProjectsContainer,
          Project,
          ProjectTitle,
-         ProjectDescription,
          TagsContainer,
          Tag,
          TagText,
@@ -39,10 +38,6 @@ Projects.Project = function ProjectsProject({ children, ...restProps }) {
 
 Projects.ProjectTitle = function ProjectsProjectTitle({ children, ...restProps }) {
     return <ProjectTitle {...restProps}>{children}</ProjectTitle>
-}
-
-Projects.ProjectDescription = function ProjectsProjectDescription({ children, ...restProps }) {
-    return <ProjectDescription {...restProps}>{children}</ProjectDescription>
 }
 
 Projects.TagsContainer = function ProjectsTagsContainer({ children, ...restProps }) {

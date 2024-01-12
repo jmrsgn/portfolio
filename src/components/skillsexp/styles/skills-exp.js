@@ -85,7 +85,7 @@ export const SkillImage = styled.img`
     width: 35%;
 
     @media ${VIEWPORT.tabletUp} {
-        width: 50%;
+        width: 40%;
     }
 `;
 
@@ -213,25 +213,5 @@ export const Company = styled(SmallText)`
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.05rem;
         letter-spacing: 3px;
-    }
-`;
-
-export const Learnings = styled(SmallText)`
-    margin-top: 1.5rem;
-    color: ${STYLES.COLOR_LIGHT_GRAY};
-    line-height: 20px;
-
-    @media ${VIEWPORT.tabletUp} {
-        line-height: 32px;
-        margin-top: 3rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        line-height: 28px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        line-height: 24px;
-        margin-top: 32px;
     }
 `;

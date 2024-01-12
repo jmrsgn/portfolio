@@ -118,25 +118,6 @@ export const ProjectTitle = styled(BigText)`
     }
 `;
 
-export const ProjectDescription = styled(SmallText)`
-    margin-top: .75rem;
-    line-height: 20px;
-    color: ${STYLES.COLOR_LIGHT_GRAY};
-
-    @media ${VIEWPORT.tabletUp} { 
-        line-height: 32px;
-        margin-top: 1rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        line-height: 28px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        line-height: 24px;
-    }
-`;
-
 export const TagsContainer = styled.div`
     display: flex;
     align-items: center;

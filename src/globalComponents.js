@@ -94,6 +94,25 @@ export const SubTitle = styled(MainText)`
     font-size: 2rem;
 `
 
+export const Description = styled(SmallText)`
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '.75rem')};
+    color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
+    line-height: 20px;
+
+    @media ${VIEWPORT.tabletUp} { 
+        line-height: 32px;
+        margin-top: 1rem;
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        line-height: 28px;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        line-height: 24px;
+    }
+`;
+
 export const Button = styled.a`
     display: block;
     text-decoration: none;

@@ -11,8 +11,7 @@ import { Container,
          Date,
          Position,
          Company,
-         Arrow,
-         Learnings } from './styles/skills-exp';
+         Arrow } from './styles/skills-exp';
 
 export default function SkillsExp({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -60,10 +59,6 @@ SkillsExp.Position = function SkillsExpPosition({ children, ...restProps }) {
 
 SkillsExp.Company = function SkillsExpCompany({ children, ...restProps }) {
     return <Company {...restProps}>{children}</Company>
-}
-
-SkillsExp.Learnings = function SkillsExpLearnings({ children, ...restProps }) {
-    return <Learnings {...restProps}>{children}</Learnings>
 }
 
 SkillsExp.Arrow = function SkillsExpArrow({ ...restProps }) {

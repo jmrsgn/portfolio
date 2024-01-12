@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from 'framer-motion';
 
-import { Title, Divider } from "../globalComponents";
+import { Title, Divider, Description } from "../globalComponents";
 import { SkillsExp } from "../components";
 
 import skillsData from '../fixtures/skills.json';
@@ -47,7 +47,7 @@ export function SkillsExpContainer() {
                                         <SkillsExp.Date>{item.date}</SkillsExp.Date>
                                         <SkillsExp.Position>{item.position}</SkillsExp.Position>
                                         <SkillsExp.Company>{item.company}</SkillsExp.Company>
-                                        <SkillsExp.Learnings>{item.learnings}</SkillsExp.Learnings>
+                                        <Description>{item.learnings}</Description>
                                     </SkillsExp.Experience>
 
                                     <SkillsExp.Arrow />

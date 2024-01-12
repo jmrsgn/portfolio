@@ -8,11 +8,9 @@ import { Container,
          Image,
          SkillTitle,
          Avatar,
-         AvatarDescription,
          AvatarDescriptionContainer,
          Quote,
          QuoteContainer,
-         SkillDescription, 
          MiniDivider } from './styles/about';
 
 export default function About({ children, ...restProps }) {
@@ -39,10 +37,6 @@ About.AvatarDescriptionContainer = function AboutAvatarDescriptionContainer({ ch
     return <AvatarDescriptionContainer {...restProps}>{children}</AvatarDescriptionContainer>
 } 
 
-About.AvatarDescription = function AboutAvatarDescription({ children, ...restProps }) {
-    return <AvatarDescription {...restProps}>{children}</AvatarDescription>
-}
-
 About.DescriptionContainer = function AboutDescriptionContainer({ children, ...restProps }) {
     return <DescriptionContainer {...restProps}>{children}</DescriptionContainer>
 }
@@ -57,10 +51,6 @@ About.Image = function AboutImage({ src, ...restProps }) {
 
 About.SkillTitle = function AboutSkillTitle({ children, ...restProps }) {
     return <SkillTitle {...restProps}>{children}</SkillTitle>
-}
-
-About.SkillDescription = function AboutSkillDescription({ children, ...restProps }) {
-    return <SkillDescription {...restProps}>{children}</SkillDescription>
 }
 
 About.Quote = function AboutQuote({ children, ...restProps }) {

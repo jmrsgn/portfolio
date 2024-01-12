@@ -42,10 +42,6 @@ export const SubBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: row;
-    }
 `;
 
 export const TextDiv = styled.div`
@@ -108,5 +104,9 @@ export const ProjectImage = styled.img`
     @media ${VIEWPORT.tabletUp} {
         width: 500px;
         margin-top: 0rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 5rem;
     }
 `;

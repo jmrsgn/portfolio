@@ -148,8 +148,8 @@ export const AvatarDescriptionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    width: 70%;
 `; 
-
 
 export const SkillTitle = styled(BigText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
@@ -180,25 +180,6 @@ export const Image = styled.img`
         height: 45px;
         width: 45px;
         margin-bottom: 1rem;
-    }
-`;
-
-export const SkillDescription = styled(SmallText)`
-    margin-top: .75rem;
-    line-height: 20px;
-    color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
-
-    @media ${VIEWPORT.tabletUp} { 
-        line-height: 32px;
-        margin-top: 1rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        line-height: 28px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        line-height: 24px;
     }
 `;
 

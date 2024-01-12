@@ -89,7 +89,6 @@ export function HomeContainer() {
                                 <Home.TechImage src="./images/tech/java.svg" />
                             </Home.TechBubble>
                         </motion.div>
-                                
 
                         <motion.div
                             whileInView={{ y: [150, 0], x: [-100, 0] }}
