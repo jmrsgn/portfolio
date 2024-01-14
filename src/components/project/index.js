@@ -8,6 +8,7 @@ import { Container,
          ProjectImage,
          Screenshot,
          ScreenshotContainer,
+         InfoContainer,
          NavigationContainer,
          ActionContainer } from './styles/project';
 
@@ -53,4 +54,8 @@ Project.ProjectImage = function ProjectProjectImage({ src, ...restProps }) {
 
 Project.NavigationContainer = function ProjectNavigationContainer({ children, ...restProps }) {
     return <NavigationContainer {...restProps}>{children}</NavigationContainer>
+}
+
+Project.InfoContainer = function ProjectInfoContainer({ children, ...restProps }) {
+    return <InfoContainer {...restProps}>{children}</InfoContainer>
 }

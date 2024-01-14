@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { SmallText, BigText } from '../../../globalComponents';
+import { Text } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -101,12 +101,15 @@ export const Project = styled.div`
     }
 `;
 
-export const ProjectTitle = styled(BigText)`
-    color: ${STYLES.COLOR_ON_SURFACE};
+export const ProjectTitle = styled(Text)`
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     font-size: 1.5rem;
+    line-height: 36px;
+    font-weight: bold;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
+        line-height: 56px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -115,6 +118,7 @@ export const ProjectTitle = styled(BigText)`
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.85rem;
+        line-height: 42px;
     }
 `;
 
@@ -147,7 +151,7 @@ export const Tag = styled.div`
     }
 `;
 
-export const TagText = styled(SmallText)`
+export const TagText = styled(Text)`
     color: ${STYLES.COLOR_RED};
     font-size: .55rem;
 
@@ -183,7 +187,7 @@ export const DevelopmentTag = styled.div`
     }
 `;
 
-export const DevelopmentText = styled(SmallText)`
+export const DevelopmentText = styled(Text)`
     font-size: .65rem;
     color: ${STYLES.COLOR_ON_SURFACE};
     position: absolute;

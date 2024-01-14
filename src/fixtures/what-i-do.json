@@ -10,7 +10,7 @@
     {
         "id": 2,
         "title": "UI/UX Design",
-        "description": "I made numerous designs in my previous projects, I have a basic knowledge of doing UI that inspires a modern way of interfaces using Figma.",
+        "description": "I made numerous designs in my previous projects. I have a basic knowledge of doing UI that inspires a modern way of interfaces using Figma.",
         "src": "./images/other/ui-ux-purple.png",
         "popOut": false
     },
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "title": "Android Development",
-        "description": "My biggest interest of all. I have already built 2 applications with Java. Now, I am currently studying Jetpack Compose and Ktor with proper code architecture, to get my skills into the industry level of development.",
+        "description": "My biggest interest of all. I have already built two applications with Java. Now I am studying Jetpack Compose and Ktor with proper code architecture and coding principles when doing personal projects.",
         "src": "./images/other/android-dev.png",
         "popOut": true
     }

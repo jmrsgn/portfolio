@@ -48,6 +48,15 @@ export function SkillsExpContainer() {
                                         <SkillsExp.Position>{item.position}</SkillsExp.Position>
                                         <SkillsExp.Company>{item.company}</SkillsExp.Company>
                                         <Description>{item.learnings}</Description>
+                                        {/* <TextLink  
+                                            style={{ marginLeft: "auto" }}
+                                            marginTop="24px"
+                                            type='2' 
+                                            to=""
+                                            target={"_blank"}
+                                        >
+                                            Read more
+                                        </TextLink>  */}
                                     </SkillsExp.Experience>
 
                                     <SkillsExp.Arrow />

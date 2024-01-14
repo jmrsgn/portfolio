@@ -22,7 +22,7 @@ export function AboutContainer() {
                             <About.Avatar src="../../images/jm.jpeg" />
                             <About.AvatarDescriptionContainer>
                                 <Description>
-                                    I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only found myself enjoying things out in my 4th year of College, and suddenly fell in love with Android Development.
+                                    I am John Martin Marasigan, a simple person who has a deep interest in doing Programming. I only enjoyed things out in my 4th year of College, and suddenly fell in love with Android Development.
                                 </Description>
                                 <TextLink 
                                     marginTop="2rem"

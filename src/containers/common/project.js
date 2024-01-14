@@ -3,10 +3,10 @@ import { Project } from '../../components';
 
 import { Title, 
          Divider, 
-         SocialIcon, 
-         SmallText, 
+         SocialIcon,
          BoxFlex, 
-         SubTitle } from "../../globalComponents";
+         SubTitle, 
+         Description} from "../../globalComponents";
 
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCaretBack } from "react-icons/io5";
@@ -18,21 +18,15 @@ export function ProjectContainer(props) {
     return (
         <Project>
             <Project.Box>
-                <Project.NavigationContainer>
-                    <IoCaretBack 
-                        size={40}
-                        onClick={ window.close.bind(this) }
-                    />
-                    <Title marginLeft="30px">{props.projectName}</Title>
-                </Project.NavigationContainer>
-                
-                <Divider  
-                    marginTop="10px"
-                    marginLeft="70px"
-                    type="1"
-                />
-
                 <Project.ActionContainer>
+                    <Project.NavigationContainer>
+                        <IoCaretBack 
+                            size={40}
+                            onClick={ window.close.bind(this) }
+                        />
+                        <Title marginLeft="30px">{props.projectName}</Title>
+                    </Project.NavigationContainer>
+                    
                     {/* <FilterCell type="1" cursor="default">
                         <FilterText>Mobile App</FilterText>
                     </FilterCell> */}
@@ -42,6 +36,12 @@ export function ProjectContainer(props) {
                     </SocialIcon>
                 </Project.ActionContainer>
 
+                <Divider  
+                    marginTop="10px"
+                    marginLeft="70px"
+                    type="1"
+                />
+
                 <Project.SubBox>
                     {props.projectInfo}
 
@@ -49,47 +49,46 @@ export function ProjectContainer(props) {
                         src={props.projectImage}
                     />
                 </Project.SubBox>
-
-                <BoxFlex marginTop="4rem" alignItems="center">
-                    <SubTitle>What I did</SubTitle>
-                </BoxFlex>
-                <SmallText marginTop="1rem">
-                    {props.whatIDid}
-                </SmallText>
-
-                <BoxFlex marginTop="4rem" alignItems="center">
-                    <SubTitle>Tech Used</SubTitle>
-                </BoxFlex>
                 
-                <Project.TechContainer>
-                    {ProjectsData.map((item) => (
-                        (item.title === props.projectName && 
-                            (item.tech.map((tech) => (
-                                <BoxFlex
-                                    margin=".5rem" 
-                                    flexDirection="column"
-                                    textAlign="center"
-                                    width="100px"
-                                    alignItems="center"
-                                >
-                                    <Project.Tech 
-                                        src={tech.src}
-                                        height="40px"
-                                    />
-                                    <SmallText marginTop="1rem">{tech.name}</SmallText>
-                                </BoxFlex>
-                            )))
-                        )
-                    ))}
-                </Project.TechContainer>
+                <Project.InfoContainer>
+                    <SubTitle>What I did</SubTitle>
+
+                    <Description marginTop="1rem">
+                        {props.whatIDid}
+                    </Description>
+                </Project.InfoContainer>
+
+                <Project.InfoContainer>
+                    <SubTitle>Tech used</SubTitle>
+
+                    <Project.TechContainer>
+                        {ProjectsData.map((item) => (
+                            (item.title === props.projectName && 
+                                (item.tech.map((tech) => (
+                                    <BoxFlex
+                                        margin=".5rem" 
+                                        flexDirection="column"
+                                        textAlign="center"
+                                        width="100px"
+                                        alignItems="center"
+                                    >
+                                        <Project.Tech 
+                                            src={tech.src}
+                                            height="40px"
+                                        />
+                                        <Description marginTop="1rem">{tech.name}</Description>
+                                    </BoxFlex>
+                                )))
+                            )
+                        ))}
+                    </Project.TechContainer>
+                </Project.InfoContainer>
 
                 {ProjectsData.map((item) => (
                     (item.title === props.projectName && 
                         (item.screenshots.length > 1 && (
-                            <div>
-                                <BoxFlex marginTop="3rem" alignItems="center">
-                                    <SubTitle>Some screenshots</SubTitle>
-                                </BoxFlex>
+                            <Project.InfoContainer>
+                                <SubTitle>Screenshots</SubTitle>
 
                                 <Project.ScreenshotContainer>
                                     {ProjectsData.map((item) => (
@@ -103,7 +102,7 @@ export function ProjectContainer(props) {
                                         )))
                                     ))}
                                 </Project.ScreenshotContainer>
-                            </div>
+                            </Project.InfoContainer>
                         )))
                     )
                 )}

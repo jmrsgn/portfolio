@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { BigText, SmallText } from '../../../globalComponents';
+import { Text } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -56,7 +56,7 @@ export const Certificate = styled.div`
     }
 `;
 
-export const CertificateTitle = styled(BigText)`
+export const CertificateTitle = styled(Text)`
     margin-top: .5rem;
     font-size: .75rem;
     color: ${STYLES.COLOR_ON_SURFACE};
@@ -71,7 +71,7 @@ export const CertificateTitle = styled(BigText)`
     }
 `;
 
-export const CertificateDate = styled(SmallText)`
+export const CertificateDate = styled(Text)`
     font-weight: bold;
     font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE1};

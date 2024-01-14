@@ -32,7 +32,7 @@ export function ContactContainer() {
                     <Divider marginTop="2rem"/>
                     <Divider type="1" />
 
-                    <Contact.Button href="mailto:marasiganjohnmartin@gmail.com">
+                    <Contact.Button to="mailto:marasiganjohnmartin@gmail.com">
                         <Contact.ButtonText>Say "Hello"</Contact.ButtonText>
                         <GiHand />
                     </Contact.Button>

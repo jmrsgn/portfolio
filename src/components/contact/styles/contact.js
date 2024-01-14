@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
 import { Text } from '../../../globalComponents';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -64,7 +65,7 @@ export const ButtonText = styled(Text)`
     }
 `
 
-export const Button = styled.a`
+export const Button = styled(Link)`
     text-decoration: none;
     margin: auto;
     background-color: ${STYLES.COLOR_SURFACE2};

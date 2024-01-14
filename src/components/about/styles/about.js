@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { SmallText, BigText } from '../../../globalComponents';
+import { Text } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -133,25 +133,20 @@ export const DescriptionContainer = styled.div`
     }
 `
 
-export const AvatarDescription = styled(SmallText)`
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        width: 60%;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 70%;
-    }
-`
-
 export const AvatarDescriptionContainer = styled.div`
+    margin: 0 auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 70%;
+    width: 80%;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 70%;
+    }
 `; 
 
-export const SkillTitle = styled(BigText)`
+export const SkillTitle = styled(Text)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     font-size: 1.5rem;
     line-height: 36px;

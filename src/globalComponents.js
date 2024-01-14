@@ -51,29 +51,6 @@ export const BigText = styled(MainText)`
     }
 `;
 
-export const SmallText = styled(SecondaryText)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
-    width: ${({ width }) => (width)};
-    font-size: .75rem;
-    line-height: 24px;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-        line-height: 40px;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.10rem;
-        line-height: 36px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: .97rem;
-        line-height: 32px;
-    }
-`;
-
 // ======
 
 export const Title = styled(MainText)`
@@ -94,26 +71,32 @@ export const SubTitle = styled(MainText)`
     font-size: 2rem;
 `
 
-export const Description = styled(SmallText)`
+export const Description = styled(SecondaryText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '.75rem')};
+    margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
     color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
     line-height: 20px;
-
-    @media ${VIEWPORT.tabletUp} { 
+    width: ${({ width }) => (width)};
+    font-size: .75rem;
+    
+    @media ${VIEWPORT.tabletUp} {
+        font-size: 1.25rem;
         line-height: 32px;
         margin-top: 1rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
+        font-size: 1.10rem;
         line-height: 28px;
     }
 
     @media ${VIEWPORT.desktopUp} {
+        font-size: .97rem;
         line-height: 24px;
     }
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
     display: block;
     text-decoration: none;
     background-color: ${STYLES.COLOR_SURFACE1};
@@ -127,7 +110,7 @@ export const Button = styled.a`
     font-size: 1rem;
     padding: .75rem;
     border-radius: 10px;
-    width: 150px;
+    width: ${({ width }) => (width? width : '150px')};
 
     @media ${VIEWPORT.tabletUp} {
         width: 250px;
@@ -320,6 +303,7 @@ export const BoxFlex = styled.div`
     text-align: ${({ textAlign }) => (textAlign)};
     margin: ${({ margin }) => (margin)};
     margin-left: ${({ marginLeft }) => (marginLeft)};
+    margin-right: ${({ marginRight }) => (marginRight)};
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     justify-content: ${({ justifyContent }) => (justifyContent)};
     align-items: ${({ alignItems }) => (alignItems)};

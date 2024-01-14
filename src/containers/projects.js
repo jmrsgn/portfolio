@@ -7,7 +7,8 @@ import { Title,
          Filter, 
          FilterText, 
          ProjectMobileAppImage, 
-         ProjectWebAppImage } from "../globalComponents";
+         ProjectWebAppImage, 
+         Description} from "../globalComponents";
 
 import MotionWrap from "../wrapper/motion-wrap";
 import { Projects } from '../components';
@@ -80,7 +81,7 @@ export function ProjectsContainer() {
                                 <Projects.SubBox key={item.id}>
                                     <Projects.Project>
                                         <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
-                                        <Projects.ProjectDescription>{item.description}</Projects.ProjectDescription>
+                                        <Description>{item.description}</Description>
                                             {item.link !== "" && 
                                                 <TextLink  
                                                     marginTop="24px"

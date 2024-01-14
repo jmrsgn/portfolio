@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 
 import CertBadges from "../components/certbadges";
 import { Title, Divider } from "../globalComponents";
-import MotionWrap from "../wrapper/motion-wrap";
 
 import certificatesData from '../fixtures/certificates.json';
 import badgesData from '../fixtures/badges.json';

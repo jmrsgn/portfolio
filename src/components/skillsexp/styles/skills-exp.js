@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { BigText, SmallText } from '../../../globalComponents';
+import { Text } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -89,7 +89,7 @@ export const SkillImage = styled.img`
     }
 `;
 
-export const SkillTitle = styled(BigText)`
+export const SkillTitle = styled(Text)`
     font-weight: bold;
     font-size: .90rem;
     margin-top: 1rem;
@@ -106,19 +106,28 @@ export const Experience = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    max-width: 30rem;
     padding: 1.5rem;
+    width: 300px;
+    max-width: 300px;
     width: 100%;
     box-shadow: 0px 5px 5px #161C24;
 
     @media ${VIEWPORT.tabletUp} {
         border-radius: 20px;
         width: 500px;
+        min-width: 500px;
         padding: 2rem;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
         padding: 2rem;
+        min-width: 400px;
+        width: 400px;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        min-width: 500px;
+        width: 500px;
     }
 `;
 
@@ -158,7 +167,7 @@ export const ExperiencesContainer = styled.div`
     }
 `;
 
-export const Date = styled(SmallText)`
+export const Date = styled(Text)`
     font-size: .75rem;
     color: ${STYLES.COLOR_SURFACE2};
     letter-spacing: 2px;
@@ -176,15 +185,15 @@ export const Date = styled(SmallText)`
     }
 `;
 
-export const Position = styled(BigText)`
+export const Position = styled(Text)`
     margin-top: 2rem;
     font-size: 1.5rem;
-    color: ${STYLES.COLOR_ON_SURFACE};
+    line-height: 36px;
     font-weight: bold;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
-        margin-top: 3rem;
+        line-height: 56px;
     }
 
     @media ${VIEWPORT.tabletLandscapeUp} {
@@ -193,13 +202,15 @@ export const Position = styled(BigText)`
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.85rem;
+        line-height: 42px;
     }
 `;
 
-export const Company = styled(SmallText)`
+export const Company = styled(Text)`
     font-size: .90rem;
     letter-spacing: 2px;
     color: ${STYLES.COLOR_SURFACE2};
+    margin-top: .25rem;
 
     @media ${VIEWPORT.tabletUp} {
         font-size: 1.5rem;
@@ -211,7 +222,7 @@ export const Company = styled(SmallText)`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1.05rem;
+        font-size: 1rem;
         letter-spacing: 3px;
     }
 `;

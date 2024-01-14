@@ -17,14 +17,10 @@ export const Box = styled.div`
 `;
 
 export const ActionContainer = styled.div`
-    margin-top: 2rem;
     display: flex;
     flex-direction: flex-start;
     align-items: center;
-
-    @media ${VIEWPORT.desktopUp} {
-        margin-top: 5rem;
-    }
+    justify-content: space-between;
 `;
 
 export const NavigationContainer = styled.div`
@@ -37,20 +33,23 @@ export const NavigationContainer = styled.div`
 `;
 
 export const SubBox = styled.div`
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 4rem;
+    }
 `;
 
 export const TextDiv = styled.div`
-    width: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 80%;
-    }
 `;
 
 export const TechContainer = styled.div`
@@ -72,7 +71,6 @@ export const TechContainer = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* justify-content: center */
     }
 `;
 
@@ -88,12 +86,16 @@ export const Screenshot = styled.img`
 `;
 
 export const ScreenshotContainer = styled.div`
-    margin-top: 4rem;
+    margin-top: 1rem;
     margin-bottom: 5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+
+    @media ${VIEWPORT.desktopUp} {
+        justify-content: center;
+    }
 `;
 
 export const ProjectImage = styled.img`
@@ -109,4 +111,15 @@ export const ProjectImage = styled.img`
     @media ${VIEWPORT.desktopUp} {
         margin-top: 5rem;
     }
+`;
+
+export const InfoContainer = styled.div`
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+    margin-top: 5rem;
+    text-align: center;
 `;

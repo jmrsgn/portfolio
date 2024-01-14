@@ -2,11 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import { Text, 
-         BigText, 
          Button, 
-         SmallText, 
          SocialIcon,
-         SpanBoldText } from '../globalComponents';
+         SpanBoldText, 
+         Description, 
+         BigText} from '../globalComponents';
 
 import { Home } from '../components';
 
@@ -24,11 +24,11 @@ export function HomeContainer() {
                     >
                         <Home.GreetingsContainer>
                             <Text>Hello,</Text>
-                            <BigText>I'm <SpanBoldText color="#FFFFFF">(Em)</SpanBoldText></BigText>
-                            <SmallText marginBottom="2rem">I'm a Developer.</SmallText>
+                            <BigText fontSize="3rem">I'm <SpanBoldText color="#FFFFFF">(Em)</SpanBoldText></BigText>
+                            <Description marginBottom="2rem">I'm a Developer.</Description>
                             <Button 
                                 type="1"
-                                href="../resume/Resume.pdf"
+                                to="../resume/Resume.pdf"
                                 target="_blank"
                             >
                                 Resume
