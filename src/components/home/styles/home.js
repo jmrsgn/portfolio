@@ -1,124 +1,147 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../constants/styles';
+import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
+import { TextExtraLarge, TextExtraSmall, TextSmall } from '../../../globalComponents';
+import { FONT } from '../../../fonts/fonts';
+
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG1};
+    background-color: ${COLORS.COLOR_BG1};
+`;
+
+export const InfoBox = styled.div`
     display: flex;
     flex-direction: column;
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        flex-direction: row;
-    }
+    justify-content: ${({ justifyContent }) => (justifyContent)};
+    padding: 1rem;
+    flex: 1;
 `;
 
 export const SubBox = styled.div`
+    margin-top: ${({ marginTop }) => (marginTop)};
     display: flex;
-    flex-direction: ${({ flexDirection }) => (flexDirection)};
-    justify-content: space-between;
-    padding: 2rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-
-    @media ${VIEWPORT.tabletUp} {
-        padding: 5rem;
-        margin-top: 5rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        margin-top: 0;
-        padding: 8rem;
-        flex-direction: column;
-    }
+    flex-direction: ${({ flexDirection }) => (flexDirection? flexDirection : 'row')};
+    justify-content: center;
 `;
 
 export const Box = styled.div`
-    flex: 1;
     display: flex;
+    width: 85%;
+    height: 100vh;
     flex-direction: column;
-    position: relative;
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        &:last-of-type {
-            ${SubBox} {
-                padding: 5rem 2rem 5rem 2rem;
-            }
-        }
-    }
-    
-    @media ${VIEWPORT.desktopUp} {
-        &:first-of-type {
-            ${SubBox} {
-                padding-left: 10rem;
-            }
-        }   
-    }
+    justify-content: space-between;
+    margin: 0 auto 0 auto;
+    padding: 5rem;
 `;
 
-export const GreetingsContainer = styled.div``;
+export const GreetingsContainer = styled.div`
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`;
 
 export const SocialContainer = styled.div`
     display: flex;
-    flex-direction: column;
-
-    @media ${VIEWPORT.tabletUp} {
-        margin-top: 2rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        flex-direction: row;
-    }
+    flex-direction: row;
+    margin-top: 3rem;
 `;
 
-export const Image = styled.img`
-    width: 200px;
-    height: auto;
-    margin: auto;
-    margin-top: 2rem;
-    z-index: 99;
-
-    @media ${VIEWPORT.tabletUp} {
-        width: 300px;
-    }
+export const TechSkillImage = styled.img`
+    transition: .3s ease-in;
+    height: 30px;
 `;
 
-export const TechBubbleContainer= styled.div`
-    width: 300px;
+export const TechSkill = styled.div`
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 1.25rem;
+    border-radius: 0.25rem;
     display: flex;
-    margin: auto;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 410px;
+    transition: .3s ease-in;
+    cursor: default;
 
-    @media ${VIEWPORT.tabletUp} {
-        width: 400px;
+    &:hover {
+        color: ${COLORS.COLOR_SURFACE1} !important;
+        opacity: 1 !important;
+        
+        ${TechSkillImage} {
+            filter: grayscale(0) !important;
+        }
     }
+`;
+
+export const TechSkillDescription = styled(TextExtraSmall)`
+    font-family: ${FONT.calibreRegular};
+    margin-top: 2rem;
+    transition: .3s ease-in;
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+`;
+
+export const TechSkillsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+    &:hover {
+        ${TechSkill} {
+            opacity: .5;
+        }
+
+        ${TechSkillImage} {
+            filter: grayscale(100%);
+        }
+    }
+`;
+
+export const TechBubbleContainer = styled.div`
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const TechBubble = styled.div`
-    width: 75px !important;
-    height: 75px;
-    border-radius: 50%;
-    position: relative;
-    background-color: ${STYLES.COLOR_SURFACE3};
-    transition: .2s ease-in;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
 
-    @media ${VIEWPORT.tabletUp} {
-        width: 90px !important;
-        height: 90px;
+
+    svg {
+        color: ${COLORS.COLOR_SURFACE1};
     }
 `;
 
 export const TechImage = styled.img`
-    width: 30px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 20px;
+    width: auto;
+    margin: 1rem;
+`;
 
-    @media ${VIEWPORT.tabletUp} {
-        width: 40px;
-    }
+
+export const TechSkillSubBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const TechSkillTitle = styled(TextSmall)`
+    font-family: ${FONT.calibreRegular};
+`;
+
+// ========
+
+export const Greeting = styled(TextExtraLarge)`
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+
+    margin-top: 2rem;
 `;

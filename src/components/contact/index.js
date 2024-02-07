@@ -4,7 +4,9 @@ import { Container,
          ImagesContainer,
          ButtonText,
          Image,
-         Button } from './styles/contact';
+         Button, 
+         InfoContainer, 
+         SubBox} from './styles/contact';
 
 export default function Contact({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -28,4 +30,12 @@ Contact.Button = function ContactButton({ children, ...restProps }) {
 
 Contact.ButtonText = function ContactButtonText({ children, ...restProps }) {
     return <ButtonText {...restProps}>{children}</ButtonText>
+}
+
+Contact.InfoContainer = function ContactInfoContainer({ children, ...restProps }) {
+    return <InfoContainer {...restProps}>{children}</InfoContainer>
+}
+
+Contact.SubBox = function ContactSubBox({ children, ...restProps }) {
+    return <SubBox {...restProps}>{children}</SubBox>
 }

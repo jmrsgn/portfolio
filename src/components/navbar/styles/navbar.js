@@ -1,147 +1,42 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../constants/styles';
+import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
+import { COLOR_ON_BACKGROUND, COLOR_SURFACE1 } from '../../../constants/styles';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
+
+export const Nav = styled.a`
+    height: 30px;
+    margin: 1.25rem 1rem 1.25rem 1rem;
+    cursor: pointer;
     align-items: center;
-    padding: 1rem 2rem;
-    position: fixed;
-    z-index: 2;
-    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
     svg {
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        padding: .15rem;
-        border-radius: 50%;
-        background-color: ${STYLES.COLOR_SURFACE1};
-    }
+        color: ${({ active }) => (active === 'true'? `${COLORS.COLOR_SURFACE1};` : `${COLORS.COLOR_LIGHT_GRAY};`)};
+        transition: .3s ease-in;
 
-    div {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 5;
-        padding: 1rem 2rem;
-        width: 80%;
-        height: 100vh;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        flex-direction: column;
-        background-color: ${STYLES.COLOR_SURFACE3};
-
-        svg {
-            width: 35px;
-            height: 35px;
-            color: ${STYLES.COLOR_ON_BACKGROUND};
-            cursor: pointer;
-            z-index: 5;
-        }
-
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-
-            li {
-                margin: 1rem;
-
-                a {
-                    font-family: 'Poppins', sans-serif;
-                    color: ${STYLES.COLOR_ON_BACKGROUND};
-                    text-decoration: none;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    transition: all 0.3s ease-in-out;
-
-                    &:hover {
-                        color: ${STYLES.COLOR_SURFACE1};
-                    }
-                }
-            }
+        &:hover {
+            color: ${COLOR_SURFACE1};
         }
     }
+`;
 
-    @media ${VIEWPORT.tabletUp} {
-        padding: 2rem;
+export const Container = styled.div`
+    height: 50vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0px 10px 10px 0px;
+    width: 4rem;
+    background-color: #151C27;
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
 
-        svg {
-            width: 50px;
-            height: 50px;
-        } 
-
-        div {
-            width: 60%;
-            padding: 2rem;
-
-            svg {
-                width: 40px;
-                height: 40px;
-            }
-
-            ul {
-                li { 
-                    margin: 1.5rem;
-                    
-                    a {
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-            
-        }
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        div {
-            width: 40%;
-
-            ul {
-                li {
-                    a {
-                        font-size: 1.25rem;
-                    }
-                }
-            }
-        }
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        div {
-            width: 30%;
-
-            svg {
-                width: 30px;
-                height: 30px;
-            }
-
-            ul {
-                li {
-                    margin: 1.25rem;
-
-                    a {
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 

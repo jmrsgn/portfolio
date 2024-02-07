@@ -1,62 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { motion } from 'framer-motion'
-import { HiMenuAlt4, HiX  } from 'react-icons/hi'
+import React, { useState } from "react";
 
 import { NavBar } from "../components";
 
-import NavigationData from "../fixtures/navigation.json";
+import { FaHome, FaPhoneAlt, FaProjectDiagram } from "react-icons/fa";
+import { GiSkills } from "react-icons/gi";
 
-export function NavBarContainer() {
-    const [toggle, setToggle] = useState(false);
-    const [showNavBar, setshowNavBar] = useState(true);
+import navigationData from '../fixtures/navigation.json';
 
-    let prevScrollpos = window.pageYOffset;
-  
-    const controlNavBar = () => {
-      const currentScrollPos = window.pageYOffset;
-      
-      if (prevScrollpos > currentScrollPos) {
-        setshowNavBar(true);
-      } else {
-        setshowNavBar(false);
-      }
-  
-      prevScrollpos = currentScrollPos;
-    }
 
-    useEffect(() => {
-        window.addEventListener('scroll', controlNavBar);
-      
-        return () => {
-          window.removeEventListener('scroll', controlNavBar);
-        }
-      }, []);
+export function NavBarContainer(props) {
+    // const [activeTab, setActiveTab] = useState(navigationData[0].name);
+
+    console.log("ANG VISIBLE AY: " + props.visibleTab);
+    
+    const navButtons = {
+        "home": <FaHome size={25} />,
+        "projects": <FaProjectDiagram size={25} />,
+        "experiences": <GiSkills size={25} />,
+        "contact": <FaPhoneAlt size={25} />
+    };
 
     return ( 
         <>
-            <NavBar showNavBar={showNavBar}>
-                {!toggle && (
-                    <HiMenuAlt4 onClick={() => setToggle(!toggle)}/>
-                )}
-
-                {toggle && (
-                    <motion.div
-                        whileInView={{ x: [300, 0] }}
-                        transition={{ duration: 0.3, ease: 'easeIn' }}
+            <NavBar>
+                {navigationData.map((item) => (
+                    <NavBar.Nav href={item.to}
+                        active={props.visibleTab === item.name? 'true' : 'false'}
                     >
-
-                        <HiX onClick={() => setToggle(!toggle)}/>
-
-                        <ul>
-                            {NavigationData.map((item) => (
-                                <li key={item.id}>
-                                    <a href={`${item.navigateTo}`} onClick={() => setToggle(!toggle)}>{item.name}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}      
+                        {navButtons[item.name]}
+                    </NavBar.Nav>
+                ))}
             </NavBar>
         </>
     )
-}
+};

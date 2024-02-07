@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { animate, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { Title, 
          Divider, 
-         TextLink, 
-         Filter, 
-         FilterText, 
-         ProjectMobileAppImage, 
-         ProjectWebAppImage, 
-         Description} from "../globalComponents";
+         SubBox, 
+         DescriptionText, 
+         NavigationIcon,
+         SpaceWidthSmall}  from "../globalComponents";
 
-import MotionWrap from "../wrapper/motion-wrap";
 import { Projects } from '../components';
+import { BsArrowUpRight } from "react-icons/bs";
 
-import FiltersData from '../fixtures/filters.json';
 import ProjectsData from '../fixtures/projects.json';
+import { AiFillGithub } from 'react-icons/ai';
 
 
 export function ProjectsContainer() {
@@ -56,20 +54,8 @@ export function ProjectsContainer() {
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <Projects.Box>
-                    <Title>Stuffs I’ve already built</Title>
-                    <Divider type="1" />
-{/* 
-                    <Projects.FiltersContainer>
-                        {FiltersData.map((item) => (
-                            <Filter
-                                key={item.id} 
-                                type={activeFilter === item.name ? '1' : ''}
-                                onClick={() => handleProjectFilter(item.name)}    
-                            >
-                                <FilterText>{item.name}</FilterText>
-                            </Filter>
-                        ))}
-                    </Projects.FiltersContainer> */}
+                    <Title>Stuffs I’ve built</Title>
+                    <Divider type="2" />
 
                     <Projects.ProjectsContainer>
                         {filterProjects.map((item) => (
@@ -78,20 +64,52 @@ export function ProjectsContainer() {
                                 animate={animateCard}
                                 transition={{ duration: 0.5 }}
                             >
-                                <Projects.SubBox key={item.id}>
-                                    <Projects.Project>
-                                        <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
-                                        <Description>{item.description}</Description>
-                                            {item.link !== "" && 
+                                <Projects.Project>
+                                    <SubBox
+                                        flexDirection='column'
+                                    >
+                                        <SubBox
+                                            flexDirection='row'
+                                            justifyContent='space-between'
+                                        >
+                                            <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
+                                            <Projects.NavigationContainer>
+                                                <NavigationIcon 
+                                                    type='2'
+                                                    href={item.href} target={"_blank"}>
+                                                    <AiFillGithub 
+                                                        size={25}
+                                                    />
+                                                </NavigationIcon>
+
+                                                <SpaceWidthSmall />
+                                                
+                                                <NavigationIcon 
+                                                    type='2'
+                                                    href={item.href} target={"_blank"}>
+                                                    <BsArrowUpRight 
+                                                        size={25}
+                                                    />
+                                                </NavigationIcon>
+                                            </Projects.NavigationContainer>
+                                           
+                                            
+                                        </SubBox>
+                                        
+                                        <DescriptionText
+                                            marginTop="24px"
+                                        >{item.description}</DescriptionText>
+
+                                            {/* {item.link !== "" && 
                                                 <TextLink  
                                                     marginTop="24px"
-                                                    type='1' 
+                                                    type='2' 
                                                     to={item.link}
                                                     target={"_blank"}
                                                 >
                                                     Read more
                                                 </TextLink> 
-                                            }
+                                            } */}
                                         <Projects.TagsContainer>
                                             {item.tech.map(( tag ) => (
                                                 <Projects.Tag>
@@ -99,19 +117,14 @@ export function ProjectsContainer() {
                                                 </Projects.Tag>
                                             ))}
                                         </Projects.TagsContainer>
-
-                                        {item.development && (
-                                            <Projects.DevelopmentTag>
-                                                <Projects.DevelopmentText>Development</Projects.DevelopmentText>
-                                            </Projects.DevelopmentTag>
-                                        )}
-                                    </Projects.Project>
-
-                                    {item.filter === 'Web App'? <ProjectWebAppImage src={item.src} /> : <ProjectMobileAppImage src={item.src} />}
-                                </Projects.SubBox>  
+                                    </SubBox>
+                                </Projects.Project>
                             </motion.div>   
                         ))}
                     </Projects.ProjectsContainer>
+                    <Projects.TechContainer>
+                        
+                    </Projects.TechContainer>
                 </Projects.Box>
             </motion.div>
         </Projects>

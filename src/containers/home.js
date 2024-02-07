@@ -1,107 +1,151 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { Text, 
+import { TechText, 
          Button, 
          SocialIcon,
-         SpanBoldText, 
-         Description, 
-         BigText} from '../globalComponents';
+         DescriptionText,
+         TextLinkContainer,
+         TextLink,
+         FilterText} from '../globalComponents';
 
 import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import {AiFillGithub, AiFillLinkedin, AiOutlineCaretRight } from 'react-icons/ai';
+import { Greeting, TechBubble } from '../components/home/styles/home';
+
+import whatIDoData from "../fixtures/what-i-do.json";
+import skillsData from '../fixtures/skills.json';
 
 export function HomeContainer() {
     return (
         <Home id="home">
             <Home.Box>
                 <Home.SubBox>
-                    <motion.div
-                        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Home.GreetingsContainer>
-                            <Text>Hello,</Text>
-                            <BigText fontSize="3rem">I'm <SpanBoldText color="#FFFFFF">(Em)</SpanBoldText></BigText>
-                            <Description marginBottom="2rem">I'm a Developer.</Description>
-                            <Button 
-                                type="1"
-                                to="../resume/Resume.pdf"
-                                target="_blank"
-                            >
-                                Resume
-                            </Button>
-                        </Home.GreetingsContainer>
-                    </motion.div>
-
-                    <Home.SocialContainer>
+                    <Home.InfoBox>
                         <motion.div
-                            whileInView={{ scale: [0, 1 ]}}
+                            whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
                         >
-                            <SocialIcon href="https://github.com/jmrsgn" target={"_blank"}> 
-                                <AiFillGithub />
-                            </SocialIcon>
-                        </motion.div>
-                        
-                        <motion.div
-                            whileInView={{ scale: [0, 1 ]}}
-                            transition={{ duration: 0.5, delay: 0.2}}
-                        >
-                            <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
-                                <AiFillLinkedin />
-                            </SocialIcon>
-                        </motion.div>
-                        
-                        <motion.div
-                            whileInView={{ scale: [0, 1 ]}}
-                            transition={{ duration: 0.5, delay: 0.4}}
-                        >
-                            <SocialIcon href="https://www.instagram.com/jmrsgn_/" target={"_blank"}>
-                                <BsInstagram />
-                            </SocialIcon>
-                        </motion.div>
-                    </Home.SocialContainer>
-                </Home.SubBox>
-            </Home.Box>
+                            <Home.GreetingsContainer>
+                                <TechText>Hello, I'm</TechText>
+                                <Greeting>John Martin</Greeting>
 
-            <Home.Box>
-                <Home.SubBox 
+                                <DescriptionText
+                                    lineHeight="0px"
+                                >I'm a Developer.</DescriptionText>
+                                <Button 
+                                    type="1"
+                                    to="../resume/Resume.pdf"
+                                    target="_blank"
+                                >
+                                    Resume
+                                </Button>
+                            </Home.GreetingsContainer>
+                        </motion.div>
+
+                        <Home.SocialContainer>
+                            <motion.div
+                                whileInView={{ scale: [0, 1 ]}}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                            >
+                                <SocialIcon href="https://github.com/jmrsgn" target={"_blank"}> 
+                                    <AiFillGithub />
+                                </SocialIcon>
+                            </motion.div>
+                            
+                            <motion.div
+                                whileInView={{ scale: [0, 1 ]}}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                            >
+                                <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
+                                    <AiFillLinkedin />
+                                </SocialIcon>
+                            </motion.div>
+                            
+                            <motion.div
+                                whileInView={{ scale: [0, 1 ]}}
+                                transition={{ duration: 0.5, delay: 0.6 }}
+                            >
+                                <SocialIcon href="https://www.instagram.com/jmrsgn_/" target={"_blank"}>
+                                    <BsInstagram />
+                                </SocialIcon>
+                            </motion.div>
+                        </Home.SocialContainer>
+                    </Home.InfoBox>
+        
+                    <Home.InfoBox
+                        justifyContent='flex-start'
+                    >
+                        <DescriptionText>
+                            My name is John Martin I. Marasigan, a simple person who likes to do Programming. I only enjoyed things out in my 4th year of College, and suddenly fell in love with Android Development. 
+                        </DescriptionText>
+
+                        <DescriptionText
+                            marginTop="24px"
+                        >
+                            I am currently working as an <FilterText>Associate Software Engineer</FilterText> at <FilterText>Infor</FilterText>, and part of the MSCM team providing maintenance and support to mobile applications.
+                        </DescriptionText>
+
+                        <DescriptionText
+                            marginTop="24px"
+                        >
+                            In my free time, I work out regularly, spending time alone going to the places that puts my mind at ease. I also have a greate taste in music, love reading books, and also, a guitarist.
+                        </DescriptionText>
+
+                        <TextLinkContainer>
+                            <TextLink 
+                                type="1"
+                                to='/about/more'
+                                target="_blank"
+                            >
+                                Know me more
+                            </TextLink>
+
+                            <TextLink 
+                                type="1"
+                                to='/about/more'
+                                target="_blank"
+                            >
+                                Spotify profile
+                            </TextLink>
+                        </TextLinkContainer>
+                    </Home.InfoBox>
+                </Home.SubBox>
+
+
+                <Home.SubBox
                     flexDirection="column"
                 >
+                    <Home.TechSkillsContainer>
+                        {whatIDoData.map((item) => (
+                            <Home.TechSkill 
+                                key={item.id}>
+
+                                <Home.TechSkillSubBox>
+                                    <Home.TechSkillTitle marginTop="24  px">{item.title}</Home.TechSkillTitle>
+                                    <Home.TechSkillImage src={item.src} />
+                                </Home.TechSkillSubBox>
+                                    
+                                <Home.TechSkillDescription>
+                                    {item.description}
+                                </Home.TechSkillDescription>
+                            </Home.TechSkill>  
+                        ))}
+                    </Home.TechSkillsContainer>
+
                     <Home.TechBubbleContainer>
-                        <motion.div
-                            whileInView={{ x: [100, 0], y: [150, 0] }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
-                        >
-                            <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/kotlin.svg" />
-                            </Home.TechBubble>
-                        </motion.div>
-
-                        <motion.div
-                            whileInView={{ y: [150, 0] }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
-                        >
-                            <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/java.svg" />
-                            </Home.TechBubble>
-                        </motion.div>
-
-                        <motion.div
-                            whileInView={{ y: [150, 0], x: [-100, 0] }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
-                        >
-                            <Home.TechBubble>
-                                <Home.TechImage src="./images/tech/react.svg" />
-                            </Home.TechBubble>
-                        </motion.div>
-                                
+                        {skillsData.map((skill) => (
+                            <TechBubble>
+                                <AiOutlineCaretRight />
+                                <TechText
+                                    fontSize=".75rem"
+                                    margin=".25rem"
+                                >{skill.name}</TechText>
+                            </TechBubble>
+                        ))}
                     </Home.TechBubbleContainer>
-
-                    <Home.Image src='./images/other/laptop.png' />
                 </Home.SubBox>
             </Home.Box>
         </Home>

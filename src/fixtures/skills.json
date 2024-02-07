@@ -1,37 +1,31 @@
 [
     {
         "id": 1,
-        "title": "Figma",
+        "name": "Figma",
         "src": "../images/tech/figma.svg"
     },
 
     {
         "id": 2,
-        "title": "Kotlin",
+        "name": "Kotlin",
         "src": "../images/tech/kotlin.svg"
     },
 
     {
         "id": 3,
-        "title": "React",
+        "name": "React",
         "src": "../images/tech/react.svg"
     },
 
     {
         "id": 4,
-        "title": "Java",
+        "name": "Java",
         "src": "../images/tech/java.svg"
     },
 
     {
         "id": 5,
-        "title": "Javascript",
-        "src": "../images/tech/js.svg"
-    },
-
-    {
-        "id": 6,
-        "title": "Git",
+        "name": "Git",
         "src": "../images/tech/git.svg"
     }
 ]

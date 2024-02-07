@@ -1,228 +1,213 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
+import * as COLORS from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { Text } from '../../../globalComponents';
+import { TechText, Text, TextSmall } from '../../../globalComponents';
+import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG2};
-    padding: 4rem 2rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        padding: 5rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        padding: 5rem 10rem;
-    }
+    background-color: ${STYLES.COLOR_BG1};
 `;
 
 export const Box = styled.div`
-    width: ${({ width }) => (width? width : '100%')};
+    width: 85%;
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const InfoContainer = styled.div`
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+`;
+
+export const DisplayContainer = styled.div`
+    padding: 6px 12px;
+    border-top: none;
+    margin-left: 2rem;
+    min-width: 500px;
+`
+
+export const SubBox = styled.div`
+    margin-top: ${({ marginTop }) => (marginTop)};
+    margin-left: ${({ marginLeft }) => (marginLeft)};
+    display: flex;
+    flex-direction: ${({ flexDirection }) => (flexDirection? flexDirection : 'row')};
+    justify-content: center;
 `;
 
 export const Arrow = styled.div`
-    border-top: 10px solid ${STYLES.COLOR_SURFACE2};
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    height: 15px;
-    width: 15px;
-    display: block;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    
-    @media ${VIEWPORT.tabletUp} {
-        border-top: 15px solid ${STYLES.COLOR_SURFACE2};
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        height: 25px;
-        width: 25px;
-    }
 
-    @media ${VIEWPORT.desktopUp} {
-        border-top: 10px solid transparent;
-        border-left: 10px solid ${STYLES.COLOR_SURFACE2};
-        border-bottom: 10px solid transparent;
-        height: 20px;
-        width: 20px;
-        margin-left: 1rem;
-    }
 `
 
 export const SkillsContainer = styled.div`
-    margin: 0 auto;
-    max-width: 30rem;
-    gap: .5rem;
-
-    display: column;
-    columns: 3;
-
-    * {
-        break-inside: avoid;
-        margin-bottom: 0.5rem;
-    }
+    
 `;
 
 export const Skill = styled.div`   
-    border-radius: 10px;
-    padding: 1rem .15rem .15rem .15rem;
-    background-color: ${STYLES.COLOR_SURFACE3};
-    align-items: center;
-    text-align: center;
-    transition: .2s ease-in;
-
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 20px;
-        padding: 1.5rem .25rem .25rem .25rem;
-    }
+    
 `;
 
 export const SkillImage = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
 
-    @media ${VIEWPORT.tabletUp} {
-        width: 40%;
-    }
 `;
 
 export const SkillTitle = styled(Text)`
-    font-weight: bold;
-    font-size: .90rem;
-    margin-top: 1rem;
-    color: ${STYLES.COLOR_ON_SURFACE};
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-        margin-top: 1.5rem;
-    }
+    
 `
 
 export const Experience = styled.div`
-    background-color: ${STYLES.COLOR_SURFACE3};
+
+`;
+
+
+export const CertificatesContainer = styled.div`
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    padding: 1.5rem;
-    width: 300px;
-    max-width: 300px;
-    width: 100%;
-    box-shadow: 0px 5px 5px #161C24;
-
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 20px;
-        width: 500px;
-        min-width: 500px;
-        padding: 2rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        padding: 2rem;
-        min-width: 400px;
-        width: 400px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        min-width: 500px;
-        width: 500px;
-    }
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 5rem;
 `;
+
+export const CertificateContainer = styled.div`
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 2rem;
+`;
+
+export const Certificate = styled.img`
+    max-width: 250px;
+    margin-left: 1rem;
+    border: 1px solid ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
+export const CertificateTitle = styled(TextSmall)`
+    font-family: ${FONT.calibreRegular};
+`
+
+export const CertificateInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const CertificateYear = styled(TechText)``;
+
 
 export const ExperienceContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-top: 1rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+    max-width: 500px;
 `;
 
-export const ExperiencesContainer = styled.div`
-    margin: auto;
+export const ExperienceTextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     margin-top: 2rem;
-    
-    &:first-of-type {
-        ${ExperienceContainer} {
-            margin-top: 0rem;
+`;
+
+export const ExperienceTextRowContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    svg {
+        color: ${COLORS.COLOR_SURFACE1};
+    }
+`;
+
+export const ExperienceTabsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: ${COLORS.COLOR_BG1};
+`;
+
+export const ExperienceTabText = styled(TechText)`
+    transition: 0.3s ease-in;
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+`;
+
+export const ExperienceTab = styled.button`
+    display: flex;
+    flex-direction: row;
+    min-width: 175px;
+    background-color: ${({ active }) => (active?  "#284A59" : `${COLORS.COLOR_BG1}`)};
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: 0.3s ease-in;
+    border-left: 3px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+
+    ${ExperienceTabText} {
+        color: ${({ active }) => (active? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+    }
+
+    &:hover {
+        background-color: #284A59;
+
+        ${ExperienceTabText} {
+            color: ${COLORS.COLOR_SURFACE1}
         }
-    };
-
-    @media ${VIEWPORT.tabletUp} {
-        margin-top: 5rem;
     }
+`;  
 
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: row;
-    }
+
+
+export const ExperiencesContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 `;
 
-export const Date = styled(Text)`
-    font-size: .75rem;
-    color: ${STYLES.COLOR_SURFACE2};
-    letter-spacing: 2px;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.20rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
-    }
+export const Date = styled(TechText)`
+    color: ${COLORS.COLOR_LIGHT_GRAY};
 `;
 
-export const Position = styled(Text)`
+export const Position = styled(TextSmall)`
+    font-size: 1.75rem;
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_SURFACE};
+`;
+
+export const Company = styled.span`
+    color: ${COLORS.COLOR_SURFACE1};
+`;
+
+export const BadgesContainer = styled.div`
     margin-top: 2rem;
-    font-size: 1.5rem;
-    line-height: 36px;
-    font-weight: bold;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 2.5rem;
-        line-height: 56px;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 2.25rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1.85rem;
-        line-height: 42px;
-    }
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `;
 
-export const Company = styled(Text)`
-    font-size: .90rem;
-    letter-spacing: 2px;
-    color: ${STYLES.COLOR_SURFACE2};
-    margin-top: .25rem;
+export const Badge = styled.img`
+    height: 75px;
+    width: auto;
+    margin: 2rem;
+    filter: grayscale(0);
+    transition: .3s ease-in;
+    cursor: pointer;
 
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.5rem;
-        letter-spacing: 4px;
+    &:hover {
+        filter: grayscale(0);
     }
 
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.25rem;
+    @media ${VIEWPORT.tabletUp} {
+        height: 70px;
     }
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
-        letter-spacing: 3px;
+        filter: grayscale(1);
     }
 `;

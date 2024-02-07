@@ -1,16 +1,20 @@
 [
     {
         "id": 1,
-        "date": "Feb 2022 - May 2022",
-        "position": "IT Specialist Intern",
-        "company": "Miyens",
-        "learnings": "I learned how to make a couple of web pages using WordPress, doing maintenance with other tasks, and so much more. It’s sad to think there are no code-related tasks in our training, but I am happy that I made it through."
-    },
-    {
-        "id": 2,
         "date": "Aug 2022 - Present",
         "position": "Software Engineer, Associate",
         "company": "Infor",
-        "learnings": "I am working as an Associate Software Engineer at Infor and part of the MSCM Android Team. Grateful working with great people that helps me strive to learn more about Software Development."
+        "learnings": [
+            "I am working as an Associate Software Engineer at Infor and part of the MSCM Android Team. Grateful working with great people that helps me strive to learn more about Software Development."
+        ]
+    },
+    {
+        "id": 2,
+        "date": "Feb 2022 - May 2022",
+        "position": "IT Specialist Intern",
+        "company": "Miyens",
+        "learnings": [
+            "I learned how to make a couple of web pages using WordPress, doing maintenance with other tasks, and so much more. It’s sad to think there are no code-related tasks in our training, but I am happy that I made it through."
+        ]
     }
 ]

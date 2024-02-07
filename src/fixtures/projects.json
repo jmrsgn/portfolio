@@ -3,10 +3,10 @@
         "id": 1,
         "title": "Expresso",
         "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool.",
-        "filter": "Mobile App",
+        "filter": "Mobile",
         "development": false,
         "src": "../images/projects/expresso-1.png",
-        "link": "/projects/expresso",
+        "href": "/projects/expresso",
         "tech": [
             {
                 "name": "Java",
@@ -41,10 +41,10 @@
         "id": 2,
         "title": "Carkilahan",
         "description": "Carkilahan is an Android application created by Java, and Firebase for the back-end side. It is our mini-project, capable of helping users book a car for their journey, and also my first applicaton ever built.",
-        "filter": "Mobile App",
+        "filter": "Mobile",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
-        "link": "/projects/carkilahan",
+        "href": "/projects/carkilahan",
         "tech": [
             {
                 "name": "Java",

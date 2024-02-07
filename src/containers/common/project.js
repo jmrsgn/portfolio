@@ -26,10 +26,6 @@ export function ProjectContainer(props) {
                         />
                         <Title marginLeft="30px">{props.projectName}</Title>
                     </Project.NavigationContainer>
-                    
-                    {/* <FilterCell type="1" cursor="default">
-                        <FilterText>Mobile App</FilterText>
-                    </FilterCell> */}
 
                     <SocialIcon href="#" target={"_blank"}> 
                         <AiFillGithub />

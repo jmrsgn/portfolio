@@ -2,13 +2,15 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 import * as STYLES from './constants/styles';
+import * as COLORS from './constants/colors';
 import { VIEWPORT } from './constants/viewports';
-import { FONT } from './constants/fonts';
+import { FONT } from './fonts/fonts';
 
 // ======
 
 export const MainText = styled.p`
-    font-family: ${FONT.main};
+    font-family: ${FONT.calibreBold};
+    font-weight: 100;
     color: ${STYLES.COLOR_ON_BACKGROUND};
 `;
 
@@ -19,10 +21,59 @@ export const SecondaryText = styled.p`
 
 // ======
 
-export const Text = styled(MainText)`
-    font-size: 1.5rem;
+export const TextExtraSmall = styled.p`
+    font-size: 1rem;
+`;
 
-    @media ${VIEWPORT.tabletUp} {
+export const TextSmall = styled.p`
+    font-size: 1.25rem;
+`;
+
+export const TextMedium = styled.p`
+    font-size: 2.5rem;
+`;
+
+export const TextLarge = styled.p`
+    font-size: 3.25rem;
+`;
+
+export const TextExtraLarge = styled.p`
+    font-size: 5rem;
+`;
+
+// ======
+
+export const TechText = styled(TextExtraSmall)`
+    font-family: ${FONT.sfMonoRegular};
+    color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
+    font-size: ${({ fontSize }) => (fontSize)};
+    margin: ${({ margin }) => (margin)};
+
+`;
+
+export const DescriptionText = styled(TextSmall)`
+    font-family: ${FONT.calibreRegular};
+    font-size: ${({ fontSize }) => (fontSize)};
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+    line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '24px')};
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-left: ${({ marginLeft }) => (marginLeft)};
+`;
+
+export const FilterText = styled(DescriptionText)`
+    display: inline;
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
+export const SubTitle = styled(TextMedium)`
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    font-family: ${({ isBold }) => (isBold === 'true' ? `${FONT.calibreBold}` : `${FONT.calibreRegular}`)};
+    font-size: ${({ fontSize }) => (fontSize)};
+`
+
+export const Text = styled(TextExtraSmall)`
+
+    /* @media ${VIEWPORT.tabletUp} {
         font-size: 3rem;
     }
 
@@ -32,7 +83,7 @@ export const Text = styled(MainText)`
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 2.25rem;
-    }
+    } */
 `;
 
 export const BigText = styled(MainText)`
@@ -53,23 +104,10 @@ export const BigText = styled(MainText)`
 
 // ======
 
-export const Title = styled(MainText)`
+export const Title = styled(TextLarge)`
     margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
-    font-size: 2rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 3.25rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 2.5rem;
-    }
+    font-family: ${FONT.calibreBold};
 `;
-
-export const SubTitle = styled(MainText)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-size: 2rem;
-`
 
 export const Description = styled(SecondaryText)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '.75rem')};
@@ -97,40 +135,33 @@ export const Description = styled(SecondaryText)`
 `;
 
 export const Button = styled(Link)`
-    display: block;
+    background-color: ${COLORS.COLOR_BG1};
+    font-family: ${FONT.sfMonoRegular};
+    border: 1px solid ${COLORS.COLOR_SURFACE1};
+    color: ${COLORS.COLOR_SURFACE1};
+    font-size: 1rem;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
+
+    margin-top: 3rem;
     text-decoration: none;
-    background-color: ${STYLES.COLOR_SURFACE1};
-    font-family: 'Poppins', sans-serif;
-    border: none;
     outline: none;
     text-align: center;
-    color: ${STYLES.COLOR_ON_SURFACE};
     cursor: pointer;
-    transition: .3s ease-in;
-    font-size: 1rem;
-    padding: .75rem;
-    border-radius: 10px;
-    width: ${({ width }) => (width? width : '150px')};
+    transition: .1s ease-in;
 
-    @media ${VIEWPORT.tabletUp} {
-        width: 250px;
-        font-size: 1.5rem;
-        padding: 1.25rem;
-        border-radius: 15px;
-        margin-top: 4rem;
-    } 
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        width: 230px;
-        font-size: 1.25rem;
-        padding: 1rem;
+    &:hover {
+        box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
     }
+`;
 
-    @media ${VIEWPORT.desktopUp} {
-        width: 200px;
-        margin-top: 3rem;
-        font-size: 1.15rem;
-    }
+export const SubBox = styled.div`
+    margin: ${({ margin }) => (margin)};
+    display: flex;
+    flex-direction: ${({ flexDirection }) => (flexDirection)};
+    width: ${({ width }) => (width)};
+    justify-content: ${({ justifyContent }) => (justifyContent)};
 `;
 
 export const Divider = styled.div`
@@ -157,19 +188,42 @@ export const MiniDivider = styled(Divider)`
 
 export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
-    letter-spacing: 2px;
-    font-size: .85rem;
-    font-family: Arial, Helvetica, sans-serif;
+    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
+    font-size: 1rem;
+    font-family: ${FONT.sfMonoRegular};
     text-decoration: none;
+    transition: .1s ease-in;
 
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.5rem;
+    display: inline-block;
+    margin-block: 2px;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: ${COLORS.COLOR_SURFACE1};
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 1;
+        margin-top: 1.5rem;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .25s ease;
     }
 
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1rem;
+    &:hover::after {
+        transform: scaleX(1);
     }
+`;
+
+export const TextLinkContainer = styled.div`
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export const Filter = styled.div`
@@ -177,7 +231,6 @@ export const Filter = styled.div`
     background-color: ${({ type }) => (type === '1'? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE3}`)};
     padding: .75rem .95rem;
     cursor: ${({ cursor }) => (cursor? cursor : "pointer")};
-    transition: .3s ease-in;
     margin: 0.5rem;
 
     &:hover {
@@ -195,23 +248,6 @@ export const Filter = styled.div`
 
     @media ${VIEWPORT.desktopUp} {
         padding: 1rem 1.2rem;
-    }
-`;
-
-export const FilterText = styled(MainText)`
-    font-size: .85rem;
-    color: ${STYLES.COLOR_ON_SURFACE};
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.15rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
     }
 `;
 
@@ -277,6 +313,32 @@ export const SocialIcon = styled.a`
     }
 `;
 
+export const NavigationIcon = styled.a`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin: .25rem 0 .25rem 0;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        color: ${COLORS.COLOR_ON_SURFACE};
+    }
+
+    &:hover {
+        background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+        border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+  
+        svg {
+          color: ${COLORS.COLOR_ON_SURFACE};
+        }
+    }
+`;
+
 export const ProjectMobileAppImage = styled.img`
     width: 250px;
     height: auto;
@@ -313,4 +375,14 @@ export const BoxFlex = styled.div`
 export const SpanBoldText = styled.span`
     font-weight: bold;
     color: ${({ color }) => (color? color : `${STYLES.COLOR_LIGHT_GRAY}`)};
+`;
+
+export const SpaceWidthSmall = styled.div`
+    height: 100%;
+    width: 1rem;
+`;
+
+export const SpaceHeightMedium = styled.div`
+    height: 3rem;
+    width: 100%;
 `;

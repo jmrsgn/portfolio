@@ -3,23 +3,20 @@
         "id": 1,
         "title": "Web Development",
         "description": "I have minimal experience in doing Web Development. I have a basic knowledge of React JS in doing UI, basic CSS skills for designing, and basic implementation of features.",
-        "src": "./images/other/web-dev-purple.png",
-        "popOut": false
+        "src": "./images/what-i-do/web-development.png"
     },
 
     {
         "id": 2,
         "title": "UI/UX Design",
         "description": "I made numerous designs in my previous projects. I have a basic knowledge of doing UI that inspires a modern way of interfaces using Figma.",
-        "src": "./images/other/ui-ux-purple.png",
-        "popOut": false
+        "src": "./images/what-i-do/ui-ux.png"
     },
 
     {
         "id": 3,
         "title": "Android Development",
         "description": "My biggest interest of all. I have already built two applications with Java. Now I am studying Jetpack Compose and Ktor with proper code architecture and coding principles when doing personal projects.",
-        "src": "./images/other/android-dev.png",
-        "popOut": true
+        "src": "./images/what-i-do/android-development.png"
     }
 ]

@@ -1,69 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
 
-import { Title, Divider, Description } from "../globalComponents";
+import { Title, SubBox, DescriptionText, SubTitle, Divider } from "../globalComponents";
 import { SkillsExp } from "../components";
 
-import skillsData from '../fixtures/skills.json';
 import experiencesData from '../fixtures/experiences.json';
+import certificatesData from '../fixtures/certificates.json';
+import badgesData from '../fixtures/badges.json';
 
 export function SkillsExpContainer() {
+    const [active, setActive] = useState(experiencesData[0]);
+
+    function setActiveTab(item) {
+        setActive(item);
+    }
+
     return (
-        <SkillsExp id="skills-&-experiences">
+        <SkillsExp id="experiences">
             <motion.div
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
             >
                 <SkillsExp.Box>
-                    <Title>Skills & Experiences</Title>
-                    <Divider marginBottom='4rem' />
+                    <Title>Experiences</Title>
+                    <Divider type='1' />
 
-                    <SkillsExp.SkillsContainer>
-                        {skillsData.map(( item ) => (
-                            <motion.div
-                                whileInView={{ opacity: [0, 1] }}
-                                transition={{ duration: 0.5 }}
-                                key={item.id}
-                            >
-                                <SkillsExp.Skill>
-                                    <SkillsExp.SkillImage src={item.src} />
-                                    <SkillsExp.SkillTitle>{item.title}</SkillsExp.SkillTitle>
-                                </SkillsExp.Skill>
-                            </motion.div>
-                        ))}
-
-                    </SkillsExp.SkillsContainer>
-
-                    <SkillsExp.ExperiencesContainer>
-                        {experiencesData.map(( item ) => (
-                            <motion.div
-                                whileInView={{ opacity: [0, 1] }}
-                                transition={{ duration: 0.5 }}
-                                key={item.id}
-                                style={{display: 'flex', alignItems: 'center'}}
-                            >
-
-                                <SkillsExp.ExperienceContainer>
-                                    <SkillsExp.Experience>
-                                        <SkillsExp.Date>{item.date}</SkillsExp.Date>
-                                        <SkillsExp.Position>{item.position}</SkillsExp.Position>
-                                        <SkillsExp.Company>{item.company}</SkillsExp.Company>
-                                        <Description>{item.learnings}</Description>
-                                        {/* <TextLink  
-                                            style={{ marginLeft: "auto" }}
-                                            marginTop="24px"
-                                            type='2' 
-                                            to=""
-                                            target={"_blank"}
+                    <SkillsExp.InfoContainer>
+                        <SkillsExp.SubBox>
+                            <SkillsExp.ExperiencesContainer>
+                                <SkillsExp.ExperienceTabsContainer>
+                                    {experiencesData.map((item) => (
+                                        <SkillsExp.ExperienceTab
+                                            active={active === item}
+                                            onClick={setActiveTab.bind(this, item)}
                                         >
-                                            Read more
-                                        </TextLink>  */}
-                                    </SkillsExp.Experience>
+                                            <SkillsExp.ExperienceTabText>
+                                                {item.company}
+                                            </SkillsExp.ExperienceTabText>
+                                        </SkillsExp.ExperienceTab>
+                                    ))}
+                                </SkillsExp.ExperienceTabsContainer>
 
-                                    <SkillsExp.Arrow />
-                                </SkillsExp.ExperienceContainer>                    
-                            </motion.div>   
-                        ))}
-                    </SkillsExp.ExperiencesContainer>
+                                <SkillsExp.DisplayContainer>
+                                    <SkillsExp.ExperienceContainer>
+                                        <SkillsExp.Position>{active.position}<SkillsExp.Company> @ {active.company}</SkillsExp.Company></SkillsExp.Position>
+                                        <SkillsExp.Date>{active.date}</SkillsExp.Date>
+                                        <SkillsExp.ExperienceTextContainer>
+                                            {active.learnings.map((item) => (
+                                                <DescriptionText>{item}</DescriptionText>
+                                            ))}
+                                        </SkillsExp.ExperienceTextContainer>
+                                    </SkillsExp.ExperienceContainer>
+                                </SkillsExp.DisplayContainer>
+                            </SkillsExp.ExperiencesContainer>
+                            
+                        </SkillsExp.SubBox>
+
+                        <SkillsExp.SubBox
+                            flexDirection='column'
+                        >
+                            <SkillsExp.CertificatesContainter>
+                                <SubBox
+                                    flexDirection='row-reverse'
+                                >
+                                    <SubTitle
+                                        isBold='true'
+                                        fontSize='2rem'
+                                    >Certificates & Badges</SubTitle>
+                                </SubBox>
+
+                                {certificatesData.map((item) => (
+                                    <SkillsExp.CertificateContainer>
+                                        <SkillsExp.CertificateInfoContainer>
+                                            <SkillsExp.CertificateTitle>{item.title}</SkillsExp.CertificateTitle>
+                                            <SkillsExp.CertificateYear>{item.year}</SkillsExp.CertificateYear>
+                                        </SkillsExp.CertificateInfoContainer>
+                                        <SkillsExp.Certificate src={item.src} />
+                                    </SkillsExp.CertificateContainer>
+                                ))}
+                            </SkillsExp.CertificatesContainter>
+
+                            <SkillsExp.BadgesContainer>
+                                {badgesData.map((item) => (
+                                    <SkillsExp.Badge src={item.src} />
+                                ))}
+                            </SkillsExp.BadgesContainer>
+                        </SkillsExp.SubBox>
+                    </SkillsExp.InfoContainer>
                 </SkillsExp.Box>
             </motion.div>
         </SkillsExp>

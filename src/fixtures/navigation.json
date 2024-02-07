@@ -1,37 +1,22 @@
 [
     {
         "id": 1,
-        "name": "Home",
-        "navigateTo": "#home"
+        "name": "home",
+        "to": "#home"
     },
-
     {
         "id": 2,
-        "name": "About",
-        "navigateTo": "#about"
+        "name": "projects",
+        "to": "#projects"
     },
-
     {
         "id": 3,
-        "name": "Projects",
-        "navigateTo": "#projects"
+        "name": "experiences",
+        "to": "#experiences"
     },
-
     {
         "id": 4,
-        "name": "Skills & Experiences",
-        "navigateTo": "#skills-&-experiences"
-    },
-
-    {
-        "id": 5,
-        "name": "Certificates & Badges",
-        "navigateTo": "#certificates-&-badges"
-    },
-
-    {
-        "id": 6,
-        "name": "Contact",
-        "navigateTo": "#contact"
+        "name": "contact",
+        "to": "#contact"
     }
 ]

@@ -1,24 +1,22 @@
 import styled from 'styled-components/macro';
 import * as STYLES from '../../../constants/styles';
+import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { Text } from '../../../globalComponents';
+import { TechText, TextMedium } from '../../../globalComponents';
+import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG1};
-    padding: 4rem 2rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        padding: 5rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        padding: 5rem 10rem;
-    }
+    background-color: ${STYLES.COLOR_BG2};
 `;
 
 export const Box = styled.div`
-    width: ${({ width }) => (width? width : '100%')};
+    width: 85%;
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const SubBox = styled.div`
@@ -47,18 +45,65 @@ export const FilterContainer = styled.div`
     margin: 4rem 0 2rem;
 `;
 
-export const ProjectsContainer = styled.div`
-    margin: auto;
+export const NavigationContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 2rem;
+    flex-direction: row;
+    align-items: center;
+`;
 
-    @media ${VIEWPORT.tabletUp} {
-        margin-top: 3rem;
+export const Project = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    min-width: 600px; 
+    min-height: 200px;
+    width: 600px;
+    box-shadow: 0px 5px 5px #161C24;
+    transition: .3s ease-in;
+    cursor: default;
+
+    svg {
+        cursor: pointer;
     }
 
-    @media ${VIEWPORT.tabletLandscapeUp} {
+
+    &:hover {
+        opacity: 1 !important;
+    }
+
+    /* @media ${VIEWPORT.tabletUp} {
+        border-radius: 20px;
+        width: 500px;
+        min-width: 500px;
+        padding: 2rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 700px;
+        min-width: 700px;
+    } */
+`;
+
+export const ProjectsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5rem;
+
+    &:hover {
+        ${Project} {
+            opacity: .5;
+        }
+    }
+
+    /* @media ${VIEWPORT.tabletUp} {
+        margin-top: 3rem;
+    } */
+
+    /* @media ${VIEWPORT.tabletLandscapeUp} {
         div {
             &:nth-child(even) {
                 ${SubBox} {
@@ -70,44 +115,17 @@ export const ProjectsContainer = styled.div`
 
     @media ${VIEWPORT.desktopUp} {
         margin-top: 0;
-    }
+    } */
 `;
 
-export const Project = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    background-color: ${STYLES.COLOR_SURFACE3};
-    padding: 1.5rem;
-    position: relative;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    min-width: 300px; 
-    min-height: 200px;
-    width: 300px;
-    box-shadow: 0px 5px 5px #161C24;
 
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 20px;
-        width: 500px;
-        min-width: 500px;
-        padding: 2rem;
-    }
 
-    @media ${VIEWPORT.desktopUp} {
-        width: 700px;
-        min-width: 700px;
-    }
-`;
 
-export const ProjectTitle = styled(Text)`
+export const ProjectTitle = styled(TextMedium)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-size: 1.5rem;
-    line-height: 36px;
-    font-weight: bold;
+    font-family: ${FONT.calibreRegular};
 
-    @media ${VIEWPORT.tabletUp} {
+    /* @media ${VIEWPORT.tabletUp} {
         font-size: 2.5rem;
         line-height: 56px;
     }
@@ -119,7 +137,7 @@ export const ProjectTitle = styled(Text)`
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.85rem;
         line-height: 42px;
-    }
+    } */
 `;
 
 export const TagsContainer = styled.div`
@@ -136,64 +154,19 @@ export const TagsContainer = styled.div`
 `;
 
 export const Tag = styled.div`
-    background-color: ${STYLES.COLOR_LIGHT_RED};
+    border: 1px solid ${COLORS.COLOR_SURFACE2};
     margin: 0.15rem;
-    border-radius: 5px;
-    padding: .01rem .5rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 7px;
-        padding: .05rem .75rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        padding: 0.1rem 0.5rem;
-    }
+    border-radius: .5rem;
+    padding: .25rem .75rem;
 `;
 
-export const TagText = styled(Text)`
-    color: ${STYLES.COLOR_RED};
-    font-size: .55rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: .80rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: .75rem;
-    }
+export const TagText = styled(TechText)`
+    color: ${COLORS.COLOR_SURFACE2};
+    font-size: .75rem;
 `;
 
-export const DevelopmentTag = styled.div`
-    border-radius: 50%;
-    padding: 1rem;
-    width: 80px;
-    height: 80px;
+export const TechContainer = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${STYLES.COLOR_SURFACE1};
-    position: absolute;
-    top: -5%;
-    right: -5%;
-
-    @media ${VIEWPORT.tabletUp} {
-        width: 100px;
-        height: 100px;
-    }
-`;
-
-export const DevelopmentText = styled(Text)`
-    font-size: .65rem;
-    color: ${STYLES.COLOR_ON_SURFACE};
-    position: absolute;
-    margin: auto;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: .8rem;
-    }
+    flex-direction: row;
+    justify-content: space-evenly;  
 `;

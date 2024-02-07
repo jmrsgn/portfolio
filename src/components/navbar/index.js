@@ -1,14 +1,14 @@
 import React from "react";
-import { Container } from "./styles/navbar";
+import { Container, Nav } from "./styles/navbar";
 
-export default function NavBar({ showNavBar, children, ...restProps }) {
+export default function NavBar({ children, ...restProps }) {
     return (
         <>
-            {showNavBar && 
-                (
-                    <Container {...restProps}>{children}</Container> 
-                )
-            }
+            <Container {...restProps}>{children}</Container> 
         </>
     )
+}
+
+NavBar.Nav = function NavBarNav({ children, ...restProps }) {
+    return <Nav {...restProps}>{children}</Nav>
 }
