@@ -13,7 +13,7 @@ import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
 import {AiFillGithub, AiFillLinkedin, AiOutlineCaretRight } from 'react-icons/ai';
-import { Greeting, TechBubble } from '../components/home/styles/home';
+import { Greeting, Tech } from '../components/home/styles/home';
 
 import whatIDoData from "../fixtures/what-i-do.json";
 import skillsData from '../fixtures/skills.json';
@@ -79,41 +79,38 @@ export function HomeContainer() {
                         justifyContent='flex-start'
                     >
                         <DescriptionText>
-                            My name is John Martin I. Marasigan, a simple person who likes to do Programming. I only enjoyed things out in my 4th year of College, and suddenly fell in love with Android Development. 
+                            My name is John Martin I. Marasigan, a simple person who likes to do Programming. I only enjoyed things out in my 4th year of College and suddenly fell in love with Android Development.
                         </DescriptionText>
 
                         <DescriptionText
                             marginTop="24px"
                         >
-                            I am currently working as an <FilterText>Associate Software Engineer</FilterText> at <FilterText>Infor</FilterText>, and part of the MSCM team providing maintenance and support to mobile applications.
+                            I am currently working as an <FilterText>Associate Software Engineer</FilterText> at <FilterText>Infor,</FilterText> and part of the MSCM team providing maintenance and support to mobile applications.
                         </DescriptionText>
 
                         <DescriptionText
                             marginTop="24px"
                         >
-                            In my free time, I work out regularly, spending time alone going to the places that puts my mind at ease. I also have a greate taste in music, love reading books, and also, a guitarist.
+                            In my free time, I work out regularly, spending time alone going to the places that put my mind at ease. I also have great taste in music, love reading books, am a fitness enthusiast, and a guitarist.
                         </DescriptionText>
 
                         <TextLinkContainer>
                             <TextLink 
                                 type="1"
-                                to='/about/more'
-                                target="_blank"
+                                to='#'
                             >
                                 Know me more
                             </TextLink>
 
                             <TextLink 
                                 type="1"
-                                to='/about/more'
-                                target="_blank"
+                                to='#'
                             >
                                 Spotify profile
                             </TextLink>
                         </TextLinkContainer>
                     </Home.InfoBox>
                 </Home.SubBox>
-
 
                 <Home.SubBox
                     flexDirection="column"
@@ -122,7 +119,6 @@ export function HomeContainer() {
                         {whatIDoData.map((item) => (
                             <Home.TechSkill 
                                 key={item.id}>
-
                                 <Home.TechSkillSubBox>
                                     <Home.TechSkillTitle marginTop="24  px">{item.title}</Home.TechSkillTitle>
                                     <Home.TechSkillImage src={item.src} />
@@ -135,17 +131,17 @@ export function HomeContainer() {
                         ))}
                     </Home.TechSkillsContainer>
 
-                    <Home.TechBubbleContainer>
+                    <Home.TechContainer>
                         {skillsData.map((skill) => (
-                            <TechBubble>
+                            <Tech>
                                 <AiOutlineCaretRight />
                                 <TechText
                                     fontSize=".75rem"
                                     margin=".25rem"
                                 >{skill.name}</TechText>
-                            </TechBubble>
+                            </Tech>
                         ))}
-                    </Home.TechBubbleContainer>
+                    </Home.TechContainer>
                 </Home.SubBox>
             </Home.Box>
         </Home>

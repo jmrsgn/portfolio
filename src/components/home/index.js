@@ -12,9 +12,9 @@ import { Container,
          TechSkillTitle,
          TechSkillSubBox,
          TechSkillDescription,
-         TechBubbleContainer,
-         TechBubble,
-         TechImage} from './styles/home';
+         Tech,
+         TechImage,
+         TechContainer } from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -68,12 +68,12 @@ Home.TechSkillSubBox = function HomeTechSkillSubBox({ children, ...restProps }) 
     return <TechSkillSubBox {...restProps}>{children}</TechSkillSubBox>
 }
 
-Home.TechBubbleContainer = function HomeTechBubbleContainer({ children, ...restProps }) {
-    return <TechBubbleContainer {...restProps}>{children}</TechBubbleContainer>
+Home.TechContainer = function HomeTechContainer({ children, ...restProps }) {
+    return <TechContainer {...restProps}>{children}</TechContainer>
 }
 
-Home.TechBubble = function HomeTechBubble({ children, ...restProps }) {
-    return <TechBubble {...restProps}>{children}</TechBubble>
+Home.Tech = function HomeTech({ children, ...restProps }) {
+    return <Tech {...restProps}>{children}</Tech>
 }
 
 Home.TechImage = function HomeTechImage({ src, ...restProps }) {

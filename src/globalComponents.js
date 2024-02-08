@@ -1,25 +1,9 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
-import * as STYLES from './constants/styles';
 import * as COLORS from './constants/colors';
 import { VIEWPORT } from './constants/viewports';
 import { FONT } from './fonts/fonts';
-
-// ======
-
-export const MainText = styled.p`
-    font-family: ${FONT.calibreBold};
-    font-weight: 100;
-    color: ${STYLES.COLOR_ON_BACKGROUND};
-`;
-
-export const SecondaryText = styled.p`
-    font-family: ${FONT.secondary};
-    color: ${STYLES.COLOR_LIGHT_GRAY};
-`;
-
-// ======
 
 export const TextExtraSmall = styled.p`
     font-size: 1rem;
@@ -71,67 +55,11 @@ export const SubTitle = styled(TextMedium)`
     font-size: ${({ fontSize }) => (fontSize)};
 `
 
-export const Text = styled(TextExtraSmall)`
-
-    /* @media ${VIEWPORT.tabletUp} {
-        font-size: 3rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 2.5rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 2.25rem;
-    } */
-`;
-
-export const BigText = styled(MainText)`
-    font-size: 3rem;
-
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 5rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 4rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 4rem;
-    }
-`;
-
 // ======
 
 export const Title = styled(TextLarge)`
     margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
     font-family: ${FONT.calibreBold};
-`;
-
-export const Description = styled(SecondaryText)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '.75rem')};
-    margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
-    color: ${({ type }) => (type === '1' ? `${STYLES.COLOR_ON_BACKGROUND}` : `${STYLES.COLOR_LIGHT_GRAY}`)};
-    line-height: 20px;
-    width: ${({ width }) => (width)};
-    font-size: .75rem;
-    
-    @media ${VIEWPORT.tabletUp} {
-        font-size: 1.25rem;
-        line-height: 32px;
-        margin-top: 1rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 1.10rem;
-        line-height: 28px;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: .97rem;
-        line-height: 24px;
-    }
 `;
 
 export const Button = styled(Link)`
@@ -171,7 +99,7 @@ export const Divider = styled.div`
     width: 30px;
     height: 7px;
     border-radius: 50px;
-    background-color: ${({ type }) => (type === '1'? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
+    background-color: ${({ type }) => (type === '1'? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
 
     @media ${VIEWPORT.tabletUp} {
         width: 50px;
@@ -188,7 +116,7 @@ export const MiniDivider = styled(Divider)`
 
 export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE2}`)};
+    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: 1rem;
     font-family: ${FONT.sfMonoRegular};
     text-decoration: none;
@@ -226,31 +154,6 @@ export const TextLinkContainer = styled.div`
     justify-content: space-between;
 `;
 
-export const Filter = styled.div`
-    border-radius: 10px;
-    background-color: ${({ type }) => (type === '1'? `${STYLES.COLOR_SURFACE1}` : `${STYLES.COLOR_SURFACE3}`)};
-    padding: .75rem .95rem;
-    cursor: ${({ cursor }) => (cursor? cursor : "pointer")};
-    margin: 0.5rem;
-
-    &:hover {
-        background-color: ${STYLES.COLOR_SURFACE1};
-    }
-
-    @media ${VIEWPORT.tabletUp} {
-        border-radius: 15px;
-        padding: 1.35rem 1.65rem;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        padding: 1.15rem 1.45rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        padding: 1rem 1.2rem;
-    }
-`;
-
 export const SocialIcon = styled.a`
     width: 40px;
     height: 40px;
@@ -264,15 +167,15 @@ export const SocialIcon = styled.a`
     svg {
         width: 20px;
         height: 20px;
-        color: ${STYLES.COLOR_ON_SURFACE};
+        color: ${COLORS.COLOR_ON_SURFACE};
     }
 
     &:hover {
-        background-color: ${STYLES.COLOR_SURFACE1};
-        border-color: ${STYLES.COLOR_SURFACE1};
+        background-color: ${COLORS.COLOR_SURFACE1};
+        border-color: ${COLORS.COLOR_SURFACE1};
   
         svg {
-          color: ${STYLES.COLOR_ON_SURFACE};
+          color: ${COLORS.COLOR_ON_SURFACE};
         }
     }
 
@@ -370,11 +273,6 @@ export const BoxFlex = styled.div`
     justify-content: ${({ justifyContent }) => (justifyContent)};
     align-items: ${({ alignItems }) => (alignItems)};
     flex-direction: ${({ flexDirection }) => (flexDirection === "column"? "column" : "row")};
-`;
-
-export const SpanBoldText = styled.span`
-    font-weight: bold;
-    color: ${({ color }) => (color? color : `${STYLES.COLOR_LIGHT_GRAY}`)};
 `;
 
 export const SpaceWidthSmall = styled.div`

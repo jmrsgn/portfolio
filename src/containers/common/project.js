@@ -6,7 +6,7 @@ import { Title,
          SocialIcon,
          BoxFlex, 
          SubTitle, 
-         Description} from "../../globalComponents";
+         DescriptionText } from "../../globalComponents";
 
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCaretBack } from "react-icons/io5";
@@ -49,9 +49,9 @@ export function ProjectContainer(props) {
                 <Project.InfoContainer>
                     <SubTitle>What I did</SubTitle>
 
-                    <Description marginTop="1rem">
+                    <DescriptionText marginTop="1rem">
                         {props.whatIDid}
-                    </Description>
+                    </DescriptionText>
                 </Project.InfoContainer>
 
                 <Project.InfoContainer>
@@ -72,7 +72,7 @@ export function ProjectContainer(props) {
                                             src={tech.src}
                                             height="40px"
                                         />
-                                        <Description marginTop="1rem">{tech.name}</Description>
+                                        <DescriptionText marginTop="1rem">{tech.name}</DescriptionText>
                                     </BoxFlex>
                                 )))
                             )

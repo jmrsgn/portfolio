@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../constants/styles';
 import * as COLORS from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
 import { TechText, Text, TextSmall } from '../../../globalComponents';
@@ -7,7 +6,7 @@ import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG1};
+    background-color: ${COLORS.COLOR_BG1};
 `;
 
 export const Box = styled.div`
@@ -41,31 +40,6 @@ export const SubBox = styled.div`
     flex-direction: ${({ flexDirection }) => (flexDirection? flexDirection : 'row')};
     justify-content: center;
 `;
-
-export const Arrow = styled.div`
-
-`
-
-export const SkillsContainer = styled.div`
-    
-`;
-
-export const Skill = styled.div`   
-    
-`;
-
-export const SkillImage = styled.img`
-
-`;
-
-export const SkillTitle = styled(Text)`
-    
-`
-
-export const Experience = styled.div`
-
-`;
-
 
 export const CertificatesContainer = styled.div`
     display: flex;

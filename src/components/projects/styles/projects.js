@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../constants/styles';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { TechText, TextMedium } from '../../../globalComponents';
@@ -7,7 +6,7 @@ import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG2};
+    background-color: ${COLORS.COLOR_BG2};
 `;
 
 export const Box = styled.div`
@@ -36,15 +35,6 @@ export const SubBox = styled.div`
     }
 `;
 
-export const FilterContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 4rem 0 2rem;
-`;
-
 export const NavigationContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -58,12 +48,14 @@ export const Project = styled.div`
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
-    min-width: 600px; 
+    min-width: 450px;
     min-height: 200px;
-    width: 600px;
+    width: 450px;
     box-shadow: 0px 5px 5px #161C24;
     transition: .3s ease-in;
     cursor: default;
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
 
     svg {
         cursor: pointer;
@@ -73,71 +65,27 @@ export const Project = styled.div`
     &:hover {
         opacity: 1 !important;
     }
-
-    /* @media ${VIEWPORT.tabletUp} {
-        border-radius: 20px;
-        width: 500px;
-        min-width: 500px;
-        padding: 2rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 700px;
-        min-width: 700px;
-    } */
 `;
 
 export const ProjectsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin: 0 auto;
     margin-top: 5rem;
+    gap: 0.5rem;
+
+    display: column;
+    columns: 3;
 
     &:hover {
         ${Project} {
             opacity: .5;
         }
     }
-
-    /* @media ${VIEWPORT.tabletUp} {
-        margin-top: 3rem;
-    } */
-
-    /* @media ${VIEWPORT.tabletLandscapeUp} {
-        div {
-            &:nth-child(even) {
-                ${SubBox} {
-                    flex-direction: row-reverse;
-                }
-            }
-        }
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        margin-top: 0;
-    } */
 `;
-
-
 
 
 export const ProjectTitle = styled(TextMedium)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     font-family: ${FONT.calibreRegular};
-
-    /* @media ${VIEWPORT.tabletUp} {
-        font-size: 2.5rem;
-        line-height: 56px;
-    }
-
-    @media ${VIEWPORT.tabletLandscapeUp} {
-        font-size: 2.25rem;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1.85rem;
-        line-height: 42px;
-    } */
 `;
 
 export const TagsContainer = styled.div`
@@ -163,10 +111,4 @@ export const Tag = styled.div`
 export const TagText = styled(TechText)`
     color: ${COLORS.COLOR_SURFACE2};
     font-size: .75rem;
-`;
-
-export const TechContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;  
 `;

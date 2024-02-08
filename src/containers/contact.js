@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GiHand } from "react-icons/gi";
 
-import { Title, Divider, DescriptionText, Button, TechText } from '../globalComponents';
+import { Title, 
+         Divider, 
+         DescriptionText, 
+         Button, 
+         TechText } from '../globalComponents';
 import { Contact } from '../components';
-
-import techData from '../fixtures/tech.json';
 
 export function ContactContainer() {
     return (
         <Contact id="contact">
             <motion.div
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.5 }}
+                whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <Contact.Box>
                     <Contact.SubBox>

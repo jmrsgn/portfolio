@@ -1,12 +1,10 @@
 import styled from 'styled-components/macro';
-import * as STYLES from '../../../constants/styles';
+import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { Text } from '../../../globalComponents';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${STYLES.COLOR_BG2};
+    background-color: ${COLORS.COLOR_BG2};
 `;
 
 export const Box = styled.div`
@@ -37,20 +35,3 @@ export const SubBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
 `;
-
-export const ImagesContainer = styled.div`
-    
-`;
-
-export const Image = styled.img`
-    
-`;
-
-export const ButtonText = styled(Text)`
-    
-`
-
-export const Button = styled(Link)`
-    
-`;
-

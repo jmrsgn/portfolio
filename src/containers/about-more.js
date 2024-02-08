@@ -1,6 +1,6 @@
 import React from "react";
 import { About } from "../components";
-import { Title, Divider, SmallText, TextLink } from '../globalComponents';
+import { Title, Divider } from '../globalComponents';
 
 import { IoCaretBack } from "react-icons/io5";
 

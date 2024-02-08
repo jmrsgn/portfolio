@@ -2,15 +2,13 @@ import React from "react";
 import { Container, 
          Box,
          SubBox,
-         FilterContainer,
          ProjectsContainer,
          Project,
          ProjectTitle,
          TagsContainer,
          Tag,
          TagText,
-         TechContainer,
-         NavigationContainer} from './styles/projects';
+         NavigationContainer } from './styles/projects';
 
 export default function Projects({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -22,10 +20,6 @@ Projects.Box = function ProjectsBox({ children, ...restProps }) {
 
 Projects.SubBox = function ProjectsSubBox({ children, ...restProps }) {
     return <SubBox {...restProps}>{children}</SubBox>
-}
-
-Projects.FiltersContainer = function ProjectsFilterContainer({ children, ...restProps }) {
-    return <FilterContainer {...restProps}>{children}</FilterContainer>
 }
 
 Projects.ProjectsContainer = function ProjectsProjectsContainer({ children, ...restProps}) {
@@ -50,10 +44,6 @@ Projects.Tag = function ProjectsTag({ children, ...restProps }) {
 
 Projects.TagText = function ProjectsTagText({ children, ...restProps }) {
     return <TagText {...restProps}>{children}</TagText>
-}
-
-Projects.TechContainer = function ProjectsTechContainer({ children, ...restProps }) {
-    return <TechContainer {...restProps}>{children}</TechContainer>
 }
 
 Projects.NavigationContainer = function ProjectsNavigationContainer({ children, ...restProps }) {

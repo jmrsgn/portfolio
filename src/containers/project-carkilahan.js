@@ -2,9 +2,8 @@ import React from 'react';
 import { ProjectContainer } from './common/project';
 
 import { Project } from '../components';
-import { SpanBoldText,
-         BoxFlex, 
-         Description} from "../globalComponents";
+import { BoxFlex, 
+         DescriptionText } from "../globalComponents";
 
 export function ProjectCarkilahanContainer() {
     const projectName = "Carkilahan";
@@ -13,17 +12,17 @@ export function ProjectCarkilahanContainer() {
         <>
             <BoxFlex flexDirection="column">
                 <Project.TextDiv>
-                    <Description>
-                        Carkilahan is an Android application created by <SpanBoldText color="#3AAFC9">Java</SpanBoldText>, and used <SpanBoldText color="#3AAFC9">Firebase</SpanBoldText> for the back-end side. It is an application that helps user to book a car for their journey, and also my first application ever built.
-                    </Description>
+                    <DescriptionText>
+                        Carkilahan is an Android application created by Java, and used Firebase for the back-end side. It is an application that helps user to book a car for their journey, and also my first application ever built.
+                    </DescriptionText>
 
-                    <Description marginTop="1rem">
+                    <DescriptionText marginTop="1rem">
                         This is our mini-project in College, and this is also the reason why I fell in love with Android Development. 
-                    </Description>
+                    </DescriptionText>
 
-                    <Description marginTop="1rem">
+                    <DescriptionText marginTop="1rem">
                         I have 0% knowledge before our professor gave this task to us, so I have no choice but to study how to make a simple Android application using Java. After hours of studying and searching for solutions online. I didn't notice that I have created my very first Java application with minimal features and connect it to the back-end.
-                    </Description>
+                    </DescriptionText>
                 </Project.TextDiv>
             </BoxFlex>
         </>

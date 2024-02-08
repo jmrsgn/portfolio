@@ -65,51 +65,44 @@ export function ProjectsContainer() {
                                 transition={{ duration: 0.5 }}
                             >
                                 <Projects.Project>
-                                    <SubBox
-                                        flexDirection='column'
-                                    >
+                                    <SubBox flexDirection='column'>
                                         <SubBox
                                             flexDirection='row'
                                             justifyContent='space-between'
                                         >
                                             <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
                                             <Projects.NavigationContainer>
-                                                <NavigationIcon 
-                                                    type='2'
-                                                    href={item.href} target={"_blank"}>
-                                                    <AiFillGithub 
-                                                        size={25}
-                                                    />
-                                                </NavigationIcon>
+                                                {item.github !== ""? 
+                                                <>
+                                                    <NavigationIcon 
+                                                        type='2'
+                                                        href={item.github} target={"_blank"}>
+                                                        <AiFillGithub 
+                                                            size={25}
+                                                        />
+                                                    </NavigationIcon>
 
-                                                <SpaceWidthSmall />
+                                                    <SpaceWidthSmall />
+                                                </>:<></>
+                                                }
                                                 
-                                                <NavigationIcon 
-                                                    type='2'
-                                                    href={item.href} target={"_blank"}>
-                                                    <BsArrowUpRight 
-                                                        size={25}
-                                                    />
-                                                </NavigationIcon>
+                                                {item.href !== ""? 
+                                                <>
+                                                    <NavigationIcon 
+                                                        type='2'
+                                                        href={item.href} target={"_blank"}>
+                                                        <BsArrowUpRight 
+                                                            size={25}
+                                                        />
+                                                    </NavigationIcon>
+                                                </>:<></>
+                                                }
                                             </Projects.NavigationContainer>
-                                           
-                                            
                                         </SubBox>
                                         
                                         <DescriptionText
                                             marginTop="24px"
                                         >{item.description}</DescriptionText>
-
-                                            {/* {item.link !== "" && 
-                                                <TextLink  
-                                                    marginTop="24px"
-                                                    type='2' 
-                                                    to={item.link}
-                                                    target={"_blank"}
-                                                >
-                                                    Read more
-                                                </TextLink> 
-                                            } */}
                                         <Projects.TagsContainer>
                                             {item.tech.map(( tag ) => (
                                                 <Projects.Tag>
@@ -122,9 +115,6 @@ export function ProjectsContainer() {
                             </motion.div>   
                         ))}
                     </Projects.ProjectsContainer>
-                    <Projects.TechContainer>
-                        
-                    </Projects.TechContainer>
                 </Projects.Box>
             </motion.div>
         </Projects>

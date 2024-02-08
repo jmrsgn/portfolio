@@ -99,7 +99,7 @@ export const TechSkillsContainer = styled.div`
     }
 `;
 
-export const TechBubbleContainer = styled.div`
+export const TechContainer = styled.div`
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
@@ -107,7 +107,7 @@ export const TechBubbleContainer = styled.div`
     align-items: center;
 `;
 
-export const TechBubble = styled.div`
+export const Tech = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -5,7 +5,9 @@
         "position": "Software Engineer, Associate",
         "company": "Infor",
         "learnings": [
-            "I am working as an Associate Software Engineer at Infor and part of the MSCM Android Team. Grateful working with great people that helps me strive to learn more about Software Development."
+            "I am working as an Associate Software Engineer at Infor and part of the MSCM Android Team. Grateful working with great people that helps me strive to learn more about Software Development.",
+            "I am one of the handheld developers, or mobile developers in the team. We currently use Java for building native apps, and Ionic JS for the hybrid mobile apps. JIRA is also used for monitoring of tasks, and Oxford GitLab for the version control.",
+            "For the past almost two years of working in the company, I found people that really inspires me to be better as I see how good they are technically. I also like how their personality fits my needs as a slow learner."
         ]
     },
     {
@@ -14,7 +16,7 @@
         "position": "IT Specialist Intern",
         "company": "Miyens",
         "learnings": [
-            "I learned how to make a couple of web pages using WordPress, doing maintenance with other tasks, and so much more. It’s sad to think there are no code-related tasks in our training, but I am happy that I made it through."
+            "I worked as an IT Specialist Intern in my OJT training at Miyens. I learned how to make a couple of web pages using WordPress, made a simple UI/UX for the team, and did maintenance with other tasks. Unfortunately there are no code-related tasks that suppposedly be my 'getting ready' in the corporate world, but I am still happy that I made it through."
         ]
     }
 ]

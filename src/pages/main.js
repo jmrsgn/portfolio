@@ -1,23 +1,27 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 
 import { HomeContainer } from "../containers/home";
 import { ProjectsContainer } from "../containers/projects";
 import { NavBarContainer } from "../containers/navbar";
-import { SkillsExpContainer } from "../containers/skills-exp";
+import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
 import { useInView } from "react-intersection-observer";
 
-
 export default function Main() {
-    const { ref: homeRef, inView: isHomeVisible } = useInView();
-    const { ref: projectsRef, inView: isProjectsVisible } = useInView();
+    const { ref: homeRef, inView: isHomeVisible } = useInView({ threshold: 0.75 });
+    const { ref: projectsRef, inView: isProjectsVisible } = useInView({ threshold: 0.75 });
+    const { ref: experiencesRef, inView: isExperiencesVisible } = useInView({ threshold: 0.75 });
+    const { ref: contactRef, inView: isContactVisible } = useInView({ threshold: 0.75 });
 
-    const [activeTab, setActiveTab] = useState('home');
+    const homeActive = isHomeVisible? 'home' : '';
+    const projectsActive = isProjectsVisible? 'projects' : '';
+    const experiencesActive = isExperiencesVisible? 'experiences' : '';
+    const contactActive = isContactVisible? 'contact' : '';
 
     return (
         <>
             <NavBarContainer 
-                visibleTab={activeTab}
+                visibleTab={homeActive || projectsActive || experiencesActive || contactActive}
             />    
             
             <div ref={homeRef}>
@@ -27,9 +31,14 @@ export default function Main() {
             <div ref={projectsRef}>
                 <ProjectsContainer />
             </div>
-            
-            <SkillsExpContainer />
-            <ContactContainer />
+
+            <div ref={experiencesRef}>
+                <ExperiencesContainer />
+            </div>
+
+            <div ref={contactRef}>
+                <ContactContainer />
+            </div>
         </>
     )
 }

@@ -7,6 +7,7 @@
         "development": false,
         "src": "../images/projects/expresso-1.png",
         "href": "/projects/expresso",
+        "github": "https://github.com/jmrsgn/expresso",
         "tech": [
             {
                 "name": "Java",
@@ -36,7 +37,6 @@
             "../images/projects/expresso-4.png"
         ]
     },
-
     {
         "id": 2,
         "title": "Carkilahan",
@@ -45,6 +45,7 @@
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
         "href": "/projects/carkilahan",
+        "github": "https://github.com/jmrsgn/carkilahan",
         "tech": [
             {
                 "name": "Java",
@@ -53,6 +54,31 @@
             {
                 "name": "Firebase",
                 "src": "../images/tech/firebase.svg"
+            }
+        ],
+        "screenshots": []
+    },
+    {
+        "id": 3,
+        "title": "Portfolio",
+        "description": "A simple portfolio I made to express what I do in life, and you are currently viewing it. I used React JS in building the website, styled-components to design my widgets, and deploy it in Netlify.",
+        "filter": "Web",
+        "development": false,
+        "src": "",
+        "github": "",
+        "href": "",
+        "tech": [
+            {
+                "name": "React JS",
+                "src": ""
+            },
+            {
+                "name": "styled-components",
+                "src": ""
+            },
+            {
+                "name": "Netlify",
+                "src": ""
             }
         ],
         "screenshots": []
