@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Title, 
          Divider, 
          DescriptionText, 
-         Button, 
          TechText } from '../globalComponents';
 import { Contact } from '../components';
 
@@ -27,9 +26,9 @@ export function ContactContainer() {
                                 Feel free to message me if you have a question or just wanted to say hello. I am always free for suggestions on what to improve.
                             </DescriptionText>
 
-                            <Button to="mailto:marasiganjohnmartin@gmail.com">
+                            <Contact.Button href="mailto:marasiganjohnmartin@gmail.com">
                                 Say "Hello"
-                            </Button>
+                            </Contact.Button>
                         </Contact.InfoContainer>
                         
                         <TechText

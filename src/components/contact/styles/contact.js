@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
+import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -43,4 +44,32 @@ export const SubBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+`;
+
+export const Button = styled.a`
+    background-color: ${COLORS.COLOR_BG1};
+    font-family: ${FONT.sfMonoRegular};
+    border: 1px solid ${COLORS.COLOR_SURFACE1};
+    color: ${COLORS.COLOR_SURFACE1};
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    width: 150px;
+    box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
+
+    margin-top: 3rem;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .1s ease-in;
+
+    &:hover {
+        box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 200px;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 `;

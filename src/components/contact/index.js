@@ -2,7 +2,8 @@ import React from "react";
 import { Container,
          Box,
          InfoContainer, 
-         SubBox} from './styles/contact';
+         SubBox,
+         Button } from './styles/contact';
 
 export default function Contact({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -18,4 +19,8 @@ Contact.InfoContainer = function ContactInfoContainer({ children, ...restProps }
 
 Contact.SubBox = function ContactSubBox({ children, ...restProps }) {
     return <SubBox {...restProps}>{children}</SubBox>
+}
+
+Contact.Button = function ContactButton({ children, ...restProps }) {
+    return <Button {...restProps}>{children}</Button>
 }
