@@ -27,21 +27,29 @@ export const TextExtraLarge = styled.p`
 
 // ======
 
-export const TechText = styled(TextExtraSmall)`
+export const TechText = styled.p`
     font-family: ${FONT.sfMonoRegular};
     color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
-    font-size: ${({ fontSize }) => (fontSize)};
+    font-size: 0.75rem;
     margin: ${({ margin }) => (margin)};
 
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
 `;
 
-export const DescriptionText = styled(TextSmall)`
+export const DescriptionText = styled.p`
     font-family: ${FONT.calibreRegular};
-    font-size: ${({ fontSize }) => (fontSize)};
+    font-size: 1rem;
     color: ${COLORS.COLOR_LIGHT_GRAY};
-    line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '24px')};
+    line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '22px')};
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     margin-left: ${({ marginLeft }) => (marginLeft)};
+
+    @media ${VIEWPORT.desktopUp} {
+        line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '26px')};
+        font-size: 1.2rem;
+    }
 `;
 
 export const FilterText = styled(DescriptionText)`
@@ -49,17 +57,28 @@ export const FilterText = styled(DescriptionText)`
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
-export const SubTitle = styled(TextMedium)`
+export const SubTitle = styled.p`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-family: ${({ isBold }) => (isBold === 'true' ? `${FONT.calibreBold}` : `${FONT.calibreRegular}`)};
-    font-size: ${({ fontSize }) => (fontSize)};
+    font-size: 1.3rem;
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_SURFACE};
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.75rem;
+    }
 `
 
 // ======
 
-export const Title = styled(TextLarge)`
-    margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
+export const Title = styled.p`
     font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+    font-size: 2.5rem;
+    margin-top: 2rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 3.5rem;
+    }
 `;
 
 export const Button = styled(Link)`
@@ -67,9 +86,9 @@ export const Button = styled(Link)`
     font-family: ${FONT.sfMonoRegular};
     border: 1px solid ${COLORS.COLOR_SURFACE1};
     color: ${COLORS.COLOR_SURFACE1};
-    font-size: 1rem;
-    padding: 1rem;
-    width: 200px;
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    width: 150px;
     box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
 
     margin-top: 3rem;
@@ -81,6 +100,12 @@ export const Button = styled(Link)`
 
     &:hover {
         box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 200px;
+        padding: 1rem;
+        font-size: 1rem;
     }
 `;
 
@@ -117,7 +142,7 @@ export const MiniDivider = styled(Divider)`
 export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-family: ${FONT.sfMonoRegular};
     text-decoration: none;
     transition: .1s ease-in;
@@ -143,6 +168,10 @@ export const TextLink = styled(Link)`
 
     &:hover::after {
         transform: scaleX(1);
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
     }
 `;
 

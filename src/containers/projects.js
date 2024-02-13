@@ -66,7 +66,7 @@ export function ProjectsContainer() {
                             >
                                 <Projects.Project>
                                     <SubBox flexDirection='column'>
-                                        <SubBox
+                                        <Projects.ProjectTitleNavContainer
                                             flexDirection='row'
                                             justifyContent='space-between'
                                         >
@@ -98,7 +98,7 @@ export function ProjectsContainer() {
                                                 </>:<></>
                                                 }
                                             </Projects.NavigationContainer>
-                                        </SubBox>
+                                        </Projects.ProjectTitleNavContainer>
                                         
                                         <DescriptionText
                                             marginTop="24px"

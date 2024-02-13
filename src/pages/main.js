@@ -20,9 +20,9 @@ export default function Main() {
 
     return (
         <>
-            <NavBarContainer 
+            {/* <NavBarContainer 
                 visibleTab={homeActive || projectsActive || experiencesActive || contactActive}
-            />    
+            />     */}
             
             <div ref={homeRef}>
                 <HomeContainer />

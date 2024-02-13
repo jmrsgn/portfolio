@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { COLOR_ON_BACKGROUND, COLOR_SURFACE1 } from '../../../constants/styles';
-import { Link } from 'react-router-dom';
 
 
 export const Nav = styled.a`
@@ -19,24 +17,43 @@ export const Nav = styled.a`
         transition: .3s ease-in;
 
         &:hover {
-            color: ${COLOR_SURFACE1};
+            color: ${COLORS.COLOR_SURFACE1};
         }
     }
 `;
 
 export const Container = styled.div`
-    height: 50vh;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 0px 10px 10px 0px;
-    width: 4rem;
-    background-color: #151C27;
+    /* height: 2rem;
+    padding: 2rem;
+    width: 100vw;
+    bottom: 0;
+    overflow: hidden;
     position: fixed;
-    top: 50%;
-    bottom: 50%;
+
+    background-color: #151C27;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; */
+
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    /* @media ${VIEWPORT.desktopUp} {
+        padding: 0;
+        height: 50vh;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 0px 10px 10px 0px;
+        width: 4rem;
+        top: 50%;
+        bottom: 50%;
+        flex-direction: column;
+        justify-content: center;
+    } */
 `;
 

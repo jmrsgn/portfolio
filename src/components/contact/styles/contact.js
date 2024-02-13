@@ -8,13 +8,18 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
-    width: 85%;
+    width: 100%;
     height: 100vh;
     margin: 0 auto 0 auto;
-    padding: 5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;  
     text-align: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 85%;
+        padding: 5rem;
+    }
 `;
 
 export const InfoContainer = styled.div`
@@ -22,11 +27,15 @@ export const InfoContainer = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 80%;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);   
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 30%;
+    }
 `;
 
 export const SubBox = styled.div`

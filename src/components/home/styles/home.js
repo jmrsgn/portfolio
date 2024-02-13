@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { TextExtraLarge, TextExtraSmall, TextSmall } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';
 
 
@@ -19,20 +18,28 @@ export const InfoBox = styled.div`
 `;
 
 export const SubBox = styled.div`
-    margin-top: ${({ marginTop }) => (marginTop)};
     display: flex;
-    flex-direction: ${({ flexDirection }) => (flexDirection? flexDirection : 'row')};
+    flex-direction: column;
     justify-content: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
+    }
 `;
 
 export const Box = styled.div`
     display: flex;
-    width: 85%;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto 0 auto;
-    padding: 5rem;
+    padding: 1.5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 85%;
+        padding: 5rem;
+    }
 `;
 
 export const GreetingsContainer = styled.div`
@@ -45,12 +52,20 @@ export const GreetingsContainer = styled.div`
 export const SocialContainer = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 3rem;
+    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
+    }
 `;
 
 export const TechSkillImage = styled.img`
     transition: .3s ease-in;
-    height: 30px;
+    height: 20px;
+
+    @media ${VIEWPORT.desktopUp} {
+        height: 30px;
+    }
 `;
 
 export const TechSkill = styled.div`
@@ -75,16 +90,23 @@ export const TechSkill = styled.div`
     }
 `;
 
-export const TechSkillDescription = styled(TextExtraSmall)`
+export const TechSkillDescription = styled.p`
     font-family: ${FONT.calibreRegular};
+    font-size: 0.9rem;
     margin-top: 2rem;
     transition: .3s ease-in;
     color: ${COLORS.COLOR_LIGHT_GRAY};
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+        line-height: 22px;
+    }
 `;
 
 export const TechSkillsContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 5rem;
     justify-content: space-around;
     width: 100%;
 
@@ -95,6 +117,18 @@ export const TechSkillsContainer = styled.div`
 
         ${TechSkillImage} {
             filter: grayscale(100%);
+        }
+    }
+
+    ${TechSkill} {
+        margin-top: 0.5rem;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
+
+        ${TechSkill} {
+            margin-top: 0;
         }
     }
 `;
@@ -133,15 +167,38 @@ export const TechSkillSubBox = styled.div`
     align-items: center;
 `;
 
-export const TechSkillTitle = styled(TextSmall)`
+export const TechSkillTitle = styled.p`
     font-family: ${FONT.calibreRegular};
+    font-size: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.25rem;
+    }
 `;
 
-// ========
-
-export const Greeting = styled(TextExtraLarge)`
+export const Greeting = styled.p`
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
-
+    font-size: 3rem;
     margin-top: 2rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 5rem;
+    }
+`;
+
+export const WhatIDoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+export const TechText = styled.p`
+    font-family: ${FONT.sfMonoRegular};
+    color: ${COLORS.COLOR_SURFACE1};
+    font-size: 0.65rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 0.75rem;
+    }
 `;

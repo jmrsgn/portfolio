@@ -112,15 +112,13 @@ export function HomeContainer() {
                     </Home.InfoBox>
                 </Home.SubBox>
 
-                <Home.SubBox
-                    flexDirection="column"
-                >
+                <Home.WhatIDoContainer>
                     <Home.TechSkillsContainer>
                         {whatIDoData.map((item) => (
                             <Home.TechSkill 
                                 key={item.id}>
                                 <Home.TechSkillSubBox>
-                                    <Home.TechSkillTitle marginTop="24  px">{item.title}</Home.TechSkillTitle>
+                                    <Home.TechSkillTitle marginTop="24px">{item.title}</Home.TechSkillTitle>
                                     <Home.TechSkillImage src={item.src} />
                                 </Home.TechSkillSubBox>
                                     
@@ -135,14 +133,11 @@ export function HomeContainer() {
                         {skillsData.map((skill) => (
                             <Tech>
                                 <AiOutlineCaretRight />
-                                <TechText
-                                    fontSize=".75rem"
-                                    margin=".25rem"
-                                >{skill.name}</TechText>
+                                <Home.TechText>{skill.name}</Home.TechText>
                             </Tech>
                         ))}
                     </Home.TechContainer>
-                </Home.SubBox>
+                </Home.WhatIDoContainer>
             </Home.Box>
         </Home>
     )

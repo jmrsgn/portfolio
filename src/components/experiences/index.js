@@ -6,9 +6,11 @@ import { Container,
          Date,
          Position,
          Company,
-         SubBox,
+         SubTitleSubBox,
          ExperienceTabsContainer,
          ExperienceTab,
+         ExperiencesSubBox,
+         CertificatesSubBox,
          InfoContainer,
          DisplayContainer,
          ExperienceContainer,
@@ -55,8 +57,16 @@ Experiences.Company = function ExperiencesCompany({ children, ...restProps }) {
     return <Company {...restProps}>{children}</Company>
 }
 
-Experiences.SubBox = function ExperiencesSubBox({ children, ...restProps }) {
-    return <SubBox {...restProps}>{children}</SubBox>
+Experiences.SubTitleSubBox = function ExperiencesSubTitleSubBox({ children, ...restProps }) {
+    return <SubTitleSubBox {...restProps}>{children}</SubTitleSubBox>
+}
+
+Experiences.ExperiencesSubBox = function ExperiencesExperiencesSubBox({ children, ...restProps }) {
+    return <ExperiencesSubBox {...restProps}>{children}</ExperiencesSubBox>
+}
+
+Experiences.CertificatesSubBox = function ExperiencesCertificatesSubBox({ children, ...restProps }) {
+    return <CertificatesSubBox {...restProps}>{children}</CertificatesSubBox>
 }
 
 Experiences.ExperienceTabsContainer = function ExperiencesExperienceTabsContainer({ children, ...restProps }) {

@@ -25,7 +25,7 @@ export function ExperiencesContainer() {
                     <Divider type='1' />
 
                     <Experiences.InfoContainer>
-                        <Experiences.SubBox>
+                        <Experiences.ExperiencesSubBox>
                             <Experiences.ExperiencesContainer>
                                 <Experiences.ExperienceTabsContainer>
                                     {experiencesData.map((item) => (
@@ -54,29 +54,24 @@ export function ExperiencesContainer() {
                                     </Experiences.ExperienceContainer>
                                 </Experiences.DisplayContainer>
                             </Experiences.ExperiencesContainer>
-                            
-                        </Experiences.SubBox>
+                        </Experiences.ExperiencesSubBox>
 
-                        <Experiences.SubBox
-                            flexDirection='column'
-                        >
+                        <Experiences.CertificatesSubBox>
                             <Experiences.CertificatesContainter>
-                                <SubBox
-                                    flexDirection='row-reverse'
-                                >
+                                <Experiences.SubTitleSubBox>
                                     <SubTitle
                                         isBold='true'
                                         fontSize='2rem'
                                     >Certificates & Badges</SubTitle>
-                                </SubBox>
+                                </Experiences.SubTitleSubBox>
 
                                 {certificatesData.map((item) => (
                                     <Experiences.CertificateContainer>
+                                        <Experiences.Certificate src={item.src} />
                                         <Experiences.CertificateInfoContainer>
                                             <Experiences.CertificateTitle>{item.title}</Experiences.CertificateTitle>
                                             <Experiences.CertificateYear>{item.year}</Experiences.CertificateYear>
                                         </Experiences.CertificateInfoContainer>
-                                        <Experiences.Certificate src={item.src} />
                                     </Experiences.CertificateContainer>
                                 ))}
                             </Experiences.CertificatesContainter>
@@ -86,7 +81,7 @@ export function ExperiencesContainer() {
                                     <Experiences.Badge src={item.src} />
                                 ))}
                             </Experiences.BadgesContainer>
-                        </Experiences.SubBox>
+                        </Experiences.CertificatesSubBox>
                     </Experiences.InfoContainer>
                 </Experiences.Box>
             </motion.div>

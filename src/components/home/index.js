@@ -14,7 +14,9 @@ import { Container,
          TechSkillDescription,
          Tech,
          TechImage,
-         TechContainer } from './styles/home';
+         TechContainer, 
+         WhatIDoContainer, 
+         TechText} from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -78,5 +80,13 @@ Home.Tech = function HomeTech({ children, ...restProps }) {
 
 Home.TechImage = function HomeTechImage({ src, ...restProps }) {
     return <TechImage {...restProps} src={src} />
+}
+
+Home.WhatIDoContainer = function HomeWhatIDoContainer({ children, ...restProps }) {
+    return <WhatIDoContainer {...restProps}>{children}</WhatIDoContainer>
+}
+
+Home.TechText = function HomeTechText({ children, ...restProps }) {
+    return <TechText {...restProps}>{children}</TechText>
 }
 

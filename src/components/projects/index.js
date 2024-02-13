@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, 
          Box,
-         SubBox,
+         ProjectTitleNavContainer,
          ProjectsContainer,
          Project,
          ProjectTitle,
@@ -18,8 +18,8 @@ Projects.Box = function ProjectsBox({ children, ...restProps }) {
     return <Box {...restProps}>{children}</Box>
 }
 
-Projects.SubBox = function ProjectsSubBox({ children, ...restProps }) {
-    return <SubBox {...restProps}>{children}</SubBox>
+Projects.ProjectTitleNavContainer = function ProjectsProjectTitleNavContainer({ children, ...restProps }) {
+    return <ProjectTitleNavContainer {...restProps}>{children}</ProjectTitleNavContainer>
 }
 
 Projects.ProjectsContainer = function ProjectsProjectsContainer({ children, ...restProps}) {
