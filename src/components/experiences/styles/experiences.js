@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/styles';
 import { VIEWPORT } from '../../../constants/viewports';
-import { TechText, Text, TextSmall } from '../../../globalComponents';
+import { TechText } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled.div`
@@ -221,7 +221,7 @@ export const Date = styled(TechText)`
     color: ${COLORS.COLOR_LIGHT_GRAY};
 `;
 
-export const Position = styled(TextSmall)`
+export const Position = styled.p`
     font-size: 1.3rem;
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};

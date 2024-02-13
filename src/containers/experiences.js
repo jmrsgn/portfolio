@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
 
-import { Title, 
-         SubBox, 
+import { Title,
          DescriptionText, 
          SubTitle, 
          Divider } from "../globalComponents";
