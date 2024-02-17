@@ -31,9 +31,7 @@ export function ContactContainer() {
                             </Contact.Button>
                         </Contact.InfoContainer>
                         
-                        <TechText
-                            type='regular'
-                        >Designed and developed by John Martin</TechText>
+                        <Contact.CopyrightText>Designed and developed by John Martin</Contact.CopyrightText>
                     </Contact.SubBox>
                 </Contact.Box>
             </motion.div>  

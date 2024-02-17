@@ -79,13 +79,16 @@ export const TechSkill = styled.div`
     max-width: 410px;
     transition: .3s ease-in;
     cursor: default;
+    margin: .25rem .5rem;
 
-    &:hover {
-        color: ${COLORS.COLOR_SURFACE1} !important;
-        opacity: 1 !important;
-        
-        ${TechSkillImage} {
-            filter: grayscale(0) !important;
+    @media ${VIEWPORT.desktopUp} {
+        &:hover {
+            color: ${COLORS.COLOR_SURFACE1} !important;
+            opacity: 1 !important;
+            
+            ${TechSkillImage} {
+                filter: grayscale(0) !important;
+            }
         }
     }
 `;
@@ -107,18 +110,7 @@ export const TechSkillsContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
-    justify-content: space-around;
     width: 100%;
-
-    &:hover {
-        ${TechSkill} {
-            opacity: .5;
-        }
-
-        ${TechSkillImage} {
-            filter: grayscale(100%);
-        }
-    }
 
     ${TechSkill} {
         margin-top: 0.5rem;
@@ -129,6 +121,16 @@ export const TechSkillsContainer = styled.div`
 
         ${TechSkill} {
             margin-top: 0;
+        }
+
+        &:hover {
+            ${TechSkill} {
+                opacity: .5;
+            }
+
+            ${TechSkillImage} {
+                filter: grayscale(100%);
+            }
         }
     }
 `;

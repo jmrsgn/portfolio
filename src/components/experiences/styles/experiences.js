@@ -13,7 +13,7 @@ export const Box = styled.div`
     width: 100%;
     min-height: 100vh;
     margin: 0 auto 0 auto;
-    padding: 1.5rem;
+    padding: 2.25rem 1.25rem;
     display: flex;
     flex-direction: column;
 
@@ -241,10 +241,12 @@ export const BadgesContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 
     @media ${VIEWPORT.desktopUp} {
         margin-top: 2rem;
         margin-left: 5rem;
+        margin-bottom: 0;
         align-items: end;
         justify-content: end;
     }

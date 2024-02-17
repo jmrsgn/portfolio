@@ -6,7 +6,10 @@ import { Title,
          SocialIcon,
          BoxFlex, 
          SubTitle, 
-         DescriptionText } from "../../globalComponents";
+         DescriptionText, 
+         NavigationIcon,
+         SpaceWidthSmall,
+         TechText} from "../../globalComponents";
 
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCaretBack } from "react-icons/io5";
@@ -19,71 +22,91 @@ export function ProjectContainer(props) {
         <Project>
             <Project.Box>
                 <Project.ActionContainer>
-                    <Project.NavigationContainer>
-                        <IoCaretBack 
-                            size={40}
-                            onClick={ window.close.bind(this) }
-                        />
-                        <Title marginLeft="30px">{props.projectName}</Title>
-                    </Project.NavigationContainer>
+                    <Title marginLeft="30px">{props.projectName}</Title>
 
-                    <SocialIcon href="#" target={"_blank"}> 
-                        <AiFillGithub />
-                    </SocialIcon>
+                    <Project.NavigationContainer>
+                        <Project.NavigationIcon>
+                            <IoCaretBack 
+                                size={25}
+                                onClick={ window.close.bind(this) }
+                            />
+                        </Project.NavigationIcon>
+
+                        <SpaceWidthSmall />
+
+                        <Project.NavigationIcon type='2' href="#" target={"_blank"}> 
+                            <AiFillGithub />
+                        </Project.NavigationIcon>
+                    </Project.NavigationContainer>
                 </Project.ActionContainer>
 
                 <Divider  
-                    marginTop="10px"
-                    marginLeft="70px"
-                    type="1"
+                   type='2'
                 />
 
-                <Project.SubBox>
-                    {props.projectInfo}
+                <Project.SubBox
+                    marginTop="3rem"
+                >
+                    <Project.ProjectInfoDiv>
+                        {props.projectInfo.map((item, index) => (
+                            <DescriptionText
+                                marginTop={index !== 0? '1rem':'0'}
+                            >{item}</DescriptionText>
+                        ))}
+                    </Project.ProjectInfoDiv>
 
                     <Project.ProjectImage 
                         src={props.projectImage}
                     />
                 </Project.SubBox>
+
+                <Project.SubBox
+                    marginTop='5rem'
+                >
+                    {/* what i did */}
+                    <Project.WhatIDoInfoContainer>
+                        <Project.WhatIDoDiv>
+                            <SubTitle>What I did</SubTitle>
+
+                            <DescriptionText marginTop="2rem">
+                                {props.whatIDid}
+                            </DescriptionText>
+                        </Project.WhatIDoDiv>
+                    </Project.WhatIDoInfoContainer>
+
+                    {/* tech  */}
+                    <Project.TechInfoContainer>
+                        <SubTitle>Tech used</SubTitle>
+
+                        <Project.TechContainer> 
+                            {ProjectsData.map((item) => (
+                                (item.title === props.projectName && 
+                                    (item.tech.map((tech) => (
+                                        <BoxFlex
+                                            margin=".5rem" 
+                                            flexDirection="column"
+                                            textAlign="center"
+                                            width="80px"
+                                            alignItems="center"
+                                        >
+                                            <Project.Tech 
+                                                src={tech.src}
+                                                height="40px"
+                                            />
+                                            <DescriptionText marginTop="1rem">{tech.name}</DescriptionText>
+                                        </BoxFlex>
+                                    )))
+                                )
+                            ))}
+                        </Project.TechContainer>
+                    </Project.TechInfoContainer>
+                </Project.SubBox>
                 
-                <Project.InfoContainer>
-                    <SubTitle>What I did</SubTitle>
-
-                    <DescriptionText marginTop="1rem">
-                        {props.whatIDid}
-                    </DescriptionText>
-                </Project.InfoContainer>
-
-                <Project.InfoContainer>
-                    <SubTitle>Tech used</SubTitle>
-
-                    <Project.TechContainer>
-                        {ProjectsData.map((item) => (
-                            (item.title === props.projectName && 
-                                (item.tech.map((tech) => (
-                                    <BoxFlex
-                                        margin=".5rem" 
-                                        flexDirection="column"
-                                        textAlign="center"
-                                        width="100px"
-                                        alignItems="center"
-                                    >
-                                        <Project.Tech 
-                                            src={tech.src}
-                                            height="40px"
-                                        />
-                                        <DescriptionText marginTop="1rem">{tech.name}</DescriptionText>
-                                    </BoxFlex>
-                                )))
-                            )
-                        ))}
-                    </Project.TechContainer>
-                </Project.InfoContainer>
-
+                {/* screenshots */}
                 {ProjectsData.map((item) => (
                     (item.title === props.projectName && 
                         (item.screenshots.length > 1 && (
-                            <Project.InfoContainer>
+                            <Project.ScreenshotsInfoContainer>
                                 <SubTitle>Screenshots</SubTitle>
 
                                 <Project.ScreenshotContainer>
@@ -98,16 +121,27 @@ export function ProjectContainer(props) {
                                         )))
                                     ))}
                                 </Project.ScreenshotContainer>
-                            </Project.InfoContainer>
+                            </Project.ScreenshotsInfoContainer>
                         )))
                     )
                 )}
 
-                <IoCaretBack 
-                    style={{ cursor: 'pointer' }}
-                    size={40}
-                    onClick={ window.close.bind(this) }
-                />
+                <Project.NavigationContainer
+                    marginTop='3rem'
+                >
+                    <Project.NavigationIcon>
+                        <IoCaretBack 
+                            size={25}
+                            onClick={ window.close.bind(this) }
+                        />
+                    </Project.NavigationIcon>
+
+                    <SpaceWidthSmall />
+
+                    <TechText 
+                        type='regular'
+                    >Return to Home</TechText>
+                </Project.NavigationContainer>
             </Project.Box>
         </Project>
     )

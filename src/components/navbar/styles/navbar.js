@@ -23,27 +23,22 @@ export const Nav = styled.a`
 `;
 
 export const Container = styled.div`
-    /* height: 2rem;
+    height: 2rem;
     padding: 2rem;
     width: 100vw;
     bottom: 0;
     overflow: hidden;
     position: fixed;
+    z-index: 1;
 
     background-color: #151C27;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; */
+    justify-content: space-between;
 
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-    /* @media ${VIEWPORT.desktopUp} {
+    @media ${VIEWPORT.desktopUp} {
         padding: 0;
         height: 50vh;
         margin-top: auto;
@@ -54,6 +49,6 @@ export const Container = styled.div`
         bottom: 50%;
         flex-direction: column;
         justify-content: center;
-    } */
+    }
 `;
 

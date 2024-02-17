@@ -63,13 +63,25 @@ export const Button = styled.a`
     cursor: pointer;
     transition: .1s ease-in;
 
-    &:hover {
-        box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
-    }
-
     @media ${VIEWPORT.desktopUp} {
         width: 200px;
         padding: 1rem;
         font-size: 1rem;
+
+        &:hover {
+            box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+        }
+    }
+`;
+
+export const CopyrightText = styled.p`
+    font-family: ${FONT.sfMonoRegular};
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+    font-size: 0.75rem;
+    margin-bottom: 5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+        margin-bottom: 0;
     }
 `;

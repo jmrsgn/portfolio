@@ -32,6 +32,7 @@ export const TechText = styled.p`
     color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
     font-size: 0.75rem;
     margin: ${({ margin }) => (margin)};
+    margin-bottom: ${({ marginBottom }) => (marginBottom)};
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1rem;
@@ -74,7 +75,6 @@ export const Title = styled.p`
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
     font-size: 2.5rem;
-    margin-top: 2rem;
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 3.5rem;
@@ -98,14 +98,14 @@ export const Button = styled(Link)`
     cursor: pointer;
     transition: .1s ease-in;
 
-    &:hover {
-        box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
-    }
-
     @media ${VIEWPORT.desktopUp} {
         width: 200px;
         padding: 1rem;
         font-size: 1rem;
+
+        &:hover {
+            box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+        }
     }
 `;
 
@@ -246,27 +246,34 @@ export const SocialIcon = styled.a`
 `;
 
 export const NavigationIcon = styled.a`
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-in-out;
-    margin: .25rem 0 .25rem 0;
+    margin: .20rem 0 .20rem 0;
 
     svg {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
         color: ${COLORS.COLOR_ON_SURFACE};
     }
 
-    &:hover {
-        background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-        border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-  
+    @media ${VIEWPORT.desktopUp} {
+        width: 40px;
+        height: 40px;
+        margin: .25rem 0 .25rem 0;
+
         svg {
-          color: ${COLORS.COLOR_ON_SURFACE};
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+            border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
         }
     }
 `;

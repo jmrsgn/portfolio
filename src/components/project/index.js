@@ -2,15 +2,19 @@ import React from "react";
 import { Container,
          Box,
          SubBox,
-         TextDiv,
+         WhatIDoDiv,
          Tech,
          TechContainer,
          ProjectImage,
          Screenshot,
          ScreenshotContainer,
-         InfoContainer,
+         WhatIDoInfoContainer,
          NavigationContainer,
-         ActionContainer } from './styles/project';
+         ActionContainer, 
+         NavigationIcon, 
+         ProjectInfoDiv, 
+         TechInfoContainer, 
+         ScreenshotsInfoContainer } from './styles/project';
 
 export default function Project({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -28,8 +32,12 @@ Project.SubBox = function ProjectSubBox({ children, ...restProps }) {
     return <SubBox {...restProps}>{children}</SubBox>
 }
 
-Project.TextDiv = function ProjectTextDiv({ children, ...restProps }) {
-    return <TextDiv {...restProps}>{children}</TextDiv>
+Project.ProjectInfoDiv = function ProjectProjectInfoDiv({ children, ...restProps }) {
+    return <ProjectInfoDiv {...restProps}>{children}</ProjectInfoDiv>
+}
+
+Project.WhatIDoDiv = function ProjectWhatIDoDiv({ children, ...restProps }) {
+    return <WhatIDoDiv {...restProps}>{children}</WhatIDoDiv>
 }
 
 Project.TechContainer = function ProjectTechContainer({ children, ...restProps }) {
@@ -56,6 +64,18 @@ Project.NavigationContainer = function ProjectNavigationContainer({ children, ..
     return <NavigationContainer {...restProps}>{children}</NavigationContainer>
 }
 
-Project.InfoContainer = function ProjectInfoContainer({ children, ...restProps }) {
-    return <InfoContainer {...restProps}>{children}</InfoContainer>
+Project.WhatIDoInfoContainer = function ProjectWhatIDoInfoContainer({ children, ...restProps }) {
+    return <WhatIDoInfoContainer {...restProps}>{children}</WhatIDoInfoContainer>
+}
+
+Project.TechInfoContainer = function ProjectTechInfoContainer ({ children, ...restProps }) {
+    return <TechInfoContainer {...restProps}>{children}</TechInfoContainer>
+}
+
+Project.NavigationIcon = function ProjectNavigationIcon({ children, ...restProps }) {
+    return <NavigationIcon {...restProps}>{children}</NavigationIcon>
+}
+
+Project.ScreenshotsInfoContainer = function ProjectScreenshotsInfoContainer({ children, ...restProps }) {
+    return <ScreenshotsInfoContainer {...restProps}>{children}</ScreenshotsInfoContainer>
 }
