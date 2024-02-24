@@ -97,7 +97,7 @@ export function HomeContainer() {
                         <TextLinkContainer>
                             <TextLink 
                                 type="1"
-                                to='#'
+                                to='/about/more'
                             >
                                 Know me more
                             </TextLink>

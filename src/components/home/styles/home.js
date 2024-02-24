@@ -182,7 +182,7 @@ export const Greeting = styled.p`
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
     font-size: 3rem;
-    margin-top: 2rem;
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '2rem')};
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 5rem;

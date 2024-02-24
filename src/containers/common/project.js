@@ -3,13 +3,11 @@ import { Project } from '../../components';
 
 import { Title, 
          Divider, 
-         SocialIcon,
          BoxFlex, 
          SubTitle, 
-         DescriptionText, 
-         NavigationIcon,
+         DescriptionText,
          SpaceWidthSmall,
-         TechText} from "../../globalComponents";
+         TechText } from "../../globalComponents";
 
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCaretBack } from "react-icons/io5";

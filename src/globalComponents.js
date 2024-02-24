@@ -30,12 +30,13 @@ export const TextExtraLarge = styled.p`
 export const TechText = styled.p`
     font-family: ${FONT.sfMonoRegular};
     color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
-    font-size: 0.75rem;
+    font-size: ${({ fontSize }) => (fontSize? fontSize : '0.75rem')};
     margin: ${({ margin }) => (margin)};
     margin-bottom: ${({ marginBottom }) => (marginBottom)};
+    margin-top: ${({ marginTop }) => (marginTop)};
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
+        font-size: ${({ fontSize }) => (fontSize? fontSize : '1rem')};
     }
 `;
 
