@@ -1,5 +1,5 @@
 import React from "react"
-import { Avatar, Box, Container, InfoBox, Link, ProfileBox, SubBox } from "./styles/about"
+import { Avatar, Box, Container, InfoBox, Link, ProfileBox, SubBox, NavigationIcon, AvatarInfoContainer, ContactText, ProfileContactTextsContainer, SocialContainer } from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -27,4 +27,24 @@ About.ProfileBox = function AboutProfileBox({ children, ...restProps }) {
 
 About.Link = function AboutLink({ children, ...restProps }) {
     return <Link {...restProps}>{children}</Link>
+}
+
+About.NavigationIcon = function AboutNavigatioIcon({ children, ...restProps }) {
+    return <NavigationIcon {...restProps}>{children}</NavigationIcon>
+}
+
+About.AvatarInfoContainer = function AboutAvatarInfoContainer({ children, ...restProps }) {
+    return <AvatarInfoContainer {...restProps}>{children}</AvatarInfoContainer>
+}
+
+About.ContactText = function AboutContactText({ children, ...restProps }) {
+    return <ContactText {...restProps}>{children}</ContactText>
+}
+
+About.ProfileContactTextsContainer = function AboutProfileContactTextsContainer({ children, ...restProps }) {
+    return <ProfileContactTextsContainer {...restProps}>{children}</ProfileContactTextsContainer>
+}
+
+About.SocialContainer = function AboutSocialContainer({ children, ...restProps }) {
+    return <SocialContainer {...restProps}>{children}</SocialContainer>
 }

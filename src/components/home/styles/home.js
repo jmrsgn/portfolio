@@ -55,7 +55,7 @@ export const SocialContainer = styled.div`
     margin-top: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 `;
 

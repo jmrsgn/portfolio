@@ -13,6 +13,7 @@ import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
 import {AiFillGithub, AiFillLinkedin, AiOutlineCaretRight } from 'react-icons/ai';
+import { FaTiktok } from "react-icons/fa";
 import { Greeting, Tech } from '../components/home/styles/home';
 
 import whatIDoData from "../fixtures/what-i-do.json";
@@ -72,6 +73,15 @@ export function HomeContainer() {
                                     <BsInstagram />
                                 </SocialIcon>
                             </motion.div>
+
+                            <motion.div
+                                whileInView={{ scale: [0, 1 ]}}
+                                transition={{ duration: 0.5, delay: 0.8 }}
+                            >
+                                <SocialIcon href="https://www.tiktok.com/@jmrsgnn?is_from_webapp=1&sender_device=pc" target={"_blank"}>
+                                    <FaTiktok />
+                                </SocialIcon>
+                            </motion.div>
                         </Home.SocialContainer>
                     </Home.InfoBox>
         
@@ -102,12 +112,7 @@ export function HomeContainer() {
                                 Know me more
                             </TextLink>
 
-                            <TextLink 
-                                type="1"
-                                to='#'
-                            >
-                                Spotify profile
-                            </TextLink>
+                            { /* TODO: add spotify profile */ }
                         </TextLinkContainer>
                     </Home.InfoBox>
                 </Home.SubBox>

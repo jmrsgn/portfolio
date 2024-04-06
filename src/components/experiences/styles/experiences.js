@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import * as COLORS from '../../../constants/styles';
+import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { TechText } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import * as STYLES from './constants/styles.js';
+import * as COLORS from './constants/colors.js';
 
 export const GlobalStyles = createGlobalStyle`
     * {    
@@ -12,6 +12,6 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${STYLES.COLOR_ON_BACKGROUND};
+        color: ${COLORS.COLOR_ON_BACKGROUND};
     }
 `;

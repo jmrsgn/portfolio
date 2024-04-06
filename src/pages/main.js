@@ -6,6 +6,7 @@ import { NavBarContainer } from "../containers/navbar";
 import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
 import { useInView } from "react-intersection-observer";
+import NowPlaying from "../spotify/now-playing";
 
 export default function Main() {
     const { ref: homeRef, inView: isHomeVisible } = useInView({ threshold: 0.35 });
@@ -23,6 +24,8 @@ export default function Main() {
             <NavBarContainer 
                 visibleTab={homeActive || projectsActive || experiencesActive || contactActive}
             />    
+
+            <NowPlaying />
             
             <div ref={homeRef}>
                 <HomeContainer />
