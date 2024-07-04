@@ -5,10 +5,11 @@ import { DescriptionText } from "../../../globalComponents";
 
 export const Container = styled.div`
     width: 250px;
+    max-width: 250px;
     height: 75px;
     background-color: #121212;
-    border-radius: 10px;
-    justify-content: center;
+    border-radius: 5px;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     right: 0;
@@ -17,11 +18,12 @@ export const Container = styled.div`
     z-index: 1;
     display: flex;
     flex-direction: row;
+    padding: 1.25rem;
 `;
 
 export const Image = styled.img`
-    border-radius: 15px;
-    height: 40px;
+    border-radius: 5px;
+    height: 50px;
 `;
 
 export const TrackInfo = styled.div`
@@ -55,10 +57,12 @@ export const TrackName = styled(DescriptionText)`
     font-weight: bold;
     font-size: 18px !important;
     color: #FEFEFE;
+    line-height: 20px !important;
 `;
 
 export const TrackInfoText = styled(DescriptionText)`
     font-size: 14px !important;
     color: #ABABAB;
     line-height: 12px !important;
+    margin-top: .25rem;
 `;

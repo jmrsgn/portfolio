@@ -7,10 +7,6 @@ import CalibreRegular from './fonts/CalibreRegular.woff';
 import CalibreBold from './fonts/CalibreBold.woff';
 import CalibreBlack from './fonts/CalibreBlack.woff';
 
-import CalibreRegular2 from './fonts/CalibreRegular.woff2';
-import CalibreBold2 from './fonts/CalibreBold.woff2';
-import CalibreBlack2 from './fonts/CalibreBlack.woff2';
-
 export const GlobalFonts = createGlobalStyle`
     @font-face {
         font-family: 'SF Mono Regular';
