@@ -92,7 +92,7 @@ export const Button = styled(Link)`
     width: 150px;
     box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
 
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-decoration: none;
     outline: none;
     text-align: center;

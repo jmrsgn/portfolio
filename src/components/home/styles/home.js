@@ -10,11 +10,11 @@ export const Container = styled.div`
 `;
 
 export const InfoBox = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: ${({ justifyContent }) => (justifyContent)};
+    justify-content: center;
     padding: 1rem;
-    flex: 1;
 `;
 
 export const SubBox = styled.div`
@@ -24,6 +24,12 @@ export const SubBox = styled.div`
 
     @media ${VIEWPORT.desktopUp} {
         flex-direction: row;
+
+        width: 80%;
+        position: absolute;
+        top: 50%; 
+        right: 50%;
+        transform: translate(50%,-50%);
     }
 `;
 
@@ -39,11 +45,11 @@ export const Box = styled.div`
     @media ${VIEWPORT.desktopUp} {
         width: 85%;
         padding: 5rem;
+        justify-content: space-between;
     }
 `;
 
 export const GreetingsContainer = styled.div`
-    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -55,7 +61,7 @@ export const SocialContainer = styled.div`
     margin-top: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
 `;
 
@@ -203,4 +209,10 @@ export const TechText = styled.p`
     @media ${VIEWPORT.desktopUp} {
         font-size: 0.75rem;
     }
+`;
+
+export const Image = styled.img`
+    height: auto;
+    width: 90%;
+    transform: translateX(20%);
 `;

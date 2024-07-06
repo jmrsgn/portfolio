@@ -16,7 +16,8 @@ import { Container,
          TechImage,
          TechContainer, 
          WhatIDoContainer, 
-         TechText} from './styles/home';
+         TechText,
+         Image}  from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -90,3 +91,6 @@ Home.TechText = function HomeTechText({ children, ...restProps }) {
     return <TechText {...restProps}>{children}</TechText>
 }
 
+Home.Image = function HomeImage({ src, ...restProps }) {
+    return <Image src={src} {...restProps} />
+}

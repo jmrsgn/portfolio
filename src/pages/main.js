@@ -31,7 +31,7 @@ export default function Main() {
                 <HomeContainer />
             </div>
 
-            <div ref={projectsRef}>
+            {/* <div ref={projectsRef}>
                 <ProjectsContainer />
             </div>
 
@@ -41,7 +41,7 @@ export default function Main() {
 
             <div ref={contactRef}>
                 <ContactContainer />
-            </div>
+            </div> */}
         </>
     );
 };

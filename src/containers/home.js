@@ -13,11 +13,15 @@ import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
 import {AiFillGithub, AiFillLinkedin, AiOutlineCaretRight } from 'react-icons/ai';
-import { FaTiktok } from "react-icons/fa";
+import { FaTiktok, FaStrava } from "react-icons/fa";
 import { Greeting, Tech } from '../components/home/styles/home';
 
 import whatIDoData from "../fixtures/what-i-do.json";
 import skillsData from '../fixtures/skills.json';
+
+
+// TODO: extend Home components to Common components and apply specific design
+// TODO: clean up code
 
 export function HomeContainer() {
     return (
@@ -33,9 +37,11 @@ export function HomeContainer() {
                                 <TechText>Hello, I'm</TechText>
                                 <Greeting>John Martin</Greeting>
 
-                                <DescriptionText
-                                    lineHeight="0px"
-                                >I'm a Developer.</DescriptionText>
+                                <DescriptionText>
+                                    A passionate Developer with a love for fitness. By day, I dive into code, creating innovative 
+                                    solutions and developing user-friendly applications. By night, you'll find me pushing my limits at the gym, 
+                                    running trails, or exploring new fitness routines.
+                                </DescriptionText>
                                 <Button 
                                     type="1"
                                     to="../resume/Resume.pdf"
@@ -82,42 +88,24 @@ export function HomeContainer() {
                                     <FaTiktok />
                                 </SocialIcon>
                             </motion.div>
+
+                            <motion.div
+                                whileInView={{ scale: [0, 1 ]}}
+                                transition={{ duration: 0.5, delay: 1 }}
+                            >
+                                <SocialIcon href="#" target={"_blank"}>
+                                    <FaStrava />
+                                </SocialIcon>
+                            </motion.div>
                         </Home.SocialContainer>
                     </Home.InfoBox>
         
-                    <Home.InfoBox
-                        justifyContent='flex-start'
-                    >
-                        <DescriptionText>
-                            My name is John Martin I. Marasigan, a simple person who likes to do Programming. I only enjoyed things out in my 4th year of College and suddenly fell in love with Android Development.
-                        </DescriptionText>
-
-                        <DescriptionText
-                            marginTop="24px"
-                        >
-                            I am currently working as an <FilterText>Associate Software Engineer</FilterText> at <FilterText>Infor,</FilterText> and part of the MSCM team providing maintenance and support to mobile applications.
-                        </DescriptionText>
-
-                        <DescriptionText
-                            marginTop="24px"
-                        >
-                            In my free time, I work out regularly, spending time alone going to the places that put my mind at ease. I also have great taste in music, love reading books, am a fitness enthusiast, and a guitarist.
-                        </DescriptionText>
-
-                        <TextLinkContainer>
-                            <TextLink 
-                                type="1"
-                                to='/about/more'
-                            >
-                                Know me more
-                            </TextLink>
-
-                            { /* TODO: add spotify profile */ }
-                        </TextLinkContainer>
+                    <Home.InfoBox>
+                        <Home.Image src="../images/who-am-i-svg.svg" />
                     </Home.InfoBox>
                 </Home.SubBox>
 
-                <Home.WhatIDoContainer>
+                {/* <Home.WhatIDoContainer>
                     <Home.TechSkillsContainer>
                         {whatIDoData.map((item) => (
                             <Home.TechSkill 
@@ -142,7 +130,7 @@ export function HomeContainer() {
                             </Tech>
                         ))}
                     </Home.TechContainer>
-                </Home.WhatIDoContainer>
+                </Home.WhatIDoContainer> */}
             </Home.Box>
         </Home>
     )
