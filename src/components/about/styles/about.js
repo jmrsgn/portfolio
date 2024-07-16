@@ -6,7 +6,7 @@ import { TechText } from '../../../globalComponents';
 
 export const Container = styled.div`
     min-height: 100vh;
-    background-color: ${COLORS.COLOR_BG1};
+    background-color: ${COLORS.COLOR_BG2};
 `;
 
 export const Box = styled.div`
@@ -20,31 +20,29 @@ export const Box = styled.div`
     @media ${VIEWPORT.desktopUp} {
         width: 85%;
         padding: 5rem;
-        flex-direction: row;
+        flex-direction: column;
     }
 `;
 
 export const SubBox = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: ${({ flexDirection }) => flexDirection};
     margin-top: ${({ marginTop }) => (marginTop)};
+    justify-content: ${({ justifyContent }) => justifyContent};
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
 
-    @media ${VIEWPORT.desktopUp} {
+    /* @media ${VIEWPORT.desktopUp} {
         justify-content: start;
         align-items: start;
-    }
+    } */
 `;
 
 export const InfoBox = styled.div`
     display: flex;
     flex-direction: column;
-
-    @media ${VIEWPORT.desktopUp} {
-        margin-left: 5rem;
-    }
+    width: ${({ width }) => (width? width: '100%')};
 `;
 
 export const Link = styled.a`

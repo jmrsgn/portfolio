@@ -5,6 +5,7 @@ import { ProjectsContainer } from "../containers/projects";
 import { NavBarContainer } from "../containers/navbar";
 import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
+import { AboutContainer } from "../containers/about";
 import { useInView } from "react-intersection-observer";
 import { SpotifyPlayer } from "../spotify/spotify";
 
@@ -25,17 +26,21 @@ export default function Main() {
                 visibleTab={homeActive || projectsActive || experiencesActive || contactActive}
             />    
 
-            <SpotifyPlayer />
+            {/* <SpotifyPlayer /> */}
             
             <div ref={homeRef}>
                 <HomeContainer />
             </div>
 
-            {/* <div ref={projectsRef}>
-                <ProjectsContainer />
+            <div>
+                <AboutContainer />
             </div>
 
-            <div ref={experiencesRef}>
+            {/* <div ref={projectsRef}>
+                <ProjectsContainer />
+            </div> */}
+
+            {/* <div ref={experiencesRef}>
                 <ExperiencesContainer />
             </div>
 

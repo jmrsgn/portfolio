@@ -49,74 +49,75 @@ export function ProjectsContainer() {
     }, []);
 
     return (
-        <Projects id="projects">
-            <motion.div
-                whileInView={{ y: [100, 0], opacity: [0, 1]}}
-            >
-                <Projects.Box>
-                    <Title>Stuffs I’ve built</Title>
-                    <Divider type="2" />
+        // <Projects id="projects">
+        //     <motion.div
+        //         whileInView={{ y: [100, 0], opacity: [0, 1]}}
+        //     >
+        //         <Projects.Box>
+        //             <Title>Stuffs I’ve built</Title>
+        //             <Divider type="2" />
 
-                    <Projects.ProjectsContainer>
-                        {filterProjects.map((item) => (
-                            <motion.div
-                                key={item.id}
-                                animate={animateCard}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <Projects.Project>
-                                    <SubBox flexDirection='column'>
-                                        <Projects.ProjectTitleNavContainer
-                                            flexDirection='row'
-                                            justifyContent='space-between'
-                                        >
-                                            <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
-                                            <Projects.NavigationContainer>
-                                                {item.github !== ""? 
-                                                <>
-                                                    <NavigationIcon 
-                                                        type='2'
-                                                        href={item.github} target={"_blank"}>
-                                                        <AiFillGithub 
-                                                            size={25}
-                                                        />
-                                                    </NavigationIcon>
+        //             <Projects.ProjectsContainer>
+        //                 {filterProjects.map((item) => (
+        //                     <motion.div
+        //                         key={item.id}
+        //                         animate={animateCard}
+        //                         transition={{ duration: 0.5 }}
+        //                     >
+        //                         <Projects.Project>
+        //                             <SubBox flexDirection='column'>
+        //                                 <Projects.ProjectTitleNavContainer
+        //                                     flexDirection='row'
+        //                                     justifyContent='space-between'
+        //                                 >
+        //                                     <Projects.ProjectTitle>{item.title}</Projects.ProjectTitle>
+        //                                     <Projects.NavigationContainer>
+        //                                         {item.github !== ""? 
+        //                                         <>
+        //                                             <NavigationIcon 
+        //                                                 type='2'
+        //                                                 href={item.github} target={"_blank"}>
+        //                                                 <AiFillGithub 
+        //                                                     size={25}
+        //                                                 />
+        //                                             </NavigationIcon>
 
-                                                    <SpaceWidthSmall />
-                                                </>:<></>
-                                                }
+        //                                             <SpaceWidthSmall />
+        //                                         </>:<></>
+        //                                         }
                                                 
-                                                {item.href !== ""? 
-                                                <>
-                                                    <NavigationIcon 
-                                                        type='2'
-                                                        href={item.href} target={"_blank"}>
-                                                        <BsArrowUpRight 
-                                                            size={25}
-                                                        />
-                                                    </NavigationIcon>
-                                                </>:<></>
-                                                }
-                                            </Projects.NavigationContainer>
-                                        </Projects.ProjectTitleNavContainer>
+        //                                         {item.href !== ""? 
+        //                                         <>
+        //                                             <NavigationIcon 
+        //                                                 type='2'
+        //                                                 href={item.href} target={"_blank"}>
+        //                                                 <BsArrowUpRight 
+        //                                                     size={25}
+        //                                                 />
+        //                                             </NavigationIcon>
+        //                                         </>:<></>
+        //                                         }
+        //                                     </Projects.NavigationContainer>
+        //                                 </Projects.ProjectTitleNavContainer>
                                         
-                                        <DescriptionText
-                                            marginTop="24px"
-                                        >{item.description}</DescriptionText>
-                                        <Projects.TagsContainer>
-                                            {item.tech.map(( tag ) => (
-                                                <Projects.Tag>
-                                                    <Projects.TagText>{tag.name}</Projects.TagText>
-                                                </Projects.Tag>
-                                            ))}
-                                        </Projects.TagsContainer>
-                                    </SubBox>
-                                </Projects.Project>
-                            </motion.div>   
-                        ))}
-                    </Projects.ProjectsContainer>
-                </Projects.Box>
-            </motion.div>
-        </Projects>
-    )
+        //                                 <DescriptionText
+        //                                     marginTop="24px"
+        //                                 >{item.description}</DescriptionText>
+        //                                 <Projects.TagsContainer>
+        //                                     {item.tech.map(( tag ) => (
+        //                                         <Projects.Tag>
+        //                                             <Projects.TagText>{tag.name}</Projects.TagText>
+        //                                         </Projects.Tag>
+        //                                     ))}
+        //                                 </Projects.TagsContainer>
+        //                             </SubBox>
+        //                         </Projects.Project>
+        //                     </motion.div>   
+        //                 ))}
+        //             </Projects.ProjectsContainer>
+        //         </Projects.Box>
+        //     </motion.div>
+        // </Projects>
+        <></>
+    );
 }

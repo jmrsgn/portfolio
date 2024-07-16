@@ -5,12 +5,24 @@ import * as COLORS from './constants/colors';
 import { VIEWPORT } from './constants/viewports';
 import { FONT } from './fonts/fonts';
 
+/*
+    Sizes
+*/
+
 export const TextExtraSmall = styled.p`
-    font-size: 1rem;
+    font-size: .75rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
 `;
 
 export const TextSmall = styled.p`
-    font-size: 1.25rem;
+    font-size: 1;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.125rem;
+    }
 `;
 
 export const TextMedium = styled.p`
@@ -25,62 +37,55 @@ export const TextExtraLarge = styled.p`
     font-size: 5rem;
 `;
 
-// ======
+// -------------------------------------------
 
-export const TechText = styled.p`
+export const TechText = styled(TextExtraSmall)`
     font-family: ${FONT.sfMonoRegular};
+
+    /* 
+        Adjustable settings
+    */
+    
     color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
-    font-size: ${({ fontSize }) => (fontSize? fontSize : '0.75rem')};
     margin: ${({ margin }) => (margin)};
     margin-bottom: ${({ marginBottom }) => (marginBottom)};
     margin-top: ${({ marginTop }) => (marginTop)};
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: ${({ fontSize }) => (fontSize? fontSize : '1rem')};
-    }
 `;
 
-export const DescriptionText = styled.p`
+export const DescriptionText = styled(TextSmall)`
     font-family: ${FONT.calibreRegular};
-    font-size: 1rem;
     color: ${COLORS.COLOR_LIGHT_GRAY};
-    line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '22px')};
+    line-height: 22px;
+
+    /*
+        Adjustable settings
+    */
+
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     margin-left: ${({ marginLeft }) => (marginLeft)};
 
     @media ${VIEWPORT.desktopUp} {
-        line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '26px')};
-        font-size: 1.2rem;
+        line-height: 26px;
     }
 `;
 
 export const FilterText = styled(DescriptionText)`
     display: inline;
+    font-weight: bold;
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
-export const SubTitle = styled.p`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-size: 1.3rem;
+export const Title = styled(TextExtraLarge)`
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
+export const SubTitle = styled(TextLarge)`
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1.75rem;
-    }
-`
-
-// ======
-
-export const Title = styled.p`
-    font-family: ${FONT.calibreBold};
-    color: ${COLORS.COLOR_ON_BACKGROUND};
-    font-size: 2.5rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 3.5rem;
-    }
 `;
+
+// -------------------------------------------
 
 export const Button = styled(Link)`
     background-color: ${COLORS.COLOR_BG1};
@@ -110,14 +115,6 @@ export const Button = styled(Link)`
     }
 `;
 
-export const SubBox = styled.div`
-    margin: ${({ margin }) => (margin)};
-    display: flex;
-    flex-direction: ${({ flexDirection }) => (flexDirection)};
-    width: ${({ width }) => (width)};
-    justify-content: ${({ justifyContent }) => (justifyContent)};
-`;
-
 export const Divider = styled.div`
     margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
@@ -138,6 +135,28 @@ export const MiniDivider = styled(Divider)`
     border-radius: 10px;
     width: 50px;
     margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
+`;
+
+// -------------------------------------------
+
+export const _Box = styled.div`
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 85%;
+    }
+`;
+
+export const _SubBox = styled.div`
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 80%;
+    }
 `;
 
 export const TextLink = styled(Link)`
@@ -320,4 +339,11 @@ export const SpaceWidthSmall = styled.div`
 export const SpaceHeightMedium = styled.div`
     height: 3rem;
     width: 100%;
+`;
+
+
+// TODO: v2 changes
+
+export const Container = styled.div`
+    
 `;

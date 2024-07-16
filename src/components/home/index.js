@@ -6,18 +6,7 @@ import { Container,
          GreetingsContainer, 
          Greeting, 
          InfoBox,
-         TechSkillsContainer,
-         TechSkill,
-         TechSkillImage,
-         TechSkillTitle,
-         TechSkillSubBox,
-         TechSkillDescription,
-         Tech,
-         TechImage,
-         TechContainer, 
-         WhatIDoContainer, 
-         TechText,
-         Image}  from './styles/home';
+         Image }  from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -45,50 +34,6 @@ Home.Greeting = function HomeGreeting({ children, ...restProps }) {
 
 Home.SubBox = function HomeSubBox({ children, ...restProps }) {
     return <SubBox {...restProps}>{children}</SubBox>
-}
-
-Home.TechSkillsContainer = function HomeTechSkillsContainer({ children, ...restProps }) {
-    return <TechSkillsContainer {...restProps}>{children}</TechSkillsContainer>
-}
-
-Home.TechSkill = function HomeTechSkill({ children, ...restProps }) {
-    return <TechSkill {...restProps}>{children}</TechSkill>
-}
-
-Home.TechSkillImage = function HomeTechSkillImage({ src, ...restProps }) {
-    return <TechSkillImage src={src} {...restProps} />
-}
-
-Home.TechSkillTitle = function HomeTechSkillTitle({ children, ...restProps }) {
-    return <TechSkillTitle {...restProps}>{children}</TechSkillTitle>
-}
-
-Home.TechSkillDescription = function HomeTechSkillDescription({ children, ...restProps }) {
-    return <TechSkillDescription {...restProps}>{children}</TechSkillDescription>
-}
-
-Home.TechSkillSubBox = function HomeTechSkillSubBox({ children, ...restProps }) {
-    return <TechSkillSubBox {...restProps}>{children}</TechSkillSubBox>
-}
-
-Home.TechContainer = function HomeTechContainer({ children, ...restProps }) {
-    return <TechContainer {...restProps}>{children}</TechContainer>
-}
-
-Home.Tech = function HomeTech({ children, ...restProps }) {
-    return <Tech {...restProps}>{children}</Tech>
-}
-
-Home.TechImage = function HomeTechImage({ src, ...restProps }) {
-    return <TechImage {...restProps} src={src} />
-}
-
-Home.WhatIDoContainer = function HomeWhatIDoContainer({ children, ...restProps }) {
-    return <WhatIDoContainer {...restProps}>{children}</WhatIDoContainer>
-}
-
-Home.TechText = function HomeTechText({ children, ...restProps }) {
-    return <TechText {...restProps}>{children}</TechText>
 }
 
 Home.Image = function HomeImage({ src, ...restProps }) {

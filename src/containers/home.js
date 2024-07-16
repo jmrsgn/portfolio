@@ -4,24 +4,14 @@ import { motion } from 'framer-motion';
 import { TechText, 
          Button, 
          SocialIcon,
-         DescriptionText,
-         TextLinkContainer,
-         TextLink,
-         FilterText} from '../globalComponents';
+         DescriptionText } from '../globalComponents';
 
 import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
-import {AiFillGithub, AiFillLinkedin, AiOutlineCaretRight } from 'react-icons/ai';
+import {AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaTiktok, FaStrava } from "react-icons/fa";
-import { Greeting, Tech } from '../components/home/styles/home';
-
-import whatIDoData from "../fixtures/what-i-do.json";
-import skillsData from '../fixtures/skills.json';
-
-
-// TODO: extend Home components to Common components and apply specific design
-// TODO: clean up code
+import { Greeting } from '../components/home/styles/home';
 
 export function HomeContainer() {
     return (
@@ -104,34 +94,7 @@ export function HomeContainer() {
                         <Home.Image src="../images/who-am-i-svg.svg" />
                     </Home.InfoBox>
                 </Home.SubBox>
-
-                {/* <Home.WhatIDoContainer>
-                    <Home.TechSkillsContainer>
-                        {whatIDoData.map((item) => (
-                            <Home.TechSkill 
-                                key={item.id}>
-                                <Home.TechSkillSubBox>
-                                    <Home.TechSkillTitle marginTop="24px">{item.title}</Home.TechSkillTitle>
-                                    <Home.TechSkillImage src={item.src} />
-                                </Home.TechSkillSubBox>
-                                    
-                                <Home.TechSkillDescription>
-                                    {item.description}
-                                </Home.TechSkillDescription>
-                            </Home.TechSkill>  
-                        ))}
-                    </Home.TechSkillsContainer>
-
-                    <Home.TechContainer>
-                        {skillsData.map((skill) => (
-                            <Tech>
-                                <AiOutlineCaretRight />
-                                <Home.TechText>{skill.name}</Home.TechText>
-                            </Tech>
-                        ))}
-                    </Home.TechContainer>
-                </Home.WhatIDoContainer> */}
             </Home.Box>
         </Home>
-    )
+    );
 }
