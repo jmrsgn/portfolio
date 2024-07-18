@@ -85,6 +85,11 @@ export const SubTitle = styled(TextLarge)`
     color: ${COLORS.COLOR_ON_SURFACE};
 `;
 
+export const OtherTitle = styled(TextMedium)`
+    font-family: ${FONT.calibreRegular};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
 // -------------------------------------------
 
 export const Button = styled(Link)`
@@ -139,6 +144,10 @@ export const MiniDivider = styled(Divider)`
 
 // -------------------------------------------
 
+export const _Container = styled.div`
+    min-height: 100vh;
+`;
+
 export const _Box = styled.div`
     height: 100%;
     width: 100%;
@@ -149,15 +158,31 @@ export const _Box = styled.div`
     }
 `;
 
-export const _SubBox = styled.div`
-    height: 100%;
-    width: 100%;
-    min-height: 100vh;
+// -------------------------------------------
 
-    @media ${VIEWPORT.desktopUp} {
-        width: 80%;
-    }
+// TODO: ADD DIMENSION CONSTANTS
+
+export const SpaceWidthSmall = styled.div`
+    height: 100%;
+    width: 1rem;
 `;
+
+export const SpaceHeightSmall = styled.div`
+    height: 1rem;
+    width: 100%;
+`;
+
+export const SpaceHeightMedium = styled.div`
+    height: 2.5rem;
+    width: 100%;
+`;
+
+export const SpaceHeightLarge = styled.div`
+    height: 3.75rem;
+    width: 100%;
+`;
+
+// -------------------------------------------
 
 export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
@@ -329,21 +354,4 @@ export const BoxFlex = styled.div`
     justify-content: ${({ justifyContent }) => (justifyContent)};
     align-items: ${({ alignItems }) => (alignItems)};
     flex-direction: ${({ flexDirection }) => (flexDirection === "column"? "column" : "row")};
-`;
-
-export const SpaceWidthSmall = styled.div`
-    height: 100%;
-    width: 1rem;
-`;
-
-export const SpaceHeightMedium = styled.div`
-    height: 3rem;
-    width: 100%;
-`;
-
-
-// TODO: v2 changes
-
-export const Container = styled.div`
-    
 `;

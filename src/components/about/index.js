@@ -1,5 +1,16 @@
 import React from "react"
-import { Avatar, Box, Container, InfoBox, Link, ProfileBox, SubBox, NavigationIcon, AvatarInfoContainer, ContactText, ProfileContactTextsContainer, SocialContainer } from "./styles/about"
+import { Avatar, 
+         Box, 
+         Container, 
+         InfoBox, 
+         NavigationIcon, 
+         ContactText, 
+         ProfileContactTextsContainer, 
+         SocialContainer, 
+         AboutMeTextContainer,
+         TechInfoContainer,
+         TechUsedContainer,
+         TechImage } from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -7,10 +18,6 @@ export default function About({ children, ...restProps }) {
 
 About.Box = function AboutBox({ children, ...restProps }) {
     return <Box {...restProps}>{children}</Box>
-}
-
-About.SubBox = function AboutSubBox({ children, ...restProps }) {
-    return <SubBox {...restProps}>{children}</SubBox>
 }
 
 About.InfoBox = function AboutInfoBox({ children, ...restProps }) {
@@ -21,20 +28,8 @@ About.Avatar = function AboutAvatar({ src, ...restProps }) {
     return <Avatar src={src} {...restProps}/>
 }
 
-About.ProfileBox = function AboutProfileBox({ children, ...restProps }) {
-    return <ProfileBox {...restProps}>{children}</ProfileBox>
-}
-
-About.Link = function AboutLink({ children, ...restProps }) {
-    return <Link {...restProps}>{children}</Link>
-}
-
 About.NavigationIcon = function AboutNavigatioIcon({ children, ...restProps }) {
     return <NavigationIcon {...restProps}>{children}</NavigationIcon>
-}
-
-About.AvatarInfoContainer = function AboutAvatarInfoContainer({ children, ...restProps }) {
-    return <AvatarInfoContainer {...restProps}>{children}</AvatarInfoContainer>
 }
 
 About.ContactText = function AboutContactText({ children, ...restProps }) {
@@ -47,4 +42,20 @@ About.ProfileContactTextsContainer = function AboutProfileContactTextsContainer(
 
 About.SocialContainer = function AboutSocialContainer({ children, ...restProps }) {
     return <SocialContainer {...restProps}>{children}</SocialContainer>
+}
+
+About.AboutMeTextContainer = function AboutAboutMeTextContainer({ children, ...restProps }) {
+    return <AboutMeTextContainer {...restProps}>{children}</AboutMeTextContainer>
+}
+
+About.TechInfoContainer = function AboutTechInfoContainer({ children, ...restProps }) {
+    return <TechInfoContainer {...restProps}>{children}</TechInfoContainer>
+}
+
+About.TechUsedContainer = function AboutTectUsedContainer({ children, ...restProps }) {
+    return <TechUsedContainer {...restProps}>{children}</TechUsedContainer>
+}
+
+About.TechImage = function AboutTechImage({ src }) {
+    return <TechImage src={src} />
 }

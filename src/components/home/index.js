@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, 
          Box, 
-         SubBox, 
          SocialContainer,
          GreetingsContainer, 
          Greeting, 
@@ -30,10 +29,6 @@ Home.GreetingsContainer = function HomeGreetingsContainer({ children, ...restPro
 
 Home.Greeting = function HomeGreeting({ children, ...restProps }) {
     return <Greeting {...restProps}>{children}</Greeting>
-}
-
-Home.SubBox = function HomeSubBox({ children, ...restProps }) {
-    return <SubBox {...restProps}>{children}</SubBox>
 }
 
 Home.Image = function HomeImage({ src, ...restProps }) {

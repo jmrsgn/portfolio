@@ -1,11 +1,10 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _SubBox, Title } from '../../../globalComponents';
+import { _Box, _Container, Title } from '../../../globalComponents';
 
 
-export const Container = styled.div`
-    min-height: 100vh;
+export const Container = styled(_Container)`
     background-color: ${COLORS.COLOR_BG1};
 `;
 
@@ -18,16 +17,7 @@ export const Box = styled(_Box)`
 
     @media ${VIEWPORT.desktopUp} {
         padding: 5rem;
-        justify-content: space-between;
-    }
-`;
 
-export const SubBox = styled(_SubBox)`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @media ${VIEWPORT.desktopUp} {
         flex-direction: row;
 
         position: absolute;

@@ -2,62 +2,36 @@ import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { FONT } from '../../../fonts/fonts';
-import { TechText } from '../../../globalComponents';
+import { _Box, _Container, TechText } from '../../../globalComponents';
 
-export const Container = styled.div`
-    min-height: 100vh;
+export const Container = styled(_Container)`
     background-color: ${COLORS.COLOR_BG2};
 `;
 
-export const Box = styled.div`
-    width: 100%;
-    min-height: 100vh;
+export const Box = styled(_Box)`
     margin: 0 auto 0 auto;
     display: flex;
     padding: 2.25rem 1.25rem;
     flex-direction: column;
 
     @media ${VIEWPORT.desktopUp} {
-        width: 85%;
         padding: 5rem;
-        flex-direction: column;
     }
-`;
-
-export const SubBox = styled.div`
-    display: flex;
-    flex-direction: ${({ flexDirection }) => flexDirection};
-    margin-top: ${({ marginTop }) => (marginTop)};
-    justify-content: ${({ justifyContent }) => justifyContent};
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3rem;
-
-    /* @media ${VIEWPORT.desktopUp} {
-        justify-content: start;
-        align-items: start;
-    } */
 `;
 
 export const InfoBox = styled.div`
     display: flex;
-    flex-direction: column;
-    width: ${({ width }) => (width? width: '100%')};
+    flex-direction: row;
+    margin-top: 1.25rem;
+    width: 100%;
+    justify-content: space-between;
 `;
 
-export const Link = styled.a`
-    font-family: ${FONT.calibreRegular};
-    font-size: 1rem;
-    color: ${COLORS.COLOR_SURFACE1};
-    font-style: italic;
-    line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '22px')};
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    margin-left: ${({ marginLeft }) => (marginLeft)};
-
-    @media ${VIEWPORT.desktopUp} {
-        line-height: ${({ lineHeight }) => (lineHeight? lineHeight : '26px')};
-        font-size: 1.2rem;
-    }
+export const AboutMeTextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
 `;
 
 export const Avatar = styled.img`
@@ -69,24 +43,9 @@ export const Avatar = styled.img`
     margin-bottom: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
-        width: 250px;
+        width: 200px;
         margin-top: 0;
         margin-bottom: 2rem;
-    }
-`;
-
-export const ProfileBox = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-export const AvatarInfoContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: column;
     }
 `;
 
@@ -150,4 +109,21 @@ export const SocialContainer = styled.div`
     @media ${VIEWPORT.desktopUp} {
         margin-top: 3rem;
     }
+`;
+
+export const TechInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    width: 50%;
+`;
+
+export const TechUsedContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const TechImage = styled.img`
+    height: auto;
+    width: 25rem;
 `;
