@@ -24,6 +24,7 @@ export const InfoBox = styled.div`
     flex-direction: row;
     margin-top: 1.25rem;
     width: 100%;
+    align-items: center;
     justify-content: space-between;
 `;
 
@@ -31,7 +32,7 @@ export const AboutMeTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70%;
+    width: 65%;
 `;
 
 export const Avatar = styled.img`
@@ -126,4 +127,20 @@ export const TechUsedContainer = styled.div`
 export const TechImage = styled.img`
     height: auto;
     width: 25rem;
+`;
+
+export const TechUsedText = styled(TechText)`
+    line-height: 24px;
+    color: ${COLORS.COLOR_SURFACE2};
+    font-size: 1rem;
+`;
+
+export const TechDivider = styled.div`
+    height: 1px;
+    background-color: ${COLORS.COLOR_GRAY};
+    width: 60%;
+`;
+
+export const InfoTechBox = styled(InfoBox)`
+    flex-direction: ${({ flexDirection }) => (flexDirection)};
 `;

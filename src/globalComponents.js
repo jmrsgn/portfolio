@@ -26,7 +26,7 @@ export const TextSmall = styled.p`
 `;
 
 export const TextMedium = styled.p`
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 `;
 
 export const TextLarge = styled.p`
@@ -354,4 +354,11 @@ export const BoxFlex = styled.div`
     justify-content: ${({ justifyContent }) => (justifyContent)};
     align-items: ${({ alignItems }) => (alignItems)};
     flex-direction: ${({ flexDirection }) => (flexDirection === "column"? "column" : "row")};
+`;
+
+export const Row = styled.div`
+    width: 100%;
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: ${({ flexDirection }) => (flexDirection)};
 `;

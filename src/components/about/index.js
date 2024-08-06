@@ -10,7 +10,10 @@ import { Avatar,
          AboutMeTextContainer,
          TechInfoContainer,
          TechUsedContainer,
-         TechImage } from "./styles/about"
+         TechUsedText,
+         TechDivider,
+         TechImage, 
+         InfoTechBox} from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -22,6 +25,10 @@ About.Box = function AboutBox({ children, ...restProps }) {
 
 About.InfoBox = function AboutInfoBox({ children, ...restProps }) {
     return <InfoBox {...restProps}>{children}</InfoBox>
+}
+
+About.InfoTechBox = function AboutInfoTechBox({ children, ...restProps }) {
+    return <InfoTechBox {...restProps}>{children}</InfoTechBox>
 }
 
 About.Avatar = function AboutAvatar({ src, ...restProps }) {
@@ -58,4 +65,12 @@ About.TechUsedContainer = function AboutTectUsedContainer({ children, ...restPro
 
 About.TechImage = function AboutTechImage({ src }) {
     return <TechImage src={src} />
+}
+
+About.TechUsedText = function AboutTechUsedText({ children, ...restProps }) {
+    return <TechUsedText {...restProps}>{children}</TechUsedText>
+}
+
+About.TechDivider = function AboutTechDivider({ ...restProps }) {
+    return <TechDivider {...restProps} />
 }

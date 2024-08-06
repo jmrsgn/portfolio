@@ -10,3 +10,5 @@ export const COLOR_SURFACE4 = '#131C27';
 export const COLOR_LIGHT_RED = '#FEE2E2';
 export const COLOR_RED = '#A61B1B';
 export const COLOR_LIGHT_GRAY = '#949494';
+
+export const COLOR_GRAY = '#444444';
