@@ -11,11 +11,13 @@ import { SpotifyPlayer } from "../spotify/spotify";
 
 export default function Main() {
     const { ref: homeRef, inView: isHomeVisible } = useInView({ threshold: 0.35 });
+    const { ref: aboutRef, inView: isAboutActive } = useInView({ threshold: 0.35 });
     const { ref: projectsRef, inView: isProjectsVisible } = useInView({ threshold: 0.35 });
     const { ref: experiencesRef, inView: isExperiencesVisible } = useInView({ threshold: 0.35 });
     const { ref: contactRef, inView: isContactVisible } = useInView({ threshold: 0.35 });
 
     const homeActive = isHomeVisible? 'home' : '';
+    const aboutActive = isAboutActive? 'about' : '';
     const projectsActive = isProjectsVisible? 'projects' : '';
     const experiencesActive = isExperiencesVisible? 'experiences' : '';
     const contactActive = isContactVisible? 'contact' : '';
@@ -23,7 +25,7 @@ export default function Main() {
     return (
         <>
             <NavBarContainer 
-                visibleTab={homeActive || projectsActive || experiencesActive || contactActive}
+                visibleTab={homeActive || aboutActive || projectsActive || experiencesActive || contactActive}
             />    
 
             {/* <SpotifyPlayer /> */}
@@ -32,13 +34,13 @@ export default function Main() {
                 <HomeContainer />
             </div>
 
-            <div>
+            <div ref={aboutRef}>
                 <AboutContainer />
             </div>
 
-            {/* <div ref={projectsRef}>
+            <div ref={projectsRef}>
                 <ProjectsContainer />
-            </div> */}
+            </div>
 
             {/* <div ref={experiencesRef}>
                 <ExperiencesContainer />

@@ -2,19 +2,32 @@
     {
         "id": 1,
         "title": "Web Development",
-        "description": "I have minimal experience in doing Web Development. I have a basic knowledge of React JS in doing UI, basic CSS skills for designing, and basic implementation of features.",
-        "src": "./images/what-i-do/web-development.png"
+        "description": "I have limited experience in Web Development, with basic proficiency in React JS for UI development, fundamental CSS skills for design, and basic feature implementation.",
+        "src": "../images/what_i_do/web-development.svg",
+        "tech": [
+            "React",
+            "HTML",
+            "styled-components"
+        ]
     },
     {
         "id": 2,
         "title": "UI/UX Design",
-        "description": "I made numerous designs in my previous projects. I have a basic knowledge of doing UI that inspires a modern way of interfaces using Figma.",
-        "src": "./images/what-i-do/ui-ux.png"
+        "description": "In my previous projects, I developed numerous designs, leveraging my basic UI skills to create modern interfaces using Figma.",
+        "src": "../images/what_i_do/ui-ux.svg",
+        "tech": [
+            "Figma"
+        ]
     },
     {
         "id": 3,
-        "title": "Android Development",
-        "description": "My star of the show. I have already built two applications with Java. I am currently studying Jetpack Compose and Ktor with proper code architecture and coding principles when doing personal projects. I am also planning to learn Flutter for future use.",
-        "src": "./images/what-i-do/android-development.png"
+        "title": "Mobile Development",
+        "description": "Java has been my star performer; I've successfully built two applications with it. Currently, I'm deepening my expertise in Jetpack Compose and Ktor, focusing on robust code architecture and coding principles in my personal projects. Looking ahead, I'm eager to master Flutter for upcoming ventures.",
+        "src": "../images/what_i_do/mobile-development.svg",
+        "tech": [
+            "Java",
+            "Kotlin",
+            "Flutter"
+        ]
     }
 ]

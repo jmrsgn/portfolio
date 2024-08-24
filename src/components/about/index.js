@@ -13,7 +13,8 @@ import { Avatar,
          TechUsedText,
          TechDivider,
          TechImage, 
-         InfoTechBox} from "./styles/about"
+         InfoTechBox, 
+         TechUsedTextContainer } from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -73,4 +74,8 @@ About.TechUsedText = function AboutTechUsedText({ children, ...restProps }) {
 
 About.TechDivider = function AboutTechDivider({ ...restProps }) {
     return <TechDivider {...restProps} />
+}
+
+About.TechUsedTextContainer = function AboutTechUsedTextContainer({ children, ...restProps }) {
+    return <TechUsedTextContainer { ...restProps}>{children}</TechUsedTextContainer>
 }

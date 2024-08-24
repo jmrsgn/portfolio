@@ -2,15 +2,13 @@ import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { FONT } from '../../../fonts/fonts';
+import { _Box, _Container } from '../../../globalComponents';
 
-export const Container = styled.div`
-    min-height: 100vh;
-    background-color: ${COLORS.COLOR_BG2};
+export const Container = styled(_Container)`
+    background-color: ${COLORS.COLOR_BG1};
 `;
 
-export const Box = styled.div`
-    width: 100%;
-    min-height: 100vh;
+export const Box = styled(_Box)`
     margin: 0 auto 0 auto;
     display: flex;
     padding: 2.25rem 1.25rem;
@@ -118,7 +116,7 @@ export const TagsContainer = styled.div`
 `;
 
 export const Tag = styled.div`
-    border: 1px solid ${COLORS.COLOR_SURFACE2};
+    border: 1px solid ${COLORS.COLOR_SURFACE1};
     margin: 0.15rem;
     border-radius: .5rem;
     padding: .25rem .75rem;
@@ -126,7 +124,7 @@ export const Tag = styled.div`
 
 export const TagText = styled.p`
     font-family: ${FONT.sfMonoRegular};
-    color: ${COLORS.COLOR_SURFACE2};
+    color: ${COLORS.COLOR_SURFACE1};
     font-size: .6rem;
 
     @media ${VIEWPORT.desktopUp} {

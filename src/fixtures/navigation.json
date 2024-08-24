@@ -6,16 +6,21 @@
     },
     {
         "id": 2,
+        "name": "about",
+        "to": "#about"
+    },
+    {
+        "id": 3,
         "name": "projects",
         "to": "#projects"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "experiences",
         "to": "#experiences"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "contact",
         "to": "#contact"
     }

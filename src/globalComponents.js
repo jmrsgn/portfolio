@@ -196,25 +196,6 @@ export const TextLink = styled(Link)`
     margin-block: 2px;
     position: relative;
 
-    &::after {
-        content: '';
-        width: 100%;
-        height: 1px;
-        background-color: ${COLORS.COLOR_SURFACE1};
-        border-radius: 4px;
-        position: absolute;
-        left: 0;
-        bottom: 1;
-        margin-top: 1.5rem;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .25s ease;
-    }
-
-    &:hover::after {
-        transform: scaleX(1);
-    }
-
     @media ${VIEWPORT.desktopUp} {
         font-size: 1rem;
     }

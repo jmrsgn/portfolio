@@ -1,16 +1,19 @@
 import React from "react";
 
 import { NavBar } from "../components";
-import { FaHome, FaPhoneAlt, FaProjectDiagram, FaBriefcase } from "react-icons/fa";
+import { FaHome, FaBriefcase, FaNetworkWired } from "react-icons/fa";
+import { BiInfoCircle } from "react-icons/bi";
+import { IoMdContact } from "react-icons/io";
 
 import navigationData from '../fixtures/navigation.json';
 
 export function NavBarContainer(props) {
     const navButtons = {
         "home": <FaHome size={25} />,
-        "projects": <FaProjectDiagram size={25} />,
+        "about": <BiInfoCircle size={25} />,
+        "projects": <FaNetworkWired size={25} />,
         "experiences": <FaBriefcase size={25} />,
-        "contact": <FaPhoneAlt size={25} />
+        "contact": <IoMdContact size={25} />
     };
 
     return ( 

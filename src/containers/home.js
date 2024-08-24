@@ -29,7 +29,7 @@ export function HomeContainer() {
                             <DescriptionText>
                                 A passionate Developer with a love for fitness. By day, I dive into code, creating innovative 
                                 solutions and developing user-friendly applications. By night, you'll find me pushing my limits at the gym, 
-                                running trails, or exploring new fitness routines.
+                                running, or exploring new fitness routines.
                             </DescriptionText>
                             <Button 
                                 type="1"

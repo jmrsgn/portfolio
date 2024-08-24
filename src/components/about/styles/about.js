@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { FONT } from '../../../fonts/fonts';
 import { _Box, _Container, TechText } from '../../../globalComponents';
 
 export const Container = styled(_Container)`
@@ -32,7 +31,7 @@ export const AboutMeTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 65%;
+    width: 50%;
 `;
 
 export const Avatar = styled.img`
@@ -115,7 +114,6 @@ export const SocialContainer = styled.div`
 export const TechInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
     width: 50%;
 `;
 
@@ -130,17 +128,29 @@ export const TechImage = styled.img`
 `;
 
 export const TechUsedText = styled(TechText)`
-    line-height: 24px;
+    line-height: 18px;
     color: ${COLORS.COLOR_SURFACE2};
-    font-size: 1rem;
+    font-size: .85rem;
+    margin-left: 1.25rem;
 `;
 
 export const TechDivider = styled.div`
     height: 1px;
     background-color: ${COLORS.COLOR_GRAY};
-    width: 60%;
+    width: 55%;
 `;
 
 export const InfoTechBox = styled(InfoBox)`
     flex-direction: ${({ flexDirection }) => (flexDirection)};
+`;
+
+export const TechUsedTextContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: .15rem;
+
+    svg {
+        color: ${COLORS.COLOR_SURFACE2};
+    }
 `;
