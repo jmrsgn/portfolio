@@ -13,7 +13,7 @@ export const Nav = styled.a`
     justify-content: center;
 
     svg {
-        color: ${({ active }) => (active === 'true'? `${COLORS.COLOR_SURFACE1};` : `${COLORS.COLOR_LIGHT_GRAY};`)};
+        color: ${({ active }) => (active === 'true'? `${COLORS.COLOR_SURFACE1};` : `${COLORS.COLOR_LIGHT_GRAY}`)};
         transition: .3s ease-in;
 
         &:hover {

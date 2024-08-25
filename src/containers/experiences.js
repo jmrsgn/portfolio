@@ -1,27 +1,28 @@
 import React, { useState } from "react";
-import { motion } from 'framer-motion';
 
 import { Title,
          DescriptionText, 
          SubTitle, 
-         Divider } from "../globalComponents";
+         Divider, 
+         SpaceHeightExtraLarge} from "../globalComponents";
 import { Experiences } from "../components";
 
 import experiencesData from '../fixtures/experiences.json';
 import certificatesData from '../fixtures/certificates.json';
 import badgesData from '../fixtures/badges.json';
+import MotionWrap from "../wrapper/motion-wrap";
 
 export function ExperiencesContainer() {
     const [active, setActive] = useState(experiencesData[0]);
 
     return (
         <Experiences id="experiences">
-            <motion.div
+            <MotionWrap
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <Experiences.Box>
                     <Title>Experiences</Title>
-                    <Divider type='1' />
+                    <Divider type='2' />
 
                     <Experiences.InfoContainer>
                         <Experiences.ExperiencesSubBox>
@@ -74,16 +75,18 @@ export function ExperiencesContainer() {
                                     </Experiences.CertificateContainer>
                                 ))}
                             </Experiences.CertificatesContainter>
-
-                            <Experiences.BadgesContainer>
-                                {badgesData.map((item) => (
-                                    <Experiences.Badge src={item.src} />
-                                ))}
-                            </Experiences.BadgesContainer>
                         </Experiences.CertificatesSubBox>
                     </Experiences.InfoContainer>
+
+                    <SpaceHeightExtraLarge />
+
+                    <Experiences.BadgesContainer>
+                        {badgesData.map((item) => (
+                            <Experiences.Badge src={item.src} />
+                        ))}
+                    </Experiences.BadgesContainer>
                 </Experiences.Box>
-            </motion.div>
+            </MotionWrap>
         </Experiences>
     )
 }

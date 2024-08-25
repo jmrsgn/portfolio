@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import * as COLORS from '../../../constants/colors';
-import { VIEWPORT } from '../../../constants/viewports';
 import { DescriptionText } from "../../../globalComponents";
 
 export const Container = styled.div`
-    width: 250px;
-    max-width: 250px;
-    height: 75px;
+    max-width: 300px;
+    min-width: 250px;
+    min-height: 75px;
     background-color: #121212;
-    border-radius: 5px;
-    justify-content: space-between;
+    justify-content: space-around;
+    border-radius: 8px;
     align-items: center;
     position: fixed;
     right: 0;
@@ -18,7 +17,8 @@ export const Container = styled.div`
     z-index: 1;
     display: flex;
     flex-direction: row;
-    padding: 1.25rem;
+    padding: 1rem;
+    cursor: pointer;
 `;
 
 export const Image = styled.img`
@@ -30,27 +30,10 @@ export const TrackInfo = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
+    margin-right: 2rem;
     height: 100%;
     text-align: left;
     justify-content: center;
-`;
-
-export const ProgressBar = styled.div`
-    width: 100%;
-    height: 5px;
-    background: #ffe0e6;
-    border-radius: 10px;
-    margin-top: 15px;
-    position: relative;
-
-    ::before {
-        content: '';
-        height: 100%;
-        width: 50%;
-        background: #ff6f61;
-        border-radius: 10px;
-        position: absolute;
-    }
 `;
 
 export const TrackName = styled(DescriptionText)`
@@ -65,4 +48,12 @@ export const TrackInfoText = styled(DescriptionText)`
     color: #ABABAB;
     line-height: 12px !important;
     margin-top: .25rem;
+`;
+
+export const Text = styled(DescriptionText)`
+    font-size: .85rem;
+    color: ${COLORS.COLOR_ON_SURFACE};
+    font-weight: bold;
+    margin-top: .25rem;
+    line-height: 20px !important;
 `;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Spotify } from '../components';
 
+import { FaSpotify } from "react-icons/fa";
+
 const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
@@ -11,6 +13,7 @@ export function SpotifyPlayer() {
     const [accessToken, setAccessToken] = useState(null);
     const [track, setTrack] = useState(null);
     const [error, setError] = useState(null);
+    const [trackName, setTrackName] = useState('');
 
     const refreshAccessToken = async () => {
         try {
@@ -62,6 +65,7 @@ export function SpotifyPlayer() {
 
                     const data = await response.json();
                     setTrack(data);
+                    setTrackName(data.item.name.length > 15 ? data.item.name.substring(0, 15) + '...' : data.item.name);
                 } catch (error) {
                     console.error('Error fetching currently playing track:', error);
                 }
@@ -74,12 +78,17 @@ export function SpotifyPlayer() {
     return (
         <>
             {track && (
-                <Spotify>
+                <Spotify
+                    onClick={() => alert("open spotify")}
+                >
                     <Spotify.Image src={track.item.album.images[0].url} alt="Album cover" />
                     <Spotify.TrackInfo>
-                        <Spotify.TrackName>{track.item.name}</Spotify.TrackName>
+                        <Spotify.TrackName>{trackName}</Spotify.TrackName>
                         <Spotify.TrackInfoText>{track.item.artists.map(artist => artist.name).join(', ')}</Spotify.TrackInfoText>
+                        <Spotify.Text>Currently Playing</Spotify.Text>
                     </Spotify.TrackInfo>
+
+                    <FaSpotify size={30}/>
                 </Spotify>
             )}
         </>

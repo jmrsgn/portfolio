@@ -2,10 +2,10 @@ import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { FONT } from '../../../fonts/fonts';
+import { _Container } from '../../../globalComponents';
 
-export const Container = styled.div`
-    min-height: 100vh;
-    background-color: ${COLORS.COLOR_BG2};
+export const Container = styled(_Container)`
+    background-color: ${COLORS.COLOR_BG1};
 `;
 
 export const Box = styled.div`

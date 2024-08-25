@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 import { Title, 
          Divider, 
@@ -12,12 +11,13 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 import ProjectsData from '../fixtures/projects.json';
 import { AiFillGithub } from 'react-icons/ai';
+import MotionWrap from '../wrapper/motion-wrap';
 
 
 export function ProjectsContainer() {
     return (
         <Projects id="projects">
-            <motion.div
+            <MotionWrap
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <Projects.Box>
@@ -77,7 +77,7 @@ export function ProjectsContainer() {
                         ))}
                     </Projects.ProjectsContainer>
                 </Projects.Box>
-            </motion.div>
+            </MotionWrap>
         </Projects>
     );
 }

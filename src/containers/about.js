@@ -7,8 +7,8 @@ import {
     FilterText,
     OtherTitle,
     Row,
+    SpaceHeightExtraLarge,
     SpaceHeightLarge,
-    SpaceHeightMedium,
     SpaceHeightSmall,
     TextLink,
     Title,
@@ -17,75 +17,83 @@ import {
 import WhatIDoData from '../fixtures/what-i-do.json';
 
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import MotionWrap from "../wrapper/motion-wrap";
 
 export function AboutContainer() {
     return (
         <About id="about">
-            <About.Box>
-                <Title>Who am I</Title>
-                <Divider type="2" />
+            <MotionWrap
+                whileInView={{ y: [100, 0], opacity: [0, 1]}}
+            >
+                <About.Box>
+                    <Title>Who am I</Title>
+                    <Divider type="2" />
 
-                <About.InfoBox>
-                    <About.AboutMeTextContainer>
-                        <DescriptionText>
-                            My name is John Martin I. Marasigan, a person who has an interest
-                            doing Programming. I only enjoyed things out in my 4th year of
-                            College and suddenly fell in love with Android Development. I am
-                            currently working as an 
-                            <FilterText>Associate Software Engineer</FilterText> at 
-                            <FilterText>Infor</FilterText>, and part of the MSCM team
-                            providing maintenance and support to mobile applications.
-                        </DescriptionText>
+                    <About.InfoBox>
+                        <About.AboutMeTextContainer>
+                            <DescriptionText>
+                                My name is John Martin I. Marasigan, a person who has an interest
+                                doing Programming. I only enjoyed things out in my 4th year of
+                                College and suddenly fell in love with Android Development. I am
+                                currently working as an 
+                                <FilterText>Associate Software Engineer</FilterText> at 
+                                <FilterText>Infor</FilterText>, and part of the MSCM team
+                                providing maintenance and support to mobile applications.
+                            </DescriptionText>
 
-                        <DescriptionText marginTop="24px">
-                            In my free time, I work out regularly, spending time alone going
-                            to the places that put my mind at ease. I also have great taste in
-                            music, love reading books, am a fitness enthusiast, and a
-                            guitarist.
-                        </DescriptionText>
-                    </About.AboutMeTextContainer>
+                            <SpaceHeightSmall />
 
-                    <About.Avatar src="../images/jm.jpeg" />
-                </About.InfoBox>
+                            <DescriptionText>
+                                In my free time, I work out regularly, spending time alone going
+                                to the places that put my mind at ease. I also have great taste in
+                                music, love reading books, am a fitness enthusiast, and a
+                                guitarist.
+                            </DescriptionText>
+                        </About.AboutMeTextContainer>
 
-                <TextLink type="2" to="/about/more">
-                    Know me more
-                </TextLink>
+                        <About.Avatar src="../images/jm.jpeg" />
+                    </About.InfoBox>
 
-                <SpaceHeightLarge />
-                <SpaceHeightLarge />
+                    <TextLink type="2" to="/about/more">
+                        Know me more
+                    </TextLink>
 
-                {WhatIDoData.map((item) => (
-                    <>
-                        <About.InfoTechBox>
-                            <About.TechInfoContainer>
-                                <OtherTitle>{item.title}</OtherTitle>
-                                <SpaceHeightSmall />
+                    <SpaceHeightExtraLarge />
 
-                                <DescriptionText>{item.description}</DescriptionText>
-                                <SpaceHeightSmall />
+                    {WhatIDoData.map((item, index) => (
+                        <>
+                            <About.InfoTechBox
+                                flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
+                            >
+                                <About.TechInfoContainer>
+                                    <OtherTitle>{item.title}</OtherTitle>
+                                    <SpaceHeightSmall />
 
-                                <About.TechUsedContainer>
-                                    {item.tech.map((tech) => (
-                                        <About.TechUsedTextContainer>
-                                            <IoIosArrowDroprightCircle />
-                                            <About.TechUsedText>{tech}</About.TechUsedText>
-                                        </About.TechUsedTextContainer>
-                                    ))}
-                                </About.TechUsedContainer>
-                            </About.TechInfoContainer>
+                                    <DescriptionText>{item.description}</DescriptionText>
+                                    <SpaceHeightSmall />
 
-                            <About.TechImage src={item.src} />
-                        </About.InfoTechBox>
+                                    <About.TechUsedContainer>
+                                        {item.tech.map((tech) => (
+                                            <About.TechUsedTextContainer>
+                                                <IoIosArrowDroprightCircle />
+                                                <About.TechUsedText>{tech}</About.TechUsedText>
+                                            </About.TechUsedTextContainer>
+                                        ))}
+                                    </About.TechUsedContainer>
+                                </About.TechInfoContainer>
 
-                        <Row>
-                            <About.TechDivider />
-                        </Row>
+                                <About.TechImage src={item.src} />
+                            </About.InfoTechBox>
 
-                        <SpaceHeightLarge />
-                    </>
-                ))}
-            </About.Box>
+                            <Row flexDirection={index % 2 === 0 ? "row" : "row-reverse"}>
+                                <About.TechDivider />
+                            </Row>
+
+                            <SpaceHeightLarge />
+                        </>
+                    ))}
+                </About.Box>
+            </MotionWrap>
         </About>
     );
 }

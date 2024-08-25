@@ -28,7 +28,7 @@ export default function Main() {
                 visibleTab={homeActive || aboutActive || projectsActive || experiencesActive || contactActive}
             />    
 
-            {/* <SpotifyPlayer /> */}
+            <SpotifyPlayer />
             
             <div ref={homeRef}>
                 <HomeContainer />
@@ -42,13 +42,13 @@ export default function Main() {
                 <ProjectsContainer />
             </div>
 
-            {/* <div ref={experiencesRef}>
+            <div ref={experiencesRef}>
                 <ExperiencesContainer />
             </div>
 
             <div ref={contactRef}>
                 <ContactContainer />
-            </div> */}
+            </div>
         </>
     );
 };

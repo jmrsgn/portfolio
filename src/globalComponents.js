@@ -182,6 +182,11 @@ export const SpaceHeightLarge = styled.div`
     width: 100%;
 `;
 
+export const SpaceHeightExtraLarge = styled.div`
+    height: 5rem;
+    width: 100%;
+`;
+
 // -------------------------------------------
 
 export const TextLink = styled(Link)`

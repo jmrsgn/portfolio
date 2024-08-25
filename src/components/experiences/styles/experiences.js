@@ -1,17 +1,14 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { TechText } from '../../../globalComponents';
+import { _Box, _Container, TechText } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';
 
-export const Container = styled.div`
-    min-height: 100vh;
-    background-color: ${COLORS.COLOR_BG1};
+export const Container = styled(_Container)`
+    background-color: ${COLORS.COLOR_BG2};
 `;
 
-export const Box = styled.div`
-    width: 100%;
-    min-height: 100vh;
+export const Box = styled(_Box)`
     margin: 0 auto 0 auto;
     padding: 2.25rem 1.25rem;
     display: flex;
@@ -135,7 +132,9 @@ export const CertificateInfoContainer = styled.div`
     }
 `;
 
-export const CertificateYear = styled(TechText)``;
+export const CertificateYear = styled(TechText)`
+    color: ${COLORS.COLOR_SURFACE2};
+`;
 
 
 export const ExperienceContainer = styled.div`
@@ -151,20 +150,14 @@ export const ExperienceTextContainer = styled.div`
 `;
 
 export const ExperienceTextRowContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    svg {
-        color: ${COLORS.COLOR_SURFACE1};
-    }
+   // TODO: remove
 `;
 
 export const ExperienceTabsContainer = styled.div`
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    background-color: ${COLORS.COLOR_BG1};
+    background-color: ${COLORS.COLOR_BG2};
 
     @media ${VIEWPORT.desktopUp} {
         flex-direction: column;
@@ -180,29 +173,29 @@ export const ExperienceTab = styled.button`
     display: flex;
     flex-direction: row;
     min-width: 100px;
-    background-color: ${({ active }) => (active?  "#284A59" : `${COLORS.COLOR_BG1}`)};
+    background-color: ${({ active }) => (active?  "#303057" : `${COLORS.COLOR_BG2}`)};
     border: none;
     outline: none;
     cursor: pointer;
     padding: 1rem 1.5rem;
     transition: 0.3s ease-in;
-    border-top: 1px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+    border-top: 1px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
 
     ${ExperienceTabText} {
-        color: ${({ active }) => (active? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+        color: ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
     }
 
     &:hover {
-        background-color: #284A59;
+        background-color: #303057;
 
         ${ExperienceTabText} {
-            color: ${COLORS.COLOR_SURFACE1}
+            color: ${COLORS.COLOR_SURFACE2}
         }
     }
 
     @media ${VIEWPORT.desktopUp} {
         min-width: 175px;
-        border-left: 2px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+        border-left: 3px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
         border-top: none;
     }
 `;  
@@ -232,23 +225,19 @@ export const Position = styled.p`
 `;
 
 export const Company = styled.span`
-    color: ${COLORS.COLOR_SURFACE1};
+    color: ${COLORS.COLOR_SURFACE2};
 `;
 
 export const BadgesContainer = styled.div`
-    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    width: 100%;
 
     @media ${VIEWPORT.desktopUp} {
-        margin-top: 2rem;
-        margin-left: 5rem;
-        margin-bottom: 0;
         align-items: end;
-        justify-content: end;
+        justify-content: center;
     }
 `;
 
