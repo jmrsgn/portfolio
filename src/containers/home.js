@@ -1,37 +1,34 @@
 import React from 'react';
 
-import { TechText, 
-         Button, 
-         SocialIcon,
-         DescriptionText } from '../globalComponents';
+import { Button, 
+         SocialIcon } from '../globalComponents';
 
 import { Home } from '../components';
 
 import { BsInstagram } from 'react-icons/bs';
 import {AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaTiktok, FaStrava } from "react-icons/fa";
-import { Greeting } from '../components/home/styles/home';
 import MotionWrap from '../wrapper/motion-wrap';
 
 export function HomeContainer() {
     return (
         <Home id="home">
             <Home.Box>
-                <Home.InfoBox>
+                <Home.BoxInfo>
                     <MotionWrap
                         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Home.GreetingsContainer>
-                            <TechText>Hello, I'm</TechText>
-                            <Greeting>John Martin</Greeting>
+                        <Home.ContainerGreetings>
+                            <Home.TextTech>Hello, I'm</Home.TextTech>
+                            <Home.TextGreeting>John Martin</Home.TextGreeting>
 
-                            <DescriptionText>
+                            <Home.TextDescription>
                                 A passionate Developer with a love for fitness. By day, I dive 
                                 into code, creating innovative solutions and developing user-friendly 
                                 applications. By night, you'll find me pushing my limits at the gym, 
                                 running, or exploring new fitness routines.
-                            </DescriptionText>
+                            </Home.TextDescription>
                             <Button 
                                 type="1"
                                 to="../resume/Resume.pdf"
@@ -39,10 +36,10 @@ export function HomeContainer() {
                             >
                                 Resume
                             </Button>
-                        </Home.GreetingsContainer>
+                        </Home.ContainerGreetings>
                     </MotionWrap>
 
-                    <Home.SocialContainer>
+                    <Home.ContainerSocials>
                         <MotionWrap
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -87,12 +84,12 @@ export function HomeContainer() {
                                 <FaStrava />
                             </SocialIcon>
                         </MotionWrap>
-                    </Home.SocialContainer>
-                </Home.InfoBox>
+                    </Home.ContainerSocials>
+                </Home.BoxInfo>
     
-                <Home.InfoBox>
+                <Home.BoxInfo>
                     <Home.Image src="../images/who-am-i-svg.svg" />
-                </Home.InfoBox>
+                </Home.BoxInfo>
             </Home.Box>
         </Home>
     );

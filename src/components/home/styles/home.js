@@ -1,12 +1,35 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, Title } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextTech, Title } from '../../../globalComponents';
 
+/**
+ * * Containers
+ */
 
 export const Container = styled(_Container)`
     background-color: ${COLORS.COLOR_BG1};
 `;
+
+export const ContainerGreetings = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`;
+
+export const ContainerSocials = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
+    }
+`;
+
+/**
+ * * Boxes
+ */
 
 export const Box = styled(_Box)`
     display: flex;
@@ -27,7 +50,7 @@ export const Box = styled(_Box)`
     }
 `;
 
-export const InfoBox = styled.div`
+export const BoxInfo = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -35,29 +58,25 @@ export const InfoBox = styled.div`
     padding: 1rem;
 `;
 
-export const GreetingsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-`;
+/**
+ * * Texts
+ */
 
-export const SocialContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
+export const TextTech = styled(_TextTech)``;
 
-    @media ${VIEWPORT.desktopUp} {
-        margin-top: 3rem;
-    }
-`;
-
-export const Greeting = styled(Title)`
+export const TextGreeting = styled(Title)`
     color: ${COLORS.COLOR_ON_BACKGROUND};
 
     @media ${VIEWPORT.desktopUp} {
         margin-top: 2rem;
     }
 `;
+
+export const TextDescription = styled(_TextDescription)``;
+
+/**
+ * * Images
+ */
 
 export const Image = styled.img`
     height: auto;

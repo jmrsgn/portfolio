@@ -2,16 +2,11 @@ import React from "react";
 import { About } from "../components";
 
 import {
-    DescriptionText,
     Divider,
     FilterText,
-    OtherTitle,
-    Row,
     SpaceHeightExtraLarge,
     SpaceHeightLarge,
     SpaceHeightSmall,
-    TextLink,
-    Title,
 } from "../globalComponents";
 
 import WhatIDoData from '../fixtures/what-i-do.json';
@@ -26,68 +21,59 @@ export function AboutContainer() {
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <About.Box>
-                    <Title>Who am I</Title>
+                    <About.TextTitle>Who am I</About.TextTitle>
                     <Divider type="2" />
 
-                    <About.InfoBox>
-                        <About.AboutMeTextContainer>
-                            <DescriptionText>
-                                My name is John Martin I. Marasigan, a person who has an interest
-                                doing Programming. I only enjoyed things out in my 4th year of
-                                College and suddenly fell in love with Android Development. I am
-                                currently working as an 
-                                <FilterText>Associate Software Engineer</FilterText> at 
-                                <FilterText>Infor</FilterText>, and part of the MSCM team
-                                providing maintenance and support to mobile applications.
-                            </DescriptionText>
+                    <About.BoxInfo>
+                        <About.ContainerAboutMeText>
+                            <About.TextDescription>
+                                My name is John Martin I. Marasigan, and I have a deep passion for programming. 
+                                My love for coding truly sparked during my fourth year of college when I discovered Android development, 
+                                and I've been hooked ever since. Currently, I work as an
+                                <FilterText> Associate Software Engineer</FilterText> at 
+                                <FilterText>Infor</FilterText> where I'm part of the MSCM team, 
+                                providing maintenance and support for mobile applications.
+                            </About.TextDescription>
 
                             <SpaceHeightSmall />
 
-                            <DescriptionText>
+                            <About.TextDescription>
                                 In my free time, I work out regularly, spending time alone going
                                 to the places that put my mind at ease. I also have great taste in
                                 music, love reading books, am a fitness enthusiast, and a
                                 guitarist.
-                            </DescriptionText>
-                        </About.AboutMeTextContainer>
+                            </About.TextDescription>
 
-                        <About.Avatar src="../images/jm.jpeg" />
-                    </About.InfoBox>
+                            <About.TextLink type="2" to="/about/more">
+                                Know me more
+                            </About.TextLink>
+                        </About.ContainerAboutMeText>
 
-                    <TextLink type="2" to="/about/more">
-                        Know me more
-                    </TextLink>
+                        <About.ImageAvatar src="../images/jm.jpeg" />
+                    </About.BoxInfo>
 
                     <SpaceHeightExtraLarge />
 
                     {WhatIDoData.map((item, index) => (
                         <>
-                            <About.InfoTechBox
+                            <About.BoxInfoTech
                                 flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
                             >
-                                <About.TechInfoContainer>
-                                    <OtherTitle>{item.title}</OtherTitle>
-                                    <SpaceHeightSmall />
-
-                                    <DescriptionText>{item.description}</DescriptionText>
-                                    <SpaceHeightSmall />
-
-                                    <About.TechUsedContainer>
+                                <About.ContainerTechInfo>
+                                    <About.TextTitleOther>{item.title}</About.TextTitleOther>
+                                    <About.TextDescription>{item.description}</About.TextDescription>
+                                    <About.ContainerTechUsed>
                                         {item.tech.map((tech) => (
-                                            <About.TechUsedTextContainer>
+                                            <About.ContainerTechUsedText>
                                                 <IoIosArrowDroprightCircle />
-                                                <About.TechUsedText>{tech}</About.TechUsedText>
-                                            </About.TechUsedTextContainer>
+                                                <About.TextTechUsed>{tech}</About.TextTechUsed>
+                                            </About.ContainerTechUsedText>
                                         ))}
-                                    </About.TechUsedContainer>
-                                </About.TechInfoContainer>
+                                    </About.ContainerTechUsed>
+                                </About.ContainerTechInfo>
 
                                 <About.TechImage src={item.src} />
-                            </About.InfoTechBox>
-
-                            <Row flexDirection={index % 2 === 0 ? "row" : "row-reverse"}>
-                                <About.TechDivider />
-                            </Row>
+                            </About.BoxInfoTech>
 
                             <SpaceHeightLarge />
                         </>

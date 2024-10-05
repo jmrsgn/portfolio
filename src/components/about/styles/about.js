@@ -1,11 +1,58 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, TechText } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextLink, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
+
+/**
+ * * Containers
+ */
 
 export const Container = styled(_Container)`
     background-color: ${COLORS.COLOR_BG2};
 `;
+
+export const ContainerAboutMeText = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+`;
+
+export const ContainerTechInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 3rem 1.75rem;
+    border: 1px solid ${COLORS.COLOR_GRAY};
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(101%);
+        transition: 0.1s;
+    }
+`;
+
+export const ContainerTechUsed = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+`;
+
+export const ContainerTechUsedText = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: .15rem;
+
+    svg {
+        color: ${COLORS.COLOR_SURFACE2};
+    }
+`;
+
+/**
+ * * Boxes
+ */
 
 export const Box = styled(_Box)`
     margin: 0 auto 0 auto;
@@ -18,7 +65,7 @@ export const Box = styled(_Box)`
     }
 `;
 
-export const InfoBox = styled.div`
+export const BoxInfo = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 1.25rem;
@@ -27,27 +74,13 @@ export const InfoBox = styled.div`
     justify-content: space-between;
 `;
 
-export const AboutMeTextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
+export const BoxInfoTech = styled(BoxInfo)`
+    flex-direction: ${({ flexDirection }) => (flexDirection)};
 `;
 
-export const Avatar = styled.img`
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    margin-top: 2rem;
-    border: 1px solid ${COLORS.COLOR_LIGHT_GRAY};
-    margin-bottom: 1rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 200px;
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-`;
+/**
+ * ! NOT ORGANIZED
+ */
 
 export const NavigationIcon = styled.a`
     width: 35px;
@@ -111,46 +144,49 @@ export const SocialContainer = styled.div`
     }
 `;
 
-export const TechInfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-`;
-
-export const TechUsedContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-export const TechImage = styled.img`
-    height: auto;
-    width: 25rem;
-`;
-
-export const TechUsedText = styled(TechText)`
-    line-height: 18px;
-    color: ${COLORS.COLOR_SURFACE2};
-    font-size: .85rem;
-    margin-left: 1.25rem;
-`;
-
 export const TechDivider = styled.div`
     height: 1px;
     background-color: ${COLORS.COLOR_GRAY};
     width: 55%;
 `;
 
-export const InfoTechBox = styled(InfoBox)`
-    flex-direction: ${({ flexDirection }) => (flexDirection)};
+/**
+ * * Texts
+ */
+
+export const TextLink = styled(_TextLink)`
+    margin-top: 1.25rem;
 `;
 
-export const TechUsedTextContainer = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    padding: .15rem;
+export const TextDescription = styled(_TextDescription)`
+    margin-top: 12px;
+`;
 
-    svg {
-        color: ${COLORS.COLOR_SURFACE2};
-    }
+export const TextTitle = styled(_TextTitle)``;
+
+export const TextTechUsed = styled(TechText)`
+    line-height: 18px;
+    color: ${COLORS.COLOR_SURFACE2};
+    font-size: .85rem;
+    margin-left: 1.25rem;
+`;
+
+export const TextTitleOther = styled(_TextTitleOther)``;
+
+/**
+ * * Images
+ */
+
+export const ImageAvatar = styled.img`
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid ${COLORS.COLOR_LIGHT_GRAY};
+    justify-content: center;
+    align-items: center;    
+`;
+
+export const ImageTech = styled.img`
+    height: auto;
+    width: 25rem;
 `;

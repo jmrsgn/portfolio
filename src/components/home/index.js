@@ -1,35 +1,61 @@
 import React from "react";
-import { Container, 
+import { Container,
+         ContainerGreetings, 
+         ContainerSocials, 
          Box, 
-         SocialContainer,
-         GreetingsContainer, 
-         Greeting, 
-         InfoBox,
+         BoxInfo,
+         TextGreeting,  
+         TextTech, 
+         TextDescription,
          Image }  from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
+/**
+ * * Containers
+ */
+
+Home.ContainerGreetings = function HomeContainerGreetings({ children, ...restProps }) {
+    return <ContainerGreetings {...restProps}>{children}</ContainerGreetings>
+}
+
+Home.ContainerSocials = function HomeContainerSocials({ children, ...restProps }) {
+    return <ContainerSocials {...restProps}>{children}</ContainerSocials>
+}
+
+/**
+ * * Boxes
+ */
+
 Home.Box = function HomeBox({ children, ...restProps }) {
     return <Box {...restProps}>{children}</Box>
 }
 
-Home.InfoBox = function HomeInfoBox({ children, ...restProps }) {
-    return <InfoBox {...restProps}>{children}</InfoBox>
+Home.BoxInfo = function HomeBoxInfo({ children, ...restProps }) {
+    return <BoxInfo {...restProps}>{children}</BoxInfo>
 }
 
-Home.SocialContainer = function HomeSocialContainer({ children, ...restProps }) {
-    return <SocialContainer {...restProps}>{children}</SocialContainer>
+/**
+ * * Texts
+ */
+
+Home.TextTech = function HomeTextTech({ children, ...restProps }) {
+    return <TextTech {...restProps}>{children}</TextTech>
 }
 
-Home.GreetingsContainer = function HomeGreetingsContainer({ children, ...restProps }) {
-    return <GreetingsContainer {...restProps}>{children}</GreetingsContainer>
+Home.TextGreeting = function HomeTextGreeting({ children, ...restProps }) {
+    return <TextGreeting {...restProps}>{children}</TextGreeting>
 }
 
-Home.Greeting = function HomeGreeting({ children, ...restProps }) {
-    return <Greeting {...restProps}>{children}</Greeting>
+Home.TextDescription = function HomeTextDescription({ children, ...restProps }) {
+    return <TextDescription {...restProps}>{children}</TextDescription>
 }
+
+/**
+ * * Images
+ */
 
 Home.Image = function HomeImage({ src, ...restProps }) {
     return <Image src={src} {...restProps} />

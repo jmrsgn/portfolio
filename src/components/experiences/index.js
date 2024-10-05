@@ -17,13 +17,15 @@ import { Container,
          ExperienceTextContainer,
          ExperienceTextRowContainer,
          CertificatesContainer,
-         CertificateContainer,
          Certificate,
          CertificateTitle,
          CertificateYear, 
-         CertificateInfoContainer,
+         ContainerCertificate,
+         ContainerCertificateInfo,
          Badge,
-         BadgesContainer } from './styles/experiences';
+         BadgesContainer, 
+         LinkCertificatesSeeMore,
+         LinkExperiencesReadMore } from './styles/experiences';
 
 export default function Experiences({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -97,10 +99,6 @@ Experiences.CertificatesContainter = function ExperiencesCertificatesContainer({
     return <CertificatesContainer {...restProps}>{children}</CertificatesContainer>
 }
 
-Experiences.CertificateContainer = function ExperiencesCertificateContainer({ children, ...restProps }) {
-    return <CertificateContainer {...restProps}>{children}</CertificateContainer>
-} 
-
 Experiences.Certificate = function ExperiencesCertificate({ src, ...restProps }) {
     return <Certificate src={src} {...restProps} />
 }
@@ -113,10 +111,6 @@ Experiences.CertificateYear = function ExperiencesCertificateYear({ children, ..
     return <CertificateYear {...restProps}>{children}</CertificateYear>
 }
 
-Experiences.CertificateInfoContainer = function ExperiencesCertificateInfoContainer({ children, ...restProps }) {
-    return <CertificateInfoContainer {...restProps}>{children}</CertificateInfoContainer>
-}
-
 Experiences.Badge = function ExperiencesBadge({ src, ...restProps }) {
     return <Badge src={src} {...restProps} />
 }
@@ -125,3 +119,27 @@ Experiences.BadgesContainer = function ExperiencesBadgesContainer({ children, ..
     return <BadgesContainer {...restProps}>{children}</BadgesContainer>
 }
 
+
+/**
+ * * Containers
+ */
+
+Experiences.ContainerCertificate = function ExperiencesContainerCertificate({ children, ...restProps }) {
+    return <ContainerCertificate {...restProps}>{children}</ContainerCertificate>
+}
+
+Experiences.ContainerCertificateInfo = function ExperiencesContainerCertificateInfo({ children, ...restProps }) {
+    return <ContainerCertificateInfo {...restProps}>{children}</ContainerCertificateInfo>
+}
+
+/**
+ *  * Links
+ */
+
+Experiences.LinkExperiencesReadMore = function ExperiencesLinkExperiencesReadMore({ children, ...restProps }) {
+    return <LinkExperiencesReadMore {...restProps}>{children}</LinkExperiencesReadMore>
+}
+
+Experiences.LinkCertificatesSeeMore = function ExperiencesLinkCertificatesSeeMore({ children, ...restProps }) {
+    return <LinkCertificatesSeeMore {...restProps}>{children}</LinkCertificatesSeeMore>
+}

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, TechText } from '../../../globalComponents';
+import { _Box, _Container, TechText, TextLink } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';
 
 export const Container = styled(_Container)`
@@ -86,21 +86,6 @@ export const CertificatesContainer = styled.div`
     }
 `;
 
-export const CertificateContainer = styled.div`
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: start;
-    }
-`;
-
 export const Certificate = styled.img`
     max-width: 250px;
     border: 1px solid ${COLORS.COLOR_ON_BACKGROUND};
@@ -120,15 +105,36 @@ export const CertificateTitle = styled.p`
     }
 `
 
-export const CertificateInfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/**
+ * * Certificate Styles
+ */
 
-    @media ${VIEWPORT.desktopUp} {
-        align-items: start;
-        justify-content: center;
+
+/**
+ * * Containers
+ */
+
+export const ContainerCertificateInfo = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const ContainerCertificate = styled.div`
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin-top: 1.25rem;
+    border: 1px solid ${COLORS.COLOR_GRAY};
+    padding: 2rem 1.25rem;;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(103%);
+        transition: 0.1s;
     }
 `;
 
@@ -257,4 +263,14 @@ export const Badge = styled.img`
         filter: grayscale(1);
         height: 70px;
     }
+`;
+
+export const LinkExperiencesReadMore = styled(TextLink)`
+    color: ${COLORS.COLOR_SURFACE2};
+    margin-top: 12px;
+`;
+
+export const LinkCertificatesSeeMore = styled(TextLink)`
+    color: ${COLORS.COLOR_SURFACE2};
+    margin-top: 12px;
 `;

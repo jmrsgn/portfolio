@@ -5,9 +5,9 @@ import * as COLORS from './constants/colors';
 import { VIEWPORT } from './constants/viewports';
 import { FONT } from './fonts/fonts';
 
-/*
-    Sizes
-*/
+/**
+ * TODO: create dimens using perfect website dimensions
+ */
 
 export const TextExtraSmall = styled.p`
     font-size: .75rem;
@@ -52,7 +52,37 @@ export const TechText = styled(TextExtraSmall)`
     margin-top: ${({ marginTop }) => (marginTop)};
 `;
 
+export const _TextTech = styled(TextExtraSmall)`
+    font-family: ${FONT.sfMonoRegular};
+
+    /* 
+        Adjustable settings
+    */
+    
+    color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
+    margin: ${({ margin }) => (margin)};
+    margin-bottom: ${({ marginBottom }) => (marginBottom)};
+    margin-top: ${({ marginTop }) => (marginTop)};
+`;
+
 export const DescriptionText = styled(TextSmall)`
+    font-family: ${FONT.calibreRegular};
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+    line-height: 22px;
+
+    /*
+        Adjustable settings
+    */
+
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-left: ${({ marginLeft }) => (marginLeft)};
+
+    @media ${VIEWPORT.desktopUp} {
+        line-height: 26px;
+    }
+`;
+
+export const _TextDescription = styled(TextSmall)`
     font-family: ${FONT.calibreRegular};
     color: ${COLORS.COLOR_LIGHT_GRAY};
     line-height: 22px;
@@ -80,12 +110,22 @@ export const Title = styled(TextExtraLarge)`
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
+export const _TextTitle = styled(TextExtraLarge)`
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
 export const SubTitle = styled(TextLarge)`
     font-family: ${FONT.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};
 `;
 
 export const OtherTitle = styled(TextMedium)`
+    font-family: ${FONT.calibreRegular};
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
+export const _TextTitleOther = styled(TextMedium)`
     font-family: ${FONT.calibreRegular};
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
@@ -190,6 +230,23 @@ export const SpaceHeightExtraLarge = styled.div`
 // -------------------------------------------
 
 export const TextLink = styled(Link)`
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+    font-size: 0.75rem;
+    font-family: ${FONT.sfMonoRegular};
+    text-decoration: none;
+    transition: .1s ease-in;
+
+    display: inline-block;
+    margin-block: 2px;
+    position: relative;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1rem;
+    }
+`;
+
+export const _TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: 0.75rem;

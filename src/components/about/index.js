@@ -1,40 +1,69 @@
 import React from "react"
-import { Avatar, 
+import { Container, 
+         ContainerAboutMeText,
+         ContainerTechInfo,
+         ContainerTechUsed,
+         ContainerTechUsedText,
          Box, 
-         Container, 
-         InfoBox, 
+         BoxInfo, 
+         BoxInfoTech,
          NavigationIcon, 
          ContactText, 
          ProfileContactTextsContainer, 
-         SocialContainer, 
-         AboutMeTextContainer,
-         TechInfoContainer,
-         TechUsedContainer,
-         TechUsedText,
+         SocialContainer,
          TechDivider,
-         TechImage, 
-         InfoTechBox, 
-         TechUsedTextContainer } from "./styles/about"
+         TextLink, 
+         TextDescription,
+         TextTitle,
+         TextTechUsed,
+         TextTitleOther,
+         ImageAvatar, 
+         ImageTech } from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
+/**
+ * * Containers
+ */
+
+About.ContainerAboutMeText = function AboutContainerAboutMeText({ children, ...restProps }) {
+    return <ContainerAboutMeText {...restProps}>{children}</ContainerAboutMeText>
+}
+
+About.ContainerTechInfo = function AboutContainerTechInfo({ children, ...restProps }) {
+    return <ContainerTechInfo {...restProps}>{children}</ContainerTechInfo>
+}
+
+About.ContainerTechUsed = function AboutContainerTechUsed({ children, ...restProps }) {
+    return <ContainerTechUsed {...restProps}>{children}</ContainerTechUsed>
+}
+
+About.ContainerTechUsedText = function AboutContainerTechUsedText({ children, ...restProps }) {
+    return <ContainerTechUsedText { ...restProps}>{children}</ContainerTechUsedText>
+}
+
+/**
+ * * Boxes
+ */
+
 About.Box = function AboutBox({ children, ...restProps }) {
     return <Box {...restProps}>{children}</Box>
 }
 
-About.InfoBox = function AboutInfoBox({ children, ...restProps }) {
-    return <InfoBox {...restProps}>{children}</InfoBox>
+About.BoxInfo = function AboutBoxInfo({ children, ...restProps }) {
+    return <BoxInfo {...restProps}>{children}</BoxInfo>
 }
 
-About.InfoTechBox = function AboutInfoTechBox({ children, ...restProps }) {
-    return <InfoTechBox {...restProps}>{children}</InfoTechBox>
+About.BoxInfoTech = function AboutBoxInfoTech({ children, ...restProps }) {
+    return <BoxInfoTech {...restProps}>{children}</BoxInfoTech>
 }
 
-About.Avatar = function AboutAvatar({ src, ...restProps }) {
-    return <Avatar src={src} {...restProps}/>
-}
+
+/**
+ * ! NOT ORGANIZED
+ */
 
 About.NavigationIcon = function AboutNavigatioIcon({ children, ...restProps }) {
     return <NavigationIcon {...restProps}>{children}</NavigationIcon>
@@ -52,30 +81,42 @@ About.SocialContainer = function AboutSocialContainer({ children, ...restProps }
     return <SocialContainer {...restProps}>{children}</SocialContainer>
 }
 
-About.AboutMeTextContainer = function AboutAboutMeTextContainer({ children, ...restProps }) {
-    return <AboutMeTextContainer {...restProps}>{children}</AboutMeTextContainer>
-}
-
-About.TechInfoContainer = function AboutTechInfoContainer({ children, ...restProps }) {
-    return <TechInfoContainer {...restProps}>{children}</TechInfoContainer>
-}
-
-About.TechUsedContainer = function AboutTectUsedContainer({ children, ...restProps }) {
-    return <TechUsedContainer {...restProps}>{children}</TechUsedContainer>
-}
-
-About.TechImage = function AboutTechImage({ src }) {
-    return <TechImage src={src} />
-}
-
-About.TechUsedText = function AboutTechUsedText({ children, ...restProps }) {
-    return <TechUsedText {...restProps}>{children}</TechUsedText>
-}
-
 About.TechDivider = function AboutTechDivider({ ...restProps }) {
     return <TechDivider {...restProps} />
 }
 
-About.TechUsedTextContainer = function AboutTechUsedTextContainer({ children, ...restProps }) {
-    return <TechUsedTextContainer { ...restProps}>{children}</TechUsedTextContainer>
+/**
+ * * Texts
+ */
+
+About.TextLink = function AboutTextLink({ children, ...restProps }) {
+    return <TextLink {...restProps}>{children}</TextLink>
+}
+
+About.TextDescription = function AboutTextDescription({ children, ...restProps }) {
+    return <TextDescription {...restProps}>{children}</TextDescription>
+}
+
+About.TextTitle = function AboutTextTitle({ children, ...restProps }) {
+    return <TextTitle {...restProps}>{children}</TextTitle>
+}
+
+About.TextTechUsed = function AboutTextTechUsed({ children, ...restProps }) {
+    return <TextTechUsed {...restProps}>{children}</TextTechUsed>
+}
+
+About.TextTitleOther = function AboutTextTitleOther({ children, ...restProps }) {
+    return <TextTitleOther {...restProps}>{children}</TextTitleOther>
+}
+
+/** 
+ * * Images
+ */
+
+About.ImageAvatar = function AboutImageAvatar({ src, ...restProps }) {
+    return <ImageAvatar src={src} {...restProps}/>
+}
+
+About.ImageTech = function AboutImageTech({ src }) {
+    return <ImageTech src={src} />
 }

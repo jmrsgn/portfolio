@@ -1,15 +1,30 @@
 [
     {
         "id": 1,
-        "title": "CompTIA IT Fundamentals Certification",
+        "title": "CompTIA IT Fundamentals",
+        "issued_by": "CompTIA",
         "year": "2018",
         "src": "../images/certificates/comptia.png"
     },
-
     {
         "id": 2,
+        "title": "MTA: Introduction to Programming using Java",
+        "issued_by": "Microsoft",
+        "year": "2019",
+        "src": ""
+    },
+    {
+        "id": 3,
         "title": "AWS Academy Graduate",
+        "issued_by": "Amazon Web Services (AWS)",
         "year": "2022",
         "src": "../images/certificates/aws.png"
+    },
+    {
+        "id": 4,
+        "title": "Health and Mind Training",
+        "issued_by": "JC Premiere Worldwide",
+        "year": "2024",
+        "src": ""
     }
 ]

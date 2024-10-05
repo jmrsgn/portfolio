@@ -5,10 +5,11 @@
         "position": "Software Engineer, Associate",
         "company": "Infor",
         "learnings": [
-            "I am working as an Associate Software Engineer at Infor and part of the MSCM Android Team. Grateful working with great people that helps me strive to learn more about Software Development.",
-            "I am one of the handheld developers, or mobile developers in the team. We currently use Java for building native apps, and Ionic JS for the hybrid mobile apps. JIRA is also used for monitoring of tasks, and Oxford GitLab for the version control.",
-            "For the past almost two years of working in the company, I found people that really inspires me to be better as I see how good they are technically. I also like how their personality fits my needs as a slow learner."
-        ]
+            "I am currently working as an Associate Software Engineer at Infor, as part of the MSCM Android Team. I'm grateful to be surrounded by talented individuals who continually motivate me to improve and deepen my understanding of software development.",
+            "As one of the handheld/mobile developers, I contribute to both native and hybrid mobile applications. We use Java for native Android apps and Ionic with JavaScript for hybrid apps. Our team relies on JIRA for task management and Oxford GitLab for version control.",
+            "In my nearly two years at Infor, I've been inspired by the technical skills of my colleagues and their supportive personalities, which have helped me grow at my own pace as a slower learner."
+        ],
+        "link": "#"
     },
     {
         "id": 2,
@@ -16,7 +17,9 @@
         "position": "IT Specialist Intern",
         "company": "Miyens",
         "learnings": [
-            "I worked as an IT Specialist Intern in my OJT training at Miyens. I learned how to make a couple of web pages using WordPress, made a simple UI/UX for the team, and did maintenance with other tasks. Unfortunately there are no code-related tasks that suppposedly be my 'getting ready' in the corporate world, but I am still happy that I made it through."
-        ]
+            "During my OJT training at Miyens, I worked as an IT Specialist Intern. During this time, I gained experience in creating web pages using WordPress, designing simple UI/UX elements for the team, and assisting with various maintenance tasks. Although I didn’t have the opportunity to work on code-related projects, which I had hoped would prepare me for the corporate world, I am still proud of what I accomplished during the internship."
+        ],
+        "link": "#"
     }
+
 ]

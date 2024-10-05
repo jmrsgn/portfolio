@@ -4,13 +4,15 @@ import { Title,
          DescriptionText, 
          SubTitle, 
          Divider, 
-         SpaceHeightExtraLarge} from "../globalComponents";
+         SpaceHeightExtraLarge } from "../globalComponents";
 import { Experiences } from "../components";
 
 import experiencesData from '../fixtures/experiences.json';
 import certificatesData from '../fixtures/certificates.json';
 import badgesData from '../fixtures/badges.json';
 import MotionWrap from "../wrapper/motion-wrap";
+
+import { BsArrowUpRight } from "react-icons/bs";
 
 export function ExperiencesContainer() {
     const [active, setActive] = useState(experiencesData[0]);
@@ -51,6 +53,10 @@ export function ExperiencesContainer() {
                                                 >{item}</DescriptionText>
                                             ))}
                                         </Experiences.ExperienceTextContainer>
+
+                                        <Experiences.LinkExperiencesReadMore
+                                            to={active.link}
+                                        >Read more</Experiences.LinkExperiencesReadMore>
                                     </Experiences.ExperienceContainer>
                                 </Experiences.DisplayContainer>
                             </Experiences.ExperiencesContainer>
@@ -65,16 +71,27 @@ export function ExperiencesContainer() {
                                     >Certificates & Badges</SubTitle>
                                 </Experiences.SubTitleSubBox>
 
-                                {certificatesData.map((item) => (
-                                    <Experiences.CertificateContainer>
-                                        <Experiences.Certificate src={item.src} />
-                                        <Experiences.CertificateInfoContainer>
-                                            <Experiences.CertificateTitle>{item.title}</Experiences.CertificateTitle>
-                                            <Experiences.CertificateYear>{item.year}</Experiences.CertificateYear>
-                                        </Experiences.CertificateInfoContainer>
-                                    </Experiences.CertificateContainer>
+                                {certificatesData.map((item, index) => (
+                                   index !== 3 && (
+                                        <Experiences.ContainerCertificate>
+                                            <Experiences.ContainerCertificateInfo>
+                                                <div>
+                                                    <Experiences.CertificateTitle>{item.title}</Experiences.CertificateTitle>
+                                                    <Experiences.CertificateYear>{item.year}</Experiences.CertificateYear>
+                                                </div>
+                                                <>
+                                                    <BsArrowUpRight 
+                                                        size={20}
+                                                    />  
+                                                </>
+                                            </Experiences.ContainerCertificateInfo>
+                                        </Experiences.ContainerCertificate>
+                                    )
                                 ))}
                             </Experiences.CertificatesContainter>
+                            <Experiences.LinkCertificatesSeeMore
+                                to="#"
+                            >See more</Experiences.LinkCertificatesSeeMore>
                         </Experiences.CertificatesSubBox>
                     </Experiences.InfoContainer>
 

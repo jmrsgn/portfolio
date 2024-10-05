@@ -9,7 +9,6 @@ import {AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaTiktok } from "react-icons/fa";
 import { BsInstagram } from 'react-icons/bs';
 
-import { Greeting } from "../components/home/styles/home";
 import { Link } from "react-router-dom";
 
 export function AboutMoreContainer() {
@@ -82,11 +81,11 @@ export function AboutMoreContainer() {
                     </About.SubBox>
                     
                     <About.InfoBox>
-                        <Greeting
+                        <About.TechUsedText
                             marginTop='0rem'
                         >
                             Hi!
-                        </Greeting>
+                        </About.TechUsedText>
                         
                         <Divider type='1'/>
 
