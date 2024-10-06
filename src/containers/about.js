@@ -72,7 +72,7 @@ export function AboutContainer() {
                                     </About.ContainerTechUsed>
                                 </About.ContainerTechInfo>
 
-                                <About.TechImage src={item.src} />
+                                <About.ImageTech src={item.src} />
                             </About.BoxInfoTech>
 
                             <SpaceHeightLarge />

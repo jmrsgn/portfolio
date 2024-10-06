@@ -2,38 +2,13 @@ import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { FONT } from '../../../fonts/fonts';
-import { _Box, _Container } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextTitle } from '../../../globalComponents';
 
-export const Container = styled(_Container)`
-    background-color: ${COLORS.COLOR_BG1};
-`;
+/**
+ * * Items
+ */
 
-export const Box = styled(_Box)`
-    margin: 0 auto 0 auto;
-    display: flex;
-    padding: 2.25rem 1.25rem;
-    flex-direction: column;
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 85%;
-        padding: 5rem;
-    }
-`;
-
-export const ProjectTitleNavContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-export const NavigationContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`;
-
-export const Project = styled.div`
+export const ItemProject = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,7 +40,35 @@ export const Project = styled.div`
     }
 `;
 
-export const ProjectsContainer = styled.div`
+export const ItemTag = styled.div`
+    border: 1px solid ${COLORS.COLOR_SURFACE1};
+    margin: 0.15rem;
+    border-radius: .5rem;
+    padding: .25rem .75rem;
+`;
+
+/**
+ * * Containers
+ */
+
+export const Container = styled(_Container)`
+    background-color: ${COLORS.COLOR_BG1};
+`;
+
+export const ContainerProjectTitleNav = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const ContainerNavigation = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const ContainerProjects = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
@@ -84,25 +87,14 @@ export const ProjectsContainer = styled.div`
         columns: 3;
 
         &:hover {
-            ${Project} {
+            ${ItemProject} {
                 opacity: .5;
             }
         }
     }
 `;
 
-
-export const ProjectTitle = styled.p`
-    font-size: 1.5rem;
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    font-family: ${FONT.calibreRegular};
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 2.25rem;
-    }
-`;
-
-export const TagsContainer = styled.div`
+export const ContainerTags = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -115,14 +107,42 @@ export const TagsContainer = styled.div`
     }
 `;
 
-export const Tag = styled.div`
-    border: 1px solid ${COLORS.COLOR_SURFACE1};
-    margin: 0.15rem;
-    border-radius: .5rem;
-    padding: .25rem .75rem;
+/**
+ * * Boxes
+ */
+
+export const Box = styled(_Box)`
+    margin: 0 auto 0 auto;
+    display: flex;
+    padding: 2.25rem 1.25rem;
+    flex-direction: column;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 85%;
+        padding: 5rem;
+    }
 `;
 
-export const TagText = styled.p`
+/**
+ * * Texts
+ */
+
+export const TextDescription = styled(_TextDescription)`
+    margin-top: 24px;
+`;
+
+export const TextProjectTitle = styled.p`  
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-family: ${FONT.calibreRegular};
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2.25rem;
+    }
+`;
+
+export const TextTag = styled.p`
     font-family: ${FONT.sfMonoRegular};
     color: ${COLORS.COLOR_SURFACE1};
     font-size: .6rem;
@@ -131,3 +151,5 @@ export const TagText = styled.p`
         font-size: .75rem;
     }
 `;
+
+export const TextTitle = styled(_TextTitle)``;

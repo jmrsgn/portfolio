@@ -11,7 +11,6 @@ import { Container,
          ContactText, 
          ProfileContactTextsContainer, 
          SocialContainer,
-         TechDivider,
          TextLink, 
          TextDescription,
          TextTitle,
@@ -79,10 +78,6 @@ About.ProfileContactTextsContainer = function AboutProfileContactTextsContainer(
 
 About.SocialContainer = function AboutSocialContainer({ children, ...restProps }) {
     return <SocialContainer {...restProps}>{children}</SocialContainer>
-}
-
-About.TechDivider = function AboutTechDivider({ ...restProps }) {
-    return <TechDivider {...restProps} />
 }
 
 /**

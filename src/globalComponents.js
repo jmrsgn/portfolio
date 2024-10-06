@@ -120,6 +120,11 @@ export const SubTitle = styled(TextLarge)`
     color: ${COLORS.COLOR_ON_SURFACE};
 `;
 
+export const _TextSubTitle = styled(TextLarge)`
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_SURFACE};
+`;
+
 export const OtherTitle = styled(TextMedium)`
     font-family: ${FONT.calibreRegular};
     color: ${COLORS.COLOR_ON_BACKGROUND};

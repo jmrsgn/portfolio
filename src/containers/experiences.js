@@ -23,12 +23,12 @@ export function ExperiencesContainer() {
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <Experiences.Box>
-                    <Title>Experiences</Title>
+                    <Experiences.TextTitle>Experiences</Experiences.TextTitle>
                     <Divider type='2' />
 
-                    <Experiences.InfoContainer>
+                    <Experiences.ContainerInfo>
                         <Experiences.ExperiencesSubBox>
-                            <Experiences.ExperiencesContainer>
+                            <Experiences.ContainerExperiences>
                                 <Experiences.ExperienceTabsContainer>
                                     {experiencesData.map((item) => (
                                         <Experiences.ExperienceTab
@@ -42,10 +42,10 @@ export function ExperiencesContainer() {
                                     ))}
                                 </Experiences.ExperienceTabsContainer>
 
-                                <Experiences.DisplayContainer>
+                                <Experiences.ContainerExperienceDisplay>
                                     <Experiences.ExperienceContainer>
-                                        <Experiences.Position>{active.position}<Experiences.Company> @ {active.company}</Experiences.Company></Experiences.Position>
-                                        <Experiences.Date>{active.date}</Experiences.Date>
+                                        <Experiences.TextPosition>{active.position}<Experiences.TextCompany> @ {active.company}</Experiences.TextCompany></Experiences.TextPosition>
+                                        <Experiences.TextDate>{active.date}</Experiences.TextDate>
                                         <Experiences.ExperienceTextContainer>
                                             {active.learnings.map((item, index) => (
                                                 <DescriptionText
@@ -54,22 +54,22 @@ export function ExperiencesContainer() {
                                             ))}
                                         </Experiences.ExperienceTextContainer>
 
-                                        <Experiences.LinkExperiencesReadMore
+                                        <Experiences.TextLink
                                             to={active.link}
-                                        >Read more</Experiences.LinkExperiencesReadMore>
+                                        >Read more</Experiences.TextLink>
                                     </Experiences.ExperienceContainer>
-                                </Experiences.DisplayContainer>
-                            </Experiences.ExperiencesContainer>
+                                </Experiences.ContainerExperienceDisplay>
+                            </Experiences.ContainerExperiences>
                         </Experiences.ExperiencesSubBox>
 
                         <Experiences.CertificatesSubBox>
-                            <Experiences.CertificatesContainter>
-                                <Experiences.SubTitleSubBox>
-                                    <SubTitle
+                            <Experiences.ContainerCertificates>
+                                <>
+                                    <Experiences.TextSubTitle
                                         isBold='true'
                                         fontSize='2rem'
-                                    >Certificates & Badges</SubTitle>
-                                </Experiences.SubTitleSubBox>
+                                    >Certificates & Badges</Experiences.TextSubTitle>
+                                </>
 
                                 {certificatesData.map((item, index) => (
                                    index !== 3 && (
@@ -88,20 +88,18 @@ export function ExperiencesContainer() {
                                         </Experiences.ContainerCertificate>
                                     )
                                 ))}
-                            </Experiences.CertificatesContainter>
-                            <Experiences.LinkCertificatesSeeMore
+                            </Experiences.ContainerCertificates>
+                            <Experiences.TextLink
                                 to="#"
-                            >See more</Experiences.LinkCertificatesSeeMore>
+                            >See more</Experiences.TextLink>
                         </Experiences.CertificatesSubBox>
-                    </Experiences.InfoContainer>
+                    </Experiences.ContainerInfo>
 
-                    <SpaceHeightExtraLarge />
-
-                    <Experiences.BadgesContainer>
+                    <Experiences.ContainerBadges>
                         {badgesData.map((item) => (
-                            <Experiences.Badge src={item.src} />
+                            <Experiences.ItemBadge src={item.src} />
                         ))}
-                    </Experiences.BadgesContainer>
+                    </Experiences.ContainerBadges>
                 </Experiences.Box>
             </MotionWrap>
         </Experiences>

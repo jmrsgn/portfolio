@@ -144,12 +144,6 @@ export const SocialContainer = styled.div`
     }
 `;
 
-export const TechDivider = styled.div`
-    height: 1px;
-    background-color: ${COLORS.COLOR_GRAY};
-    width: 55%;
-`;
-
 /**
  * * Texts
  */
