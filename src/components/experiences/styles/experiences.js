@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _TextLink, _TextSubTitle, _TextTitle, TechText } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, TechText } from '../../../globalComponents';
 import { FONT } from '../../../fonts/fonts';
 
 /**
@@ -27,13 +27,29 @@ export const ContainerInfo = styled.div`
     }
 `;
 
+export const ContainerExperienceTabs = styled.div`
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: ${COLORS.COLOR_BG2};
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: column;
+    }
+`;
+
 /**
  * * Texts
  */
 
 export const TextTitle = styled(_TextTitle)``;
 
-export const TextSubTitle = styled(_TextSubTitle)``;
+export const TextSubTitle = styled(_TextSubTitle)`
+    font-size: 3rem;
+    font-weight: bold;
+`;
+
+export const TextDescription = styled(_TextDescription)``;
 
 export const TextLink = styled(_TextLink)`
     color: ${COLORS.COLOR_SURFACE2};
@@ -90,6 +106,68 @@ export const ContainerBadges = styled.div`
  */
 
 /**
+ * * Texts
+ */
+
+export const TextCompany = styled.span`
+    color: ${COLORS.COLOR_SURFACE2};
+`;
+
+export const TextDate = styled(TechText)`
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+`;
+
+export const TextPosition = styled.p`
+    font-size: 1.3rem;
+    font-family: ${FONT.calibreBold};
+    color: ${COLORS.COLOR_ON_SURFACE};
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.75rem;
+    }
+`;
+
+export const TextExperienceTab = styled(TechText)`
+    transition: 0.3s ease-in;
+    color: ${COLORS.COLOR_LIGHT_GRAY};
+`;
+
+/**
+ * * Items
+ */
+
+export const ItemExperienceTab = styled.button`
+    display: flex;
+    flex-direction: row;
+    min-width: 100px;
+    background-color: ${({ active }) => (active?  "#303057" : `${COLORS.COLOR_BG2}`)};
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: 0.3s ease-in;
+    border-top: 1px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
+
+    ${TextExperienceTab} {
+        color: ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
+    }
+
+    &:hover {
+        background-color: #303057;
+
+        ${TextExperienceTab} {
+            color: ${COLORS.COLOR_SURFACE2}
+        }
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        min-width: 175px;
+        border-left: 3px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
+        border-top: none;
+    }
+`;
+
+/**
  * * Containers
  */
 
@@ -118,6 +196,18 @@ export const ContainerExperiences = styled.div`
     }
 `;
 
+export const ContainerExperience = styled.div`
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+`;
+
+export const ContainerExperienceText = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+`;
+
 /**
  * * Boxes 
  */
@@ -134,43 +224,22 @@ export const Box = styled(_Box)`
     }
 `;
 
+export const BoxExperiences = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
 /**
- * * Texts
+ * * Certificates Styles
+ */ 
+
+/**
+ * * Items
  */
 
-export const TextCompany = styled.span`
-    color: ${COLORS.COLOR_SURFACE2};
-`;
-
-export const TextDate = styled(TechText)`
-    color: ${COLORS.COLOR_LIGHT_GRAY};
-`;
-
-export const TextPosition = styled.p`
-    font-size: 1.3rem;
-    font-family: ${FONT.calibreBold};
-    color: ${COLORS.COLOR_ON_SURFACE};
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1.75rem;
-    }
-`;
-
-export const ExperiencesSubBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-`;
-
-export const CertificatesSubBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;    
-`;
-
-export const Certificate = styled.img`
+export const ItemCertificate = styled.img`
+    background-color: red;
     max-width: 250px;
     border: 1px solid ${COLORS.COLOR_ON_BACKGROUND};
     margin-bottom: 1rem;
@@ -180,18 +249,9 @@ export const Certificate = styled.img`
     }
 `;
 
-export const CertificateTitle = styled.p`
-    font-family: ${FONT.calibreRegular};
-    font-size: 1rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1.25rem;
-    }
-`;
-
 /**
- * * Certificates Styles
- */ 
+ * * Containers
+ */
 
 export const ContainerCertificateInfo = styled.div`
     display: flex;
@@ -231,70 +291,31 @@ export const ContainerCertificates = styled.div`
     }
 `;
 
-export const CertificateYear = styled(TechText)`
+/**
+ * * Boxes
+ */
+
+export const BoxCertificates = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+`;
+
+/**
+ * * Texts
+ */
+
+export const TextCertificateTitle = styled.p`
+    font-family: ${FONT.calibreRegular};
+    font-size: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 1.25rem;
+    }
+`;
+
+export const TextCertificateYear = styled(TechText)`
     color: ${COLORS.COLOR_SURFACE2};
-`;
-
-
-export const ExperienceContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-`;
-
-export const ExperienceTextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-`;
-
-export const ExperienceTextRowContainer = styled.div`
-   // TODO: remove
-`;
-
-export const ExperienceTabsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    background-color: ${COLORS.COLOR_BG2};
-
-    @media ${VIEWPORT.desktopUp} {
-        flex-direction: column;
-    }
-`;
-
-export const ExperienceTabText = styled(TechText)`
-    transition: 0.3s ease-in;
-    color: ${COLORS.COLOR_LIGHT_GRAY};
-`;
-
-export const ExperienceTab = styled.button`
-    display: flex;
-    flex-direction: row;
-    min-width: 100px;
-    background-color: ${({ active }) => (active?  "#303057" : `${COLORS.COLOR_BG2}`)};
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 1rem 1.5rem;
-    transition: 0.3s ease-in;
-    border-top: 1px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
-
-    ${ExperienceTabText} {
-        color: ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : `${COLORS.COLOR_LIGHT_GRAY}`)};
-    }
-
-    &:hover {
-        background-color: #303057;
-
-        ${ExperienceTabText} {
-            color: ${COLORS.COLOR_SURFACE2}
-        }
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        min-width: 175px;
-        border-left: 3px solid ${({ active }) => (active? `${COLORS.COLOR_SURFACE2}` : "#303057")};
-        border-top: none;
-    }
 `;

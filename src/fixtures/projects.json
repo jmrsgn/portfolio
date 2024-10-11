@@ -40,7 +40,7 @@
     {
         "id": 2,
         "title": "Carkilahan",
-        "description": "Carkilahan is an Android application created by Java, and Firebase for the back-end side. It is our mini-project, capable of helping users book a car for their journey, and also my first applicaton ever built.",
+        "description": "Carkilahan is an Android application developed using Java, with Firebase powering the back-end. This was a mini-project designed to help users easily book cars for their trips, and it also marks my first-ever application build.",
         "filter": "Mobile",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
@@ -61,7 +61,7 @@
     {
         "id": 3,
         "title": "Portfolio",
-        "description": "A simple portfolio I made to express what I do in life, and you are currently viewing it. I used React JS in building the website, styled-components to design my widgets, and deploy it in Netlify.",
+        "description": "This portfolio is a simple project I created to showcase what I do, and you're currently exploring it. I built the website using React JS, styled the components with styled-components, and deployed it on Netlify.",
         "filter": "Web",
         "development": false,
         "src": "",

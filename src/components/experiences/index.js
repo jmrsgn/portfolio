@@ -1,5 +1,7 @@
 import React from "react";
 import { ItemBadge,
+         ItemCertificate,
+         ItemExperienceTab,
          Container,
          ContainerInfo,
          ContainerExperienceDisplay,
@@ -8,91 +10,41 @@ import { ItemBadge,
          ContainerCertificate,
          ContainerCertificateInfo,
          ContainerExperiences,
+         ContainerExperience,
+         ContainerExperienceText,
+         ContainerExperienceTabs,
          Box,
-         ExperienceTabText,
-         ExperienceTabsContainer,
-         ExperienceTab,
-         ExperiencesSubBox,
-         CertificatesSubBox,
-         ExperienceContainer,
-         ExperienceTextContainer,
-         ExperienceTextRowContainer,
-         Certificate,
-         CertificateTitle,
-         CertificateYear, 
+         BoxExperiences,
+         BoxCertificates,
+         TextExperienceTab,
+         TextCertificateTitle,
+         TextCertificateYear, 
          TextLink,
          TextTitle,
          TextSubTitle, 
          TextCompany,
          TextDate,
+         TextDescription,
          TextPosition } from './styles/experiences';
 
 export default function Experiences({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
-Experiences.Box = function ExperiencesBox({ children, ...restProps }) {
-    return <Box {...restProps}>{children}</Box>
-}
-
-Experiences.TextDate = function ExperiencesTextDate({ children, ...restProps }) {
-    return <TextDate {...restProps}>{children}</TextDate>
-}
-
-Experiences.TextPosition = function ExperiencesTextPosition({ children, ...restProps }) {
-    return <TextPosition {...restProps}>{children}</TextPosition>
-}
-
-Experiences.ExperiencesSubBox = function ExperiencesExperiencesSubBox({ children, ...restProps }) {
-    return <ExperiencesSubBox {...restProps}>{children}</ExperiencesSubBox>
-}
-
-Experiences.CertificatesSubBox = function ExperiencesCertificatesSubBox({ children, ...restProps }) {
-    return <CertificatesSubBox {...restProps}>{children}</CertificatesSubBox>
-}
-
-Experiences.ExperienceTabsContainer = function ExperiencesExperienceTabsContainer({ children, ...restProps }) {
-    return <ExperienceTabsContainer {...restProps}>{children}</ExperienceTabsContainer>
-}
-
-Experiences.ExperienceTab = function ExperiencesExperienceTab({ children, ...restProps }) {
-    return <ExperienceTab {...restProps}>{children}</ExperienceTab>
-}
-
-Experiences.ExperienceTabText = function ExperiencesExperienceTabText({ children, ...restProps }) {
-    return <ExperienceTabText {...restProps}>{children}</ExperienceTabText>
-}
-
-Experiences.ExperienceContainer = function ExperiencesExperienceContainer({ children, ...restProps }) {
-    return <ExperienceContainer {...restProps}>{children}</ExperienceContainer>
-}
-
-Experiences.ExperienceTextContainer = function ExperiencesExperienceTextContainer({ children, ...restProps }) {
-    return <ExperienceTextContainer {...restProps}>{children}</ExperienceTextContainer>
-}
-
-Experiences.ExperienceTextRowContainer = function ExperiencesExperienceTextRowContainer({ children, ...restProps }) {
-    return <ExperienceTextRowContainer {...restProps}>{children}</ExperienceTextRowContainer>
-}
-
-Experiences.Certificate = function ExperiencesCertificate({ src, ...restProps }) {
-    return <Certificate src={src} {...restProps} />
-}
-
-Experiences.CertificateTitle = function ExperiencesCertificateTitle({ children, ...restProps }) {
-    return <CertificateTitle {...restProps}>{children}</CertificateTitle>
-}
-
-Experiences.CertificateYear = function ExperiencesCertificateYear({ children, ...restProps }) {
-    return <CertificateYear {...restProps}>{children}</CertificateYear>
-}
-
 /**
  * * Items
  */
 
+Experiences.ItemExperienceTab = function ExperiencesItemExperienceTab({ children, ...restProps }) {
+    return <ItemExperienceTab {...restProps}>{children}</ItemExperienceTab>
+}
+
 Experiences.ItemBadge = function ExperiencesItemBadge({ src, ...restProps }) {
     return <ItemBadge src={src} {...restProps} />
+}
+
+Experiences.ItemCertificate = function ExperiencesItemCertificate({ src, ...restProps }) {
+    return <ItemCertificate src={src} {...restProps} />
 }
 
 /**
@@ -127,6 +79,34 @@ Experiences.ContainerExperiences = function ExperiencesContainerExperiences({ ch
     return <ContainerExperiences {...restProps}>{children}</ContainerExperiences>
 }
 
+Experiences.ContainerExperience = function ExperiencesContainerExperience({ children, ...restProps }) {
+    return <ContainerExperience {...restProps}>{children}</ContainerExperience>
+}
+
+Experiences.ContainerExperienceText = function ExperiencesContainerExperienceText({ children, ...restProps }) {
+    return <ContainerExperienceText {...restProps}>{children}</ContainerExperienceText>
+}
+
+Experiences.ContainerExperienceTabs = function ExperiencesContainerExperienceTabs({ children, ...restProps }) {
+    return <ContainerExperienceTabs {...restProps}>{children}</ContainerExperienceTabs>
+}
+
+/**
+ * * Boxes
+ */
+
+Experiences.Box = function ExperiencesBox({ children, ...restProps }) {
+    return <Box {...restProps}>{children}</Box>
+}
+
+Experiences.BoxExperiences = function ExperiencesBoxExperiences({ children, ...restProps }) {
+    return <BoxExperiences {...restProps}>{children}</BoxExperiences>
+}
+
+Experiences.BoxCertificates = function ExperiencesBoxCertificates({ children, ...restProps }) {
+    return <BoxCertificates {...restProps}>{children}</BoxCertificates>
+}
+
 /**
  * * Texts
  */
@@ -145,4 +125,28 @@ Experiences.TextSubTitle = function ExperiencesTextSubTitle({ children, ...restP
 
 Experiences.TextCompany = function ExperiencesTextCompany({ children, ...restProps }) {
     return <TextCompany {...restProps}>{children}</TextCompany>
+}
+
+Experiences.TextCertificateTitle = function ExperiencesTextCertificateTitle({ children, ...restProps }) {
+    return <TextCertificateTitle {...restProps}>{children}</TextCertificateTitle>
+}
+
+Experiences.TextCertificateYear = function ExperiencesTextCertificateYear({ children, ...restProps }) {
+    return <TextCertificateYear {...restProps}>{children}</TextCertificateYear>
+}
+
+Experiences.TextDate = function ExperiencesTextDate({ children, ...restProps }) {
+    return <TextDate {...restProps}>{children}</TextDate>
+}
+
+Experiences.TextPosition = function ExperiencesTextPosition({ children, ...restProps }) {
+    return <TextPosition {...restProps}>{children}</TextPosition>
+}
+
+Experiences.TextExperienceTab = function ExperiencesTextExperienceTab({ children, ...restProps }) {
+    return <TextExperienceTab {...restProps}>{children}</TextExperienceTab>
+}
+
+Experiences.TextDescription = function ExperiencesTextDescription({ children, ...restProps }) {
+    return <TextDescription {...restProps}>{children}</TextDescription>
 }

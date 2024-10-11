@@ -1,31 +1,57 @@
 import React from "react";
-import { Container,
+import { ItemButton,
+         Container,
+         ContainerInfo,
          Box,
-         InfoContainer, 
-         SubBox,
-         Button, 
-         CopyrightText } from './styles/contact';
+         BoxContact,
+         TextCopyright,
+         TextTitle,
+         TextDescription } from './styles/contact';
 
 export default function Contact({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
+/**
+ * * Items
+ */
+
+Contact.ItemButton = function ContactButton({ children, ...restProps }) {
+    return <ItemButton {...restProps}>{children}</ItemButton>
+}
+
+/**
+ * * Containers
+ */
+
+Contact.ContainerInfo = function ContactContainerInfo({ children, ...restProps }) {
+    return <ContainerInfo {...restProps}>{children}</ContainerInfo>
+}
+
+/**
+ * * Boxes
+ */
+
 Contact.Box = function ContactBox({ children, ...restProps }) {
     return <Box {...restProps}>{children}</Box>
 }
 
-Contact.InfoContainer = function ContactInfoContainer({ children, ...restProps }) {
-    return <InfoContainer {...restProps}>{children}</InfoContainer>
+Contact.BoxContact = function ContactBoxContact({ children, ...restProps }) {
+    return <BoxContact {...restProps}>{children}</BoxContact>
 }
 
-Contact.SubBox = function ContactSubBox({ children, ...restProps }) {
-    return <SubBox {...restProps}>{children}</SubBox>
+/**
+ * * Texts
+ */
+
+Contact.TextCopyright = function ContactTextCopyright({ children, ...restProps }) {
+    return <TextCopyright {...restProps}>{children}</TextCopyright>
 }
 
-Contact.Button = function ContactButton({ children, ...restProps }) {
-    return <Button {...restProps}>{children}</Button>
+Contact.TextTitle = function ContactTextTitle({ children, ...restProps }) {
+    return <TextTitle {...restProps}>{children}</TextTitle>
 }
 
-Contact.CopyrightText = function ContactCopyrightText({ children, ...restProps }) {
-    return <CopyrightText {...restProps}>{children}</CopyrightText>
+Contact.TextDescription = function ContactTextDescription({ children, ...restProps }) {
+    return <TextDescription {...restProps}>{children}</TextDescription>
 }

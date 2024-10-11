@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-import { Title,
-         DescriptionText, 
-         SubTitle, 
-         Divider, 
-         SpaceHeightExtraLarge } from "../globalComponents";
+import { Divider } from "../globalComponents";
 import { Experiences } from "../components";
 
 import experiencesData from '../fixtures/experiences.json';
@@ -27,48 +23,45 @@ export function ExperiencesContainer() {
                     <Divider type='2' />
 
                     <Experiences.ContainerInfo>
-                        <Experiences.ExperiencesSubBox>
+                        <Experiences.BoxExperiences>
                             <Experiences.ContainerExperiences>
-                                <Experiences.ExperienceTabsContainer>
+                                <Experiences.ContainerExperienceTabs>
                                     {experiencesData.map((item) => (
-                                        <Experiences.ExperienceTab
+                                        <Experiences.ItemExperienceTab
                                             active={active === item}
                                             onClick={setActive.bind(this, item)}
                                         >
-                                            <Experiences.ExperienceTabText>
+                                            <Experiences.TextExperienceTab>
                                                 {item.company}
-                                            </Experiences.ExperienceTabText>
-                                        </Experiences.ExperienceTab>
+                                            </Experiences.TextExperienceTab>
+                                        </Experiences.ItemExperienceTab>
                                     ))}
-                                </Experiences.ExperienceTabsContainer>
+                                </Experiences.ContainerExperienceTabs>
 
                                 <Experiences.ContainerExperienceDisplay>
-                                    <Experiences.ExperienceContainer>
+                                    <Experiences.ContainerExperience>
                                         <Experiences.TextPosition>{active.position}<Experiences.TextCompany> @ {active.company}</Experiences.TextCompany></Experiences.TextPosition>
                                         <Experiences.TextDate>{active.date}</Experiences.TextDate>
-                                        <Experiences.ExperienceTextContainer>
+                                        <Experiences.ContainerExperienceText>
                                             {active.learnings.map((item, index) => (
-                                                <DescriptionText
+                                                <Experiences.TextDescription
                                                     marginTop={index !== 0? '24px':'0px'}
-                                                >{item}</DescriptionText>
+                                                >{item}</Experiences.TextDescription>
                                             ))}
-                                        </Experiences.ExperienceTextContainer>
+                                        </Experiences.ContainerExperienceText>
 
                                         <Experiences.TextLink
                                             to={active.link}
                                         >Read more</Experiences.TextLink>
-                                    </Experiences.ExperienceContainer>
+                                    </Experiences.ContainerExperience>
                                 </Experiences.ContainerExperienceDisplay>
                             </Experiences.ContainerExperiences>
-                        </Experiences.ExperiencesSubBox>
+                        </Experiences.BoxExperiences>
 
-                        <Experiences.CertificatesSubBox>
+                        <Experiences.BoxCertificates>
                             <Experiences.ContainerCertificates>
                                 <>
-                                    <Experiences.TextSubTitle
-                                        isBold='true'
-                                        fontSize='2rem'
-                                    >Certificates & Badges</Experiences.TextSubTitle>
+                                    <Experiences.TextSubTitle>Certificates & Badges</Experiences.TextSubTitle>
                                 </>
 
                                 {certificatesData.map((item, index) => (
@@ -76,8 +69,8 @@ export function ExperiencesContainer() {
                                         <Experiences.ContainerCertificate>
                                             <Experiences.ContainerCertificateInfo>
                                                 <div>
-                                                    <Experiences.CertificateTitle>{item.title}</Experiences.CertificateTitle>
-                                                    <Experiences.CertificateYear>{item.year}</Experiences.CertificateYear>
+                                                    <Experiences.TextCertificateTitle>{item.title}</Experiences.TextCertificateTitle>
+                                                    <Experiences.TextCertificateYear>{item.year}</Experiences.TextCertificateYear>
                                                 </div>
                                                 <>
                                                     <BsArrowUpRight 
@@ -92,7 +85,7 @@ export function ExperiencesContainer() {
                             <Experiences.TextLink
                                 to="#"
                             >See more</Experiences.TextLink>
-                        </Experiences.CertificatesSubBox>
+                        </Experiences.BoxCertificates>
                     </Experiences.ContainerInfo>
 
                     <Experiences.ContainerBadges>
