@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Divider } from "../globalComponents";
+import { Divider, SpaceHeightExtraSmall, SpaceHeightMedium, SpaceHeightSmall, SpaceWidthSmall } from "../globalComponents";
 import { Experiences } from "../components";
 
 import experiencesData from '../fixtures/experiences.json';
@@ -64,27 +64,31 @@ export function ExperiencesContainer() {
                                     <Experiences.TextSubTitle>Certificates & Badges</Experiences.TextSubTitle>
                                 </>
 
+                                <SpaceHeightSmall />
                                 {certificatesData.map((item, index) => (
                                    index !== 3 && (
-                                        <Experiences.ContainerCertificate>
-                                            <Experiences.ContainerCertificateInfo>
-                                                <div>
-                                                    <Experiences.TextCertificateTitle>{item.title}</Experiences.TextCertificateTitle>
-                                                    <Experiences.TextCertificateYear>{item.year}</Experiences.TextCertificateYear>
-                                                </div>
-                                                <>
-                                                    <BsArrowUpRight 
-                                                        size={20}
-                                                    />  
-                                                </>
-                                            </Experiences.ContainerCertificateInfo>
-                                        </Experiences.ContainerCertificate>
-                                    )
+                                        <>
+                                            <Experiences.ContainerCertificate>
+                                                <Experiences.ContainerCertificateInfo>
+                                                    <div>
+                                                        <Experiences.TextCertificateTitle>{item.title}</Experiences.TextCertificateTitle>
+                                                        <Experiences.TextCertificateYear>{item.year}</Experiences.TextCertificateYear>
+                                                    </div>
+                                                    <>
+                                                        <BsArrowUpRight 
+                                                            size={20}
+                                                        />  
+                                                    </>
+                                                </Experiences.ContainerCertificateInfo>
+                                            </Experiences.ContainerCertificate>
+                                            <SpaceHeightExtraSmall />
+                                        </>
+                                   )
                                 ))}
                             </Experiences.ContainerCertificates>
-                            {/* <Experiences.TextLink
+                            <Experiences.TextLink
                                 to="/certificates/all"
-                            >See more</Experiences.TextLink> */}
+                            >See more</Experiences.TextLink>
                         </Experiences.BoxCertificates>
                     </Experiences.ContainerInfo>
 

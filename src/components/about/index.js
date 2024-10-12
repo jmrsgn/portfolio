@@ -2,6 +2,7 @@ import React from "react"
 import { ItemNavigationIcon,
          ItemSocialIconNavigation,
          ItemButton,
+         ItemSocialIcon,
          Container, 
          ContainerAboutMeText,
          ContainerTechInfo,
@@ -49,6 +50,10 @@ About.ItemSocialIconNavigation = function AboutItemSocialIconNavigation({ childr
 
 About.ItemButton = function AboutItemButton({ children, ...restProps }) {
     return <ItemButton {...restProps}>{children}</ItemButton>
+}
+
+About.ItemSocialIcon = function AboutItemSocialIcon({ children, ...restProps }) {
+    return <ItemSocialIcon {...restProps}>{children}</ItemSocialIcon>
 }
 
 /**

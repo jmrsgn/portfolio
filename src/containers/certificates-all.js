@@ -1,7 +1,7 @@
 import React from 'react';
 import { Experiences } from '../components';
 import MotionWrap from '../wrapper/motion-wrap';
-import { Divider } from '../globalComponents';
+import { Divider, SpaceWidthLarge } from '../globalComponents';
 
 import certificatesData from '../fixtures/certificates.json';
 
@@ -26,6 +26,7 @@ export function CertificatesAllContainer() {
                         </Link> 
                     </Experiences.ContainerNavigation>        
 
+                    <SpaceWidthLarge />
                     <Experiences.TextTitle>All Certificates</Experiences.TextTitle>
                     <Divider type='2' />
 

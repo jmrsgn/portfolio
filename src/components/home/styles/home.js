@@ -14,7 +14,7 @@ export const Container = styled(_Container)`
 export const ContainerGreetings = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 `;
 
 export const ContainerSocials = styled.div`
@@ -34,15 +34,11 @@ export const ContainerSocials = styled.div`
 export const Box = styled(_Box)`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto 0 auto;
     padding: 1.5rem;
 
     @media ${VIEWPORT.desktopUp} {
         padding: 5rem;
-
         flex-direction: row;
-
         position: absolute;
         top: 50%; 
         right: 50%;
@@ -66,6 +62,7 @@ export const TextTech = styled(_TextTech)``;
 
 export const TextGreeting = styled(Title)`
     color: ${COLORS.COLOR_ON_BACKGROUND};
+    margin-top: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
         margin-top: 2rem;
@@ -79,7 +76,12 @@ export const TextDescription = styled(_TextDescription)``;
  */
 
 export const Image = styled.img`
-    height: auto;
-    width: 90%;
-    transform: translateX(20%);
+    display: none;
+
+    @media ${VIEWPORT.desktopUp} {
+        display: block;
+        height: auto;
+        width: 90%;
+        transform: translateX(20%);
+    }
 `;

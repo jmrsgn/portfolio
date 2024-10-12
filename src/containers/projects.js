@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Divider,
          NavigationIcon,
+         SpaceHeightSmall,
          SpaceWidthSmall }  from "../globalComponents";
 
 import { Projects } from '../components';
@@ -59,6 +60,7 @@ export function ProjectsContainer() {
                                         </Projects.ContainerNavigation>
                                     </Projects.ContainerProjectTitleNav>
                                     
+                                    <SpaceHeightSmall />
                                     <Projects.TextDescription>{item.description}</Projects.TextDescription>
                                     <Projects.ContainerTags>
                                         {item.tech.map(( tag ) => (

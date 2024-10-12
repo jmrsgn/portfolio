@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { FONT } from '../../../fonts/fonts';
+import { FONTS } from '../../../fonts/fonts';
 import { _Container, _TextDescription, _TextTitle } from '../../../globalComponents';
 
 /**
@@ -10,7 +10,7 @@ import { _Container, _TextDescription, _TextTitle } from '../../../globalCompone
 
 export const ItemButton = styled.a`
     background-color: ${COLORS.COLOR_BG1};
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
     border: 1px solid ${COLORS.COLOR_SURFACE1};
     color: ${COLORS.COLOR_SURFACE1};
     font-size: 0.75rem;
@@ -91,7 +91,7 @@ export const BoxContact = styled.div`
  */
 
 export const TextCopyright = styled.p`
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
     color: ${COLORS.COLOR_LIGHT_GRAY};
     font-size: 0.75rem;
     margin-bottom: 5rem;

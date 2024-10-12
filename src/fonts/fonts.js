@@ -3,7 +3,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap');
 </style>
 
-export const FONT = {
+export const FONTS = {
     poppins: "'Poppins', sans-serif",
     roboto: "Roboto, Helvetica, sans-serif;",
     calibreRegular: 'Calibre Regular',

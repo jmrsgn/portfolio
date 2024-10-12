@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as COLORS from './constants/colors';
 import { VIEWPORT } from './constants/viewports';
-import { FONT } from './fonts/fonts';
+import { FONTS } from './fonts/fonts';
 
 /**
  * TODO: create dimens using perfect website dimensions
@@ -18,7 +18,7 @@ export const TextExtraSmall = styled.p`
 `;
 
 export const TextSmall = styled.p`
-    font-size: 1;
+    font-size: .95rem;
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 1.125rem;
@@ -26,21 +26,33 @@ export const TextSmall = styled.p`
 `;
 
 export const TextMedium = styled.p`
-    font-size: 2.25rem;
+    font-size: 1.75rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 2.25rem;
+    }
 `;
 
 export const TextLarge = styled.p`
-    font-size: 3.25rem;
+    font-size: 2.5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 3.25rem;
+    }
 `;
 
 export const TextExtraLarge = styled.p`
-    font-size: 5rem;
+    font-size: 3rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: 5rem;
+    }
 `;
 
 // -------------------------------------------
 
 export const TechText = styled(TextExtraSmall)`
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
 
     /* 
         Adjustable settings
@@ -53,7 +65,7 @@ export const TechText = styled(TextExtraSmall)`
 `;
 
 export const _TextTech = styled(TextExtraSmall)`
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
 
     /* 
         Adjustable settings
@@ -66,7 +78,7 @@ export const _TextTech = styled(TextExtraSmall)`
 `;
 
 export const DescriptionText = styled(TextSmall)`
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
     color: ${COLORS.COLOR_LIGHT_GRAY};
     line-height: 22px;
 
@@ -83,7 +95,7 @@ export const DescriptionText = styled(TextSmall)`
 `;
 
 export const _TextDescription = styled(TextSmall)`
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
     color: ${COLORS.COLOR_LIGHT_GRAY};
     line-height: 22px;
 
@@ -106,32 +118,32 @@ export const FilterText = styled(DescriptionText)`
 `;
 
 export const Title = styled(TextExtraLarge)`
-    font-family: ${FONT.calibreBold};
+    font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
 export const _TextTitle = styled(TextExtraLarge)`
-    font-family: ${FONT.calibreBold};
+    font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
 export const SubTitle = styled(TextLarge)`
-    font-family: ${FONT.calibreBold};
+    font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};
 `;
 
 export const _TextSubTitle = styled(TextLarge)`
-    font-family: ${FONT.calibreBold};
+    font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};
 `;
 
 export const OtherTitle = styled(TextMedium)`
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
 export const _TextTitleOther = styled(TextMedium)`
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
     color: ${COLORS.COLOR_ON_BACKGROUND};
 `;
 
@@ -139,7 +151,7 @@ export const _TextTitleOther = styled(TextMedium)`
 
 export const Button = styled(Link)`
     background-color: ${COLORS.COLOR_BG1};
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
     border: 1px solid ${COLORS.COLOR_SURFACE1};
     color: ${COLORS.COLOR_SURFACE1};
     font-size: 0.75rem;
@@ -198,8 +210,14 @@ export const _Box = styled.div`
     width: 100%;
     min-height: 100vh;
 
+    margin: 0 auto 0 auto;
+    display: flex;
+    padding: 3.25rem 2.25rem;
+    flex-direction: column;
+
     @media ${VIEWPORT.desktopUp} {
         width: 85%;
+        padding: 5rem;
     }
 `;
 
@@ -210,6 +228,11 @@ export const _Box = styled.div`
 export const SpaceWidthSmall = styled.div`
     height: 100%;
     width: 1rem;
+`;
+
+export const SpaceWidthLarge = styled.div`
+    height: 100%;
+    width: 3.75rem;
 `;
 
 export const SpaceHeightExtraSmall = styled.div`
@@ -228,13 +251,21 @@ export const SpaceHeightMedium = styled.div`
 `;
 
 export const SpaceHeightLarge = styled.div`
-    height: 3.75rem;
     width: 100%;
+    height: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        height: 3.75rem;
+    }
 `;
 
 export const SpaceHeightExtraLarge = styled.div`
-    height: 5rem;
     width: 100%;
+    height: 3.5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        height: 5rem;
+    }
 `;
 
 // -------------------------------------------
@@ -243,7 +274,7 @@ export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: 0.75rem;
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
     text-decoration: none;
     transition: .1s ease-in;
 
@@ -259,8 +290,8 @@ export const TextLink = styled(Link)`
 export const _TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-    font-size: 0.75rem;
-    font-family: ${FONT.sfMonoRegular};
+    font-size: 0.90rem;
+    font-family: ${FONTS.sfMonoRegular};
     text-decoration: none;
     transition: .1s ease-in;
 
@@ -282,6 +313,68 @@ export const TextLinkContainer = styled.div`
 `;
 
 export const SocialIcon = styled.a`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin: .25rem 0 .25rem 0;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        color: ${COLORS.COLOR_ON_SURFACE};
+    }
+
+    &:hover {
+        background-color: ${COLORS.COLOR_SURFACE1};
+        border-color: ${COLORS.COLOR_SURFACE1};
+  
+        svg {
+          color: ${COLORS.COLOR_ON_SURFACE};
+        }
+    }
+
+    @media ${VIEWPORT.tabletUp} {
+        width: 55px;
+        height: 55px;
+        margin: 1rem 0 1rem 0;
+
+        svg {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media ${VIEWPORT.tabletLandscapeUp} {
+        margin: 0 .5rem 0 .5rem;
+        width: 50px;
+        height: 50px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 45px;
+        height: 45px;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+`;
+
+export const _ItemSocialIcon = styled.a`
     width: 40px;
     height: 40px;
     border-radius: 50%;

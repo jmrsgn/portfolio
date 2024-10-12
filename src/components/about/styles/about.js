@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
-import { FONT } from '../../../fonts/fonts';
+import { _Box, _Container, _ItemSocialIcon, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
+import { FONTS } from '../../../fonts/fonts';
 
 /**
  * * Items
@@ -49,7 +49,7 @@ export const ItemSocialIconNavigation = styled.a`
         transition: 0.1s;
 
         svg {
-            color: ${COLORS.COLOR_SURFACE1};
+            color: ${COLORS.COLOR_SURFACE2};
         }
     }
 
@@ -79,6 +79,17 @@ export const ItemButton = styled.a`
     }
 `;
 
+export const ItemSocialIcon = styled(_ItemSocialIcon)`
+    &:hover {
+        background-color: ${COLORS.COLOR_SURFACE2};
+        border-color: ${COLORS.COLOR_SURFACE2};
+  
+        svg {
+          color: ${COLORS.COLOR_ON_SURFACE};
+        }
+    }
+`;
+
 /**
  * * Containers
  */
@@ -91,17 +102,26 @@ export const ContainerAboutMeText = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
+    width: 100%;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 60%;
+    }
 `;
 
 export const ContainerTechInfo = styled.div`
     display: flex;
-    flex-direction: column;
-    width: 60%;
-    padding: 3rem 1.75rem;
     border: 1px solid ${COLORS.COLOR_GRAY};
     border-radius: 10px;
     cursor: pointer;
+    width: 100%;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 60%;
+        padding: 3rem 1.75rem;
+    }
 
     &:hover {
         transform: scale(101%);
@@ -188,14 +208,14 @@ export const ContainerNavigaton = styled.div`
  */
 
 export const Box = styled(_Box)`
-    margin: 0 auto 0 auto;
+    /* margin: 0 auto 0 auto;
     display: flex;
-    padding: 2.25rem 1.25rem;
+    padding: 3.25rem 2.25rem;
     flex-direction: column;
 
     @media ${VIEWPORT.desktopUp} {
         padding: 5rem;
-    }
+    } */
 `;
 
 export const BoxInfo = styled.div`
@@ -219,10 +239,14 @@ export const BoxProfile = styled.div`
 
 export const BoxProfileInfo = styled.div`
     display: flex;
-    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 `;
 
 /**
@@ -231,7 +255,6 @@ export const BoxProfileInfo = styled.div`
 
 export const TextLink = styled(_TextLink)`
     margin-top: 12px;
-    font-size: .95rem;
 `;
 
 export const TextDescription = styled(_TextDescription)`
@@ -241,18 +264,23 @@ export const TextDescription = styled(_TextDescription)`
 export const TextTitle = styled(_TextTitle)``;
 
 export const TextTechUsed = styled(TechText)`
-    line-height: 18px;
+    line-height: 14px;
     color: ${COLORS.COLOR_SURFACE2};
-    font-size: .85rem;
+    font-size: .75rem;
     margin-left: 1.25rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        line-height: 18px;
+        font-size: .85rem;
+    }
 `;
 
 export const TextTitleOther = styled(_TextTitleOther)``;
 
 export const TextContact = styled.a`
-    font-family: ${FONT.sfMonoLight};
+    font-family: ${FONTS.sfMonoLight};
     cursor: pointer;
-    color: ${COLORS.COLOR_SURFACE1};
+    color: ${COLORS.COLOR_SURFACE2};
     text-decoration: none;
     font-size: .75rem;
     margin-top: .25rem;
@@ -297,6 +325,11 @@ export const ImageAvatar = styled.img`
 `;
 
 export const ImageTech = styled.img`
-    height: auto;
-    width: 25rem;
+    display: none;
+
+    @media ${VIEWPORT.desktopUp} {
+        display: block;
+        height: auto;
+        width: 25rem;
+    }
 `;

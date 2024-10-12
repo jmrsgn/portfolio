@@ -51,8 +51,6 @@ export function AboutContainer() {
                                 Know me more
                             </About.TextLink>
                         </About.ContainerAboutMeText>
-
-                        {/* <About.ImageAvatar src="../images/jm.jpeg" /> */}
                     </About.BoxProfileInfo>
 
                     <SpaceHeightExtraLarge />
@@ -79,7 +77,6 @@ export function AboutContainer() {
 
                                 <About.ImageTech src={item.src} />
                             </About.BoxInfoTech>
-
                             <SpaceHeightLarge />
                         </>
                     ))}

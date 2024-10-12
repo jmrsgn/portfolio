@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { FONT } from '../../../fonts/fonts';
+import { FONTS } from '../../../fonts/fonts';
 import { _Box, _Container, _TextDescription, _TextTitle } from '../../../globalComponents';
 
 /**
@@ -112,15 +112,14 @@ export const ContainerTags = styled.div`
  */
 
 export const Box = styled(_Box)`
-    margin: 0 auto 0 auto;
+    /* margin: 0 auto 0 auto;
     display: flex;
-    padding: 2.25rem 1.25rem;
+    padding: 3.25rem 2.25rem;
     flex-direction: column;
 
     @media ${VIEWPORT.desktopUp} {
-        width: 85%;
         padding: 5rem;
-    }
+    } */
 `;
 
 /**
@@ -128,14 +127,13 @@ export const Box = styled(_Box)`
  */
 
 export const TextDescription = styled(_TextDescription)`
-    margin-top: 24px;
 `;
 
 export const TextProjectTitle = styled.p`  
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
 
     @media ${VIEWPORT.desktopUp} {
         font-size: 2.25rem;
@@ -143,7 +141,7 @@ export const TextProjectTitle = styled.p`
 `;
 
 export const TextTag = styled.p`
-    font-family: ${FONT.sfMonoRegular};
+    font-family: ${FONTS.sfMonoRegular};
     color: ${COLORS.COLOR_SURFACE1};
     font-size: .6rem;
 

@@ -27,7 +27,7 @@ export function AboutMoreContainer() {
                     <About.BoxProfile>
                         <About.ContainerNavigaton>
                             <Link to="/">
-                                <About.ItemNavigationIcon type='1'>
+                                <About.ItemNavigationIcon type='2'>
                                     <IoCaretBack 
                                         size={25}
                                     />
@@ -54,45 +54,45 @@ export function AboutMoreContainer() {
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.2 }}
                                         >
-                                            <SocialIcon href="https://github.com/jmrsgn" target={"_blank"}> 
+                                            <About.ItemSocialIcon href="https://github.com/jmrsgn" target={"_blank"}> 
                                                 <AiFillGithub />
-                                            </SocialIcon>
+                                            </About.ItemSocialIcon>
                                         </motion.div>
                                         
                                         <motion.div
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.4 }}
                                         >
-                                            <SocialIcon href="https://www.linkedin.com/in/marasiganjohnmartin/" target={"_blank"}>
+                                            <About.ItemSocialIcon href="https://www.linkedin.com/in/marasiganjohnmartin/" target={"_blank"}>
                                                 <AiFillLinkedin />
-                                            </SocialIcon>
+                                            </About.ItemSocialIcon>
                                         </motion.div>
                                         
                                         <motion.div
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.6 }}
                                         >
-                                            <SocialIcon href="https://www.instagram.com/marasigan.johnmartin/" target={"_blank"}>
+                                            <About.ItemSocialIcon href="https://www.instagram.com/marasigan.johnmartin/" target={"_blank"}>
                                                 <BsInstagram />
-                                            </SocialIcon>
+                                            </About.ItemSocialIcon>
                                         </motion.div>
 
                                         <motion.div
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.8 }}
                                         >
-                                            <SocialIcon href="https://www.tiktok.com/@marasigan.johnmartin" target={"_blank"}>
+                                            <About.ItemSocialIcon href="https://www.tiktok.com/@marasigan.johnmartin" target={"_blank"}>
                                                 <FaTiktok />
-                                            </SocialIcon>
+                                            </About.ItemSocialIcon>
                                         </motion.div>
 
                                         <motion.div
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 1.0 }}
                                         >
-                                            <SocialIcon href="https://www.strava.com/athletes/140326588" target={"_blank"}>
+                                            <About.ItemSocialIcon href="https://www.strava.com/athletes/140326588" target={"_blank"}>
                                                 <FaStrava />
-                                            </SocialIcon>
+                                            </About.ItemSocialIcon>
                                         </motion.div>
                                     </About.ContainerSocial>
                                 </About.ContainerContacts>           
@@ -128,7 +128,7 @@ export function AboutMoreContainer() {
                                     About
                                 </About.TextSubTitle>
                                 <SpaceHeightExtraSmall />
-                                <Divider type="1"/>
+                                <Divider type="2"/>
                             </About.ContainerDivider>
 
                             <SpaceHeightSmall />
@@ -159,7 +159,7 @@ export function AboutMoreContainer() {
                             </About.TextDescription>
                             
                             <About.TextDescription>
-                                To read more about Infor, go to <About.TextLink type="1" to="https://www.infor.com/about">https://www.infor.com/about</About.TextLink>
+                                To read more about Infor, go to <About.TextLink type="2" to="https://www.infor.com/about">https://www.infor.com/about</About.TextLink>
                             </About.TextDescription>
 
                             {/* hobbies */}
@@ -171,7 +171,7 @@ export function AboutMoreContainer() {
                                     Hobbies
                                 </About.TextSubTitle>
                                 <SpaceHeightExtraSmall />
-                                <Divider type="1"/>
+                                <Divider type="2"/>
                             </About.ContainerDivider>
 
                             <SpaceHeightSmall />
@@ -217,14 +217,13 @@ export function AboutMoreContainer() {
                                     Business
                                 </About.TextSubTitle>
                                 <SpaceHeightExtraSmall />
-                                <Divider type="1"/>
+                                <Divider type="2"/>
                             </About.ContainerDivider>
 
                             <SpaceHeightSmall />
 
                             <About.TextDescription>
-                                I am also a business owner passionate about health and wellness. I manage a business centered on 
-                                <About.TextDescriptionHighlight>JC Organic Barley,</About.TextDescriptionHighlight> a 
+                                I am also a business owner passionate about health and wellness. I manage a business centered on <About.TextDescriptionHighlight>JC Organic Barley,</About.TextDescriptionHighlight> a 
                                 premium health drink made from barley grass sourced from the pristine fields of New Zealand. This superfood offers numerous benefits 
                                 like boosting immunity, improving digestion, and balancing blood sugar levels. 
                             </About.TextDescription>

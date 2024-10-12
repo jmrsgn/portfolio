@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
 import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, TechText } from '../../../globalComponents';
-import { FONT } from '../../../fonts/fonts';
+import { FONTS } from '../../../fonts/fonts';
 
 /**
  * * Common Styles
@@ -89,7 +89,6 @@ export const ContainerNavigation = styled.div`
 export const TextTitle = styled(_TextTitle)``;
 
 export const TextSubTitle = styled(_TextSubTitle)`
-    font-size: 3rem;
     font-weight: bold;
 `;
 
@@ -163,7 +162,7 @@ export const TextDate = styled(TechText)`
 
 export const TextPosition = styled.p`
     font-size: 1.3rem;
-    font-family: ${FONT.calibreBold};
+    font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_SURFACE};
 
     @media ${VIEWPORT.desktopUp} {
@@ -257,7 +256,7 @@ export const ContainerExperienceText = styled.div`
  */
 
 export const Box = styled(_Box)`
-    margin: 0 auto 0 auto;
+    /* margin: 0 auto 0 auto;
     padding: 2.25rem 1.25rem;
     display: flex;
     flex-direction: column;
@@ -265,7 +264,7 @@ export const Box = styled(_Box)`
     @media ${VIEWPORT.desktopUp} {
         width: 85%;
         padding: 5rem;
-    }
+    } */
 `;
 
 export const BoxExperiences = styled.div`
@@ -309,15 +308,18 @@ export const ContainerCertificate = styled.div`
     max-width: 500px;
     display: flex;
     align-items: center;
-    margin-top: 1.25rem;
     border: 1px solid ${COLORS.COLOR_GRAY};
-    padding: 2rem 1.25rem;;
     border-radius: 10px;
     cursor: pointer;
+    padding: 1.75rem 1rem;
 
     &:hover {
         transform: scale(103%);
         transition: 0.1s;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        padding: 2rem 1.25rem;
     }
 `;
 
@@ -352,7 +354,7 @@ export const BoxCertificates = styled.div`
  */
 
 export const TextCertificateTitle = styled.p`
-    font-family: ${FONT.calibreRegular};
+    font-family: ${FONTS.calibreRegular};
     font-size: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
