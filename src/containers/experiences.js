@@ -50,9 +50,9 @@ export function ExperiencesContainer() {
                                             ))}
                                         </Experiences.ContainerExperienceText>
 
-                                        <Experiences.TextLink
+                                        {/* <Experiences.TextLink
                                             to={active.link}
-                                        >Read more</Experiences.TextLink>
+                                        >Read more</Experiences.TextLink> */}
                                     </Experiences.ContainerExperience>
                                 </Experiences.ContainerExperienceDisplay>
                             </Experiences.ContainerExperiences>
@@ -82,9 +82,9 @@ export function ExperiencesContainer() {
                                     )
                                 ))}
                             </Experiences.ContainerCertificates>
-                            <Experiences.TextLink
-                                to="#"
-                            >See more</Experiences.TextLink>
+                            {/* <Experiences.TextLink
+                                to="/certificates/all"
+                            >See more</Experiences.TextLink> */}
                         </Experiences.BoxCertificates>
                     </Experiences.ContainerInfo>
 

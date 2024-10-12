@@ -9,6 +9,44 @@ import { FONT } from '../../../fonts/fonts';
  */
 
 /**
+ * * Items
+ */
+
+export const ItemNavigationIcon = styled.a`
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin: .20rem 0 .20rem 0;
+
+    svg {
+        width: 17px;
+        height: 17px;
+        color: ${COLORS.COLOR_ON_SURFACE};
+        cursor: pointer;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 40px;
+        height: 40px;
+        margin: .25rem 0 .25rem 0;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover {
+            background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+            border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+        }
+    }
+`;
+
+/**
  * * Containers
  */
 
@@ -36,6 +74,12 @@ export const ContainerExperienceTabs = styled.div`
     @media ${VIEWPORT.desktopUp} {
         flex-direction: column;
     }
+`;
+
+export const ContainerNavigation = styled.div`
+    position: absolute;
+    top: 50;
+    left: 50;
 `;
 
 /**

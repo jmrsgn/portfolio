@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProjectContainer } from './common/project';
 
-export function ProjectExpressoContainer() {
+export function ProjectsExpressoContainer() {
     const projectName = "Expresso";
     const projectImage = "../../images/projects/expresso-1.png";
     const projectInfo = 

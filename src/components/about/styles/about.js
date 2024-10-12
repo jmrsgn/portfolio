@@ -1,7 +1,83 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _TextDescription, _TextLink, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
+import { FONT } from '../../../fonts/fonts';
+
+/**
+ * * Items
+ */
+
+export const ItemNavigationIcon = styled.a`
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin: .20rem 0 .20rem 0;
+
+    svg {
+        width: 17px;
+        height: 17px;
+        color: ${COLORS.COLOR_ON_SURFACE};
+        cursor: pointer;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 40px;
+        height: 40px;
+        margin: .25rem 0 .25rem 0;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover {
+            background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+            border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+        }
+    }
+`;
+
+export const ItemSocialIconNavigation = styled.a`
+    margin-left: .5rem;
+
+    &:hover { 
+        transition: 0.1s;
+
+        svg {
+            color: ${COLORS.COLOR_SURFACE1};
+        }
+    }
+
+    svg {
+        color: white;
+        height: 1.35rem;
+        width: 1.35rem;
+    }
+`;  
+
+export const ItemButton = styled.a`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    padding: 1.25rem 2.5rem;
+    border: 1px solid ${COLORS.COLOR_GRAY};
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(101%);
+        transition: 0.1s;
+    }
+`;
 
 /**
  * * Containers
@@ -15,7 +91,7 @@ export const ContainerAboutMeText = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 60%;
 `;
 
 export const ContainerTechInfo = styled.div`
@@ -50,6 +126,63 @@ export const ContainerTechUsedText = styled.div`
     }
 `;
 
+export const ContainerAvatarInfo = styled.div`
+    width: 30%;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+`;
+
+export const ContainerProfileContactTexts = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+    justify-content: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-left: 0;
+    }
+`;
+
+export const ContainerSocial = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 1.25rem;
+    }
+`;
+
+export const ContainerContacts = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ContainerBusinessShopButtons = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+`;
+
+export const ContainerDivider = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+`;
+
+export const ContainerNavigaton = styled.div`
+    position: absolute;
+    top: 50;
+    left: 50;
+`;
+
 /**
  * * Boxes
  */
@@ -67,81 +200,29 @@ export const Box = styled(_Box)`
 
 export const BoxInfo = styled.div`
     display: flex;
-    flex-direction: row;
-    margin-top: 1.25rem;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    padding: .5rem 2.5rem;
+    flex-direction: column;
+    flex: 1;
 `;
 
 export const BoxInfoTech = styled(BoxInfo)`
+    padding: 0;
     flex-direction: ${({ flexDirection }) => (flexDirection)};
+    justify-content: space-between;
+    width: 100%;
 `;
 
-/**
- * ! NOT ORGANIZED
- */
-
-export const NavigationIcon = styled.a`
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-    margin: .20rem 0 .20rem 0;
-
-    svg {
-        width: 17px;
-        height: 17px;
-        color: ${COLORS.COLOR_ON_SURFACE};
-        cursor: pointer;
-    }
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 40px;
-        height: 40px;
-        margin: .25rem 0 .25rem 0;
-
-        svg {
-            width: 25px;
-            height: 25px;
-        }
-
-        &:hover {
-            background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-            border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-        }
-    }
-`;
-
-export const ContactText = styled(TechText)`
-    font-size: .75rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: .85rem;
-    }
-`;
-
-export const ProfileContactTextsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        margin-left: 0;
-    }
-`;
-
-export const SocialContainer = styled.div`
+export const BoxProfile = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+`;
 
-    @media ${VIEWPORT.desktopUp} {
-        margin-top: 3rem;
-    }
+export const BoxProfileInfo = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 /**
@@ -149,11 +230,12 @@ export const SocialContainer = styled.div`
  */
 
 export const TextLink = styled(_TextLink)`
-    margin-top: 1.25rem;
+    margin-top: 12px;
+    font-size: .95rem;
 `;
 
 export const TextDescription = styled(_TextDescription)`
-    margin-top: 12px;
+    /* margin-top: 12px; */
 `;
 
 export const TextTitle = styled(_TextTitle)``;
@@ -167,6 +249,42 @@ export const TextTechUsed = styled(TechText)`
 
 export const TextTitleOther = styled(_TextTitleOther)``;
 
+export const TextContact = styled.a`
+    font-family: ${FONT.sfMonoLight};
+    cursor: pointer;
+    color: ${COLORS.COLOR_SURFACE1};
+    text-decoration: none;
+    font-size: .75rem;
+    margin-top: .25rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: .85rem;
+    }
+`;
+
+export const TextSubTitle = styled(_TextSubTitle)`
+    font-size: 1.5rem;
+`;
+
+export const TextDescriptionFilter = styled(TextDescription)`
+    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+`;
+
+export const TextDescriptionHighlight = styled(TextDescription)`
+    font-weight: bold;
+    display: inline-block;
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
+export const TextBusinessShopTitle = styled(TextSubTitle)`
+    font-weight: bold;
+    font-size: 1.25rem;
+`;
+
 /**
  * * Images
  */
@@ -176,8 +294,6 @@ export const ImageAvatar = styled.img`
     height: auto;
     border-radius: 50%;
     border: 1px solid ${COLORS.COLOR_LIGHT_GRAY};
-    justify-content: center;
-    align-items: center;    
 `;
 
 export const ImageTech = styled.img`

@@ -4,12 +4,17 @@ import AboutMore from './pages/about-more';
 
 import * as ROUTES from './constants/routes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ProjectExpressoContainer } from './containers/project-expresso';
-import { ProjectCarkilahanContainer } from './containers/project-carkilahan';
+import { ProjectsExpressoContainer } from './containers/projects-expresso';
+import { ProjectsCarkilahanContainer } from './containers/projects-carkilahan';
+import ScrollToTop from './helpers/scroll-to-top';
+import { CertificatesAllContainer } from './containers/certificates-all';
 
 export default function App() {
+  document.title = "jm";
+
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path={ROUTES.HOME}
@@ -23,12 +28,17 @@ export default function App() {
 
         <Route
           path={ROUTES.PROJECT_EXPRESSO}
-          element={ <ProjectExpressoContainer /> }
+          element={ <ProjectsExpressoContainer /> }
         />
 
         <Route
           path={ROUTES.PROJECT_CARKILAHAN}
-          element={ <ProjectCarkilahanContainer /> }
+          element={ <ProjectsCarkilahanContainer /> }
+        />
+
+        <Route
+          path={ROUTES.ALL_CERTIFICATES}
+          element={ <CertificatesAllContainer /> }
         />
       </Routes>
     </Router>

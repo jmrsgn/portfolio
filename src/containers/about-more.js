@@ -2,17 +2,21 @@ import React from "react";
 import { motion } from 'framer-motion';
 
 import { About } from "../components";
-import { Divider, DescriptionText, SubTitle, SocialIcon } from '../globalComponents';
+import { Divider, 
+         SocialIcon, 
+         SpaceHeightExtraSmall, 
+         SpaceHeightMedium, 
+         SpaceHeightSmall } from '../globalComponents';
 
 import { IoCaretBack } from "react-icons/io5";
 import {AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { FaTiktok } from "react-icons/fa";
-import { BsInstagram } from 'react-icons/bs';
+import { FaTiktok, FaStrava } from "react-icons/fa";
+import { BsInstagram, BsArrowUpRight } from 'react-icons/bs';
 
 import { Link } from "react-router-dom";
 
 export function AboutMoreContainer() {
-    document.title = "About me";
+    document.title = "jm";
 
     return (
         <About type="1">
@@ -20,25 +24,32 @@ export function AboutMoreContainer() {
                 whileInView={{ y: [100, 0], opacity: [0, 1]}}
             >
                 <About.Box>
-                    <About.SubBox>
-                        <About.ProfileBox>
+                    <About.BoxProfile>
+                        <About.ContainerNavigaton>
                             <Link to="/">
-                                <About.NavigationIcon type='1'>
+                                <About.ItemNavigationIcon type='1'>
                                     <IoCaretBack 
                                         size={25}
                                     />
-                                </About.NavigationIcon> 
+                                </About.ItemNavigationIcon> 
                             </Link> 
+                        </About.ContainerNavigaton>                       
 
-                            <About.AvatarInfoContainer>
-                                <About.Avatar src="../images/jm.jpeg" />
+                        <About.ContainerAvatarInfo>
+                            <About.ImageAvatar src="../images/jm.jpeg" />
 
-                                <About.ProfileContactTextsContainer>
-                                    <About.ContactText>John Martin Marasigan</About.ContactText>
-                                    <About.ContactText>+63 956 172 3007</About.ContactText>
-                                    <About.ContactText>marasiganjohnmartin@gmail.com</About.ContactText>
+                            <About.ContainerProfileContactTexts>
+                                <About.ContainerContacts>
+                                    <SpaceHeightSmall />
+                                    <About.TextSubTitle>John Martin Marasigan</About.TextSubTitle>
+                                    <About.TextContact
+                                        href="sms:+639561723007"
+                                    >+63 956 172 3007</About.TextContact>
+                                    <About.TextContact
+                                        href="mailto:marasiganjohnmartin@gmail.com"
+                                    >marasiganjohnmartin@gmail.com</About.TextContact>
 
-                                    <About.SocialContainer>
+                                    <About.ContainerSocial>
                                         <motion.div
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -52,7 +63,7 @@ export function AboutMoreContainer() {
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.4 }}
                                         >
-                                            <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
+                                            <SocialIcon href="https://www.linkedin.com/in/marasiganjohnmartin/" target={"_blank"}>
                                                 <AiFillLinkedin />
                                             </SocialIcon>
                                         </motion.div>
@@ -61,7 +72,7 @@ export function AboutMoreContainer() {
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.6 }}
                                         >
-                                            <SocialIcon href="https://www.instagram.com/jmrsgn_/" target={"_blank"}>
+                                            <SocialIcon href="https://www.instagram.com/marasigan.johnmartin/" target={"_blank"}>
                                                 <BsInstagram />
                                             </SocialIcon>
                                         </motion.div>
@@ -70,74 +81,196 @@ export function AboutMoreContainer() {
                                             whileInView={{ scale: [0, 1 ]}}
                                             transition={{ duration: 0.5, delay: 0.8 }}
                                         >
-                                            <SocialIcon href="https://www.tiktok.com/@jmrsgnn?is_from_webapp=1&sender_device=pc" target={"_blank"}>
+                                            <SocialIcon href="https://www.tiktok.com/@marasigan.johnmartin" target={"_blank"}>
                                                 <FaTiktok />
                                             </SocialIcon>
                                         </motion.div>
-                                    </About.SocialContainer>
-                                </About.ProfileContactTextsContainer>
-                            </About.AvatarInfoContainer>
-                        </About.ProfileBox>
-                    </About.SubBox>
-                    
-                    <About.InfoBox>
-                        <About.TechUsedText
-                            marginTop='0rem'
-                        >
-                            Hi!
-                        </About.TechUsedText>
-                        
-                        <Divider type='1'/>
 
-                        <DescriptionText
-                            marginTop='48px'
-                        >
-                            My name is John Martin, JM or Em for short. I'm from Mandaluyong City, Philippines. I graduated Bachelor of Science in Information Technology at Jose Rizal University, Cum Laude. 
-                        </DescriptionText>
+                                        <motion.div
+                                            whileInView={{ scale: [0, 1 ]}}
+                                            transition={{ duration: 0.5, delay: 1.0 }}
+                                        >
+                                            <SocialIcon href="https://www.strava.com/athletes/140326588" target={"_blank"}>
+                                                <FaStrava />
+                                            </SocialIcon>
+                                        </motion.div>
+                                    </About.ContainerSocial>
+                                </About.ContainerContacts>           
+                            </About.ContainerProfileContactTexts>
 
-                        <DescriptionText
-                            marginTop="24px"
-                        >
-                            I currently work at Infor, located in Bonifacio Global City, Taguig, Philippines. I am one of the Mobile Developers that provides support and maintenance for customers. 
-                            I am working for almost two years now, and still happy participating to the team to get the job done. Working with Infor as my first real job is one of the great decisions I have made. 
-                            I met great people that I didn't expect to have such great philosophy that always make me feel that I belong to the team, and as co-workers.
-                        </DescriptionText>
+                            <About.ContainerBusinessShopButtons>
+                                <SpaceHeightMedium />
+                                <About.TextSubTitle>
+                                    Business Shops
+                                </About.TextSubTitle>
 
-                        <DescriptionText
-                            marginTop="24px"
-                        >
-                            Infor is a Software Development company, specializing building apps that help other businesses to achieve their business goals. One thing I like about Infor is, it has a strong bond between 
-                            employees that contributes to excellent team work to provide quality results for customers. I also have great leaders that always make sure all of us don't fall behind and always on the right track.
-                        </DescriptionText>
+                                <SpaceHeightSmall />
 
-                        <DescriptionText
-                            marginTop='24px'
-                        >
-                            To read more about Infor, go to <About.Link href='https://www.infor.com/about'>https://www.infor.com/about</About.Link>
-                        </DescriptionText>
+                                <About.ItemButton
+                                    href="https://bit.ly/4e028BB" target="_blank"
+                                >
+                                    <About.TextBusinessShopTitle>FOOD</About.TextBusinessShopTitle>
+                                </About.ItemButton>
 
+                                <SpaceHeightSmall />
 
-                        {/* hobbies */}
-                        <SubTitle
-                            marginTop="5rem"
-                        >
-                            Hobbies
-                        </SubTitle>
+                                <About.ItemButton
+                                    href="https://bit.ly/3ZmEhrn" target="_blank"
+                                >
+                                    <About.TextBusinessShopTitle>HEALTH & WELLNESS</About.TextBusinessShopTitle>
+                                </About.ItemButton>
+                            </About.ContainerBusinessShopButtons>
+                        </About.ContainerAvatarInfo>
 
-                        <DescriptionText
-                            marginTop="16px"
-                        >
-                            I go to the gym regularly, I find it as my comfort zone after a tiring day and helps boost my mood, obtain self-discipline, and have a better and healthier mind and body. 
-                            I also read books, especially books about self-improvement. I usually spend time alone going to places that puts my mind at ease.
-                        </DescriptionText>
+                        <About.BoxInfo>
+                            <About.ContainerDivider>
+                                <About.TextSubTitle>
+                                    About
+                                </About.TextSubTitle>
+                                <SpaceHeightExtraSmall />
+                                <Divider type="1"/>
+                            </About.ContainerDivider>
 
-                        <DescriptionText
-                            marginTop='24px'
-                        >
-                            I am also into music. I love listening to music. I do play guitar, both acoustic and electric. I am a former lead guitarist in our band. I also play bass. 
-                            I started playing guitar year 2012, but I am still very confident about my current skills in playing said instruments.
-                        </DescriptionText>
-                    </About.InfoBox>
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                My name is John Martin but you can call me JM or Em. I'm from Mandaluyong City, Philippines, 
+                                and I graduated Cum Laude with a Bachelor's degree in Information Technology from Jose Rizal University. 
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I currently work at Infor, a software development company based in Bonifacio Global City, Taguig. 
+                                As a Mobile Developer, I help provide support and maintenance for customer applications. Having been 
+                                with Infor for almost two years, I’m still enthusiastic about being part of a team that gets the job done. 
+                                Choosing Infor as my first professional job has been one of the best decisions I've made. I’ve had the privilege 
+                                of working alongside exceptional people who share a philosophy of teamwork, making me feel 
+                                valued and appreciated as part of the team.
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                Infor specializes in developing software solutions that help businesses achieve their goals. One of the things 
+                                I admire most about the company is its strong sense of camaraderie, which fosters excellent teamwork and 
+                                drives us to deliver high-quality results for our customers. I’m also fortunate to have great leaders who 
+                                ensure that none of us fall behind and that we’re always on the right path.
+                            </About.TextDescription>
+                            
+                            <About.TextDescription>
+                                To read more about Infor, go to <About.TextLink type="1" to="https://www.infor.com/about">https://www.infor.com/about</About.TextLink>
+                            </About.TextDescription>
+
+                            {/* hobbies */}
+                            
+                            <SpaceHeightMedium />
+
+                            <About.ContainerDivider>
+                                <About.TextSubTitle>
+                                    Hobbies
+                                </About.TextSubTitle>
+                                <SpaceHeightExtraSmall />
+                                <Divider type="1"/>
+                            </About.ContainerDivider>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I regularly go to the gym, which has become my comfort zone after a long day. It helps boost my mood, 
+                                instills self-discipline, and promotes a healthier mind and body. I also enjoy reading, particularly 
+                                books on self-improvement. In my free time, I often seek out peaceful places where I can spend time alone and clear my mind.
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I do also upload some workout videos. Come check it out!
+                                    <About.ItemSocialIconNavigation href="https://www.instagram.com/marasigan.johnmartin/" target={"_blank"}> 
+                                        <BsArrowUpRight />    
+                                    </About.ItemSocialIconNavigation>
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I’m also passionate about music. I love listening to various genres and enjoy playing both acoustic and electric guitar. 
+                                As a former lead guitarist in a band, I also have experience playing bass. I began my guitar journey back in 2012, and 
+                                while there’s always room to grow, I’m confident in my current abilities on these instruments.
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                Here are some of my playlists.
+                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
+                                        <BsArrowUpRight />    
+                                    </About.ItemSocialIconNavigation>
+                            </About.TextDescription>
+
+                            {/* business */}
+
+                            <SpaceHeightMedium />
+
+                            <About.ContainerDivider>
+                                <About.TextSubTitle>
+                                    Business
+                                </About.TextSubTitle>
+                                <SpaceHeightExtraSmall />
+                                <Divider type="1"/>
+                            </About.ContainerDivider>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I am also a business owner passionate about health and wellness. I manage a business centered on 
+                                <About.TextDescriptionHighlight>JC Organic Barley,</About.TextDescriptionHighlight> a 
+                                premium health drink made from barley grass sourced from the pristine fields of New Zealand. This superfood offers numerous benefits 
+                                like boosting immunity, improving digestion, and balancing blood sugar levels. 
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                I chose JC Organic Barley because of its incredible demand 
+                                and its reputation as a trusted brand in the wellness industry. Additionally, I’ve ventured into franchising through JC’s comprehensive 
+                                franchise system, which offers exciting opportunities to start or expand a business. With a low one-time investment, lifetime membership, 
+                                and no renewal fees, this franchise provides the tools and support needed to succeed, from an online selling platform to potential incentives 
+                                like cars and house-and-lot bonuses. My decision to engage in these businesses allows me to promote healthier lifestyles while tapping 
+                                into a thriving entrepreneurial community.
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                Check out my shops!
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                Food Shop
+                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
+                                        <BsArrowUpRight />    
+                                    </About.ItemSocialIconNavigation>
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                Health & Wellness Shop
+                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
+                                        <BsArrowUpRight />    
+                                    </About.ItemSocialIconNavigation>
+                            </About.TextDescription>
+
+                            <SpaceHeightSmall />
+
+                            <About.TextDescription>
+                                The good thing is, this is something you can also have with ease. <About.TextDescriptionHighlight>Message me for details! :)</About.TextDescriptionHighlight>
+                            </About.TextDescription>
+                        </About.BoxInfo>
+                    </About.BoxProfile>
                 </About.Box>
             </motion.div>
         </About>

@@ -6,6 +6,7 @@ import {
     FilterText,
     SpaceHeightExtraLarge,
     SpaceHeightLarge,
+    SpaceHeightMedium,
     SpaceHeightSmall,
 } from "../globalComponents";
 
@@ -24,7 +25,9 @@ export function AboutContainer() {
                     <About.TextTitle>Who am I</About.TextTitle>
                     <Divider type="2" />
 
-                    <About.BoxInfo>
+                    <SpaceHeightMedium />
+
+                    <About.BoxProfileInfo>
                         <About.ContainerAboutMeText>
                             <About.TextDescription>
                                 My name is John Martin I. Marasigan, and I have a deep passion for programming. 
@@ -49,8 +52,8 @@ export function AboutContainer() {
                             </About.TextLink>
                         </About.ContainerAboutMeText>
 
-                        <About.ImageAvatar src="../images/jm.jpeg" />
-                    </About.BoxInfo>
+                        {/* <About.ImageAvatar src="../images/jm.jpeg" /> */}
+                    </About.BoxProfileInfo>
 
                     <SpaceHeightExtraLarge />
 
@@ -61,7 +64,9 @@ export function AboutContainer() {
                             >
                                 <About.ContainerTechInfo>
                                     <About.TextTitleOther>{item.title}</About.TextTitleOther>
+                                    <SpaceHeightSmall />
                                     <About.TextDescription>{item.description}</About.TextDescription>
+                                    <SpaceHeightSmall />
                                     <About.ContainerTechUsed>
                                         {item.tech.map((tech) => (
                                             <About.ContainerTechUsedText>

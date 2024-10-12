@@ -1,26 +1,54 @@
 import React from "react"
-import { Container, 
+import { ItemNavigationIcon,
+         ItemSocialIconNavigation,
+         ItemButton,
+         Container, 
          ContainerAboutMeText,
          ContainerTechInfo,
          ContainerTechUsed,
          ContainerTechUsedText,
+         ContainerAvatarInfo,
+         ContainerProfileContactTexts,
+         ContainerSocial,
+         ContainerContacts,
+         ContainerBusinessShopButtons,
+         ContainerDivider,
+         ContainerNavigaton,
          Box, 
          BoxInfo, 
          BoxInfoTech,
-         NavigationIcon, 
-         ContactText, 
-         ProfileContactTextsContainer, 
-         SocialContainer,
+         BoxProfileInfo,
+         BoxProfile,
          TextLink, 
          TextDescription,
          TextTitle,
          TextTechUsed,
          TextTitleOther,
+         TextSubTitle,
+         TextContact,
+         TextDescriptionHighlight,
+         TextBusinessShopTitle,
          ImageAvatar, 
          ImageTech } from "./styles/about"
 
 export default function About({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
+}
+
+/**
+ * * Items
+ */
+
+About.ItemNavigationIcon = function AboutItemNavigationIcon({ children, ...restProps }) {
+    return <ItemNavigationIcon {...restProps}>{children}</ItemNavigationIcon>
+}
+
+About.ItemSocialIconNavigation = function AboutItemSocialIconNavigation({ children, ...restProps }) {
+    return <ItemSocialIconNavigation {...restProps}>{children}</ItemSocialIconNavigation>
+}
+
+About.ItemButton = function AboutItemButton({ children, ...restProps }) {
+    return <ItemButton {...restProps}>{children}</ItemButton>
 }
 
 /**
@@ -43,6 +71,34 @@ About.ContainerTechUsedText = function AboutContainerTechUsedText({ children, ..
     return <ContainerTechUsedText { ...restProps}>{children}</ContainerTechUsedText>
 }
 
+About.ContainerAvatarInfo = function AboutContainerAvatarInfo({ children, ...restProps }) {
+    return <ContainerAvatarInfo { ...restProps}>{children}</ContainerAvatarInfo>
+}
+
+About.ContainerProfileContactTexts = function AboutContainerProfileContactTexts({ children, ...restProps }) {
+    return <ContainerProfileContactTexts {...restProps}>{children}</ContainerProfileContactTexts>
+}
+
+About.ContainerSocial = function AboutContainerSocial({ children, ...restProps }) {
+    return <ContainerSocial {...restProps}>{children}</ContainerSocial>
+}
+
+About.ContainerContacts = function AboutContainerContacts({ children, ...restProps }) {
+    return <ContainerContacts {...restProps}>{children}</ContainerContacts>
+}
+
+About.ContainerBusinessShopButtons = function AboutContainerBusinessShopButtons({ children, ...restProps }) {
+    return <ContainerBusinessShopButtons {...restProps}>{children}</ContainerBusinessShopButtons>
+}
+
+About.ContainerDivider = function AboutContainerDivider({ children, ...restProps }) {
+    return <ContainerDivider {...restProps}>{children}</ContainerDivider>
+}
+
+About.ContainerNavigaton = function AboutContainerNavigaton({ children, ...restProps }) {
+    return <ContainerNavigaton {...restProps}>{children}</ContainerNavigaton>
+}
+
 /**
  * * Boxes
  */
@@ -59,25 +115,12 @@ About.BoxInfoTech = function AboutBoxInfoTech({ children, ...restProps }) {
     return <BoxInfoTech {...restProps}>{children}</BoxInfoTech>
 }
 
-
-/**
- * ! NOT ORGANIZED
- */
-
-About.NavigationIcon = function AboutNavigatioIcon({ children, ...restProps }) {
-    return <NavigationIcon {...restProps}>{children}</NavigationIcon>
+About.BoxProfile = function AboutBoxProfile({ children, ...restProps }) {
+    return <BoxProfile {...restProps}>{children}</BoxProfile>
 }
 
-About.ContactText = function AboutContactText({ children, ...restProps }) {
-    return <ContactText {...restProps}>{children}</ContactText>
-}
-
-About.ProfileContactTextsContainer = function AboutProfileContactTextsContainer({ children, ...restProps }) {
-    return <ProfileContactTextsContainer {...restProps}>{children}</ProfileContactTextsContainer>
-}
-
-About.SocialContainer = function AboutSocialContainer({ children, ...restProps }) {
-    return <SocialContainer {...restProps}>{children}</SocialContainer>
+About.BoxProfileInfo = function AboutBoxProfileInfo({ children, ...restProps }) {
+    return <BoxProfileInfo {...restProps}>{children}</BoxProfileInfo>
 }
 
 /**
@@ -102,6 +145,22 @@ About.TextTechUsed = function AboutTextTechUsed({ children, ...restProps }) {
 
 About.TextTitleOther = function AboutTextTitleOther({ children, ...restProps }) {
     return <TextTitleOther {...restProps}>{children}</TextTitleOther>
+}
+
+About.TextContact = function AboutTextContact({ children, ...restProps }) {
+    return <TextContact {...restProps}>{children}</TextContact>
+}
+
+About.TextSubTitle = function AboutTextSubTitle({ children, ...restProps }) {
+    return <TextSubTitle {...restProps}>{children}</TextSubTitle>
+}
+
+About.TextDescriptionHighlight = function AboutTextDescriptionHighlight({ children, ...restProps }) {
+    return <TextDescriptionHighlight {...restProps}>{children}</TextDescriptionHighlight>
+}
+
+About.TextBusinessShopTitle = function AboutTextBusinessShopTitle({ children, ...restProps }) {
+    return <TextBusinessShopTitle {...restProps}>{children}</TextBusinessShopTitle>
 }
 
 /** 

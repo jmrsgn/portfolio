@@ -53,7 +53,7 @@ export function HomeContainer() {
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                            <SocialIcon href="https://www.linkedin.com/in/jmrsgn/" target={"_blank"}>
+                            <SocialIcon href="https://www.linkedin.com/in/marasiganjohnmartin/" target={"_blank"}>
                                 <AiFillLinkedin />
                             </SocialIcon>
                         </MotionWrap>
@@ -62,7 +62,7 @@ export function HomeContainer() {
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            <SocialIcon href="https://www.instagram.com/johnmartin.marasigan/" target={"_blank"}>
+                            <SocialIcon href="https://www.instagram.com/marasigan.johnmartin/" target={"_blank"}>
                                 <BsInstagram />
                             </SocialIcon>
                         </MotionWrap>
@@ -71,7 +71,7 @@ export function HomeContainer() {
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
-                            <SocialIcon href="https://www.tiktok.com/@jmrsgnn?is_from_webapp=1&sender_device=pc" target={"_blank"}>
+                            <SocialIcon href="https://www.tiktok.com/@marasigan.johnmartin" target={"_blank"}>
                                 <FaTiktok />
                             </SocialIcon>
                         </MotionWrap>
@@ -80,7 +80,7 @@ export function HomeContainer() {
                             whileInView={{ scale: [0, 1 ]}}
                             transition={{ duration: 0.5, delay: 1 }}
                         >
-                            <SocialIcon href="https://strava.app.link/0b8PDxJbmMb" target={"_blank"}>
+                            <SocialIcon href="https://www.strava.com/athletes/140326588" target={"_blank"}>
                                 <FaStrava />
                             </SocialIcon>
                         </MotionWrap>

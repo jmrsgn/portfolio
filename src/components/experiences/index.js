@@ -2,8 +2,10 @@ import React from "react";
 import { ItemBadge,
          ItemCertificate,
          ItemExperienceTab,
+         ItemNavigationIcon,
          Container,
          ContainerInfo,
+         ContainerNavigation,
          ContainerExperienceDisplay,
          ContainerBadges,
          ContainerCertificates,
@@ -45,6 +47,10 @@ Experiences.ItemBadge = function ExperiencesItemBadge({ src, ...restProps }) {
 
 Experiences.ItemCertificate = function ExperiencesItemCertificate({ src, ...restProps }) {
     return <ItemCertificate src={src} {...restProps} />
+}
+
+Experiences.ItemNavigationIcon = function ExperiencesItemNavigationIcon({ children, ...restProps }) {
+    return <ItemNavigationIcon {...restProps}>{children}</ItemNavigationIcon>
 }
 
 /**
@@ -89,6 +95,10 @@ Experiences.ContainerExperienceText = function ExperiencesContainerExperienceTex
 
 Experiences.ContainerExperienceTabs = function ExperiencesContainerExperienceTabs({ children, ...restProps }) {
     return <ContainerExperienceTabs {...restProps}>{children}</ContainerExperienceTabs>
+}
+
+Experiences.ContainerNavigation = function ExperiencesContainerNavigation({ children, ...restProps }) {
+    return <ContainerNavigation {...restProps}>{children}</ContainerNavigation>
 }
 
 /**

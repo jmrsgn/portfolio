@@ -212,6 +212,11 @@ export const SpaceWidthSmall = styled.div`
     width: 1rem;
 `;
 
+export const SpaceHeightExtraSmall = styled.div`
+    height: .5rem;
+    width: 100%;
+`;
+
 export const SpaceHeightSmall = styled.div`
     height: 1rem;
     width: 100%;
