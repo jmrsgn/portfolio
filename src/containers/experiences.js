@@ -86,9 +86,9 @@ export function ExperiencesContainer() {
                                    )
                                 ))}
                             </Experiences.ContainerCertificates>
-                            <Experiences.TextLink
+                            {/* <Experiences.TextLink
                                 to="/certificates/all"
-                            >See more</Experiences.TextLink>
+                            >See more</Experiences.TextLink> */}
                         </Experiences.BoxCertificates>
                     </Experiences.ContainerInfo>
 

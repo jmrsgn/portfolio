@@ -28,9 +28,7 @@ export function AboutMoreContainer() {
                         <About.ContainerNavigaton>
                             <Link to="/">
                                 <About.ItemNavigationIcon type='2'>
-                                    <IoCaretBack 
-                                        size={25}
-                                    />
+                                    <IoCaretBack />
                                 </About.ItemNavigationIcon> 
                             </Link> 
                         </About.ContainerNavigaton>                       
@@ -98,7 +96,7 @@ export function AboutMoreContainer() {
                                 </About.ContainerContacts>           
                             </About.ContainerProfileContactTexts>
 
-                            <About.ContainerBusinessShopButtons>
+                            {/* <About.ContainerBusinessShopButtons>
                                 <SpaceHeightMedium />
                                 <About.TextSubTitle>
                                     Business Shops
@@ -119,17 +117,13 @@ export function AboutMoreContainer() {
                                 >
                                     <About.TextBusinessShopTitle>HEALTH & WELLNESS</About.TextBusinessShopTitle>
                                 </About.ItemButton>
-                            </About.ContainerBusinessShopButtons>
+                            </About.ContainerBusinessShopButtons> */}
                         </About.ContainerAvatarInfo>
 
                         <About.BoxInfo>
-                            <About.ContainerDivider>
-                                <About.TextSubTitle>
-                                    About
-                                </About.TextSubTitle>
-                                <SpaceHeightExtraSmall />
-                                <Divider type="2"/>
-                            </About.ContainerDivider>
+                            <About.TextSubTitle>
+                                About
+                            </About.TextSubTitle>
 
                             <SpaceHeightSmall />
 
@@ -166,13 +160,9 @@ export function AboutMoreContainer() {
                             
                             <SpaceHeightMedium />
 
-                            <About.ContainerDivider>
-                                <About.TextSubTitle>
-                                    Hobbies
-                                </About.TextSubTitle>
-                                <SpaceHeightExtraSmall />
-                                <Divider type="2"/>
-                            </About.ContainerDivider>
+                            <About.TextSubTitle>
+                                Hobbies
+                            </About.TextSubTitle>
 
                             <SpaceHeightSmall />
 
@@ -212,13 +202,9 @@ export function AboutMoreContainer() {
 
                             <SpaceHeightMedium />
 
-                            <About.ContainerDivider>
-                                <About.TextSubTitle>
-                                    Business
-                                </About.TextSubTitle>
-                                <SpaceHeightExtraSmall />
-                                <Divider type="2"/>
-                            </About.ContainerDivider>
+                            <About.TextSubTitle>
+                                Business
+                            </About.TextSubTitle>
 
                             <SpaceHeightSmall />
 

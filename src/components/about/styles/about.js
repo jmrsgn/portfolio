@@ -143,15 +143,26 @@ export const ContainerTechUsedText = styled.div`
 
     svg {
         color: ${COLORS.COLOR_SURFACE2};
+        width: 12px;
+        height: 12px;
+
+        @media ${VIEWPORT.desktopUp} {
+            width: 15px;
+            height: 15px;
+        }
     }
 `;
 
 export const ContainerAvatarInfo = styled.div`
-    width: 30%;
+    width: 100%;
     align-items: center;
     display: flex;
     height: 100%;
     flex-direction: column;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 30%;
+    }
 `;
 
 export const ContainerProfileContactTexts = styled.div`
@@ -208,21 +219,18 @@ export const ContainerNavigaton = styled.div`
  */
 
 export const Box = styled(_Box)`
-    /* margin: 0 auto 0 auto;
-    display: flex;
-    padding: 3.25rem 2.25rem;
-    flex-direction: column;
-
-    @media ${VIEWPORT.desktopUp} {
-        padding: 5rem;
-    } */
 `;
 
 export const BoxInfo = styled.div`
     display: flex;
-    padding: .5rem 2.5rem;
     flex-direction: column;
     flex: 1;
+    margin-top: 5rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 0;
+        padding: .5rem 2.5rem;  
+    }
 `;
 
 export const BoxInfoTech = styled(BoxInfo)`
@@ -234,7 +242,11 @@ export const BoxInfoTech = styled(BoxInfo)`
 
 export const BoxProfile = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    @media ${VIEWPORT.desktopUp} {
+        flex-direction: row;
+    }
 `;
 
 export const BoxProfileInfo = styled.div`
@@ -267,10 +279,11 @@ export const TextTechUsed = styled(TechText)`
     line-height: 14px;
     color: ${COLORS.COLOR_SURFACE2};
     font-size: .75rem;
-    margin-left: 1.25rem;
+    margin-left: .75rem;
 
     @media ${VIEWPORT.desktopUp} {
         line-height: 18px;
+        margin-left: 1rem;
         font-size: .85rem;
     }
 `;
