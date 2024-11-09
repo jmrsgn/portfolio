@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
-import * as COLORS from '../../../constants/colors';
+import * as COLORS from '../../../constants/styles/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _TextDescription, _TextTech, Title } from '../../../globalComponents';
+import { _Box, _Button, _Container, _TextDescription, _TextGreeting, _TextTech } from '../../../globalComponents';
 
 /**
  * * Containers
@@ -58,10 +58,11 @@ export const BoxInfo = styled.div`
  * * Texts
  */
 
-export const TextTech = styled(_TextTech)``;
+export const TextTech = styled(_TextTech)`
+    color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
+`;
 
-export const TextGreeting = styled(Title)`
-    color: ${COLORS.COLOR_ON_BACKGROUND};
+export const TextGreeting = styled(_TextGreeting)`
     margin-top: 1rem;
 
     @media ${VIEWPORT.desktopUp} {
@@ -85,3 +86,9 @@ export const Image = styled.img`
         transform: translateX(20%);
     }
 `;
+
+/**
+ * * Buttons
+ */
+
+export const ButtonResume = styled(_Button)``;

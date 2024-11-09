@@ -7,7 +7,8 @@ import { Container,
          TextGreeting,  
          TextTech, 
          TextDescription,
-         Image }  from './styles/home';
+         Image, 
+         ButtonResume}  from './styles/home';
 
 export default function Home({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -59,4 +60,12 @@ Home.TextDescription = function HomeTextDescription({ children, ...restProps }) 
 
 Home.Image = function HomeImage({ src, ...restProps }) {
     return <Image src={src} {...restProps} />
+}
+
+/**
+ * * Buttons
+ */
+
+Home.ButtonResume = function HomeButtonResume({ children, ...restProps }) {
+    return <ButtonResume {...restProps}>{children}</ButtonResume>
 }

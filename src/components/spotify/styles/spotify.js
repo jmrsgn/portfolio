@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as COLORS from '../../../constants/colors';
+import * as COLORS from '../../../constants/styles/colors';
 import { DescriptionText } from "../../../globalComponents";
 import { VIEWPORT } from "../../../constants/viewports";
 
