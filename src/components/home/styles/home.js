@@ -21,9 +21,9 @@ export const ContainerSocials = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 1rem;
-
+    
     @media ${VIEWPORT.desktopUp} {
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 `;
 
@@ -91,4 +91,6 @@ export const Image = styled.img`
  * * Buttons
  */
 
-export const ButtonResume = styled(_Button)``;
+export const ButtonResume = styled(_Button)`
+    margin-top: 1rem;
+`;

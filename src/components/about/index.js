@@ -15,6 +15,7 @@ import { ItemNavigationIcon,
          ContainerBusinessShopButtons,
          ContainerDivider,
          ContainerNavigaton,
+         ContainerTech,
          Box, 
          BoxInfo, 
          BoxInfoTech,
@@ -102,6 +103,10 @@ About.ContainerDivider = function AboutContainerDivider({ children, ...restProps
 
 About.ContainerNavigaton = function AboutContainerNavigaton({ children, ...restProps }) {
     return <ContainerNavigaton {...restProps}>{children}</ContainerNavigaton>
+}
+
+About.ContainerTech = function AboutContainerTech({ children, ...restProps }) {
+    return <ContainerTech {...restProps}>{children}</ContainerTech>
 }
 
 /**

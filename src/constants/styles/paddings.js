@@ -14,5 +14,9 @@ export const PADDINGS = {
             mobile: 12,
             desktop: 16,
         }
+    },
+
+    NAVBAR: {
+        // TODO: 
     }
 }

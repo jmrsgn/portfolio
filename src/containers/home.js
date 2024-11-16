@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { SocialIcon, 
-         SpaceHeightMedium,
-         SpaceHeightSmall} from '../globalComponents';
+import { SocialIcon } from '../globalComponents';
 
 import { Home } from '../components';
 
@@ -30,7 +28,6 @@ export function HomeContainer() {
                                 applications. By night, you'll find me pushing my limits at the gym, 
                                 running, or exploring new fitness routines.
                             </Home.TextDescription>
-                            <SpaceHeightMedium />
                             <Home.ButtonResume 
                                 type="1"
                                 to="../resume/Resume.pdf"

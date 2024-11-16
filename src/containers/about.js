@@ -25,8 +25,6 @@ export function AboutContainer() {
                     <About.TextTitle>Who am I</About.TextTitle>
                     <Divider type="2" />
 
-                    <SpaceHeightMedium />
-
                     <About.BoxProfileInfo>
                         <About.ContainerAboutMeText>
                             <About.TextDescription>
@@ -47,39 +45,41 @@ export function AboutContainer() {
                                 guitarist.
                             </About.TextDescription>
 
-                            <About.TextLink type="2" to="/about/more">
+                            {/* <About.TextLink type="2" to="/about/more">
                                 Know me more
-                            </About.TextLink>
+                            </About.TextLink> */}
                         </About.ContainerAboutMeText>
                     </About.BoxProfileInfo>
 
                     <SpaceHeightExtraLarge />
 
-                    {WhatIDoData.map((item, index) => (
-                        <>
-                            <About.BoxInfoTech
-                                flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
-                            >
-                                <About.ContainerTechInfo>
-                                    <About.TextTitleOther>{item.title}</About.TextTitleOther>
-                                    <SpaceHeightSmall />
-                                    <About.TextDescription>{item.description}</About.TextDescription>
-                                    <SpaceHeightSmall />
-                                    <About.ContainerTechUsed>
-                                        {item.tech.map((tech) => (
-                                            <About.ContainerTechUsedText>
-                                                <IoIosArrowDroprightCircle />
-                                                <About.TextTechUsed>{tech}</About.TextTechUsed>
-                                            </About.ContainerTechUsedText>
-                                        ))}
-                                    </About.ContainerTechUsed>
-                                </About.ContainerTechInfo>
+                    <About.ContainerTech>
+                        {WhatIDoData.map((item, index) => (
+                            <>
+                                <About.BoxInfoTech
+                                    flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
+                                >
+                                    <About.ContainerTechInfo>
+                                        <About.TextTitleOther>{item.title}</About.TextTitleOther>
+                                        <SpaceHeightMedium />
+                                        <About.TextDescription>{item.description}</About.TextDescription>
+                                        <SpaceHeightSmall />
+                                        <About.ContainerTechUsed>
+                                            {item.tech.map((tech) => (
+                                                <About.ContainerTechUsedText>
+                                                    <IoIosArrowDroprightCircle />
+                                                    <About.TextTechUsed>{tech}</About.TextTechUsed>
+                                                </About.ContainerTechUsedText>
+                                            ))}
+                                        </About.ContainerTechUsed>
+                                    </About.ContainerTechInfo>
 
-                                <About.ImageTech src={item.src} />
-                            </About.BoxInfoTech>
-                            <SpaceHeightLarge />
-                        </>
-                    ))}
+                                    <About.ImageTech src={item.src} />
+                                </About.BoxInfoTech>
+                                <SpaceHeightLarge />
+                            </>
+                        ))}
+                    </About.ContainerTech>
                 </About.Box>
             </MotionWrap>
         </About>

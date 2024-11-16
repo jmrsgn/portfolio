@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/styles/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _ItemSocialIcon, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
+import { _Box, _Container, _ItemSocialIcon, _TextDescription, _TextLink, _TextSubTitle, _TextTech, _TextTitle, _TextTitleOther, TechText } from '../../../globalComponents';
 import { FONTS } from '../../../fonts/fonts';
 
 /**
@@ -214,6 +214,16 @@ export const ContainerNavigaton = styled.div`
     left: 50;
 `;
 
+export const ContainerTech = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
+    }
+`;  
+
 /**
  * * Boxes
  */
@@ -235,6 +245,7 @@ export const BoxInfo = styled.div`
 
 export const BoxInfoTech = styled(BoxInfo)`
     padding: 0;
+    margin: 0;
     flex-direction: ${({ flexDirection }) => (flexDirection)};
     justify-content: space-between;
     width: 100%;
@@ -253,8 +264,10 @@ export const BoxProfileInfo = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin-top: 2rem;
 
     @media ${VIEWPORT.desktopUp} {
+        margin-top: 3rem;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -269,13 +282,11 @@ export const TextLink = styled(_TextLink)`
     margin-top: 12px;
 `;
 
-export const TextDescription = styled(_TextDescription)`
-    /* margin-top: 12px; */
-`;
+export const TextDescription = styled(_TextDescription)``;
 
 export const TextTitle = styled(_TextTitle)``;
 
-export const TextTechUsed = styled(TechText)`
+export const TextTechUsed = styled(_TextTech)`
     line-height: 14px;
     color: ${COLORS.COLOR_SURFACE2};
     font-size: .75rem;

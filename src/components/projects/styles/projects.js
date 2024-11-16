@@ -111,16 +111,7 @@ export const ContainerTags = styled.div`
  * * Boxes
  */
 
-export const Box = styled(_Box)`
-    /* margin: 0 auto 0 auto;
-    display: flex;
-    padding: 3.25rem 2.25rem;
-    flex-direction: column;
-
-    @media ${VIEWPORT.desktopUp} {
-        padding: 5rem;
-    } */
-`;
+export const Box = styled(_Box)``;
 
 /**
  * * Texts

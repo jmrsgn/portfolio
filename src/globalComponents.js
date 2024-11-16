@@ -66,6 +66,31 @@ export const _TextTitle = styled.p`
     }
 `;
 
+export const _TextLink = styled(Link)`
+    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+    font-size: ${pxToRem(TEXTS.SIZES.OTHER.mobile)};
+    font-family: ${FONTS.sfMonoRegular};
+    text-decoration: none;
+    transition: .1s ease-in;
+
+    display: inline-block;
+    margin-block: 2px;
+    position: relative;
+
+    @media ${VIEWPORT.desktopUp} {
+        font-size: ${pxToRem(TEXTS.SIZES.OTHER.desktop)};
+    }
+`;
+
+// -------------------------------------------
+
+export const FilterText = styled(_TextDescription)`
+    display: inline;
+    font-weight: bold;
+    color: ${COLORS.COLOR_ON_BACKGROUND};
+`;
+
 // -------------------------------------------
 
 /**
@@ -158,12 +183,6 @@ export const DescriptionText = styled(TextSmall)`
     }
 `;
 
-export const FilterText = styled(DescriptionText)`
-    display: inline;
-    font-weight: bold;
-    color: ${COLORS.COLOR_ON_BACKGROUND};
-`;
-
 export const Title = styled(TextExtraLarge)`
     font-family: ${FONTS.calibreBold};
     color: ${COLORS.COLOR_ON_BACKGROUND};
@@ -238,8 +257,6 @@ export const _Box = styled.div`
         width: 85%;
         padding: 5rem;
     }
-
-
 `;
 
 // -------------------------------------------
@@ -275,23 +292,6 @@ export const TextLink = styled(Link)`
     margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: 0.75rem;
-    font-family: ${FONTS.sfMonoRegular};
-    text-decoration: none;
-    transition: .1s ease-in;
-
-    display: inline-block;
-    margin-block: 2px;
-    position: relative;
-
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
-    }
-`;
-
-export const _TextLink = styled(Link)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-    font-size: 0.90rem;
     font-family: ${FONTS.sfMonoRegular};
     text-decoration: none;
     transition: .1s ease-in;
@@ -488,7 +488,7 @@ export const ProjectWebAppImage = styled.img`
         height: 320px;
         margin: 1rem 2rem 1rem 2rem;
     }
-`
+`;
 
 export const BoxFlex = styled.div`
     width: ${({ width }) => (width)};

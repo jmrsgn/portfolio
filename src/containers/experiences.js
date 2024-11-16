@@ -44,9 +44,13 @@ export function ExperiencesContainer() {
                                         <Experiences.TextDate>{active.date}</Experiences.TextDate>
                                         <Experiences.ContainerExperienceText>
                                             {active.learnings.map((item, index) => (
-                                                <Experiences.TextDescription
-                                                    marginTop={index !== 0? '24px':'0px'}
-                                                >{item}</Experiences.TextDescription>
+                                                <>
+                                                    <Experiences.TextDescription
+                                                        marginTop={index !== 0? '24px':'0px'}
+                                                    >{item}</Experiences.TextDescription>
+                                                    <SpaceHeightSmall />
+                                                </>
+
                                             ))}
                                         </Experiences.ContainerExperienceText>
 
@@ -77,11 +81,11 @@ export function ExperiencesContainer() {
                                                     <>
                                                         <BsArrowUpRight 
                                                             size={20}
-                                                        />  
+                                                        />
                                                     </>
                                                 </Experiences.ContainerCertificateInfo>
                                             </Experiences.ContainerCertificate>
-                                            <SpaceHeightExtraSmall />
+                                            <SpaceHeightSmall />
                                         </>
                                    )
                                 ))}

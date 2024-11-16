@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import * as COLORS from '../../../constants/styles/colors';
 import { VIEWPORT } from '../../../constants/viewports';
-import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTitle, TechText } from '../../../globalComponents';
+import { _Box, _Container, _TextDescription, _TextLink, _TextSubTitle, _TextTech, _TextTitle, TechText } from '../../../globalComponents';
 import { FONTS } from '../../../fonts/fonts';
 
 /**
@@ -255,17 +255,7 @@ export const ContainerExperienceText = styled.div`
  * * Boxes 
  */
 
-export const Box = styled(_Box)`
-    /* margin: 0 auto 0 auto;
-    padding: 2.25rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-
-    @media ${VIEWPORT.desktopUp} {
-        width: 85%;
-        padding: 5rem;
-    } */
-`;
+export const Box = styled(_Box)``;
 
 export const BoxExperiences = styled.div`
     display: flex;
@@ -362,6 +352,6 @@ export const TextCertificateTitle = styled.p`
     }
 `;
 
-export const TextCertificateYear = styled(TechText)`
+export const TextCertificateYear = styled(_TextTech)`
     color: ${COLORS.COLOR_SURFACE2};
 `;

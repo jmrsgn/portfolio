@@ -6,6 +6,7 @@ import { BiInfoCircle } from "react-icons/bi";
 import { IoCall } from "react-icons/io5";
 
 import navigationData from '../fixtures/navigation.json';
+import { COLOR_SURFACE1, COLOR_SURFACE2 } from "../constants/styles/colors";
 
 export function NavBarContainer(props) {
     const navButtons = {
@@ -23,6 +24,7 @@ export function NavBarContainer(props) {
                     <NavBar.Nav 
                         href={item.to}
                         active={props.visibleTab === item.name? 'true' : 'false'}
+                        color={index % 2 === 0 ? COLOR_SURFACE1 : COLOR_SURFACE2}
                     >
                         {navButtons[item.name]}
                     </NavBar.Nav>

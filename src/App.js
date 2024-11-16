@@ -10,7 +10,7 @@ import ScrollToTop from './helpers/scroll-to-top';
 import { CertificatesAllContainer } from './containers/certificates-all';
 
 export default function App() {
-  document.title = "em";
+  document.title = "em"; 
 
   return (
     <Router>
