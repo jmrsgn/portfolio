@@ -18,17 +18,17 @@ export default function Main() {
     const { ref: experiencesRef, inView: isExperiencesVisible } = useInView({ threshold: 0.35 });
     const { ref: contactRef, inView: isContactVisible } = useInView({ threshold: 0.35 });
 
-    const homeActive = isHomeVisible? 'home' : '';
-    const aboutActive = isAboutActive? 'about' : '';
-    const projectsActive = isProjectsVisible? 'projects' : '';
-    const experiencesActive = isExperiencesVisible? 'experiences' : '';
-    const contactActive = isContactVisible? 'contact' : '';
+    const homeActive = isHomeVisible ? 'home' : '';
+    const aboutActive = isAboutActive ? 'about' : '';
+    const projectsActive = isProjectsVisible ? 'projects' : '';
+    const experiencesActive = isExperiencesVisible ? 'experiences' : '';
+    const contactActive = isContactVisible ? 'contact' : '';
 
     return (
         <>
-            <NavBarContainer 
+            <NavBarContainer
                 visibleTab={homeActive || aboutActive || projectsActive || experiencesActive || contactActive}
-            />    
+            />
 
             {/* <SpotifyPlayer /> */}
 
