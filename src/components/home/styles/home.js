@@ -7,14 +7,16 @@ import { _Box, _Button, _Container, _TextDescription, _TextGreeting, _TextTech }
  * * Containers
  */
 
-export const Container = styled(_Container)`
-    background-color: ${COLORS.COLOR_BG1};
-`;
+export const Container = styled(_Container)``;
 
 export const ContainerGreetings = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media ${VIEWPORT.desktopUp} {
+        width: 50%;
+    }
 `;
 
 export const ContainerSocials = styled.div`
@@ -51,7 +53,6 @@ export const BoxInfo = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
 `;
 
 /**
@@ -59,7 +60,7 @@ export const BoxInfo = styled.div`
  */
 
 export const TextTech = styled(_TextTech)`
-    color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
+    color: ${COLORS.PRIMARY};
 `;
 
 export const TextGreeting = styled(_TextGreeting)`

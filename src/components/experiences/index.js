@@ -1,40 +1,51 @@
 import React from "react";
-import { ItemBadge,
-         ItemCertificate,
-         ItemExperienceTab,
-         ItemNavigationIcon,
-         Container,
-         ContainerInfo,
-         ContainerNavigation,
-         ContainerExperienceDisplay,
-         ContainerBadges,
-         ContainerCertificates,
-         ContainerCertificate,
-         ContainerCertificateInfo,
-         ContainerExperiences,
-         ContainerExperience,
-         ContainerExperienceText,
-         ContainerExperienceTabs,
-         Box,
-         BoxExperiences,
-         BoxCertificates,
-         TextExperienceTab,
-         TextCertificateTitle,
-         TextCertificateYear, 
-         TextLink,
-         TextTitle,
-         TextSubTitle, 
-         TextCompany,
-         TextDate,
-         TextDescription,
-         TextPosition } from './styles/experiences';
+import {
+    ItemBadge,
+    ItemCertificate,
+    ItemExperienceTab,
+    ItemNavigationIcon,
+    Container,
+    ContainerInfo,
+    ContainerNavigation,
+    ContainerExperienceDisplay,
+    ContainerBadges,
+    ContainerCertificates,
+    ContainerCertificate,
+    ContainerCertificateInfo,
+    ContainerExperiences,
+    ContainerExperience,
+    ContainerExperienceText,
+    ContainerExperienceTabs,
+    Box,
+    BoxExperiences,
+    BoxCertificates,
+    TextExperienceTab,
+    TextCertificateTitle,
+    TextCertificateYear,
+    TextLink,
+    TextTitle,
+    TextSubTitle,
+    TextCompany,
+    TextDate,
+    TextDescription,
+    PositionDivider,
+    TextPosition,
+    TextPreviousPosition
+} from './styles/experiences';
 
 export default function Experiences({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
 /**
- * * Items
+ * Common Styles
+ */
+Experiences.PositionDivider = function ExperiencesPositionDivider({ children, ...restProps }) {
+    return <PositionDivider {...restProps}>{children}</PositionDivider>
+}
+
+/**
+ * Items
  */
 
 Experiences.ItemExperienceTab = function ExperiencesItemExperienceTab({ children, ...restProps }) {
@@ -54,7 +65,7 @@ Experiences.ItemNavigationIcon = function ExperiencesItemNavigationIcon({ childr
 }
 
 /**
- * * Containers
+ * Containers
  */
 
 Experiences.ContainerCertificate = function ExperiencesContainerCertificate({ children, ...restProps }) {
@@ -102,7 +113,7 @@ Experiences.ContainerNavigation = function ExperiencesContainerNavigation({ chil
 }
 
 /**
- * * Boxes
+ * Boxes
  */
 
 Experiences.Box = function ExperiencesBox({ children, ...restProps }) {
@@ -118,7 +129,7 @@ Experiences.BoxCertificates = function ExperiencesBoxCertificates({ children, ..
 }
 
 /**
- * * Texts
+ * Texts
  */
 
 Experiences.TextTitle = function ExperiencesTextTitle({ children, ...restProps }) {
@@ -151,6 +162,10 @@ Experiences.TextDate = function ExperiencesTextDate({ children, ...restProps }) 
 
 Experiences.TextPosition = function ExperiencesTextPosition({ children, ...restProps }) {
     return <TextPosition {...restProps}>{children}</TextPosition>
+}
+
+Experiences.TextPreviousPosition = function ExperiencesTextPreviousPosition({ children, ...restProps }) {
+    return <TextPreviousPosition {...restProps}>{children}</TextPreviousPosition>
 }
 
 Experiences.TextExperienceTab = function ExperiencesTextExperienceTab({ children, ...restProps }) {

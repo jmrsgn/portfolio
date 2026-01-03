@@ -2,18 +2,19 @@
     {
         "id": 1,
         "title": "Web Development",
-        "description": "I have limited experience in Web Development, with basic proficiency in React JS for UI development, fundamental CSS skills for design, and basic feature implementation.",
+        "description": "I build clean and responsive user interfaces using React, with a focus on reusable components, basic state management, and modern styling practices.",
         "src": "../images/what_i_do/web-development.svg",
         "tech": [
-            "React",
+            "React JS",
             "HTML",
+            "CSS",
             "styled-components"
         ]
     },
     {
         "id": 2,
         "title": "UI/UX Design",
-        "description": "In my previous projects, I developed numerous designs, leveraging my basic UI skills to create modern interfaces using Figma.",
+        "description": "I design simple and modern user interfaces using Figma, focusing on clarity, usability, and consistency across screens.",
         "src": "../images/what_i_do/ui-ux.svg",
         "tech": [
             "Figma"
@@ -22,12 +23,23 @@
     {
         "id": 3,
         "title": "Mobile Development",
-        "description": "Java has been my star performer; I've successfully built two applications with it. Currently, I'm deepening my expertise in Jetpack Compose and Ktor, focusing on robust code architecture and coding principles in my personal projects. Looking ahead, I'm eager to master Flutter for upcoming ventures.",
+        "description": "I build mobile applications using Java, applying solid object-oriented principles and clean code practices. I am open to extending my knowledge to Kotlin, as its concepts align closely with the Java fundamentals I already use in my projects.",
         "src": "../images/what_i_do/mobile-development.svg",
         "tech": [
             "Java",
             "Kotlin",
             "Flutter"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Backend Development",
+        "description": "I am currently learning backend development using Java Spring, focusing on RESTful API design, clean architecture principles, and containerization with Docker and Kubernetes through hands-on personal projects.",
+        "src": "../images/what_i_do/backend-development.svg",
+        "tech": [
+            "Java Spring",
+            "Docker",
+            "Kubernetes"
         ]
     }
 ]

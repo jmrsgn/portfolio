@@ -31,7 +31,7 @@ export const Container = styled.div`
     position: fixed;
     z-index: 1;
 
-    background-color: #151C27;
+    background-color: #13171fff;
 
     display: flex;
     flex-direction: row;
@@ -40,7 +40,7 @@ export const Container = styled.div`
 
     @media ${VIEWPORT.desktopUp} {
         padding: 0;
-        height: 50vh;
+        height: 40vh;
         margin-top: auto;
         margin-bottom: auto;
         border-radius: 0px 10px 10px 0px;

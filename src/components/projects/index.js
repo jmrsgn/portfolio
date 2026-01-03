@@ -3,7 +3,6 @@ import { ItemProject,
          ItemTag,
          Container, 
          ContainerProjectTitleNav,
-         ContainerNavigation,
          ContainerProjects,
          ContainerTags,
          Box,
@@ -34,10 +33,6 @@ Projects.ItemTag = function ProjectsItemTag({ children, ...restProps }) {
 
 Projects.ContainerProjectTitleNav = function ProjectsContainerProjectTitleNav({ children, ...restProps }) {
     return <ContainerProjectTitleNav {...restProps}>{children}</ContainerProjectTitleNav>
-}
-
-Projects.ContainerNavigation = function ProjectsContainerNavigation({ children, ...restProps }) {
-    return <ContainerNavigation {...restProps}>{children}</ContainerNavigation>
 }
 
 Projects.ContainerProjects = function ProjectsContainerProjects({ children, ...restProps}) {

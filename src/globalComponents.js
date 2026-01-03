@@ -18,13 +18,13 @@ export const _TextDescription = styled.p`
     font-family: ${FONTS.calibreRegular};
     font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
     line-height: ${numToRem(TEXTS.LINEHEIGHT.BODY.mobile)};
-    color: ${COLORS.COLOR_LIGHT_GRAY};
+    color: ${COLORS.TEXT_SECONDARY};
     
     /*
         Adjustable settings
     */
 
-    /* margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    /* margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
     margin-left: ${({ marginLeft }) => (marginLeft)}; */
 
     @media ${VIEWPORT.tabletUp} {
@@ -48,7 +48,7 @@ export const _TextTech = styled.p`
 
 export const _TextGreeting = styled.p`
     font-family: ${FONTS.calibreBold};
-    color: ${COLORS.COLOR_ON_BACKGROUND};
+    color: ${COLORS.TEXT_PRIMARY};
     font-size: ${pxToRem(TEXTS.SIZES.GREETING.mobile)};
 
     @media ${VIEWPORT.desktopUp} {
@@ -58,7 +58,7 @@ export const _TextGreeting = styled.p`
 
 export const _TextTitle = styled.p`
     font-family: ${FONTS.calibreBold};
-    color: ${COLORS.COLOR_ON_BACKGROUND};
+    color: ${COLORS.TEXT_PRIMARY};
     font-size: ${pxToRem(TEXTS.SIZES.GREETING.mobile)};
 
     @media ${VIEWPORT.desktopUp} {
@@ -67,7 +67,7 @@ export const _TextTitle = styled.p`
 `;
 
 export const _TextLink = styled(Link)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: ${pxToRem(TEXTS.SIZES.OTHER.mobile)};
     font-family: ${FONTS.sfMonoRegular};
@@ -88,7 +88,7 @@ export const _TextLink = styled(Link)`
 export const FilterText = styled(_TextDescription)`
     display: inline;
     font-weight: bold;
-    color: ${COLORS.COLOR_ON_BACKGROUND};
+    color: ${COLORS.TEXT_PRIMARY};
 `;
 
 // -------------------------------------------
@@ -175,7 +175,7 @@ export const DescriptionText = styled(TextSmall)`
         Adjustable settings
     */
 
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
     margin-left: ${({ marginLeft }) => (marginLeft)};
 
     @media ${VIEWPORT.desktopUp} {
@@ -210,19 +210,19 @@ export const OtherTitle = styled(TextMedium)`
 
 export const _TextTitleOther = styled(TextMedium)`
     font-family: ${FONTS.calibreRegular};
-    color: ${COLORS.COLOR_ON_BACKGROUND};
+    color: ${COLORS.TEXT_PRIMARY};
 `;
 
 // -------------------------------------------
 
 export const Divider = styled.div`
-    margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
-    margin-bottom: ${({ marginBottom }) => (marginBottom? marginBottom : '0')};
+    margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0')};
+    margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
+    margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : '0')};
     width: 30px;
     height: 7px;
     border-radius: 50px;
-    background-color: ${({ type }) => (type === '1'? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+    background-color: ${COLORS.PRIMARY};
 
     @media ${VIEWPORT.tabletUp} {
         width: 50px;
@@ -234,13 +234,14 @@ export const MiniDivider = styled(Divider)`
     height: 2px;
     border-radius: 10px;
     width: 50px;
-    margin-left: ${({ marginLeft }) => (marginLeft? marginLeft : '0')};
+    margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0')};
 `;
 
 // -------------------------------------------
 
 export const _Container = styled.div`
     min-height: 100vh;
+    background-color: ${COLORS.BACKGROUND_DEFAULT};
 `;
 
 export const _Box = styled.div`
@@ -282,14 +283,14 @@ export const TechText = styled(TextExtraSmall)`
         Adjustable settings
     */
     
-    color: ${({ type }) => (type === 'regular'? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
+    color: ${({ type }) => (type === 'regular' ? `${COLORS.COLOR_LIGHT_GRAY}` : `${COLORS.COLOR_SURFACE1}`)};
     margin: ${({ margin }) => (margin)};
     margin-bottom: ${({ marginBottom }) => (marginBottom)};
     margin-top: ${({ marginTop }) => (marginTop)};
 `;
 
 export const TextLink = styled(Link)`
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
     color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
     font-size: 0.75rem;
     font-family: ${FONTS.sfMonoRegular};
@@ -326,15 +327,14 @@ export const SocialIcon = styled.a`
     svg {
         width: 20px;
         height: 20px;
-        color: ${COLORS.COLOR_ON_SURFACE};
+        color: ${COLORS.TEXT_MUTED};
     }
 
     &:hover {
-        background-color: ${COLORS.COLOR_SURFACE1};
-        border-color: ${COLORS.COLOR_SURFACE1};
+        background-color: ${COLORS.PRIMARY};
   
         svg {
-          color: ${COLORS.COLOR_ON_SURFACE};
+          color: ${COLORS.TEXT_PRIMARY};
         }
     }
 
@@ -464,8 +464,7 @@ export const NavigationIcon = styled.a`
         }
 
         &:hover {
-            background-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
-            border-color: ${({ type }) => (type === '1' ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`)};
+            background-color: ${COLORS.PRIMARY};
         }
     }
 `;
@@ -497,10 +496,10 @@ export const BoxFlex = styled.div`
     margin: ${({ margin }) => (margin)};
     margin-left: ${({ marginLeft }) => (marginLeft)};
     margin-right: ${({ marginRight }) => (marginRight)};
-    margin-top: ${({ marginTop }) => (marginTop? marginTop : '0')};
+    margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0')};
     justify-content: ${({ justifyContent }) => (justifyContent)};
     align-items: ${({ alignItems }) => (alignItems)};
-    flex-direction: ${({ flexDirection }) => (flexDirection === "column"? "column" : "row")};
+    flex-direction: ${({ flexDirection }) => (flexDirection === "column" ? "column" : "row")};
 `;
 
 export const Row = styled.div`
@@ -516,17 +515,17 @@ export const Row = styled.div`
  */
 
 export const _Button = styled(Link)`
-    background-color: ${COLORS.COLOR_BG1};
     font-family: ${FONTS.sfMonoRegular};
-    border: 1px solid ${COLORS.COLOR_SURFACE1};
-    color: ${COLORS.COLOR_SURFACE1};
-    box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
+
+    border: 1px solid ${COLORS.PRIMARY};                      
+    color: ${COLORS.PRIMARY};                                 
+    box-shadow: 0px 0px 0 ${COLORS.PRIMARY};                 
 
     text-decoration: none;
     outline: none;
     text-align: center;
     cursor: pointer;
-    transition: .1s ease-in;
+    transition: 0.15s ease-in-out;
 
     font-size: ${pxToRem(TEXTS.SIZES.BUTTON.mobile)};
     padding: ${pxToRem(PADDINGS.BUTTON.TOP_BOTTOM.mobile)} ${pxToRem(PADDINGS.BUTTON.SIDE.mobile)};
@@ -538,7 +537,8 @@ export const _Button = styled(Link)`
         font-size: ${pxToRem(TEXTS.SIZES.BUTTON.desktop)};
 
         &:hover {
-            box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+            box-shadow: 5px 5px 0 ${COLORS.PRIMARY};          
+            border-color: ${COLORS.PRIMARY_HOVER};            
         }
     }
 `;

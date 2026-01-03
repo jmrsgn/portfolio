@@ -13,9 +13,10 @@ export const ItemProject = styled.div`
     flex-direction: row;
     justify-content: space-between;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    background-color: ${COLORS.BACKGROUND_CARD};
+    flex: 1 1 calc(33.333% - 1.5rem);
     
-    box-shadow: 0px 5px 5px #161C24;
+    box-shadow: 0px 5px 5px #141c29ff;
     transition: .3s ease-in;
     cursor: default;
     break-inside: avoid;
@@ -30,7 +31,7 @@ export const ItemProject = styled.div`
     }
 
     @media ${VIEWPORT.desktopUp} {
-        padding: 2rem;
+        padding: 2.75rem 1.75rem;
         max-width: 450px;
         min-height: 200px;
 
@@ -41,7 +42,7 @@ export const ItemProject = styled.div`
 `;
 
 export const ItemTag = styled.div`
-    border: 1px solid ${COLORS.COLOR_SURFACE1};
+    border: 1px solid ${COLORS.PRIMARY};
     margin: 0.15rem;
     border-radius: .5rem;
     padding: .25rem .75rem;
@@ -51,20 +52,12 @@ export const ItemTag = styled.div`
  * * Containers
  */
 
-export const Container = styled(_Container)`
-    background-color: ${COLORS.COLOR_BG1};
-`;
+export const Container = styled(_Container)``;
 
 export const ContainerProjectTitleNav = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-`;
-
-export const ContainerNavigation = styled.div`
-    display: flex;
-    flex-direction: row;
     align-items: center;
 `;
 
@@ -120,20 +113,23 @@ export const Box = styled(_Box)``;
 export const TextDescription = styled(_TextDescription)`
 `;
 
-export const TextProjectTitle = styled.p`  
-    margin: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    font-family: ${FONTS.calibreRegular};
+export const TextProjectTitle = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-family: ${FONTS.calibreRegular};
 
-    @media ${VIEWPORT.desktopUp} {
-        font-size: 2.25rem;
-    }
+  display: flex;
+  align-items: center;
+
+  @media ${VIEWPORT.desktopUp} {
+    font-size: 2.25rem;
+  }
 `;
 
 export const TextTag = styled.p`
     font-family: ${FONTS.sfMonoRegular};
-    color: ${COLORS.COLOR_SURFACE1};
+    color: ${COLORS.PRIMARY};
     font-size: .6rem;
 
     @media ${VIEWPORT.desktopUp} {

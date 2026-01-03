@@ -1,12 +1,10 @@
-import React from 'react';
-
-import { Divider,
-         NavigationIcon,
-         SpaceHeightMedium,
-         SpaceWidthSmall }  from "../globalComponents";
+import {
+    Divider,
+    NavigationIcon,
+    SpaceHeightMedium,
+} from "../globalComponents";
 
 import { Projects } from '../components';
-import { BsArrowUpRight } from "react-icons/bs";
 
 import ProjectsData from '../fixtures/projects.json';
 import { AiFillGithub } from 'react-icons/ai';
@@ -16,61 +14,39 @@ export function ProjectsContainer() {
     return (
         <Projects id="projects">
             <MotionWrap
-                whileInView={{ y: [100, 0], opacity: [0, 1]}}
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
             >
                 <Projects.Box>
                     <Projects.TextTitle>Stuffs I’ve built</Projects.TextTitle>
-                    <Divider type="1" />
+                    <Divider />
 
                     <Projects.ContainerProjects>
                         {ProjectsData.map((item) => (
                             <Projects.ItemProject>
                                 <div>
-                                    <Projects.ContainerProjectTitleNav
-                                        flexDirection='row'
-                                        justifyContent='space-between'
-                                    >
+                                    <Projects.ContainerProjectTitleNav>
                                         <Projects.TextProjectTitle>{item.title}</Projects.TextProjectTitle>
-                                        <Projects.ContainerNavigation>
-                                            {item.github !== ""? 
-                                            <>
-                                                <NavigationIcon 
-                                                    type='1'
-                                                    href={item.github} target={"_blank"}>
-                                                    <AiFillGithub 
-                                                        size={25}
-                                                    />
-                                                </NavigationIcon>
-
-                                                <SpaceWidthSmall />
-                                            </>:<></>
-                                            }
-                                            
-                                            {item.href !== ""? 
-                                            <>
-                                                <NavigationIcon 
-                                                    type='1'
-                                                    href={item.href} target={"_blank"}>
-                                                    <BsArrowUpRight 
-                                                        size={25}
-                                                    />
-                                                </NavigationIcon>
-                                            </>:<></>
-                                            }
-                                        </Projects.ContainerNavigation>
+                                        {item.github !== "" ?
+                                            <NavigationIcon
+                                                href={item.github} target={"_blank"}>
+                                                <AiFillGithub
+                                                    size={25}
+                                                />
+                                            </NavigationIcon> : <></>
+                                        }
                                     </Projects.ContainerProjectTitleNav>
-                                    
+
                                     <SpaceHeightMedium />
                                     <Projects.TextDescription>{item.description}</Projects.TextDescription>
                                     <Projects.ContainerTags>
-                                        {item.tech.map(( tag ) => (
+                                        {item.tech.map((tag) => (
                                             <Projects.ItemTag>
                                                 <Projects.TextTag>{tag.name}</Projects.TextTag>
                                             </Projects.ItemTag>
                                         ))}
                                     </Projects.ContainerTags>
                                 </div>
-                            </Projects.ItemProject> 
+                            </Projects.ItemProject>
                         ))}
                     </Projects.ContainerProjects>
                 </Projects.Box>

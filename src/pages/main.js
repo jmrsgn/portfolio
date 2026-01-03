@@ -1,13 +1,15 @@
-import React from "react";
+import styled from 'styled-components/macro';
+
+import * as COLORS from '../constants/styles/colors';
 
 import { HomeContainer } from "../containers/home";
 import { ProjectsContainer } from "../containers/projects";
-import { NavBarContainer } from "../containers/navbar";
 import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
 import { AboutContainer } from "../containers/about";
 import { useInView } from "react-intersection-observer";
 import { SpotifyPlayer } from "../spotify/spotify";
+import { NavBarContainer } from '../containers/navbar';
 
 export default function Main() {
     const { ref: homeRef, inView: isHomeVisible } = useInView({ threshold: 0.35 });
@@ -28,27 +30,35 @@ export default function Main() {
                 visibleTab={homeActive || aboutActive || projectsActive || experiencesActive || contactActive}
             />    
 
-            <SpotifyPlayer />
-            
-            <div ref={homeRef}>
-                <HomeContainer />
-            </div>
+            {/* <SpotifyPlayer /> */}
 
-            <div ref={aboutRef}>
-                <AboutContainer />
-            </div>
+            <MainWrapper>
+                <div ref={homeRef}>
+                    <HomeContainer />
+                </div>
 
-            <div ref={projectsRef}>
-                <ProjectsContainer />
-            </div>
+                <div ref={aboutRef}>
+                    <AboutContainer />
+                </div>
 
-            <div ref={experiencesRef}>
-                <ExperiencesContainer />
-            </div>
+                <div ref={projectsRef}>
+                    <ProjectsContainer />
+                </div>
 
-            <div ref={contactRef}>
-                <ContactContainer />
-            </div>
+                <div ref={experiencesRef}>
+                    <ExperiencesContainer />
+                </div>
+
+                <div ref={contactRef}>
+                    <ContactContainer />
+                </div>
+            </MainWrapper>
         </>
     );
 };
+
+const MainWrapper = styled.div`
+    > div:not(:first-child) {
+        border-top: 1px solid ${COLORS.BORDER_SUBTLE};
+    }
+`;

@@ -1,30 +1,32 @@
-import React from "react";
-
 import { NavBar } from "../components";
-import { FaHome, FaBriefcase, FaNetworkWired } from "react-icons/fa";
-import { BiInfoCircle } from "react-icons/bi";
-import { IoCall } from "react-icons/io5";
+import {
+    HiOutlineHome,
+    HiOutlineUser,
+    HiOutlineSquares2X2,
+    HiOutlineBriefcase,
+    HiOutlineEnvelope
+} from "react-icons/hi2";
 
 import navigationData from '../fixtures/navigation.json';
-import { COLOR_SURFACE1, COLOR_SURFACE2 } from "../constants/styles/colors";
+import * as COLORS from '../constants/styles/colors';
 
 export function NavBarContainer(props) {
     const navButtons = {
-        "home": <FaHome size={25} />,
-        "about": <BiInfoCircle size={25} />,
-        "projects": <FaNetworkWired size={25} />,
-        "experiences": <FaBriefcase size={25} />,
-        "contact": <IoCall size={25} />
+        "home": <HiOutlineHome size={25} />,
+        "about": <HiOutlineUser size={25} />,
+        "projects": <HiOutlineSquares2X2 size={25} />,
+        "experiences": <HiOutlineBriefcase size={25} />,
+        "contact": <HiOutlineEnvelope size={25} />
     };
 
-    return ( 
+    return (
         <>
             <NavBar>
-                {navigationData.map((item, index) => (
-                    <NavBar.Nav 
+                {navigationData.map((item) => (
+                    <NavBar.Nav
                         href={item.to}
-                        active={props.visibleTab === item.name? 'true' : 'false'}
-                        color={index % 2 === 0 ? COLOR_SURFACE1 : COLOR_SURFACE2}
+                        active={props.visibleTab === item.name ? 'true' : 'false'}
+                        color={COLORS.PRIMARY}
                     >
                         {navButtons[item.name]}
                     </NavBar.Nav>

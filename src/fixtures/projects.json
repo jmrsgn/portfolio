@@ -2,16 +2,16 @@
     {
         "id": 1,
         "title": "Expresso",
-        "description": "Expresso is an Android application created by Java that provides a friendly interface and uses machine learning to help students learn OOP using Java as a tool.",
+        "description": "An Android application built with Java that helps students learn Object-Oriented Programming through interactive lessons and machine-learning–driven personalization.",
         "filter": "Mobile",
         "development": false,
         "src": "../images/projects/expresso-1.png",
-        "href": "/projects/expresso",
+        "href": "",
         "github": "https://github.com/jmrsgn/expresso",
         "tech": [
             {
                 "name": "Java",
-                "src": "../images/tech/java.svg" 
+                "src": "../images/tech/java.svg"
             },
             {
                 "name": "PHP",
@@ -40,11 +40,11 @@
     {
         "id": 2,
         "title": "Carkilahan",
-        "description": "Carkilahan is an Android application developed using Java, with Firebase powering the back-end. This was a mini-project designed to help users easily book cars for their trips, and it also marks my first-ever application build.",
+        "description": "An Android application built with Java and Firebase that allows users to easily book cars for trips. This project represents my first complete mobile application.",
         "filter": "Mobile",
         "development": false,
         "src": "../images/projects/carkilahan-1.png",
-        "href": "/projects/carkilahan",
+        "href": "",
         "github": "https://github.com/jmrsgn/carkilahan",
         "tech": [
             {
@@ -60,8 +60,37 @@
     },
     {
         "id": 3,
+        "title": "Pump",
+        "description": "A Flutter-based social fitness application designed for bodybuilding enthusiasts, combining progress tracking, coach-client interactions, and community engagement. The backend is being developed using Java Spring, Docker, and Kubernetes.",
+        "filter": "Mobile",
+        "development": true,
+        "src": "",
+        "github": "https://github.com/jmrsgn/pump-frontend",
+        "href": "",
+        "tech": [
+            {
+                "name": "Flutter",
+                "src": ""
+            },
+            {
+                "name": "Java Spring",
+                "src": ""
+            },
+            {
+                "name": "Docker",
+                "src": ""
+            },
+            {
+                "name": "Kubernetes",
+                "src": ""
+            }
+        ],
+        "screenshots": []
+    },
+    {
+        "id": 4,
         "title": "Portfolio",
-        "description": "This portfolio is a simple project I created to showcase what I do, and you're currently exploring it. I built the website using React JS, styled the components with styled-components, and deployed it on Netlify.",
+        "description": "A personal portfolio website built with React to showcase my projects and skills, styled with styled-components and deployed on Netlify.",
         "filter": "Web",
         "development": false,
         "src": "",

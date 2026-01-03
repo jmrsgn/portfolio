@@ -1,4 +1,3 @@
-import React from "react";
 import { About } from "../components";
 
 import {
@@ -8,6 +7,8 @@ import {
     SpaceHeightLarge,
     SpaceHeightMedium,
     SpaceHeightSmall,
+    SpaceWidthLarge,
+    SpaceWidthSmall,
 } from "../globalComponents";
 
 import WhatIDoData from '../fixtures/what-i-do.json';
@@ -19,30 +20,27 @@ export function AboutContainer() {
     return (
         <About id="about">
             <MotionWrap
-                whileInView={{ y: [100, 0], opacity: [0, 1]}}
+                whileInView={{ y: [100, 0], opacity: [0, 1] }}
             >
                 <About.Box>
                     <About.TextTitle>Who am I</About.TextTitle>
-                    <Divider type="2" />
+                    <Divider />
 
                     <About.BoxProfileInfo>
                         <About.ContainerAboutMeText>
                             <About.TextDescription>
-                                My name is John Martin I. Marasigan, and I have a deep passion for programming. 
-                                My love for coding truly sparked during my fourth year of college when I discovered Android development, 
-                                and I've been hooked ever since. Currently, I work as an
-                                <FilterText> Associate Software Engineer</FilterText> at 
-                                <FilterText>Infor</FilterText> where I'm part of the MSCM team, 
+                                My name is John Martin I. Marasigan, and I have a deep passion for programming.
+                                My love for coding truly sparked during my fourth year of college when I discovered Android Development,
+                                and I've been hooked ever since. Currently, I work as a
+                                <FilterText> Software Engineer</FilterText> at <FilterText>Infor</FilterText> where I'm part of the MSCM team,
                                 providing maintenance and support for mobile applications.
                             </About.TextDescription>
 
                             <SpaceHeightSmall />
 
                             <About.TextDescription>
-                                In my free time, I work out regularly, spending time alone going
-                                to the places that put my mind at ease. I also have great taste in
-                                music, love reading books, am a fitness enthusiast, and a
-                                guitarist.
+                                In my free time, I work out regularly, spending time alone. I also have great taste in
+                                music, love reading books, play guitar.
                             </About.TextDescription>
 
                             {/* <About.TextLink type="2" to="/about/more">
@@ -54,29 +52,23 @@ export function AboutContainer() {
                     <SpaceHeightExtraLarge />
 
                     <About.ContainerTech>
-                        {WhatIDoData.map((item, index) => (
+                        {WhatIDoData.map((item) => (
                             <>
-                                <About.BoxInfoTech
-                                    flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
-                                >
-                                    <About.ContainerTechInfo>
-                                        <About.TextTitleOther>{item.title}</About.TextTitleOther>
-                                        <SpaceHeightMedium />
-                                        <About.TextDescription>{item.description}</About.TextDescription>
-                                        <SpaceHeightSmall />
-                                        <About.ContainerTechUsed>
-                                            {item.tech.map((tech) => (
-                                                <About.ContainerTechUsedText>
-                                                    <IoIosArrowDroprightCircle />
-                                                    <About.TextTechUsed>{tech}</About.TextTechUsed>
-                                                </About.ContainerTechUsedText>
-                                            ))}
-                                        </About.ContainerTechUsed>
-                                    </About.ContainerTechInfo>
-
-                                    <About.ImageTech src={item.src} />
-                                </About.BoxInfoTech>
-                                <SpaceHeightLarge />
+                                <About.ContainerTechInfo>
+                                    <About.TextTitleOther>{item.title}</About.TextTitleOther>
+                                    <SpaceHeightMedium />
+                                    <About.TextDescription>{item.description}</About.TextDescription>
+                                    <SpaceHeightSmall />
+                                    <About.ContainerTechUsed>
+                                        {item.tech.map((tech) => (
+                                            <About.ContainerTechUsedText>
+                                                <IoIosArrowDroprightCircle />
+                                                <About.TextTechUsed>{tech}</About.TextTechUsed>
+                                            </About.ContainerTechUsedText>
+                                        ))}
+                                    </About.ContainerTechUsed>
+                                </About.ContainerTechInfo>
+                                <SpaceWidthSmall />
                             </>
                         ))}
                     </About.ContainerTech>

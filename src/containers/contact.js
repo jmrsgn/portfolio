@@ -1,6 +1,5 @@
-import React from "react";
-
 import { Divider, 
+         SpaceHeightLarge, 
          SpaceHeightMedium } from '../globalComponents';
 
 import { Contact } from '../components';
@@ -18,9 +17,8 @@ export function ContactContainer() {
                             <Contact.TextTitle>Let's get in touch.</Contact.TextTitle>
                             <SpaceHeightMedium />
                             <Divider />
-                            <Divider type="1" />
 
-                            <SpaceHeightMedium />
+                            <SpaceHeightLarge />
 
                             <Contact.TextDescription>
                                 Feel free to message me if you have a question or just wanted to say hello. 

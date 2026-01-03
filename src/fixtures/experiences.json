@@ -1,14 +1,21 @@
 [
     {
         "id": 1,
-        "date": "Aug 2022 - Present",
-        "position": "Software Engineer, Associate",
+        "date": "Aug 2025 - Present",
+        "position": "Software Engineer",
         "company": "Infor",
         "learnings": [
-            "I am currently working as an Associate Software Engineer at Infor, as part of the MSCM Android Team. I'm grateful to be surrounded by talented individuals who continually motivate me to improve and deepen my understanding of software development.",
-            "As one of the handheld/mobile developers, I contribute to both native and hybrid mobile applications. We use Java for native Android apps and Ionic with JavaScript for hybrid apps. Our team relies on JIRA for task management and Oxford GitLab for version control.",
-            "In my nearly two years at Infor, I've been inspired by the technical skills of my colleagues and their supportive personalities, which have helped me grow at my own pace as a slower learner."
+            "I am currently working as a Software Engineer at Infor as part of the MSCM Android Team.",
+            "As one of the handheld and mobile developers, I contribute to both native and hybrid applications. I work with Java for native Android development and Ionic with JavaScript for hybrid apps, using JIRA for task management and GitLab for version control."
         ],
+        "previous_position": {
+            "position": "Software Engineer, Associate",
+            "date": "Aug 2022 - Aug 2025",
+            "learnings": [
+                "Developed and maintained a native Android application using Java, implementing MVVM architecture and clean code principles to improve code readability, maintainability, and integration with RESTful APIs supporting core business functionality.",
+                "Worked closely with experienced engineers in a collaborative team environment, gaining strong foundations in enterprise mobile development, coding standards, and professional software workflows."
+            ]
+        },
         "link": "#"
     },
     {
@@ -17,9 +24,9 @@
         "position": "IT Specialist Intern",
         "company": "Miyens",
         "learnings": [
-            "During my OJT training at Miyens, I worked as an IT Specialist Intern. During this time, I gained experience in creating web pages using WordPress, designing simple UI/UX elements for the team, and assisting with various maintenance tasks. Although I didn’t have the opportunity to work on code-related projects, which I had hoped would prepare me for the corporate world, I am still proud of what I accomplished during the internship."
+            "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance. This role provided early exposure to professional workflows and team collaboration."
         ],
+        "previous_position": "",
         "link": "#"
     }
-
 ]

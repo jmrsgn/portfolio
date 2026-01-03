@@ -58,7 +58,7 @@ export const ItemSocialIconNavigation = styled.a`
         height: 1.35rem;
         width: 1.35rem;
     }
-`;  
+`;
 
 export const ItemButton = styled.a`
     display: flex;
@@ -94,9 +94,7 @@ export const ItemSocialIcon = styled(_ItemSocialIcon)`
  * * Containers
  */
 
-export const Container = styled(_Container)`
-    background-color: ${COLORS.COLOR_BG2};
-`;
+export const Container = styled(_Container)``;
 
 export const ContainerAboutMeText = styled.div`
     display: flex;
@@ -111,16 +109,21 @@ export const ContainerAboutMeText = styled.div`
 
 export const ContainerTechInfo = styled.div`
     display: flex;
-    border: 1px solid ${COLORS.COLOR_GRAY};
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 1.5rem);
+
+    background-color: ${COLORS.BACKGROUND_CARD};
+    box-shadow: 0px 5px 5px #141c29ff;
     border-radius: 10px;
     cursor: pointer;
-    width: 100%;
-    flex-direction: column;
     padding: 2.5rem 1.5rem;
+    height: 100%;
+
+    transition: transform 0.15s ease;
 
     @media ${VIEWPORT.desktopUp} {
-        width: 60%;
         padding: 3rem 1.75rem;
+        min-height: 450px;                  
     }
 
     &:hover {
@@ -142,7 +145,7 @@ export const ContainerTechUsedText = styled.div`
     padding: .15rem;
 
     svg {
-        color: ${COLORS.COLOR_SURFACE2};
+        color: ${COLORS.PRIMARY};
         width: 12px;
         height: 12px;
 
@@ -216,13 +219,11 @@ export const ContainerNavigaton = styled.div`
 
 export const ContainerTech = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
-
-    @media ${VIEWPORT.desktopUp} {
-        margin-top: 3rem;
-    }
-`;  
+`;
 
 /**
  * * Boxes
@@ -288,7 +289,7 @@ export const TextTitle = styled(_TextTitle)``;
 
 export const TextTechUsed = styled(_TextTech)`
     line-height: 14px;
-    color: ${COLORS.COLOR_SURFACE2};
+    color: ${COLORS.PRIMARY};
     font-size: .75rem;
     margin-left: .75rem;
 

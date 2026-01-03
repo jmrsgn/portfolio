@@ -9,14 +9,13 @@ import { _Container, _TextDescription, _TextTitle } from '../../../globalCompone
  */
 
 export const ItemButton = styled.a`
-    background-color: ${COLORS.COLOR_BG1};
     font-family: ${FONTS.sfMonoRegular};
-    border: 1px solid ${COLORS.COLOR_SURFACE1};
-    color: ${COLORS.COLOR_SURFACE1};
+    border: 1px solid ${COLORS.PRIMARY};
+    color: ${COLORS.PRIMARY};
     font-size: 0.75rem;
     padding: 0.75rem;
     width: 150px;
-    box-shadow: 0px 0px 0 ${COLORS.COLOR_SURFACE1};
+    box-shadow: 0px 0px 0 ${COLORS.PRIMARY};
 
     margin-top: 3rem;
     text-decoration: none;
@@ -31,7 +30,7 @@ export const ItemButton = styled.a`
         font-size: 1rem;
 
         &:hover {
-            box-shadow: 5px 5px 0 ${COLORS.COLOR_SURFACE1};
+            box-shadow: 5px 5px 0 ${COLORS.PRIMARY};
         }
     }
 `;
@@ -40,9 +39,7 @@ export const ItemButton = styled.a`
  * * Containers 
  */
 
-export const Container = styled(_Container)`
-    background-color: ${COLORS.COLOR_BG1};
-`;
+export const Container = styled(_Container)``;
 
 export const ContainerInfo = styled.div`
     display: flex;
@@ -97,7 +94,7 @@ export const TextCopyright = styled.p`
     margin-bottom: 5rem;
 
     @media ${VIEWPORT.desktopUp} {
-        font-size: 1rem;
+        font-size: 0.85rem;
         margin-bottom: 0;
     }
 `;
