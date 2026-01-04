@@ -20,11 +20,11 @@ export const ItemProject = styled.div`
     transition: .3s ease-in;
     cursor: default;
     break-inside: avoid;
-    margin-bottom: 0.5rem;
 
     padding: 1.5rem;
     max-width: 370px;
     min-height: 170px;
+    margin-top: 1.25rem;
 
     svg {
         cursor: pointer;
@@ -34,6 +34,7 @@ export const ItemProject = styled.div`
         padding: 2.75rem 1.75rem;
         max-width: 450px;
         min-height: 200px;
+        margin-top: 0;
 
         &:hover {
             opacity: 1 !important;
