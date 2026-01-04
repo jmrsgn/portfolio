@@ -118,10 +118,12 @@ export const ContainerTechInfo = styled.div`
     cursor: pointer;
     padding: 2.5rem 1.5rem;
     height: 100%;
+    margin-top: 1.25rem;
 
     transition: transform 0.15s ease;
 
     @media ${VIEWPORT.desktopUp} {
+        margin-top: 0;
         padding: 3rem 1.75rem;
         min-height: 450px;                  
     }
@@ -219,10 +221,14 @@ export const ContainerNavigaton = styled.div`
 
 export const ContainerTech = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+
+    @media ${VIEWPORT.desktopUp} {
+        margin-top: 1rem;
+        flex-direction: row;
+    }
 `;
 
 /**
