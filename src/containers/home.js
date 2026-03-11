@@ -26,7 +26,7 @@ export function HomeContainer() {
                             </Home.TextDescription>
                             <Home.ButtonResume
                                 type="1"
-                                to="../resume/Resume.pdf"
+                                to="../resume/MARASIGAN_RESUME.pdf"
                                 target="_blank"
                             >
                                 Resume
