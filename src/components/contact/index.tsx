@@ -10,20 +10,22 @@ import {
   TextDescription,
 } from "./styles/contact";
 
-// Accept props whatever Container accepts
-type ContactProps = React.ComponentProps<typeof Container>;
+type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
-type ItemButtonProps = React.ComponentProps<typeof ItemButton>;
-type ContainerInfoProps = React.ComponentProps<typeof ContainerInfo>;
-type BoxProps = React.ComponentProps<typeof Box>;
-type BoxContactProps = React.ComponentProps<typeof BoxContact>;
-type TextCopyrightProps = React.ComponentProps<typeof TextCopyright>;
-type TextTitleProps = React.ComponentProps<typeof TextTitle>;
-type TextDescriptionProps = React.ComponentProps<typeof TextDescription>;
+// Accept props whatever Container accepts
+type ContactProps = StyledProps<typeof Container>;
 
 export default function Contact({ children, ...restProps }: ContactProps) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+type ItemButtonProps = StyledProps<typeof ItemButton>;
+type ContainerInfoProps = StyledProps<typeof ContainerInfo>;
+type BoxProps = StyledProps<typeof Box>;
+type BoxContactProps = StyledProps<typeof BoxContact>;
+type TextCopyrightProps = StyledProps<typeof TextCopyright>;
+type TextTitleProps = StyledProps<typeof TextTitle>;
+type TextDescriptionProps = StyledProps<typeof TextDescription>;
 
 /**
  * * Items
