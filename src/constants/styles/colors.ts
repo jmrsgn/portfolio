@@ -1,18 +1,17 @@
-export const COLOR_BG1 = '#222A36';
-export const COLOR_BG2 = '#1C232E';
-export const COLOR_ON_BACKGROUND = '#FFFFFF';
-export const COLOR_ON_SURFACE = '#FFFFFF';
-export const COLOR_SURFACE1 = '#3AAFC9';
-export const COLOR_SURFACE2 = '#676CDB';
-export const COLOR_SURFACE3 = '#29313D';
-export const COLOR_SURFACE4 = '#131C27';
+export const COLOR_BG1 = "#222A36";
+export const COLOR_BG2 = "#1C232E";
+export const COLOR_ON_BACKGROUND = "#FFFFFF";
+export const COLOR_ON_SURFACE = "#FFFFFF";
+export const COLOR_SURFACE1 = "#3AAFC9";
+export const COLOR_SURFACE2 = "#676CDB";
+export const COLOR_SURFACE3 = "#29313D";
+export const COLOR_SURFACE4 = "#131C27";
 
-export const COLOR_LIGHT_RED = '#FEE2E2';
-export const COLOR_RED = '#A61B1B';
-export const COLOR_LIGHT_GRAY = '#949494';
+export const COLOR_LIGHT_RED = "#FEE2E2";
+export const COLOR_RED = "#A61B1B";
+export const COLOR_LIGHT_GRAY = "#949494";
 
-export const COLOR_GRAY = '#444444';
-
+export const COLOR_GRAY = "#444444";
 
 // ---- Core Backgrounds ----
 export const BACKGROUND_DEFAULT = "#0E0F12";
@@ -54,5 +53,6 @@ export const SHADOW_GLOW_PRIMARY = "0px 0px 16px rgba(20,121,255,0.4)";
 export const SHADOW_GLOW_SECONDARY = "0px 0px 16px rgba(0,229,255,0.4)";
 
 // ---- Gradients ----
-export const GRADIENT_HERO = "linear-gradient(135deg, #050507 0%, #0E0F12 60%, #1479FF 140%)";
+export const GRADIENT_HERO =
+  "linear-gradient(135deg, #050507 0%, #0E0F12 60%, #1479FF 140%)";
 export const GRADIENT_ACCENT = "linear-gradient(90deg, #1479FF, #00E5FF)";

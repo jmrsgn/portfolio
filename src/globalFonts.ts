@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
-import SFMonoRegular from './fonts/SFMonoRegular.woff';
-import SFMonoLight from './fonts/SFMonoLight.woff';
+import SFMonoRegular from "./fonts/SFMonoRegular.woff";
+import SFMonoLight from "./fonts/SFMonoLight.woff";
 
-import CalibreRegular from './fonts/CalibreRegular.woff';
-import CalibreBold from './fonts/CalibreBold.woff';
-import CalibreBlack from './fonts/CalibreBlack.woff';
+import CalibreRegular from "./fonts/CalibreRegular.woff";
+import CalibreBold from "./fonts/CalibreBold.woff";
+import CalibreBlack from "./fonts/CalibreBlack.woff";
 
 export const GlobalFonts = createGlobalStyle`
     @font-face {
