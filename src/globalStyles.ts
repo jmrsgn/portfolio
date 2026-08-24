@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import * as COLORS from "./constants/styles/colors";
 
 export const GlobalStyles = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap');
+
     * {    
         padding: 0;
         margin: 0;
