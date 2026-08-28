@@ -61,11 +61,11 @@ export default function Main() {
           <ProjectsContainer />
         </div>
 
-        {/*  <div ref={experiencesRef}>
+        <div ref={experiencesRef}>
           <ExperiencesContainer />
         </div>
 
-        <div ref={contactRef}>
+        {/*  <div ref={contactRef}>
           <ContactContainer />
         </div> */}
       </MainWrapper>

@@ -1,32 +1,49 @@
 [
-    {
-        "id": 1,
-        "date": "Aug 2025 - Present",
-        "position": "Software Engineer",
-        "company": "Infor",
-        "learnings": [
-            "I am currently working as a Software Engineer at Infor as part of the MSCM Android Team.",
-            "As one of the handheld and mobile developers, I contribute to both native and hybrid applications. I work with Java for native Android development and Ionic with JavaScript for hybrid apps, using JIRA for task management and GitLab for version control."
-        ],
-        "previous_position": {
-            "position": "Software Engineer, Associate",
-            "date": "Aug 2022 - Aug 2025",
-            "learnings": [
-                "Developed and maintained a native Android application using Java, implementing MVVM architecture and clean code principles to improve code readability, maintainability, and integration with RESTful APIs supporting core business functionality.",
-                "Worked closely with experienced engineers in a collaborative team environment, gaining strong foundations in enterprise mobile development, coding standards, and professional software workflows."
-            ]
-        },
-        "link": "#"
-    },
-    {
-        "id": 2,
-        "date": "Feb 2022 - May 2022",
-        "position": "IT Specialist Intern",
-        "company": "Miyens",
-        "learnings": [
-            "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance. This role provided early exposure to professional workflows and team collaboration."
-        ],
-        "previous_position": "",
-        "link": "#"
-    }
+  {
+    "id": 1,
+    "date": "Aug 2026 - Present",
+    "position": "Senior Software Engineer",
+    "company": "Stratpoint Technologies",
+    "current": true,
+    "learnings": [
+      "PLACEHOLDER: Add description of my current role and responsibilities at Stratpoint Technologies.",
+      "PLACEHOLDER: Add technologies, projects, engineering responsibilities, and key things I am learning."
+    ],
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "date": "Aug 2025 - Aug 2026",
+    "position": "Software Engineer",
+    "company": "Infor",
+    "current": false,
+    "learnings": [
+      "PLACEHOLDER: Add description of my experience as a Software Engineer at Infor.",
+      "PLACEHOLDER: Add responsibilities, technologies, projects, and key contributions."
+    ],
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "date": "Aug 2022 - Aug 2025",
+    "position": "Software Engineer, Associate",
+    "company": "Infor",
+    "current": false,
+    "learnings": [
+      "Developed and maintained a native Android application using Java, implementing MVVM architecture and clean code principles to improve code readability, maintainability, and integration with RESTful APIs supporting core business functionality.",
+      "Worked closely with experienced engineers in a collaborative team environment, gaining strong foundations in enterprise mobile development, coding standards, and professional software workflows."
+    ],
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "date": "Feb 2022 - May 2022",
+    "position": "IT Specialist Intern",
+    "company": "Miyens",
+    "current": false,
+    "learnings": [
+      "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance. This role provided early exposure to professional workflows and team collaboration."
+    ],
+    "link": "#"
+  }
 ]

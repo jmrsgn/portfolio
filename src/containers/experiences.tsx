@@ -1,160 +1,152 @@
-import React from "react";
-import { useState } from "react";
-
-import {
-  Divider,
-  NavigationIcon,
-  SpaceHeightMedium,
-  SpaceHeightSmall,
-  SpaceWidthSmall,
-} from "../globalComponents";
 import { Experiences } from "../components";
 
 import experiencesData from "../fixtures/experiences.json";
 import certificatesData from "../fixtures/certificates.json";
+
 import MotionWrap from "../wrapper/motion-wrap";
 
 import { BsArrowUpRight } from "react-icons/bs";
-
-type PreviousPosition = {
-  position: string;
-  date: string;
-  learnings: string[];
-};
 
 type Experience = {
   id: number;
   date: string;
   position: string;
   company: string;
+  current: boolean;
   learnings: string[];
-  previous_position: PreviousPosition | "";
   link: string;
+};
+
+type Certificate = {
+  id?: number;
+  title: string;
+  year: string | number;
+  badge: string;
+  href: string;
 };
 
 const experiences: Experience[] = experiencesData as Experience[];
 
-export function ExperiencesContainer() {
-  const [active, setActive] = useState<Experience>(experiences[0]);
+const certificates: Certificate[] = certificatesData as Certificate[];
 
+export function ExperiencesContainer() {
   return (
     <Experiences id="experiences">
-      <MotionWrap whileInView={{ y: [100, 0], opacity: [0, 1] }}>
+      <MotionWrap
+        whileInView={{ y: [60, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+      >
         <Experiences.Box>
+          {/* Header */}
+
+          <Experiences.TextEyebrow>// EXPERIENCE</Experiences.TextEyebrow>
+
           <Experiences.TextTitle>Experiences</Experiences.TextTitle>
-          <Divider />
+
+          <Experiences.Divider />
+
+          <Experiences.TextIntro>
+            My professional journey as a software engineer, building software
+            and learning along the way.
+          </Experiences.TextIntro>
+
+          {/* Main Content */}
 
           <Experiences.ContainerInfo>
-            <Experiences.BoxExperiences>
-              <Experiences.ContainerExperiences>
-                <Experiences.ContainerExperienceTabs>
-                  {experiences.map((item) => (
-                    <Experiences.ItemExperienceTab
-                      active={active === item}
-                      onClick={() => setActive(item)}
-                    >
-                      <Experiences.TextExperienceTab>
-                        {item.company}
-                      </Experiences.TextExperienceTab>
-                    </Experiences.ItemExperienceTab>
-                  ))}
-                </Experiences.ContainerExperienceTabs>
+            {/* Experience Timeline */}
 
-                <Experiences.ContainerExperienceDisplay>
-                  <Experiences.ContainerExperience>
-                    <Experiences.TextPosition>
-                      {active.position}
-                      <Experiences.TextCompany>
-                        {" "}
-                        @ {active.company}
-                      </Experiences.TextCompany>
-                    </Experiences.TextPosition>
-                    <Experiences.TextDate>{active.date}</Experiences.TextDate>
-                    <Experiences.ContainerExperienceText>
-                      {active.learnings.map((item, index) => (
-                        <React.Fragment key={index}>
-                          <Experiences.TextDescription
-                            marginTop={index !== 0 ? "24px" : "0px"}
-                          >
-                            {item}
+            <Experiences.BoxExperiences>
+              <Experiences.ContainerTimeline>
+                {experiences.map((experience) => (
+                  <Experiences.ExperienceItem key={experience.id}>
+                    <Experiences.TimelineDate>
+                      {experience.date}
+                    </Experiences.TimelineDate>
+
+                    <Experiences.TimelineMarker>
+                      <Experiences.TimelineDot />
+                    </Experiences.TimelineMarker>
+
+                    <Experiences.ExperienceContent>
+                      <Experiences.ExperienceHeader>
+                        <div>
+                          <Experiences.TextPosition>
+                            {experience.position}
+                            <Experiences.TextCompany>
+                              {" "}
+                              @ {experience.company}
+                            </Experiences.TextCompany>
+                          </Experiences.TextPosition>
+
+                          {experience.current && (
+                            <Experiences.CurrentBadge>
+                              <Experiences.CurrentDot />
+                              Current
+                            </Experiences.CurrentBadge>
+                          )}
+                        </div>
+                      </Experiences.ExperienceHeader>
+
+                      <Experiences.ContainerExperienceText>
+                        {experience.learnings.map((learning, index) => (
+                          <Experiences.TextDescription key={index}>
+                            {learning}
                           </Experiences.TextDescription>
-                          <SpaceHeightSmall />
-                        </React.Fragment>
-                      ))}
-                      {active.previous_position && (
-                        <>
-                          <Experiences.PositionDivider />
-                          <SpaceHeightMedium />
-                          <Experiences.TextPreviousPosition>
-                            {active.previous_position.position}
-                          </Experiences.TextPreviousPosition>
-                          <Experiences.TextDate>
-                            {active.previous_position.date}
-                          </Experiences.TextDate>
-                          <Experiences.ContainerExperienceText>
-                            {active.previous_position.learnings.map(
-                              (item, index) => (
-                                <>
-                                  <Experiences.TextDescription
-                                    marginTop={index !== 0 ? "24px" : "0px"}
-                                  >
-                                    {item}
-                                  </Experiences.TextDescription>
-                                  <SpaceHeightSmall />
-                                </>
-                              ),
-                            )}
-                          </Experiences.ContainerExperienceText>
-                        </>
-                      )}
-                    </Experiences.ContainerExperienceText>
-                  </Experiences.ContainerExperience>
-                </Experiences.ContainerExperienceDisplay>
-              </Experiences.ContainerExperiences>
+                        ))}
+                      </Experiences.ContainerExperienceText>
+                    </Experiences.ExperienceContent>
+                  </Experiences.ExperienceItem>
+                ))}
+              </Experiences.ContainerTimeline>
             </Experiences.BoxExperiences>
 
-            {/* Certificate Section */}
+            {/* Certificates */}
 
             <Experiences.BoxCertificates>
+              <Experiences.TextSubTitle>
+                Certificates & Badges
+              </Experiences.TextSubTitle>
+
+              <Experiences.CertificateDivider />
+
               <Experiences.ContainerCertificates>
-                <>
-                  <Experiences.TextSubTitle>
-                    Certificates & Badges
-                  </Experiences.TextSubTitle>
-                </>
+                {certificates.map(
+                  (certificate, index) =>
+                    index < 3 && (
+                      <Experiences.ContainerCertificate
+                        key={
+                          certificate.id ??
+                          `${certificate.title}-${certificate.year}`
+                        }
+                      >
+                        <Experiences.ItemBadge
+                          src={certificate.badge}
+                          alt={certificate.title}
+                        />
 
-                <SpaceHeightSmall />
-                {certificatesData.map(
-                  (item, index) =>
-                    index !== 3 && (
-                      <>
-                        <Experiences.ContainerCertificate>
-                          <Experiences.ItemBadge src={item.badge} />
-                          <Experiences.ContainerCertificateInfo>
-                            <div>
-                              <Experiences.TextCertificateTitle>
-                                {item.title}
-                              </Experiences.TextCertificateTitle>
-                              <Experiences.TextCertificateYear>
-                                {item.year}
-                              </Experiences.TextCertificateYear>
-                            </div>
-                            <SpaceWidthSmall />
+                        <Experiences.ContainerCertificateInfo>
+                          <div>
+                            <Experiences.TextCertificateTitle>
+                              {certificate.title}
+                            </Experiences.TextCertificateTitle>
 
-                            {item.href !== "" ? (
-                              <NavigationIcon
-                                href={item.href}
-                                target={"_blank"}
-                              >
-                                <BsArrowUpRight size={20} />
-                              </NavigationIcon>
-                            ) : (
-                              <></>
-                            )}
-                          </Experiences.ContainerCertificateInfo>
-                        </Experiences.ContainerCertificate>
-                        <SpaceHeightSmall />
-                      </>
+                            <Experiences.TextCertificateYear>
+                              {certificate.year}
+                            </Experiences.TextCertificateYear>
+                          </div>
+
+                          {certificate.href !== "" && (
+                            <Experiences.CertificateLink
+                              href={certificate.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`View ${certificate.title}`}
+                            >
+                              <BsArrowUpRight />
+                            </Experiences.CertificateLink>
+                          )}
+                        </Experiences.ContainerCertificateInfo>
+                      </Experiences.ContainerCertificate>
                     ),
                 )}
               </Experiences.ContainerCertificates>
