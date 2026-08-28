@@ -71,7 +71,7 @@ export const ContainerTrackInfo = styled.div`
  */
 
 export const BoxSpotifyIcon = styled.div`
-  color: ${COLORS.COLOR_ON_SURFACE};
+  color: ${COLORS.TEXT_PRIMARY};
 
   svg {
     height: 32px;
@@ -104,7 +104,7 @@ export const Image = styled.img`
 
 export const TextNowPlaying = styled(DescriptionText)`
   font-size: 0.75rem;
-  color: ${COLORS.COLOR_ON_SURFACE};
+  color: ${COLORS.TEXT_PRIMARY};
   font-weight: bold;
   margin-top: 0rem;
   line-height: 16px;

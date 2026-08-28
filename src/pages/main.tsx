@@ -36,7 +36,7 @@ export default function Main() {
 
   return (
     <>
-      <NavBarContainer
+      {/* <NavBarContainer
         visibleTab={
           homeActive ||
           aboutActive ||
@@ -44,7 +44,7 @@ export default function Main() {
           experiencesActive ||
           contactActive
         }
-      />
+      /> */}
 
       {/* <SpotifyPlayer /> */}
 
@@ -53,7 +53,7 @@ export default function Main() {
           <HomeContainer />
         </div>
 
-        <div ref={aboutRef}>
+        {/* <div ref={aboutRef}>
           <AboutContainer />
         </div>
 
@@ -67,7 +67,7 @@ export default function Main() {
 
         <div ref={contactRef}>
           <ContactContainer />
-        </div>
+        </div> */}
       </MainWrapper>
     </>
   );
@@ -75,6 +75,6 @@ export default function Main() {
 
 const MainWrapper = styled.div`
   > div:not(:first-child) {
-    border-top: 1px solid ${COLORS.BORDER_SUBTLE};
+    border-top: 1px solid ${COLORS.BORDER};
   }
 `;

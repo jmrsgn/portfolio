@@ -45,7 +45,7 @@ export const _TextDescription = styled.p`
     */
 
   @media ${VIEWPORT.tabletUp} {
-    font-size: ${pxToRem(TEXTS.SIZES.BODY.tablet)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -56,38 +56,38 @@ export const _TextDescription = styled.p`
 
 export const _TextTech = styled.p`
   font-family: ${FONTS.sfMonoRegular};
-  font-size: ${pxToRem(TEXTS.SIZES.OTHER.mobile)};
+  font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: ${pxToRem(TEXTS.SIZES.OTHER.desktop)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.desktop)};
   }
 `;
 
 export const _TextGreeting = styled.p`
   font-family: ${FONTS.calibreBold};
   color: ${COLORS.TEXT_PRIMARY};
-  font-size: ${pxToRem(TEXTS.SIZES.GREETING.mobile)};
+  font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: ${pxToRem(TEXTS.SIZES.GREETING.desktop)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.desktop)};
   }
 `;
 
 export const _TextTitle = styled.p`
   font-family: ${FONTS.calibreBold};
   color: ${COLORS.TEXT_PRIMARY};
-  font-size: ${pxToRem(TEXTS.SIZES.GREETING.mobile)};
+  font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: ${pxToRem(TEXTS.SIZES.GREETING.desktop)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.desktop)};
   }
 `;
 
 export const _TextLink = styled(Link)<TextProps>`
   margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0")};
   color: ${({ type }) =>
-    type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
-  font-size: ${pxToRem(TEXTS.SIZES.OTHER.mobile)};
+    type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
+  font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
   font-family: ${FONTS.sfMonoRegular};
   text-decoration: none;
   transition: 0.1s ease-in;
@@ -97,7 +97,7 @@ export const _TextLink = styled(Link)<TextProps>`
   position: relative;
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: ${pxToRem(TEXTS.SIZES.OTHER.desktop)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.desktop)};
   }
 `;
 
@@ -186,7 +186,7 @@ export const TextExtraLarge = styled.p`
 
 export const DescriptionText = styled(TextSmall)<TextProps>`
   font-family: ${FONTS.calibreRegular};
-  color: ${COLORS.COLOR_LIGHT_GRAY};
+  color: ${COLORS.TEXT_SECONDARY};
   line-height: 22px;
 
   /*
@@ -203,7 +203,7 @@ export const DescriptionText = styled(TextSmall)<TextProps>`
 
 export const Title = styled(TextExtraLarge)`
   font-family: ${FONTS.calibreBold};
-  color: ${COLORS.COLOR_ON_BACKGROUND};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 // export const _TextTitle = styled(TextExtraLarge)`
@@ -213,17 +213,17 @@ export const Title = styled(TextExtraLarge)`
 
 export const SubTitle = styled(TextLarge)`
   font-family: ${FONTS.calibreBold};
-  color: ${COLORS.COLOR_ON_SURFACE};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const _TextSubTitle = styled(TextLarge)`
   font-family: ${FONTS.calibreBold};
-  color: ${COLORS.COLOR_ON_SURFACE};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const OtherTitle = styled(TextMedium)`
   font-family: ${FONTS.calibreRegular};
-  color: ${COLORS.COLOR_ON_BACKGROUND};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const _TextTitleOther = styled(TextMedium)`
@@ -259,7 +259,7 @@ export const MiniDivider = styled(Divider)`
 
 export const _Container = styled.div`
   min-height: 100vh;
-  background-color: ${COLORS.BACKGROUND_DEFAULT};
+  background-color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const _Box = styled.div`
@@ -303,8 +303,8 @@ export const TechText = styled(TextExtraSmall)<TextProps>`
 
   color: ${({ type }) =>
     type === "regular"
-      ? `${COLORS.COLOR_LIGHT_GRAY}`
-      : `${COLORS.COLOR_SURFACE1}`};
+      ? `${COLORS.TEXT_PRIMARY}`
+      : `${COLORS.TEXT_PRIMARY}`};
   margin: ${({ margin }) => margin};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-top: ${({ marginTop }) => marginTop};
@@ -313,7 +313,7 @@ export const TechText = styled(TextExtraSmall)<TextProps>`
 export const TextLink = styled(Link)<TextProps>`
   margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0")};
   color: ${({ type }) =>
-    type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+    type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
   font-size: 0.75rem;
   font-family: ${FONTS.sfMonoRegular};
   text-decoration: none;
@@ -349,7 +349,7 @@ export const SocialIcon = styled.a`
   svg {
     width: 20px;
     height: 20px;
-    color: ${COLORS.TEXT_MUTED};
+    color: ${COLORS.TEXT_PRIMARY};
   }
 
   &:hover {
@@ -410,15 +410,15 @@ export const _ItemSocialIcon = styled.a`
   svg {
     width: 20px;
     height: 20px;
-    color: ${COLORS.COLOR_ON_SURFACE};
+    color: ${COLORS.TEXT_PRIMARY};
   }
 
   &:hover {
-    background-color: ${COLORS.COLOR_SURFACE1};
-    border-color: ${COLORS.COLOR_SURFACE1};
+    background-color: ${COLORS.PRIMARY};
+    border-color: ${COLORS.PRIMARY};
 
     svg {
-      color: ${COLORS.COLOR_ON_SURFACE};
+      color: ${COLORS.TEXT_PRIMARY};
     }
   }
 
@@ -472,7 +472,7 @@ export const NavigationIcon = styled.a`
   svg {
     width: 17px;
     height: 17px;
-    color: ${COLORS.COLOR_ON_SURFACE};
+    color: ${COLORS.TEXT_PRIMARY};
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -549,7 +549,7 @@ export const _Button = styled(Link)`
   cursor: pointer;
   transition: 0.15s ease-in-out;
 
-  font-size: ${pxToRem(TEXTS.SIZES.BUTTON.mobile)};
+  font-size: ${pxToRem(TEXTS.SIZES.BODY.mobile)};
   // prettier-ignore
   padding: ${pxToRem(PADDINGS.BUTTON.TOP_BOTTOM.mobile)} ${pxToRem(
     PADDINGS.BUTTON.SIDE.mobile,
@@ -562,7 +562,7 @@ export const _Button = styled(Link)`
     padding: ${pxToRem(PADDINGS.BUTTON.TOP_BOTTOM.desktop)} ${pxToRem(
       PADDINGS.BUTTON.SIDE.desktop,
     )};
-    font-size: ${pxToRem(TEXTS.SIZES.BUTTON.desktop)};
+    font-size: ${pxToRem(TEXTS.SIZES.BODY.desktop)};
 
     &:hover {
       box-shadow: 5px 5px 0 ${COLORS.PRIMARY};

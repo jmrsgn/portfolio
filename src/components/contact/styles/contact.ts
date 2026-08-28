@@ -93,7 +93,7 @@ export const BoxContact = styled.div`
 
 export const TextCopyright = styled.p`
   font-family: ${FONTS.sfMonoRegular};
-  color: ${COLORS.COLOR_LIGHT_GRAY};
+  color: ${COLORS.TEXT_PRIMARY};
   font-size: 0.75rem;
   margin-bottom: 5rem;
 

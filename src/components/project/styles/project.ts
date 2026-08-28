@@ -5,7 +5,7 @@ import { MarginProps, TechText } from "../../../globalComponents";
 
 export const Container = styled.div`
   min-height: 100vh;
-  background-color: ${COLORS.COLOR_BG2};
+  background-color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const Box = styled.div`
@@ -117,8 +117,8 @@ export const ScreenshotContainer = styled.div`
   overflow-x: scroll;
 
   border-radius: 10px;
-  border-right: 1.5px solid ${COLORS.COLOR_LIGHT_GRAY};
-  border-left: 1.5px solid ${COLORS.COLOR_LIGHT_GRAY};
+  border-right: 1.5px solid ${COLORS.TEXT_PRIMARY};
+  border-left: 1.5px solid ${COLORS.TEXT_PRIMARY};
 
   @media ${VIEWPORT.desktopUp} {
     border: none;
@@ -170,7 +170,7 @@ export const NavigationIcon = styled.a`
   svg {
     width: 17px;
     height: 17px;
-    color: ${COLORS.COLOR_ON_SURFACE};
+    color: ${COLORS.TEXT_PRIMARY};
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -185,9 +185,9 @@ export const NavigationIcon = styled.a`
 
     &:hover {
       background-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
       border-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
     }
   }
 `;

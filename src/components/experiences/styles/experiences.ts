@@ -26,7 +26,7 @@ export const PositionDivider = styled.div`
   margin-left: 6px;
   width: 1.5px;
   height: 70px;
-  background-color: ${COLORS.COLOR_LIGHT_GRAY};
+  background-color: ${COLORS.TEXT_PRIMARY};
 
   &::before,
   &::after {
@@ -35,7 +35,7 @@ export const PositionDivider = styled.div`
     left: 50%;
     width: 5px;
     height: 5px;
-    background-color: ${COLORS.COLOR_LIGHT_GRAY};
+    background-color: ${COLORS.TEXT_PRIMARY};
     border-radius: 50%;
     transform: translateX(-50%);
   }
@@ -66,7 +66,7 @@ export const ItemNavigationIcon = styled.a`
   svg {
     width: 17px;
     height: 17px;
-    color: ${COLORS.COLOR_ON_SURFACE};
+    color: ${COLORS.TEXT_PRIMARY};
     cursor: pointer;
   }
 
@@ -82,9 +82,9 @@ export const ItemNavigationIcon = styled.a`
 
     &:hover {
       background-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
       border-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
     }
   }
 `;
@@ -136,7 +136,7 @@ export const TextSubTitle = styled(_TextSubTitle)`
 export const TextDescription = styled(_TextDescription)``;
 
 export const TextLink = styled(_TextLink)`
-  color: ${COLORS.COLOR_SURFACE2};
+  color: ${COLORS.TEXT_PRIMARY};
   margin-top: 12px;
 `;
 
@@ -193,13 +193,13 @@ export const TextCompany = styled.span`
 `;
 
 export const TextDate = styled(TechText)`
-  color: ${COLORS.COLOR_LIGHT_GRAY};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const TextPosition = styled.p`
   font-size: 1.3rem;
   font-family: ${FONTS.calibreBold};
-  color: ${COLORS.COLOR_ON_SURFACE};
+  color: ${COLORS.TEXT_PRIMARY};
 
   @media ${VIEWPORT.desktopUp} {
     font-size: 1.75rem;
@@ -214,7 +214,7 @@ export const TextPreviousPosition = styled(TextPosition)`
 
 export const TextExperienceTab = styled(TechText)`
   transition: 0.3s ease-in;
-  color: ${COLORS.COLOR_LIGHT_GRAY};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 /**
@@ -234,7 +234,7 @@ export const ItemExperienceTab = styled.button<ItemExperienceTabProps>`
 
   ${TextExperienceTab} {
     color: ${({ active }) =>
-      active ? `${COLORS.PRIMARY}` : `${COLORS.COLOR_LIGHT_GRAY}`};
+      active ? `${COLORS.PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -309,7 +309,7 @@ export const BoxExperiences = styled.div`
 export const ItemCertificate = styled.img`
   background-color: red;
   max-width: 250px;
-  border: 1px solid ${COLORS.COLOR_ON_BACKGROUND};
+  border: 1px solid ${COLORS.TEXT_PRIMARY};
   margin-bottom: 1rem;
 
   @media ${VIEWPORT.desktopUp} {
@@ -333,7 +333,7 @@ export const ContainerCertificate = styled.div`
   max-width: 500px;
   display: flex;
   align-items: center;
-  border: 1px solid ${COLORS.COLOR_GRAY};
+  border: 1px solid ${COLORS.TEXT_PRIMARY};
   border-radius: 10px;
   cursor: pointer;
   padding: 1.75rem 1rem;

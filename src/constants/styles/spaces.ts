@@ -5,6 +5,6 @@ export const SPACES = {
     medium: 16,
     large: 24,
     extraLarge: 32,
-    xextraLarge: 48,
+    huge: 48,
   },
 };

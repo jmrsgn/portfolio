@@ -17,7 +17,7 @@ export const Nav = styled.a<NavProps>`
 
   svg {
     color: ${({ active, color }) =>
-      active === "true" ? color : `${COLORS.COLOR_LIGHT_GRAY}`};
+      active === "true" ? color : `${COLORS.TEXT_PRIMARY}`};
     transition: 0.3s ease-in;
 
     &:hover {

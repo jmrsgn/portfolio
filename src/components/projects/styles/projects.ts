@@ -18,7 +18,7 @@ export const ItemProject = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border-radius: 10px;
-  background-color: ${COLORS.BACKGROUND_CARD};
+  background-color: ${COLORS.TEXT_PRIMARY};
   flex: 1 1 calc(33.333% - 1.5rem);
 
   box-shadow: 0px 5px 5px #141c29ff;

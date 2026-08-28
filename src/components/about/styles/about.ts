@@ -33,7 +33,7 @@ export const ItemNavigationIcon = styled.a`
   svg {
     width: 17px;
     height: 17px;
-    color: ${COLORS.COLOR_ON_SURFACE};
+    color: ${COLORS.TEXT_PRIMARY};
     cursor: pointer;
   }
 
@@ -49,9 +49,9 @@ export const ItemNavigationIcon = styled.a`
 
     &:hover {
       background-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
       border-color: ${({ type }) =>
-        type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+        type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
     }
   }
 `;
@@ -63,7 +63,7 @@ export const ItemSocialIconNavigation = styled.a`
     transition: 0.1s;
 
     svg {
-      color: ${COLORS.COLOR_SURFACE2};
+      color: ${COLORS.TEXT_PRIMARY};
     }
   }
 
@@ -82,7 +82,7 @@ export const ItemButton = styled.a`
   justify-content: center;
   width: 80%;
   padding: 1.25rem 2.5rem;
-  border: 1px solid ${COLORS.COLOR_GRAY};
+  border: 1px solid ${COLORS.TEXT_PRIMARY};
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -95,11 +95,11 @@ export const ItemButton = styled.a`
 
 export const ItemSocialIcon = styled(_ItemSocialIcon)`
   &:hover {
-    background-color: ${COLORS.COLOR_SURFACE2};
-    border-color: ${COLORS.COLOR_SURFACE2};
+    background-color: ${COLORS.TEXT_PRIMARY};
+    border-color: ${COLORS.TEXT_PRIMARY};
 
     svg {
-      color: ${COLORS.COLOR_ON_SURFACE};
+      color: ${COLORS.TEXT_PRIMARY};
     }
   }
 `;
@@ -126,7 +126,7 @@ export const ContainerTechInfo = styled.div`
   flex-direction: column;
   flex: 1 1 calc(33.333% - 1.5rem);
 
-  background-color: ${COLORS.BACKGROUND_CARD};
+  background-color: ${COLORS.SURFACE_ELEVATED};
   box-shadow: 0px 5px 5px #141c29ff;
   border-radius: 10px;
   cursor: pointer;
@@ -324,7 +324,7 @@ export const TextTitleOther = styled(_TextTitleOther)``;
 export const TextContact = styled.a`
   font-family: ${FONTS.sfMonoLight};
   cursor: pointer;
-  color: ${COLORS.COLOR_SURFACE2};
+  color: ${COLORS.TEXT_PRIMARY};
   text-decoration: none;
   font-size: 0.75rem;
   margin-top: 0.25rem;
@@ -344,13 +344,13 @@ export const TextSubTitle = styled(_TextSubTitle)`
 
 export const TextDescriptionFilter = styled(TextDescription)<TextProps>`
   color: ${({ type }) =>
-    type === "1" ? `${COLORS.COLOR_SURFACE1}` : `${COLORS.COLOR_SURFACE2}`};
+    type === "1" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
 `;
 
 export const TextDescriptionHighlight = styled(TextDescription)`
   font-weight: bold;
   display: inline-block;
-  color: ${COLORS.COLOR_ON_BACKGROUND};
+  color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const TextBusinessShopTitle = styled(TextSubTitle)`
@@ -366,7 +366,7 @@ export const ImageAvatar = styled.img`
   width: 250px;
   height: auto;
   border-radius: 50%;
-  border: 1px solid ${COLORS.COLOR_LIGHT_GRAY};
+  border: 1px solid ${COLORS.TEXT_PRIMARY};
 `;
 
 export const ImageTech = styled.img`

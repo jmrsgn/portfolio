@@ -1,38 +1,37 @@
 export const TEXTS = {
   SIZES: {
-    /**
-     * 14px for mobile
-     * 16px-18px for readability on desktop
-     * 18-20px for larger displays
-     */
+    HERO: {
+      mobile: 56,
+      desktop: 96,
+    },
 
-    GREETING: {
-      mobile: 48,
-      desktop: 80,
+    H1: {
+      mobile: 42,
+      desktop: 64,
+    },
+
+    H2: {
+      mobile: 32,
+      desktop: 48,
     },
 
     BODY: {
+      mobile: 18,
+      desktop: 20,
+    },
+
+    SMALL: {
       mobile: 14,
-      tablet: 16,
-      desktop: 18,
+      desktop: 15,
     },
 
-    OTHER: {
+    MONO: {
       mobile: 12,
-      desktop: 16,
-    },
-
-    BUTTON: {
-      mobile: 12,
-      desktop: 16,
+      desktop: 13,
     },
   },
 
   LINEHEIGHT: {
-    /**
-     * 1.25 - 1.75 to improve readability
-     */
-
     BODY: {
       mobile: 1.25,
       desktop: 1.5,
