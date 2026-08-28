@@ -1,342 +1,202 @@
 import React from "react";
+
 import {
-  ItemNavigationIcon,
-  ItemSocialIconNavigation,
-  ItemButton,
-  ItemSocialIcon,
+  Box,
   Container,
   ContainerAboutMeText,
+  ContainerTech,
   ContainerTechInfo,
   ContainerTechUsed,
-  ContainerTechUsedText,
-  ContainerAvatarInfo,
-  ContainerProfileContactTexts,
-  ContainerSocial,
-  ContainerContacts,
-  ContainerBusinessShopButtons,
-  ContainerDivider,
-  ContainerNavigaton,
-  ContainerTech,
-  Box,
-  BoxInfo,
-  BoxInfoTech,
-  BoxProfileInfo,
-  BoxProfile,
-  TextLink,
+  Divider,
+  ProfileCard,
+  ProfileItem,
+  ProfileLabel,
+  ProfileValue,
+  SectionEyebrow,
+  SectionHeader,
+  TechCardHeader,
+  TechNumber,
+  TechStack,
+  TechStackGrid,
+  TechStackHeader,
+  TechStackItem,
+  TechTag,
   TextDescription,
+  TextEyebrow,
+  TextHighlight,
   TextTitle,
-  TextTechUsed,
   TextTitleOther,
-  TextSubTitle,
-  TextContact,
-  TextDescriptionHighlight,
-  TextBusinessShopTitle,
-  ImageAvatar,
-  ImageTech,
+  BoxProfile,
 } from "./styles/about";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
-// Accept props whatever Container accepts
 type AboutProps = StyledProps<typeof Container>;
 
-export default function About({ children, ...restProps }: AboutProps) {
+type AboutComponent = React.FC<AboutProps> & {
+  Box: React.FC<StyledProps<typeof Box>>;
+  BoxProfile: React.FC<StyledProps<typeof BoxProfile>>;
+
+  TextEyebrow: React.FC<StyledProps<typeof TextEyebrow>>;
+  TextTitle: React.FC<StyledProps<typeof TextTitle>>;
+  TextDescription: React.FC<StyledProps<typeof TextDescription>>;
+  TextHighlight: React.FC<StyledProps<typeof TextHighlight>>;
+  Divider: React.FC<StyledProps<typeof Divider>>;
+
+  ContainerAboutMeText: React.FC<StyledProps<typeof ContainerAboutMeText>>;
+
+  ProfileCard: React.FC<StyledProps<typeof ProfileCard>>;
+  ProfileItem: React.FC<StyledProps<typeof ProfileItem>>;
+  ProfileLabel: React.FC<StyledProps<typeof ProfileLabel>>;
+  ProfileValue: React.FC<StyledProps<typeof ProfileValue>>;
+
+  SectionHeader: React.FC<StyledProps<typeof SectionHeader>>;
+  SectionEyebrow: React.FC<StyledProps<typeof SectionEyebrow>>;
+
+  ContainerTech: React.FC<StyledProps<typeof ContainerTech>>;
+  ContainerTechInfo: React.FC<StyledProps<typeof ContainerTechInfo>>;
+  TechCardHeader: React.FC<StyledProps<typeof TechCardHeader>>;
+  TechNumber: React.FC<StyledProps<typeof TechNumber>>;
+  TextTitleOther: React.FC<StyledProps<typeof TextTitleOther>>;
+  ContainerTechUsed: React.FC<StyledProps<typeof ContainerTechUsed>>;
+  TechTag: React.FC<StyledProps<typeof TechTag>>;
+
+  TechStack: React.FC<StyledProps<typeof TechStack>>;
+  TechStackHeader: React.FC<StyledProps<typeof TechStackHeader>>;
+  TechStackGrid: React.FC<StyledProps<typeof TechStackGrid>>;
+  TechStackItem: React.FC<StyledProps<typeof TechStackItem>>;
+};
+
+const About = function About({ children, ...restProps }: AboutProps) {
   return <Container {...restProps}>{children}</Container>;
-}
-
-type ItemNavigationIconProps = StyledProps<typeof ItemNavigationIcon>;
-type ItemSocialIconNavigationProps = StyledProps<typeof ItemSocialIcon>;
-type ItemButtonProps = StyledProps<typeof ItemButton>;
-type ItemSocialIconProps = StyledProps<typeof ItemSocialIcon>;
-type ContainerAboutMeTextProps = StyledProps<typeof ContainerAboutMeText>;
-type ContainerTechInfoProps = StyledProps<typeof ContainerTechInfo>;
-type ContainerTechUsedProps = StyledProps<typeof ContainerTechUsed>;
-type ContainerTechUsedTextProps = StyledProps<typeof ContainerTechUsedText>;
-type ContainerAvatarInfoProps = StyledProps<typeof ContainerAvatarInfo>;
-type ContainerProfileContactTextsProps = StyledProps<
-  typeof ContainerProfileContactTexts
->;
-type ContainerSocialProps = StyledProps<typeof ContainerSocial>;
-type ContainerContactsProps = StyledProps<typeof ContainerContacts>;
-type ContainerBusinessShopButtonsProps = StyledProps<
-  typeof ContainerBusinessShopButtons
->;
-type ContainerDividerProps = StyledProps<typeof ContainerDivider>;
-type ContainerNavigatonProps = StyledProps<typeof ContainerNavigaton>;
-type ContainerTechProps = StyledProps<typeof ContainerTech>;
-type BoxProps = StyledProps<typeof Box>;
-type BoxInfoProps = StyledProps<typeof BoxInfo>;
-type BoxInfoTechProps = StyledProps<typeof BoxInfoTech>;
-type BoxProfileProps = StyledProps<typeof BoxProfile>;
-type BoxProfileInfoProps = StyledProps<typeof BoxProfileInfo>;
-type TextLinkProps = StyledProps<typeof TextLink>;
-type TextDescriptionProps = StyledProps<typeof TextDescription>;
-type TextTitleProps = StyledProps<typeof TextTitle>;
-type TextTechUsedProps = StyledProps<typeof TextTechUsed>;
-type TextTitleOtherProps = StyledProps<typeof TextTitleOther>;
-type TextSubTitleProps = StyledProps<typeof TextSubTitle>;
-type TextContactProps = StyledProps<typeof TextContact>;
-type TextDescriptionHighlightProps = StyledProps<
-  typeof TextDescriptionHighlight
->;
-type TextBusinessShopTitleProps = StyledProps<typeof TextBusinessShopTitle>;
-type ImageAvatarProps = StyledProps<typeof ImageAvatar>;
-type ImageTechProps = StyledProps<typeof ImageTech>;
+} as AboutComponent;
 
 /**
- * * Items
+ * Layout
  */
 
-About.ItemNavigationIcon = function Component({
-  children,
-  ...restProps
-}: ItemNavigationIconProps) {
-  return <ItemNavigationIcon {...restProps}>{children}</ItemNavigationIcon>;
-};
+About.Box = ({ children, ...restProps }) => (
+  <Box {...restProps}>{children}</Box>
+);
 
-About.ItemSocialIconNavigation = function Component({
-  children,
-  ...restProps
-}: ItemSocialIconNavigationProps) {
-  return (
-    <ItemSocialIconNavigation {...restProps}>
-      {children}
-    </ItemSocialIconNavigation>
-  );
-};
-
-About.ItemButton = function Component({
-  children,
-  ...restProps
-}: ItemButtonProps) {
-  return <ItemButton {...restProps}>{children}</ItemButton>;
-};
-
-About.ItemSocialIcon = function Component({
-  children,
-  ...restProps
-}: ItemSocialIconProps) {
-  return <ItemSocialIcon {...restProps}>{children}</ItemSocialIcon>;
-};
+About.BoxProfile = ({ children, ...restProps }) => (
+  <BoxProfile {...restProps}>{children}</BoxProfile>
+);
 
 /**
- * * Containers
+ * Header
  */
 
-About.ContainerAboutMeText = function Component({
-  children,
-  ...restProps
-}: ContainerAboutMeTextProps) {
-  return <ContainerAboutMeText {...restProps}>{children}</ContainerAboutMeText>;
-};
+About.TextEyebrow = ({ children, ...restProps }) => (
+  <TextEyebrow {...restProps}>{children}</TextEyebrow>
+);
 
-About.ContainerTechInfo = function Component({
-  children,
-  ...restProps
-}: ContainerTechInfoProps) {
-  return <ContainerTechInfo {...restProps}>{children}</ContainerTechInfo>;
-};
+About.TextTitle = ({ children, ...restProps }) => (
+  <TextTitle {...restProps}>{children}</TextTitle>
+);
 
-About.ContainerTechUsed = function Component({
-  children,
-  ...restProps
-}: ContainerTechUsedProps) {
-  return <ContainerTechUsed {...restProps}>{children}</ContainerTechUsed>;
-};
+About.TextDescription = ({ children, ...restProps }) => (
+  <TextDescription {...restProps}>{children}</TextDescription>
+);
 
-About.ContainerTechUsedText = function Component({
-  children,
-  ...restProps
-}: ContainerTechUsedTextProps) {
-  return (
-    <ContainerTechUsedText {...restProps}>{children}</ContainerTechUsedText>
-  );
-};
+About.TextHighlight = ({ children, ...restProps }) => (
+  <TextHighlight {...restProps}>{children}</TextHighlight>
+);
 
-About.ContainerAvatarInfo = function Component({
-  children,
-  ...restProps
-}: ContainerAvatarInfoProps) {
-  return <ContainerAvatarInfo {...restProps}>{children}</ContainerAvatarInfo>;
-};
-
-About.ContainerProfileContactTexts = function Component({
-  children,
-  ...restProps
-}: ContainerProfileContactTextsProps) {
-  return (
-    <ContainerProfileContactTexts {...restProps}>
-      {children}
-    </ContainerProfileContactTexts>
-  );
-};
-
-About.ContainerSocial = function Component({
-  children,
-  ...restProps
-}: ContainerSocialProps) {
-  return <ContainerSocial {...restProps}>{children}</ContainerSocial>;
-};
-
-About.ContainerContacts = function Component({
-  children,
-  ...restProps
-}: ContainerContactsProps) {
-  return <ContainerContacts {...restProps}>{children}</ContainerContacts>;
-};
-
-About.ContainerBusinessShopButtons = function Component({
-  children,
-  ...restProps
-}: ContainerBusinessShopButtonsProps) {
-  return (
-    <ContainerBusinessShopButtons {...restProps}>
-      {children}
-    </ContainerBusinessShopButtons>
-  );
-};
-
-About.ContainerDivider = function Component({
-  children,
-  ...restProps
-}: ContainerDividerProps) {
-  return <ContainerDivider {...restProps}>{children}</ContainerDivider>;
-};
-
-About.ContainerNavigaton = function Component({
-  children,
-  ...restProps
-}: ContainerNavigatonProps) {
-  return <ContainerNavigaton {...restProps}>{children}</ContainerNavigaton>;
-};
-
-About.ContainerTech = function Component({
-  children,
-  ...restProps
-}: ContainerTechProps) {
-  return <ContainerTech {...restProps}>{children}</ContainerTech>;
-};
+About.Divider = ({ children, ...restProps }) => (
+  <Divider {...restProps}>{children}</Divider>
+);
 
 /**
- * * Boxes
+ * Introduction
  */
 
-About.Box = function Component({ children, ...restProps }: BoxProps) {
-  return <Box {...restProps}>{children}</Box>;
-};
-
-About.BoxInfo = function Component({ children, ...restProps }: BoxInfoProps) {
-  return <BoxInfo {...restProps}>{children}</BoxInfo>;
-};
-
-About.BoxInfoTech = function Component({
-  children,
-  ...restProps
-}: BoxInfoTechProps) {
-  return <BoxInfoTech {...restProps}>{children}</BoxInfoTech>;
-};
-
-About.BoxProfile = function Component({
-  children,
-  ...restProps
-}: BoxProfileProps) {
-  return <BoxProfile {...restProps}>{children}</BoxProfile>;
-};
-
-About.BoxProfileInfo = function Component({
-  children,
-  ...restProps
-}: BoxProfileInfoProps) {
-  return <BoxProfileInfo {...restProps}>{children}</BoxProfileInfo>;
-};
+About.ContainerAboutMeText = ({ children, ...restProps }) => (
+  <ContainerAboutMeText {...restProps}>{children}</ContainerAboutMeText>
+);
 
 /**
- * * Texts
+ * Profile
  */
 
-About.TextLink = function AboutTextLink({
-  children,
-  ...restProps
-}: TextLinkProps) {
-  return <TextLink {...restProps}>{children}</TextLink>;
-};
+About.ProfileCard = ({ children, ...restProps }) => (
+  <ProfileCard {...restProps}>{children}</ProfileCard>
+);
 
-About.TextDescription = function AboutTextDescription({
-  children,
-  ...restProps
-}: TextDescriptionProps) {
-  return <TextDescription {...restProps}>{children}</TextDescription>;
-};
+About.ProfileItem = ({ children, ...restProps }) => (
+  <ProfileItem {...restProps}>{children}</ProfileItem>
+);
 
-About.TextTitle = function AboutTextTitle({
-  children,
-  ...restProps
-}: TextTitleProps) {
-  return <TextTitle {...restProps}>{children}</TextTitle>;
-};
+About.ProfileLabel = ({ children, ...restProps }) => (
+  <ProfileLabel {...restProps}>{children}</ProfileLabel>
+);
 
-About.TextTechUsed = function AboutTextTechUsed({
-  children,
-  ...restProps
-}: TextTechUsedProps) {
-  return <TextTechUsed {...restProps}>{children}</TextTechUsed>;
-};
-
-About.TextTitleOther = function AboutTextTitleOther({
-  children,
-  ...restProps
-}: TextTitleOtherProps) {
-  return <TextTitleOther {...restProps}>{children}</TextTitleOther>;
-};
-
-About.TextContact = function AboutTextContact({
-  children,
-  ...restProps
-}: TextContactProps) {
-  return <TextContact {...restProps}>{children}</TextContact>;
-};
-
-About.TextSubTitle = function AboutTextSubTitle({
-  children,
-  ...restProps
-}: TextSubTitleProps) {
-  return <TextSubTitle {...restProps}>{children}</TextSubTitle>;
-};
-
-About.TextDescriptionHighlight = function AboutTextDescriptionHighlight({
-  children,
-  ...restProps
-}: TextDescriptionHighlightProps) {
-  return (
-    <TextDescriptionHighlight {...restProps}>
-      {children}
-    </TextDescriptionHighlight>
-  );
-};
-
-About.TextBusinessShopTitle = function AboutTextBusinessShopTitle({
-  children,
-  ...restProps
-}: TextBusinessShopTitleProps) {
-  return (
-    <TextBusinessShopTitle {...restProps}>{children}</TextBusinessShopTitle>
-  );
-};
+About.ProfileValue = ({ children, ...restProps }) => (
+  <ProfileValue {...restProps}>{children}</ProfileValue>
+);
 
 /**
- * * Images
+ * Sections
  */
 
-About.ImageAvatar = function AboutImageAvatar({
-  src,
-  ...restProps
-}: ImageAvatarProps) {
-  return <ImageAvatar src={src} {...restProps} />;
-};
+About.SectionHeader = ({ children, ...restProps }) => (
+  <SectionHeader {...restProps}>{children}</SectionHeader>
+);
 
-About.ImageTech = function AboutImageTech({
-  src,
-  ...restProps
-}: ImageTechProps) {
-  return <ImageTech src={src} {...restProps} />;
-};
+About.SectionEyebrow = ({ children, ...restProps }) => (
+  <SectionEyebrow {...restProps}>{children}</SectionEyebrow>
+);
+
+/**
+ * What I Do
+ */
+
+About.ContainerTech = ({ children, ...restProps }) => (
+  <ContainerTech {...restProps}>{children}</ContainerTech>
+);
+
+About.ContainerTechInfo = ({ children, ...restProps }) => (
+  <ContainerTechInfo {...restProps}>{children}</ContainerTechInfo>
+);
+
+About.TechCardHeader = ({ children, ...restProps }) => (
+  <TechCardHeader {...restProps}>{children}</TechCardHeader>
+);
+
+About.TechNumber = ({ children, ...restProps }) => (
+  <TechNumber {...restProps}>{children}</TechNumber>
+);
+
+About.TextTitleOther = ({ children, ...restProps }) => (
+  <TextTitleOther {...restProps}>{children}</TextTitleOther>
+);
+
+About.ContainerTechUsed = ({ children, ...restProps }) => (
+  <ContainerTechUsed {...restProps}>{children}</ContainerTechUsed>
+);
+
+About.TechTag = ({ children, ...restProps }) => (
+  <TechTag {...restProps}>{children}</TechTag>
+);
+
+/**
+ * Tech Stack
+ */
+
+About.TechStack = ({ children, ...restProps }) => (
+  <TechStack {...restProps}>{children}</TechStack>
+);
+
+About.TechStackHeader = ({ children, ...restProps }) => (
+  <TechStackHeader {...restProps}>{children}</TechStackHeader>
+);
+
+About.TechStackGrid = ({ children, ...restProps }) => (
+  <TechStackGrid {...restProps}>{children}</TechStackGrid>
+);
+
+About.TechStackItem = ({ children, ...restProps }) => (
+  <TechStackItem {...restProps}>{children}</TechStackItem>
+);
+
+export default About;

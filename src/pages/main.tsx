@@ -53,11 +53,11 @@ export default function Main() {
           <HomeContainer />
         </div>
 
-        {/* <div ref={aboutRef}>
+        <div ref={aboutRef}>
           <AboutContainer />
         </div>
 
-        <div ref={projectsRef}>
+        {/* <div ref={projectsRef}>
           <ProjectsContainer />
         </div>
 

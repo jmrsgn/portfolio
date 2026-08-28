@@ -143,7 +143,7 @@ export function HomeContainer() {
                 <Home.CodeIndent />
                 <Home.CodeIndent />
                 <Home.CodeString>
-                  &quot;Mobile Development&quot;
+                  &quot;Java&quot;
                 </Home.CodeString>
                 ,
               </Home.CodeLine>
