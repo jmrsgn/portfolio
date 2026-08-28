@@ -1,115 +1,123 @@
 [
-    {
-        "id": 1,
-        "title": "Expresso",
-        "description": "An Android application built with Java that helps students learn Object-Oriented Programming through interactive lessons and machine-learning–driven personalization.",
-        "filter": "Mobile",
-        "development": false,
-        "src": "../images/projects/expresso-1.png",
-        "href": "",
-        "github": "https://github.com/jmrsgn/expresso",
-        "tech": [
-            {
-                "name": "Java",
-                "src": "../images/tech/java.svg"
-            },
-            {
-                "name": "PHP",
-                "src": "../images/tech/php.svg"
-            },
-            {
-                "name": "PlantUML",
-                "src": "../images/tech/plantuml.svg"
-            },
-            {
-                "name": "Microsoft Personalizer",
-                "src": "../images/tech/microsoft.svg"
-            },
-            {
-                "name": "Material Design",
-                "src": "../images/tech/material-design.svg"
-            }
-        ],
-        "screenshots": [
-            "../images/projects/expresso-1.png",
-            "../images/projects/expresso-2.png",
-            "../images/projects/expresso-3.png",
-            "../images/projects/expresso-4.png"
-        ]
-    },
-    {
-        "id": 2,
-        "title": "Carkilahan",
-        "description": "An Android application built with Java and Firebase that allows users to easily book cars for trips. This project represents my first complete mobile application.",
-        "filter": "Mobile",
-        "development": false,
-        "src": "../images/projects/carkilahan-1.png",
-        "href": "",
-        "github": "https://github.com/jmrsgn/carkilahan",
-        "tech": [
-            {
-                "name": "Java",
-                "src": "../images/tech/java.svg"
-            },
-            {
-                "name": "Firebase",
-                "src": "../images/tech/firebase.svg"
-            }
-        ],
-        "screenshots": []
-    },
-    {
-        "id": 3,
-        "title": "Pump",
-        "description": "A Flutter-based social fitness application designed for bodybuilding enthusiasts, combining progress tracking, coach-client interactions, and community engagement. The backend is being developed using Java Spring, Docker, and Kubernetes.",
-        "filter": "Mobile",
-        "development": true,
-        "src": "",
-        "github": "https://github.com/jmrsgn/pump-frontend",
-        "href": "",
-        "tech": [
-            {
-                "name": "Flutter",
-                "src": ""
-            },
-            {
-                "name": "Java Spring",
-                "src": ""
-            },
-            {
-                "name": "Docker",
-                "src": ""
-            },
-            {
-                "name": "Kubernetes",
-                "src": ""
-            }
-        ],
-        "screenshots": []
-    },
-    {
-        "id": 4,
-        "title": "Portfolio",
-        "description": "A personal portfolio website built with React to showcase my projects and skills, styled with styled-components and deployed on Netlify.",
-        "filter": "Web",
-        "development": false,
-        "src": "",
-        "github": "",
-        "href": "",
-        "tech": [
-            {
-                "name": "React JS",
-                "src": ""
-            },
-            {
-                "name": "styled-components",
-                "src": ""
-            },
-            {
-                "name": "Netlify",
-                "src": ""
-            }
-        ],
-        "screenshots": []
-    }
+  {
+    "id": 1,
+    "title": "Expresso",
+    "description": "An Android application built with Java that helps students learn Object-Oriented Programming through interactive lessons and machine-learning–driven personalization.",
+    "filter": "Mobile",
+    "development": false,
+    "src": "../images/projects/expresso-1.png",
+    "href": "",
+    "github": "https://github.com/jmrsgn/expresso",
+    "tech": [
+      {
+        "name": "Java",
+        "src": "../images/tech/java.svg"
+      },
+      {
+        "name": "PHP",
+        "src": "../images/tech/php.svg"
+      },
+      {
+        "name": "PlantUML",
+        "src": "../images/tech/plantuml.svg"
+      },
+      {
+        "name": "Microsoft Personalizer",
+        "src": "../images/tech/microsoft.svg"
+      },
+      {
+        "name": "Material Design",
+        "src": "../images/tech/material-design.svg"
+      }
+    ],
+    "screenshots": [
+      "../images/projects/expresso-1.png",
+      "../images/projects/expresso-2.png",
+      "../images/projects/expresso-3.png",
+      "../images/projects/expresso-4.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Carkilahan",
+    "description": "An Android application built with Java and Firebase that allows users to easily book cars for trips. This project represents my first complete mobile application.",
+    "filter": "Mobile",
+    "development": false,
+    "src": "../images/projects/carkilahan-1.png",
+    "href": "",
+    "github": "https://github.com/jmrsgn/carkilahan",
+    "tech": [
+      {
+        "name": "Java",
+        "src": "../images/tech/java.svg"
+      },
+      {
+        "name": "Firebase",
+        "src": "../images/tech/firebase.svg"
+      }
+    ],
+    "screenshots": []
+  },
+  {
+    "id": 3,
+    "title": "Pump",
+    "description": "A Flutter-based social fitness application designed for bodybuilding enthusiasts, combining progress tracking, coach-client interactions, and community engagement. The backend is being developed using Java Spring, Docker, and Kubernetes.",
+    "filter": "Mobile",
+    "development": true,
+    "src": "",
+    "github": "https://github.com/jmrsgn/pump-frontend",
+    "href": "",
+    "tech": [
+      {
+        "name": "Flutter",
+        "src": ""
+      },
+      {
+        "name": "Java",
+        "src": ""
+      },
+      {
+        "name": "Spring Boot",
+        "src": ""
+      },
+      {
+        "name": "Docker",
+        "src": ""
+      },
+      {
+        "name": "Kubernetes",
+        "src": ""
+      }
+    ],
+    "screenshots": []
+  },
+  {
+    "id": 4,
+    "title": "Portfolio",
+    "description": "A personal portfolio website built with React and TypeScript to showcase my projects, experience, and technical skills, styled with styled-components and deployed on Vercel.",
+    "filter": "Web",
+    "development": false,
+    "src": "",
+    "github": "",
+    "href": "",
+    "tech": [
+      {
+        "name": "React JS",
+        "src": ""
+      },
+      {
+        "name": "styled-components",
+        "src": ""
+      },
+      {
+        "name": "Vercel",
+        "src": ""
+      },
+      {
+        "name": "TypeScript",
+        "src": ""
+      }
+    ],
+    "screenshots": []
+  }
 ]

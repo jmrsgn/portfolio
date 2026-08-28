@@ -57,11 +57,11 @@ export default function Main() {
           <AboutContainer />
         </div>
 
-        {/* <div ref={projectsRef}>
+        <div ref={projectsRef}>
           <ProjectsContainer />
         </div>
 
-        <div ref={experiencesRef}>
+        {/*  <div ref={experiencesRef}>
           <ExperiencesContainer />
         </div>
 
