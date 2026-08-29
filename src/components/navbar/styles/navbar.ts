@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from "styled-components";
 
 import * as COLORS from "../../../constants/styles/colors";
 import { FONTS } from "../../../fonts/fonts";

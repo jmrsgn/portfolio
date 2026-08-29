@@ -65,7 +65,7 @@
     "filter": "Mobile",
     "development": true,
     "src": "",
-    "github": "https://github.com/jmrsgn/pump-frontend",
+    "github": "https://github.com/jmrsgn/pump",
     "href": "",
     "tech": [
       {
@@ -98,7 +98,7 @@
     "filter": "Web",
     "development": false,
     "src": "",
-    "github": "",
+    "github": "https://github.com/jmrsgn/portfolio",
     "href": "",
     "tech": [
       {
@@ -115,6 +115,10 @@
       },
       {
         "name": "TypeScript",
+        "src": ""
+      },
+      {
+        "name": "Vite",
         "src": ""
       }
     ],
