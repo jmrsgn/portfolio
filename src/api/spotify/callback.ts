@@ -17,7 +17,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .send("Spotify environment variables are not configured.");
   }
 
-  const redirectUri = "https://marasiganjohnmartin.vercel.app/callback";
+  const redirectUri =
+    "https://marasiganjohnmartin.vercel.app/api/spotify/callback";
 
   try {
     const response = await fetch(TOKEN_ENDPOINT, {
