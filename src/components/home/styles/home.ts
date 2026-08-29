@@ -108,30 +108,6 @@ export const ContainerGreetings = styled.div`
 `;
 
 /**
- * Technical label
- */
-
-export const TextTech = styled.div`
-  margin-bottom: 1.5rem;
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-
-  @media ${VIEWPORT.mobileLargeUp} {
-    font-size: 0.75rem;
-  }
-
-  @media ${VIEWPORT.tabletUp} {
-    font-size: 0.8rem;
-  }
-`;
-
-/**
  * Hero heading
  */
 

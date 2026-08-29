@@ -14,7 +14,7 @@ export function HomeContainer() {
             transition={{ duration: 0.6 }}
           >
             <Home.ContainerGreetings>
-              <Home.TextTech>// SOFTWARE ENGINEER</Home.TextTech>
+              <Home.TextEyebrow>// SOFTWARE ENGINEER</Home.TextEyebrow>
 
               <Home.TextGreeting>
                 JOHN MARTIN
@@ -142,10 +142,7 @@ export function HomeContainer() {
                 <Home.LineNumber>7</Home.LineNumber>
                 <Home.CodeIndent />
                 <Home.CodeIndent />
-                <Home.CodeString>
-                  &quot;Java&quot;
-                </Home.CodeString>
-                ,
+                <Home.CodeString>&quot;Java&quot;</Home.CodeString>,
               </Home.CodeLine>
 
               <Home.CodeLine>

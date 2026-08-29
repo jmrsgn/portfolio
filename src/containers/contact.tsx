@@ -14,107 +14,101 @@ export function ContactContainer() {
       <MotionWrap whileInView={{ y: [100, 0], opacity: [0, 1] }}>
         <Contact.Box>
           <Contact.BoxContact>
-            <Contact.ContainerInfo>
-              <Contact.TextLabel>// CONTACT</Contact.TextLabel>
+            <Contact.TextEyebrow>// CONTACT</Contact.TextEyebrow>
 
-              <Contact.TextTitle>
-                Let&apos;s build
-                <br />
-                something.
-              </Contact.TextTitle>
+            <Contact.TextTitle>
+              Let&apos;s build
+              <br />
+              something.
+            </Contact.TextTitle>
 
-              <Contact.Divider />
+            <Contact.Divider />
 
-              <Contact.ContainerContactContent>
-                <Contact.ContainerDescription>
-                  <Contact.TextIntro>
-                    Have an idea, project, or just want to talk tech? I&apos;m
-                    always open to interesting projects, engineering
-                    conversations, and new ideas.
-                  </Contact.TextIntro>
-                </Contact.ContainerDescription>
+            <Contact.ContainerContactContent>
+              <Contact.TextIntro>
+                Have an idea, project, or just want to talk tech? I&apos;m
+                always open to interesting projects, engineering conversations,
+                and new ideas.
+              </Contact.TextIntro>
 
-                <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
-                  LET&apos;S TALK
-                  <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />
-                </Contact.ItemButton>
-              </Contact.ContainerContactContent>
+              <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
+                LET&apos;S TALK
+                <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />
+              </Contact.ItemButton>
+            </Contact.ContainerContactContent>
 
-              <Contact.ContainerContacts>
-                <Contact.ContainerContactItem>
-                  <Contact.ItemContactIcon>
-                    <FiMail />
-                  </Contact.ItemContactIcon>
+            <Contact.ContainerContacts>
+              <Contact.ContainerContactItem>
+                <Contact.ItemContactIcon>
+                  <FiMail />
+                </Contact.ItemContactIcon>
 
-                  <Contact.ContainerContactText>
-                    <Contact.TextContactLabel>EMAIL</Contact.TextContactLabel>
-                    <Contact.ItemContact href="mailto:marasiganjohnmartin@gmail.com">
-                      marasiganjohnmartin@gmail.com
-                    </Contact.ItemContact>
-                  </Contact.ContainerContactText>
-                </Contact.ContainerContactItem>
+                <Contact.ContainerContactText>
+                  <Contact.TextContactLabel>EMAIL</Contact.TextContactLabel>
+                  <Contact.ItemContact href="mailto:marasiganjohnmartin@gmail.com">
+                    marasiganjohnmartin@gmail.com
+                  </Contact.ItemContact>
+                </Contact.ContainerContactText>
+              </Contact.ContainerContactItem>
 
-                <Contact.ContactDivider />
+              <Contact.ContactDivider />
 
-                <Contact.ContainerContactItem>
-                  <Contact.ItemContactIcon>
-                    <AiFillGithub />
-                  </Contact.ItemContactIcon>
+              <Contact.ContainerContactItem>
+                <Contact.ItemContactIcon>
+                  <AiFillGithub />
+                </Contact.ItemContactIcon>
 
-                  <Contact.ContainerContactText>
-                    <Contact.TextContactLabel>GITHUB</Contact.TextContactLabel>
-                    <Contact.ItemContact
-                      href="https://github.com/jmrsgn"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      github.com/jmrsgn
-                    </Contact.ItemContact>
-                  </Contact.ContainerContactText>
-                </Contact.ContainerContactItem>
+                <Contact.ContainerContactText>
+                  <Contact.TextContactLabel>GITHUB</Contact.TextContactLabel>
+                  <Contact.ItemContact
+                    href="https://github.com/jmrsgn"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    github.com/jmrsgn
+                  </Contact.ItemContact>
+                </Contact.ContainerContactText>
+              </Contact.ContainerContactItem>
 
-                <Contact.ContactDivider />
+              <Contact.ContactDivider />
 
-                <Contact.ContainerContactItem>
-                  <Contact.ItemContactIcon>
-                    <FaLinkedinIn />
-                  </Contact.ItemContactIcon>
+              <Contact.ContainerContactItem>
+                <Contact.ItemContactIcon>
+                  <FaLinkedinIn />
+                </Contact.ItemContactIcon>
 
-                  <Contact.ContainerContactText>
-                    <Contact.TextContactLabel>
-                      LINKEDIN
-                    </Contact.TextContactLabel>
-                    <Contact.ItemContact
-                      href="#"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      linkedin.com/in/jmrsgn
-                    </Contact.ItemContact>
-                  </Contact.ContainerContactText>
-                </Contact.ContainerContactItem>
+                <Contact.ContainerContactText>
+                  <Contact.TextContactLabel>LINKEDIN</Contact.TextContactLabel>
+                  <Contact.ItemContact
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    linkedin.com/in/jmrsgn
+                  </Contact.ItemContact>
+                </Contact.ContainerContactText>
+              </Contact.ContainerContactItem>
 
-                <Contact.ContactDivider />
+              <Contact.ContactDivider />
 
-                <Contact.ContainerStatus>
-                  <Contact.ContainerStatusIndicator />
+              <Contact.ContainerStatus>
+                <Contact.ContainerStatusIndicator />
 
-                  <Contact.ContainerStatusText>
-                    <Contact.TextStatusTitle>
-                      OPEN TO TALK
-                    </Contact.TextStatusTitle>
+                <Contact.ContainerStatusText>
+                  <Contact.TextStatusTitle>
+                    OPEN TO TALK
+                  </Contact.TextStatusTitle>
 
-                    <Contact.TextStatus>
-                      Available for a conversation
-                      <br />
-                      about new opportunities
-                      <br />
-                      and collaboration.
-                    </Contact.TextStatus>
-                  </Contact.ContainerStatusText>
-                </Contact.ContainerStatus>
-              </Contact.ContainerContacts>
-            </Contact.ContainerInfo>
+                  <Contact.TextStatus>
+                    Available for a conversation
+                    <br />
+                    about new opportunities
+                    <br />
+                    and collaboration.
+                  </Contact.TextStatus>
+                </Contact.ContainerStatusText>
+              </Contact.ContainerStatus>
+            </Contact.ContainerContacts>
 
             <Contact.TextCopyright>
               Designed and developed by John Martin

@@ -81,7 +81,7 @@ export function AboutContainer() {
           {/* Introduction */}
           <About.BoxProfile>
             <About.ContainerAboutMeText>
-              <About.TextDescription>
+              <About.TextIntro>
                 I&apos;m John Martin I. Marasigan, a{" "}
                 <About.TextHighlight>
                   Senior Software Engineer
@@ -91,20 +91,20 @@ export function AboutContainer() {
                   Stratpoint Technologies
                 </About.TextHighlight>
                 .
-              </About.TextDescription>
+              </About.TextIntro>
 
-              <About.TextDescription>
+              <About.TextIntro>
                 I enjoy building scalable, efficient, and user-focused
                 applications that solve real problems. My coding journey started
                 in college when I discovered Android Development, and I&apos;ve
                 been passionate about creating software ever since.
-              </About.TextDescription>
+              </About.TextIntro>
 
-              <About.TextDescription>
+              <About.TextIntro>
                 When I&apos;m not coding, you&apos;ll usually find me at the
                 gym, chasing strength and discipline, or spending time alone
                 with my thoughts.
-              </About.TextDescription>
+              </About.TextIntro>
             </About.ContainerAboutMeText>
 
             {/* Professional Info */}

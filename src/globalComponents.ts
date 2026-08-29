@@ -304,9 +304,7 @@ export const TechText = styled(TextExtraSmall)<TextProps>`
     */
 
   color: ${({ type }) =>
-    type === "regular"
-      ? `${COLORS.TEXT_PRIMARY}`
-      : `${COLORS.TEXT_PRIMARY}`};
+    type === "regular" ? `${COLORS.TEXT_PRIMARY}` : `${COLORS.TEXT_PRIMARY}`};
   margin: ${({ margin }) => margin};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-top: ${({ marginTop }) => marginTop};
@@ -570,5 +568,26 @@ export const _Button = styled(Link)`
       box-shadow: 5px 5px 0 ${COLORS.PRIMARY};
       border-color: ${COLORS.PRIMARY_HOVER};
     }
+  }
+`;
+
+// V3
+export const TextEyebrow = styled.span`
+  margin-bottom: 1.5rem;
+
+  font-family: ${FONTS.sfMonoRegular};
+
+  color: ${COLORS.PRIMARY_LIGHT};
+
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+
+  @media ${VIEWPORT.mobileLargeUp} {
+    font-size: 0.75rem;
+  }
+
+  @media ${VIEWPORT.tabletUp} {
+    font-size: 0.8rem;
   }
 `;

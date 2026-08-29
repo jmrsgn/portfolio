@@ -94,9 +94,7 @@ export function ProjectsContainer() {
 
                 <Projects.ContainerTags>
                   {item.tech.map((tech) => (
-                    <Projects.ItemTag key={tech.name}>
-                      <Projects.TextTag>{tech.name}</Projects.TextTag>
-                    </Projects.ItemTag>
+                    <Projects.ItemTag key={tech.name}>{tech.name}</Projects.ItemTag>
                   ))}
                 </Projects.ContainerTags>
               </Projects.ItemProject>

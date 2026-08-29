@@ -101,19 +101,6 @@ export const Container = styled.section`
   color: ${COLORS.TEXT_PRIMARY};
 `;
 
-export const ContainerInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-export const ContainerIntro = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  max-width: 680px;
-`;
-
 export const ContainerContactContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -128,12 +115,6 @@ export const ContainerContactContent = styled.div`
     justify-content: space-between;
     gap: 4rem;
   }
-`;
-
-export const ContainerDescription = styled.div`
-  flex: 1;
-  min-width: 0;
-  max-width: 650px;
 `;
 
 export const ContainerContacts = styled.div`
@@ -230,18 +211,6 @@ export const TextStatusTitle = styled.span`
   letter-spacing: 0.06em;
 `;
 
-export const ContainerContactLinks = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  gap: 1.5rem;
-
-  @media ${VIEWPORT.desktopUp} {
-    gap: 2rem;
-  }
-`;
-
 export const ContainerStatus = styled.div`
   display: flex;
   align-items: center;
@@ -310,23 +279,6 @@ export const BoxContact = styled.div`
  * Texts
  */
 
-export const TextLabel = styled.span`
-  display: block;
-
-  margin-bottom: 1rem;
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-family: ${FONTS.sfMonoRegular};
-  font-size: 0.7rem;
-
-  letter-spacing: 0.08em;
-
-  @media ${VIEWPORT.desktopUp} {
-    font-size: 0.75rem;
-  }
-`;
-
 export const TextTitle = styled.h2`
   margin: 0;
 
@@ -366,17 +318,19 @@ export const Divider = styled.div`
 `;
 
 export const TextIntro = styled.p`
-  margin: 0;
+  flex: 1;
+  min-width: 0;
+  max-width: 650px;
+
+  margin: 2rem 0 0;
 
   color: ${COLORS.TEXT_SECONDARY};
 
   font-family: ${FONTS.calibreRegular};
 
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
 
-  line-height: 1.35;
-
-  letter-spacing: -0.01em;
+  line-height: 1.45;
 `;
 
 export const TextContactLabel = styled.span`

@@ -1,261 +1,166 @@
 import React from "react";
 
 import {
-  ItemButton,
-  ItemContact,
-  ItemContactIcon,
+  Box,
+  BoxContact,
   ContactDivider,
   Container,
-  ContainerInfo,
-  ContainerIntro,
   ContainerContactContent,
-  ContainerDescription,
-  ContainerContacts,
   ContainerContactItem,
+  ContainerContacts,
   ContainerContactText,
   ContainerStatus,
   ContainerStatusIndicator,
   ContainerStatusText,
-  Box,
-  BoxContact,
-  TextLabel,
-  TextTitle,
   Divider,
-  TextIntro,
+  ItemButton,
+  ItemContact,
+  ItemContactIcon,
   TextContactLabel,
-  TextStatusTitle,
-  TextStatus,
   TextCopyright,
+  TextIntro,
+  TextStatus,
+  TextStatusTitle,
+  TextTitle,
 } from "./styles/contact";
+import { TextEyebrow } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
 type ContactProps = StyledProps<typeof Container>;
 
-/**
- * Items
- */
+type ContactComponent = React.FC<ContactProps> & {
+  Box: React.FC<StyledProps<typeof Box>>;
+  BoxContact: React.FC<StyledProps<typeof BoxContact>>;
 
-type ItemButtonProps = StyledProps<typeof ItemButton>;
-type ItemContactProps = StyledProps<typeof ItemContact>;
-type ItemContactIconProps = StyledProps<typeof ItemContactIcon>;
-type ContactDividerProps = StyledProps<typeof ContactDivider>;
+  TextEyebrow: React.FC<StyledProps<typeof TextEyebrow>>;
+  TextTitle: React.FC<StyledProps<typeof TextTitle>>;
+  Divider: React.FC<StyledProps<typeof Divider>>;
+  TextIntro: React.FC<StyledProps<typeof TextIntro>>;
 
-/**
- * Containers
- */
+  ContainerContactContent: React.FC<
+    StyledProps<typeof ContainerContactContent>
+  >;
+  ContainerContacts: React.FC<StyledProps<typeof ContainerContacts>>;
+  ContainerContactItem: React.FC<StyledProps<typeof ContainerContactItem>>;
+  ContainerContactText: React.FC<StyledProps<typeof ContainerContactText>>;
+  ContainerStatus: React.FC<StyledProps<typeof ContainerStatus>>;
+  ContainerStatusIndicator: React.FC<
+    StyledProps<typeof ContainerStatusIndicator>
+  >;
+  ContainerStatusText: React.FC<StyledProps<typeof ContainerStatusText>>;
 
-type ContainerInfoProps = StyledProps<typeof ContainerInfo>;
-type ContainerIntroProps = StyledProps<typeof ContainerIntro>;
-type ContainerContactContentProps = StyledProps<typeof ContainerContactContent>;
-type ContainerDescriptionProps = StyledProps<typeof ContainerDescription>;
-type ContainerContactsProps = StyledProps<typeof ContainerContacts>;
-type ContainerContactItemProps = StyledProps<typeof ContainerContactItem>;
-type ContainerContactTextProps = StyledProps<typeof ContainerContactText>;
-type ContainerStatusProps = StyledProps<typeof ContainerStatus>;
-type ContainerStatusIndicatorProps = StyledProps<
-  typeof ContainerStatusIndicator
->;
-type ContainerStatusTextProps = StyledProps<typeof ContainerStatusText>;
+  ItemButton: React.FC<StyledProps<typeof ItemButton>>;
+  ItemContact: React.FC<StyledProps<typeof ItemContact>>;
+  ItemContactIcon: React.FC<StyledProps<typeof ItemContactIcon>>;
+  ContactDivider: React.FC<StyledProps<typeof ContactDivider>>;
 
-/**
- * Boxes
- */
+  TextContactLabel: React.FC<StyledProps<typeof TextContactLabel>>;
+  TextStatusTitle: React.FC<StyledProps<typeof TextStatusTitle>>;
+  TextStatus: React.FC<StyledProps<typeof TextStatus>>;
+  TextCopyright: React.FC<StyledProps<typeof TextCopyright>>;
+};
 
-type BoxProps = StyledProps<typeof Box>;
-type BoxContactProps = StyledProps<typeof BoxContact>;
-
-/**
- * Texts
- */
-
-type TextLabelProps = StyledProps<typeof TextLabel>;
-type TextTitleProps = StyledProps<typeof TextTitle>;
-type DividerProps = StyledProps<typeof Divider>;
-type TextIntroProps = StyledProps<typeof TextIntro>;
-type TextContactLabelProps = StyledProps<typeof TextContactLabel>;
-type TextStatusTitleProps = StyledProps<typeof TextStatusTitle>;
-type TextStatusProps = StyledProps<typeof TextStatus>;
-type TextCopyrightProps = StyledProps<typeof TextCopyright>;
-
-export default function Contact({ children, ...restProps }: ContactProps) {
+const Contact = function Contact({ children, ...restProps }: ContactProps) {
   return <Container {...restProps}>{children}</Container>;
-}
+} as ContactComponent;
 
 /**
- * Items
+ * Layout
  */
 
-Contact.ItemButton = function Component({
-  children,
-  ...restProps
-}: ItemButtonProps) {
-  return <ItemButton {...restProps}>{children}</ItemButton>;
+Contact.Box = ({ children, ...restProps }) => {
+  return <Box {...restProps}>{children}</Box>;
 };
 
-Contact.ItemContact = function Component({
-  children,
-  ...restProps
-}: ItemContactProps) {
-  return <ItemContact {...restProps}>{children}</ItemContact>;
-};
-
-Contact.ItemContactIcon = function Component({
-  children,
-  ...restProps
-}: ItemContactIconProps) {
-  return <ItemContactIcon {...restProps}>{children}</ItemContactIcon>;
-};
-
-Contact.ContactDivider = function Component({
-  ...restProps
-}: ContactDividerProps) {
-  return <ContactDivider {...restProps} />;
+Contact.BoxContact = ({ children, ...restProps }) => {
+  return <BoxContact {...restProps}>{children}</BoxContact>;
 };
 
 /**
- * Containers
+ * Header
  */
 
-Contact.ContainerInfo = function Component({
-  children,
-  ...restProps
-}: ContainerInfoProps) {
-  return <ContainerInfo {...restProps}>{children}</ContainerInfo>;
+Contact.TextEyebrow = ({ children, ...restProps }) => {
+  return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
 };
 
-Contact.ContainerIntro = function Component({
-  children,
-  ...restProps
-}: ContainerIntroProps) {
-  return <ContainerIntro {...restProps}>{children}</ContainerIntro>;
+Contact.TextTitle = ({ children, ...restProps }) => {
+  return <TextTitle {...restProps}>{children}</TextTitle>;
 };
 
-Contact.ContainerContactContent = function Component({
-  children,
-  ...restProps
-}: ContainerContactContentProps) {
+Contact.Divider = ({ children, ...restProps }) => {
+  return <Divider {...restProps} />;
+};
+
+Contact.TextIntro = ({ children, ...restProps }) => {
+  return <TextIntro {...restProps}>{children}</TextIntro>;
+};
+
+/**
+ * Contact details
+ */
+
+Contact.ContainerContactContent = ({ children, ...restProps }) => {
   return (
     <ContainerContactContent {...restProps}>{children}</ContainerContactContent>
   );
 };
 
-Contact.ContainerDescription = function Component({
-  children,
-  ...restProps
-}: ContainerDescriptionProps) {
-  return <ContainerDescription {...restProps}>{children}</ContainerDescription>;
-};
-
-Contact.ContainerContacts = function Component({
-  children,
-  ...restProps
-}: ContainerContactsProps) {
+Contact.ContainerContacts = ({ children, ...restProps }) => {
   return <ContainerContacts {...restProps}>{children}</ContainerContacts>;
 };
 
-Contact.ContainerContactItem = function Component({
-  children,
-  ...restProps
-}: ContainerContactItemProps) {
+Contact.ContainerContactItem = ({ children, ...restProps }) => {
   return <ContainerContactItem {...restProps}>{children}</ContainerContactItem>;
 };
 
-Contact.ContainerContactText = function Component({
-  children,
-  ...restProps
-}: ContainerContactTextProps) {
+Contact.ContainerContactText = ({ children, ...restProps }) => {
   return <ContainerContactText {...restProps}>{children}</ContainerContactText>;
 };
 
-Contact.ContainerStatus = function Component({
-  children,
-  ...restProps
-}: ContainerStatusProps) {
+Contact.ContainerStatus = ({ children, ...restProps }) => {
   return <ContainerStatus {...restProps}>{children}</ContainerStatus>;
 };
 
-Contact.ContainerStatusIndicator = function Component({
-  ...restProps
-}: ContainerStatusIndicatorProps) {
+Contact.ContainerStatusIndicator = ({ children, ...restProps }) => {
   return <ContainerStatusIndicator {...restProps} />;
 };
 
-Contact.ContainerStatusText = function Component({
-  children,
-  ...restProps
-}: ContainerStatusTextProps) {
+Contact.ContainerStatusText = ({ children, ...restProps }) => {
   return <ContainerStatusText {...restProps}>{children}</ContainerStatusText>;
 };
 
-/**
- * Boxes
- */
-
-Contact.Box = function Component({ children, ...restProps }: BoxProps) {
-  return <Box {...restProps}>{children}</Box>;
+Contact.ItemButton = ({ children, ...restProps }) => {
+  return <ItemButton {...restProps}>{children}</ItemButton>;
 };
 
-Contact.BoxContact = function Component({
-  children,
-  ...restProps
-}: BoxContactProps) {
-  return <BoxContact {...restProps}>{children}</BoxContact>;
+Contact.ItemContact = ({ children, ...restProps }) => {
+  return <ItemContact {...restProps}>{children}</ItemContact>;
 };
 
-/**
- * Texts
- */
-
-Contact.TextLabel = function Component({
-  children,
-  ...restProps
-}: TextLabelProps) {
-  return <TextLabel {...restProps}>{children}</TextLabel>;
+Contact.ItemContactIcon = ({ children, ...restProps }) => {
+  return <ItemContactIcon {...restProps}>{children}</ItemContactIcon>;
 };
 
-Contact.TextTitle = function Component({
-  children,
-  ...restProps
-}: TextTitleProps) {
-  return <TextTitle {...restProps}>{children}</TextTitle>;
+Contact.ContactDivider = ({ children, ...restProps }) => {
+  return <ContactDivider {...restProps} />;
 };
 
-Contact.Divider = function Component({ ...restProps }: DividerProps) {
-  return <Divider {...restProps} />;
-};
-
-Contact.TextIntro = function Component({
-  children,
-  ...restProps
-}: TextIntroProps) {
-  return <TextIntro {...restProps}>{children}</TextIntro>;
-};
-
-Contact.TextContactLabel = function Component({
-  children,
-  ...restProps
-}: TextContactLabelProps) {
+Contact.TextContactLabel = ({ children, ...restProps }) => {
   return <TextContactLabel {...restProps}>{children}</TextContactLabel>;
 };
 
-Contact.TextStatusTitle = function Component({
-  children,
-  ...restProps
-}: TextStatusTitleProps) {
+Contact.TextStatusTitle = ({ children, ...restProps }) => {
   return <TextStatusTitle {...restProps}>{children}</TextStatusTitle>;
 };
 
-Contact.TextStatus = function Component({
-  children,
-  ...restProps
-}: TextStatusProps) {
+Contact.TextStatus = ({ children, ...restProps }) => {
   return <TextStatus {...restProps}>{children}</TextStatus>;
 };
 
-Contact.TextCopyright = function Component({
-  children,
-  ...restProps
-}: TextCopyrightProps) {
+Contact.TextCopyright = ({ children, ...restProps }) => {
   return <TextCopyright {...restProps}>{children}</TextCopyright>;
 };
+
+export default Contact;

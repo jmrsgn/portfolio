@@ -21,12 +21,11 @@ import {
   ProjectNumber,
   ProjectStatus,
   TextDescription,
-  TextEyebrow,
   TextIntro,
   TextProjectTitle,
-  TextTag,
   TextTitle,
 } from "./styles/projects";
+import { TextEyebrow } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
@@ -69,8 +68,6 @@ type ProjectsComponent = React.FC<ProjectsProps> & {
 
   ItemTag: React.FC<StyledProps<typeof ItemTag>>;
 
-  TextTag: React.FC<StyledProps<typeof TextTag>>;
-
   GithubCta: React.FC<StyledProps<typeof GithubCta>>;
 
   GithubCtaContent: React.FC<StyledProps<typeof GithubCtaContent>>;
@@ -90,10 +87,7 @@ const Projects = function Projects({ children, ...restProps }: ProjectsProps) {
  * Layout
  */
 
-Projects.Box = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Box>) {
+Projects.Box = ({ children, ...restProps }) => {
   return <Box {...restProps}>{children}</Box>;
 };
 
@@ -101,31 +95,19 @@ Projects.Box = function Component({
  * Header
  */
 
-Projects.TextEyebrow = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextEyebrow>) {
+Projects.TextEyebrow = ({ children, ...restProps }) => {
   return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
 };
 
-Projects.TextTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextTitle>) {
+Projects.TextTitle = ({ children, ...restProps }) => {
   return <TextTitle {...restProps}>{children}</TextTitle>;
 };
 
-Projects.TextIntro = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextIntro>) {
+Projects.TextIntro = ({ children, ...restProps }) => {
   return <TextIntro {...restProps}>{children}</TextIntro>;
 };
 
-Projects.Divider = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Divider>) {
+Projects.Divider = ({ children, ...restProps }) => {
   return <Divider {...restProps}>{children}</Divider>;
 };
 
@@ -133,17 +115,11 @@ Projects.Divider = function Component({
  * Filters
  */
 
-Projects.ContainerFilters = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerFilters>) {
+Projects.ContainerFilters = ({ children, ...restProps }) => {
   return <ContainerFilters {...restProps}>{children}</ContainerFilters>;
 };
 
-Projects.FilterButton = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof FilterButton>) {
+Projects.FilterButton = ({ children, ...restProps }) => {
   return <FilterButton {...restProps}>{children}</FilterButton>;
 };
 
@@ -151,52 +127,31 @@ Projects.FilterButton = function Component({
  * Projects
  */
 
-Projects.ContainerProjects = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerProjects>) {
+Projects.ContainerProjects = ({ children, ...restProps }) => {
   return <ContainerProjects {...restProps}>{children}</ContainerProjects>;
 };
 
-Projects.ItemProject = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ItemProject>) {
+Projects.ItemProject = ({ children, ...restProps }) => {
   return <ItemProject {...restProps}>{children}</ItemProject>;
 };
 
-Projects.ProjectHeader = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ProjectHeader>) {
+Projects.ProjectHeader = ({ children, ...restProps }) => {
   return <ProjectHeader {...restProps}>{children}</ProjectHeader>;
 };
 
-Projects.ProjectHeaderRight = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ProjectHeaderRight>) {
+Projects.ProjectHeaderRight = ({ children, ...restProps }) => {
   return <ProjectHeaderRight {...restProps}>{children}</ProjectHeaderRight>;
 };
 
-Projects.ProjectNumber = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ProjectNumber>) {
+Projects.ProjectNumber = ({ children, ...restProps }) => {
   return <ProjectNumber {...restProps}>{children}</ProjectNumber>;
 };
 
-Projects.ProjectStatus = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ProjectStatus>) {
+Projects.ProjectStatus = ({ children, ...restProps }) => {
   return <ProjectStatus {...restProps}>{children}</ProjectStatus>;
 };
 
-Projects.ProjectGithub = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ProjectGithub>) {
+Projects.ProjectGithub = ({ children, ...restProps }) => {
   return <ProjectGithub {...restProps}>{children}</ProjectGithub>;
 };
 
@@ -204,17 +159,11 @@ Projects.ProjectGithub = function Component({
  * Project content
  */
 
-Projects.TextProjectTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextProjectTitle>) {
+Projects.TextProjectTitle = ({ children, ...restProps }) => {
   return <TextProjectTitle {...restProps}>{children}</TextProjectTitle>;
 };
 
-Projects.TextDescription = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextDescription>) {
+Projects.TextDescription = ({ children, ...restProps }) => {
   return <TextDescription {...restProps}>{children}</TextDescription>;
 };
 
@@ -222,63 +171,35 @@ Projects.TextDescription = function Component({
  * Tags
  */
 
-Projects.ContainerTags = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerTags>) {
+Projects.ContainerTags = ({ children, ...restProps }) => {
   return <ContainerTags {...restProps}>{children}</ContainerTags>;
 };
 
-Projects.ItemTag = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ItemTag>) {
+Projects.ItemTag = ({ children, ...restProps }) => {
   return <ItemTag {...restProps}>{children}</ItemTag>;
-};
-
-Projects.TextTag = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextTag>) {
-  return <TextTag {...restProps}>{children}</TextTag>;
 };
 
 /**
  * GitHub CTA
  */
 
-Projects.GithubCta = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof GithubCta>) {
+Projects.GithubCta = ({ children, ...restProps }) => {
   return <GithubCta {...restProps}>{children}</GithubCta>;
 };
 
-Projects.GithubCtaContent = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof GithubCtaContent>) {
+Projects.GithubCtaContent = ({ children, ...restProps }) => {
   return <GithubCtaContent {...restProps}>{children}</GithubCtaContent>;
 };
 
-Projects.GithubCtaTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof GithubCtaTitle>) {
+Projects.GithubCtaTitle = ({ children, ...restProps }) => {
   return <GithubCtaTitle {...restProps}>{children}</GithubCtaTitle>;
 };
 
-Projects.GithubCtaDescription = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof GithubCtaDescription>) {
+Projects.GithubCtaDescription = ({ children, ...restProps }) => {
   return <GithubCtaDescription {...restProps}>{children}</GithubCtaDescription>;
 };
 
-Projects.GithubCtaButton = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof GithubCtaButton>) {
+Projects.GithubCtaButton = ({ children, ...restProps }) => {
   return <GithubCtaButton {...restProps}>{children}</GithubCtaButton>;
 };
 

@@ -48,20 +48,6 @@ export const Box = styled.div`
  * Header
  */
 
-export const TextEyebrow = styled.span`
-  display: block;
-
-  margin-bottom: 1rem;
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.08em;
-`;
-
 export const TextTitle = styled.h2`
   margin: 0;
 
@@ -346,9 +332,7 @@ export const ItemTag = styled.span`
   border-radius: 4px;
 
   background: rgba(37, 99, 235, 0.06);
-`;
 
-export const TextTag = styled.span`
   font-family: ${FONTS.sfMonoRegular};
 
   color: ${COLORS.PRIMARY_LIGHT};

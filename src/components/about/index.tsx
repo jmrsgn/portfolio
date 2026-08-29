@@ -12,7 +12,6 @@ import {
   ProfileItem,
   ProfileLabel,
   ProfileValue,
-  SectionEyebrow,
   SectionHeader,
   TechCardHeader,
   TechNumber,
@@ -22,12 +21,13 @@ import {
   TechStackItem,
   TechTag,
   TextDescription,
-  TextEyebrow,
+  TextIntro,
   TextHighlight,
   TextTitle,
   TextTitleOther,
   BoxProfile,
 } from "./styles/about";
+import { TextEyebrow } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
@@ -39,6 +39,7 @@ type AboutComponent = React.FC<AboutProps> & {
 
   TextEyebrow: React.FC<StyledProps<typeof TextEyebrow>>;
   TextTitle: React.FC<StyledProps<typeof TextTitle>>;
+  TextIntro: React.FC<StyledProps<typeof TextIntro>>;
   TextDescription: React.FC<StyledProps<typeof TextDescription>>;
   TextHighlight: React.FC<StyledProps<typeof TextHighlight>>;
   Divider: React.FC<StyledProps<typeof Divider>>;
@@ -51,7 +52,7 @@ type AboutComponent = React.FC<AboutProps> & {
   ProfileValue: React.FC<StyledProps<typeof ProfileValue>>;
 
   SectionHeader: React.FC<StyledProps<typeof SectionHeader>>;
-  SectionEyebrow: React.FC<StyledProps<typeof SectionEyebrow>>;
+  SectionEyebrow: React.FC<StyledProps<typeof TextEyebrow>>;
 
   ContainerTech: React.FC<StyledProps<typeof ContainerTech>>;
   ContainerTechInfo: React.FC<StyledProps<typeof ContainerTechInfo>>;
@@ -93,6 +94,10 @@ About.TextEyebrow = ({ children, ...restProps }) => (
 
 About.TextTitle = ({ children, ...restProps }) => (
   <TextTitle {...restProps}>{children}</TextTitle>
+);
+
+About.TextIntro = ({ children, ...restProps }) => (
+  <TextIntro {...restProps}>{children}</TextIntro>
 );
 
 About.TextDescription = ({ children, ...restProps }) => (
@@ -141,10 +146,6 @@ About.ProfileValue = ({ children, ...restProps }) => (
 
 About.SectionHeader = ({ children, ...restProps }) => (
   <SectionHeader {...restProps}>{children}</SectionHeader>
-);
-
-About.SectionEyebrow = ({ children, ...restProps }) => (
-  <SectionEyebrow {...restProps}>{children}</SectionEyebrow>
 );
 
 /**

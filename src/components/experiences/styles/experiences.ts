@@ -48,20 +48,6 @@ export const Box = styled.div`
  * Header
  */
 
-export const TextEyebrow = styled.span`
-  display: block;
-
-  margin-bottom: 1rem;
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.08em;
-`;
-
 export const TextTitle = styled.h2`
   margin: 0;
 
@@ -128,12 +114,10 @@ export const ContainerInfo = styled.div`
  * Experience Timeline
  */
 
-export const BoxExperiences = styled.div`
-  min-width: 0;
-`;
-
 export const ContainerTimeline = styled.div`
   position: relative;
+
+  min-width: 0;
 
   display: flex;
 
@@ -236,16 +220,6 @@ export const ExperienceContent = styled.div`
   @media ${VIEWPORT.tabletUp} {
     padding-left: 1.5rem;
   }
-`;
-
-export const ExperienceHeader = styled.div`
-  display: flex;
-
-  align-items: flex-start;
-
-  justify-content: space-between;
-
-  gap: 1rem;
 `;
 
 export const TextPosition = styled.h3`

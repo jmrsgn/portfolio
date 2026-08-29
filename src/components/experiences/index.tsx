@@ -3,19 +3,16 @@ import React from "react";
 import {
   Container,
   Box,
-  TextEyebrow,
   TextTitle,
   Divider,
   TextIntro,
   ContainerInfo,
-  BoxExperiences,
   ContainerTimeline,
   ExperienceItem,
   TimelineDate,
   TimelineMarker,
   TimelineDot,
   ExperienceContent,
-  ExperienceHeader,
   TextPosition,
   TextCompany,
   CurrentBadge,
@@ -33,6 +30,7 @@ import {
   TextCertificateYear,
   CertificateLink,
 } from "./styles/experiences";
+import { TextEyebrow } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
@@ -51,8 +49,6 @@ type ExperiencesComponent = React.FC<ExperiencesProps> & {
 
   ContainerInfo: React.FC<StyledProps<typeof ContainerInfo>>;
 
-  BoxExperiences: React.FC<StyledProps<typeof BoxExperiences>>;
-
   ContainerTimeline: React.FC<StyledProps<typeof ContainerTimeline>>;
 
   ExperienceItem: React.FC<StyledProps<typeof ExperienceItem>>;
@@ -64,8 +60,6 @@ type ExperiencesComponent = React.FC<ExperiencesProps> & {
   TimelineDot: React.FC<StyledProps<typeof TimelineDot>>;
 
   ExperienceContent: React.FC<StyledProps<typeof ExperienceContent>>;
-
-  ExperienceHeader: React.FC<StyledProps<typeof ExperienceHeader>>;
 
   TextPosition: React.FC<StyledProps<typeof TextPosition>>;
 
@@ -115,10 +109,7 @@ const Experiences = function Experiences({
  * Layout
  */
 
-Experiences.Box = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Box>) {
+Experiences.Box = ({ children, ...restProps }) => {
   return <Box {...restProps}>{children}</Box>;
 };
 
@@ -126,31 +117,19 @@ Experiences.Box = function Component({
  * Header
  */
 
-Experiences.TextEyebrow = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextEyebrow>) {
+Experiences.TextEyebrow = ({ children, ...restProps }) => {
   return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
 };
 
-Experiences.TextTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextTitle>) {
+Experiences.TextTitle = ({ children, ...restProps }) => {
   return <TextTitle {...restProps}>{children}</TextTitle>;
 };
 
-Experiences.Divider = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Divider>) {
+Experiences.Divider = ({ children, ...restProps }) => {
   return <Divider {...restProps}>{children}</Divider>;
 };
 
-Experiences.TextIntro = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextIntro>) {
+Experiences.TextIntro = ({ children, ...restProps }) => {
   return <TextIntro {...restProps}>{children}</TextIntro>;
 };
 
@@ -158,110 +137,57 @@ Experiences.TextIntro = function Component({
  * Experience
  */
 
-Experiences.ContainerInfo = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerInfo>) {
+Experiences.ContainerInfo = ({ children, ...restProps }) => {
   return <ContainerInfo {...restProps}>{children}</ContainerInfo>;
 };
 
-Experiences.BoxExperiences = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof BoxExperiences>) {
-  return <BoxExperiences {...restProps}>{children}</BoxExperiences>;
-};
-
-Experiences.ContainerTimeline = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerTimeline>) {
+Experiences.ContainerTimeline = ({ children, ...restProps }) => {
   return <ContainerTimeline {...restProps}>{children}</ContainerTimeline>;
 };
 
-Experiences.ExperienceItem = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ExperienceItem>) {
+Experiences.ExperienceItem = ({ children, ...restProps }) => {
   return <ExperienceItem {...restProps}>{children}</ExperienceItem>;
 };
 
-Experiences.TimelineDate = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TimelineDate>) {
+Experiences.TimelineDate = ({ children, ...restProps }) => {
   return <TimelineDate {...restProps}>{children}</TimelineDate>;
 };
 
-Experiences.TimelineMarker = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TimelineMarker>) {
+Experiences.TimelineMarker = ({ children, ...restProps }) => {
   return <TimelineMarker {...restProps}>{children}</TimelineMarker>;
 };
 
-Experiences.TimelineDot = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TimelineDot>) {
+Experiences.TimelineDot = ({ children, ...restProps }) => {
   return <TimelineDot {...restProps}>{children}</TimelineDot>;
 };
 
-Experiences.ExperienceContent = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ExperienceContent>) {
+Experiences.ExperienceContent = ({ children, ...restProps }) => {
   return <ExperienceContent {...restProps}>{children}</ExperienceContent>;
 };
 
-Experiences.ExperienceHeader = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ExperienceHeader>) {
-  return <ExperienceHeader {...restProps}>{children}</ExperienceHeader>;
-};
-
-Experiences.TextPosition = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextPosition>) {
+Experiences.TextPosition = ({ children, ...restProps }) => {
   return <TextPosition {...restProps}>{children}</TextPosition>;
 };
 
-Experiences.TextCompany = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextCompany>) {
+Experiences.TextCompany = ({ children, ...restProps }) => {
   return <TextCompany {...restProps}>{children}</TextCompany>;
 };
 
-Experiences.CurrentBadge = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CurrentBadge>) {
+Experiences.CurrentBadge = ({ children, ...restProps }) => {
   return <CurrentBadge {...restProps}>{children}</CurrentBadge>;
 };
 
-Experiences.CurrentDot = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CurrentDot>) {
+Experiences.CurrentDot = ({ children, ...restProps }) => {
   return <CurrentDot {...restProps}>{children}</CurrentDot>;
 };
 
-Experiences.ContainerExperienceText = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerExperienceText>) {
+Experiences.ContainerExperienceText = ({ children, ...restProps }) => {
   return (
     <ContainerExperienceText {...restProps}>{children}</ContainerExperienceText>
   );
 };
 
-Experiences.TextDescription = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextDescription>) {
+Experiences.TextDescription = ({ children, ...restProps }) => {
   return <TextDescription {...restProps}>{children}</TextDescription>;
 };
 
@@ -269,54 +195,33 @@ Experiences.TextDescription = function Component({
  * Certificates
  */
 
-Experiences.BoxCertificates = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof BoxCertificates>) {
+Experiences.BoxCertificates = ({ children, ...restProps }) => {
   return <BoxCertificates {...restProps}>{children}</BoxCertificates>;
 };
 
-Experiences.TextSubTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextSubTitle>) {
+Experiences.TextSubTitle = ({ children, ...restProps }) => {
   return <TextSubTitle {...restProps}>{children}</TextSubTitle>;
 };
 
-Experiences.CertificateDivider = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CertificateDivider>) {
+Experiences.CertificateDivider = ({ children, ...restProps }) => {
   return <CertificateDivider {...restProps}>{children}</CertificateDivider>;
 };
 
-Experiences.ContainerCertificates = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerCertificates>) {
+Experiences.ContainerCertificates = ({ children, ...restProps }) => {
   return (
     <ContainerCertificates {...restProps}>{children}</ContainerCertificates>
   );
 };
 
-Experiences.ContainerCertificate = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerCertificate>) {
+Experiences.ContainerCertificate = ({ children, ...restProps }) => {
   return <ContainerCertificate {...restProps}>{children}</ContainerCertificate>;
 };
 
-Experiences.ItemBadge = function Component({
-  src,
-  ...restProps
-}: StyledProps<typeof ItemBadge>) {
+Experiences.ItemBadge = ({ src, ...restProps }) => {
   return <ItemBadge src={src} {...restProps} />;
 };
 
-Experiences.ContainerCertificateInfo = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerCertificateInfo>) {
+Experiences.ContainerCertificateInfo = ({ children, ...restProps }) => {
   return (
     <ContainerCertificateInfo {...restProps}>
       {children}
@@ -324,24 +229,15 @@ Experiences.ContainerCertificateInfo = function Component({
   );
 };
 
-Experiences.TextCertificateTitle = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextCertificateTitle>) {
+Experiences.TextCertificateTitle = ({ children, ...restProps }) => {
   return <TextCertificateTitle {...restProps}>{children}</TextCertificateTitle>;
 };
 
-Experiences.TextCertificateYear = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextCertificateYear>) {
+Experiences.TextCertificateYear = ({ children, ...restProps }) => {
   return <TextCertificateYear {...restProps}>{children}</TextCertificateYear>;
 };
 
-Experiences.CertificateLink = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CertificateLink>) {
+Experiences.CertificateLink = ({ children, ...restProps }) => {
   return <CertificateLink {...restProps}>{children}</CertificateLink>;
 };
 

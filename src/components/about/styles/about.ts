@@ -44,24 +44,6 @@ export const Box = styled.div`
   }
 `;
 
-/**
- * Header
- */
-
-export const TextEyebrow = styled.span`
-  display: block;
-
-  margin-bottom: 1rem;
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.08em;
-`;
-
 export const TextTitle = styled.h2`
   margin: 0;
 
@@ -121,9 +103,20 @@ export const ContainerAboutMeText = styled.div`
   max-width: 680px;
 `;
 
-export const TextDescription = styled.p`
+export const TextIntro = styled.p`
   margin: 0;
-  margin-top: 0.5rem;
+
+  font-family: ${FONTS.calibreRegular};
+
+  color: ${COLORS.TEXT_SECONDARY};
+
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+
+  line-height: 1.45;
+`;
+
+export const TextDescription = styled.p`
+  margin: 0.5rem 0 0;
 
   font-family: ${FONTS.calibreRegular};
 
@@ -212,16 +205,6 @@ export const SectionHeader = styled.div`
   @media ${VIEWPORT.desktopUp} {
     margin-top: 8rem;
   }
-`;
-
-export const SectionEyebrow = styled.span`
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.75rem;
-
-  letter-spacing: 0.08em;
 `;
 
 /**

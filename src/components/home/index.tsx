@@ -31,10 +31,10 @@ import {
   TaglineStatus,
   TextDescription,
   TextGreeting,
-  TextTech,
   WindowDot,
   CodeWindowControls,
 } from "./styles/home";
+import { TextEyebrow } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
@@ -48,7 +48,7 @@ type HomeComponent = React.FC<HomeProps> & {
   ContainerActions: React.FC<StyledProps<typeof ContainerActions>>;
   ContainerSocials: React.FC<StyledProps<typeof ContainerSocials>>;
 
-  TextTech: React.FC<StyledProps<typeof TextTech>>;
+  TextEyebrow: React.FC<StyledProps<typeof TextEyebrow>>;
   TextGreeting: React.FC<StyledProps<typeof TextGreeting>>;
   TextDescription: React.FC<StyledProps<typeof TextDescription>>;
 
@@ -89,38 +89,23 @@ const Home = function Home({ children, ...restProps }: HomeProps) {
  * Layout
  */
 
-Home.Box = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Box>) {
+Home.Box = ({ children, ...restProps }) => {
   return <Box {...restProps}>{children}</Box>;
 };
 
-Home.BoxInfo = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof BoxInfo>) {
+Home.BoxInfo = ({ children, ...restProps }) => {
   return <BoxInfo {...restProps}>{children}</BoxInfo>;
 };
 
-Home.ContainerGreetings = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerGreetings>) {
+Home.ContainerGreetings = ({ children, ...restProps }) => {
   return <ContainerGreetings {...restProps}>{children}</ContainerGreetings>;
 };
 
-Home.ContainerActions = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerActions>) {
+Home.ContainerActions = ({ children, ...restProps }) => {
   return <ContainerActions {...restProps}>{children}</ContainerActions>;
 };
 
-Home.ContainerSocials = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ContainerSocials>) {
+Home.ContainerSocials = ({ children, ...restProps }) => {
   return <ContainerSocials {...restProps}>{children}</ContainerSocials>;
 };
 
@@ -128,24 +113,15 @@ Home.ContainerSocials = function Component({
  * Text
  */
 
-Home.TextTech = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextTech>) {
-  return <TextTech {...restProps}>{children}</TextTech>;
+Home.TextEyebrow = ({ children, ...restProps }) => {
+  return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
 };
 
-Home.TextGreeting = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextGreeting>) {
+Home.TextGreeting = ({ children, ...restProps }) => {
   return <TextGreeting {...restProps}>{children}</TextGreeting>;
 };
 
-Home.TextDescription = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TextDescription>) {
+Home.TextDescription = ({ children, ...restProps }) => {
   return <TextDescription {...restProps}>{children}</TextDescription>;
 };
 
@@ -153,24 +129,15 @@ Home.TextDescription = function Component({
  * Buttons
  */
 
-Home.ButtonResume = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ButtonResume>) {
+Home.ButtonResume = ({ children, ...restProps }) => {
   return <ButtonResume {...restProps}>{children}</ButtonResume>;
 };
 
-Home.ButtonAbout = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ButtonAbout>) {
+Home.ButtonAbout = ({ children, ...restProps }) => {
   return <ButtonAbout {...restProps}>{children}</ButtonAbout>;
 };
 
-Home.ButtonArrow = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof ButtonArrow>) {
+Home.ButtonArrow = ({ children, ...restProps }) => {
   return <ButtonArrow {...restProps}>{children}</ButtonArrow>;
 };
 
@@ -178,10 +145,7 @@ Home.ButtonArrow = function Component({
  * Social
  */
 
-Home.SocialLink = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof SocialLink>) {
+Home.SocialLink = ({ children, ...restProps }) => {
   return <SocialLink {...restProps}>{children}</SocialLink>;
 };
 
@@ -189,120 +153,71 @@ Home.SocialLink = function Component({
  * Code panel
  */
 
-Home.CodePanel = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodePanel>) {
+Home.CodePanel = ({ children, ...restProps }) => {
   return <CodePanel {...restProps}>{children}</CodePanel>;
 };
 
-Home.CodeHeader = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeHeader>) {
+Home.CodeHeader = ({ children, ...restProps }) => {
   return <CodeHeader {...restProps}>{children}</CodeHeader>;
 };
 
-Home.CodeWindowControls = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeWindowControls>) {
+Home.CodeWindowControls = ({ children, ...restProps }) => {
   return <CodeWindowControls {...restProps}>{children}</CodeWindowControls>;
 };
 
-Home.WindowDot = function Component({
-  ...restProps
-}: StyledProps<typeof WindowDot>) {
+Home.WindowDot = ({ children, ...restProps }) => {
   return <WindowDot {...restProps} />;
 };
 
-Home.CodeFileName = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeFileName>) {
+Home.CodeFileName = ({ children, ...restProps }) => {
   return <CodeFileName {...restProps}>{children}</CodeFileName>;
 };
 
-Home.CodeLanguage = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeLanguage>) {
+Home.CodeLanguage = ({ children, ...restProps }) => {
   return <CodeLanguage {...restProps}>{children}</CodeLanguage>;
 };
 
-Home.CodeContent = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeContent>) {
+Home.CodeContent = ({ children, ...restProps }) => {
   return <CodeContent {...restProps}>{children}</CodeContent>;
 };
 
-Home.CodeLine = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeLine>) {
+Home.CodeLine = ({ children, ...restProps }) => {
   return <CodeLine {...restProps}>{children}</CodeLine>;
 };
 
-Home.LineNumber = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof LineNumber>) {
+Home.LineNumber = ({ children, ...restProps }) => {
   return <LineNumber {...restProps}>{children}</LineNumber>;
 };
 
-Home.CodeIndent = function Component({
-  ...restProps
-}: StyledProps<typeof CodeIndent>) {
+Home.CodeIndent = ({ children, ...restProps }) => {
   return <CodeIndent {...restProps} />;
 };
 
-Home.CodeKeyword = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeKeyword>) {
+Home.CodeKeyword = ({ children, ...restProps }) => {
   return <CodeKeyword {...restProps}>{children}</CodeKeyword>;
 };
 
-Home.CodeVariable = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeVariable>) {
+Home.CodeVariable = ({ children, ...restProps }) => {
   return <CodeVariable {...restProps}>{children}</CodeVariable>;
 };
 
-Home.CodeOperator = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeOperator>) {
+Home.CodeOperator = ({ children, ...restProps }) => {
   return <CodeOperator {...restProps}>{children}</CodeOperator>;
 };
 
-Home.CodeComment = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeComment>) {
+Home.CodeComment = ({ children, ...restProps }) => {
   return <CodeComment {...restProps}>{children}</CodeComment>;
 };
 
-Home.CodeString = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeString>) {
+Home.CodeString = ({ children, ...restProps }) => {
   return <CodeString {...restProps}>{children}</CodeString>;
 };
 
-Home.CodeFooter = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodeFooter>) {
+Home.CodeFooter = ({ children, ...restProps }) => {
   return <CodeFooter {...restProps}>{children}</CodeFooter>;
 };
 
-Home.CodePrompt = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof CodePrompt>) {
+Home.CodePrompt = ({ children, ...restProps }) => {
   return <CodePrompt {...restProps}>{children}</CodePrompt>;
 };
 
@@ -310,23 +225,15 @@ Home.CodePrompt = function Component({
  * Tagline
  */
 
-Home.Tagline = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof Tagline>) {
+Home.Tagline = ({ children, ...restProps }) => {
   return <Tagline {...restProps}>{children}</Tagline>;
 };
 
-Home.TaglineAccent = function Component({
-  ...restProps
-}: StyledProps<typeof TaglineAccent>) {
+Home.TaglineAccent = ({ children, ...restProps }) => {
   return <TaglineAccent {...restProps} />;
 };
 
-Home.TaglineStatus = function Component({
-  children,
-  ...restProps
-}: StyledProps<typeof TaglineStatus>) {
+Home.TaglineStatus = ({ children, ...restProps }) => {
   return <TaglineStatus {...restProps}>{children}</TaglineStatus>;
 };
 

@@ -55,8 +55,7 @@ export function ExperiencesContainer() {
           <Experiences.ContainerInfo>
             {/* Experience Timeline */}
 
-            <Experiences.BoxExperiences>
-              <Experiences.ContainerTimeline>
+            <Experiences.ContainerTimeline>
                 {experiences.map((experience) => (
                   <Experiences.ExperienceItem key={experience.id}>
                     <Experiences.TimelineDate>
@@ -68,24 +67,20 @@ export function ExperiencesContainer() {
                     </Experiences.TimelineMarker>
 
                     <Experiences.ExperienceContent>
-                      <Experiences.ExperienceHeader>
-                        <div>
-                          <Experiences.TextPosition>
-                            {experience.position}
-                            <Experiences.TextCompany>
-                              {" "}
-                              @ {experience.company}
-                            </Experiences.TextCompany>
-                          </Experiences.TextPosition>
+                      <Experiences.TextPosition>
+                        {experience.position}
+                        <Experiences.TextCompany>
+                          {" "}
+                          @ {experience.company}
+                        </Experiences.TextCompany>
+                      </Experiences.TextPosition>
 
-                          {experience.current && (
-                            <Experiences.CurrentBadge>
-                              <Experiences.CurrentDot />
-                              Current
-                            </Experiences.CurrentBadge>
-                          )}
-                        </div>
-                      </Experiences.ExperienceHeader>
+                      {experience.current && (
+                        <Experiences.CurrentBadge>
+                          <Experiences.CurrentDot />
+                          Current
+                        </Experiences.CurrentBadge>
+                      )}
 
                       <Experiences.ContainerExperienceText>
                         {experience.learnings.map((learning, index) => (
@@ -97,8 +92,7 @@ export function ExperiencesContainer() {
                     </Experiences.ExperienceContent>
                   </Experiences.ExperienceItem>
                 ))}
-              </Experiences.ContainerTimeline>
-            </Experiences.BoxExperiences>
+            </Experiences.ContainerTimeline>
 
             {/* Certificates */}
 
