@@ -6,7 +6,6 @@ import {
   ContainerFilters,
   ContainerProjects,
   ContainerTags,
-  Divider,
   FilterButton,
   GithubCta,
   GithubCtaButton,
@@ -21,10 +20,14 @@ import {
   ProjectNumber,
   ProjectStatus,
   TextDescription,
-  TextIntro,
   TextProjectTitle,
 } from "./styles/projects";
-import { TextEyebrow, TextTitle } from "../../globalComponents";
+import {
+  TextEyebrow,
+  TextTitle,
+  Divider,
+  TextIntro,
+} from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 

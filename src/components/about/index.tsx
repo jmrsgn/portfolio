@@ -7,7 +7,6 @@ import {
   ContainerTech,
   ContainerTechInfo,
   ContainerTechUsed,
-  Divider,
   ProfileCard,
   ProfileItem,
   ProfileLabel,
@@ -21,12 +20,16 @@ import {
   TechStackItem,
   TechTag,
   TextDescription,
-  TextIntro,
   TextHighlight,
   TextTitleOther,
   BoxProfile,
 } from "./styles/about";
-import { TextEyebrow, TextTitle } from "../../globalComponents";
+import {
+  TextEyebrow,
+  TextTitle,
+  Divider,
+  TextIntro,
+} from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 

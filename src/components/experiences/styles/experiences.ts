@@ -45,35 +45,6 @@ export const Box = styled.div`
 `;
 
 /**
- * Header
- */
-
-export const Divider = styled.div`
-  width: 52px;
-  height: 5px;
-
-  margin-top: 1.5rem;
-
-  border-radius: 2px;
-
-  background: ${COLORS.PRIMARY};
-`;
-
-export const TextIntro = styled.p`
-  max-width: 650px;
-
-  margin: 2rem 0 0;
-
-  font-family: ${FONTS.calibreRegular};
-
-  color: ${COLORS.TEXT_SECONDARY};
-
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
-
-  line-height: 1.45;
-`;
-
-/**
  * Main content
  */
 

@@ -279,34 +279,6 @@ export const BoxContact = styled.div`
  * Texts
  */
 
-export const Divider = styled.div`
-  width: 52px;
-  height: 5px;
-
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-
-  border-radius: 2px;
-
-  background: ${COLORS.PRIMARY};
-`;
-
-export const TextIntro = styled.p`
-  flex: 1;
-  min-width: 0;
-  max-width: 650px;
-
-  margin: 2rem 0 0;
-
-  color: ${COLORS.TEXT_SECONDARY};
-
-  font-family: ${FONTS.calibreRegular};
-
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
-
-  line-height: 1.45;
-`;
-
 export const TextContactLabel = styled.span`
   color: ${COLORS.TEXT_TERTIARY};
 

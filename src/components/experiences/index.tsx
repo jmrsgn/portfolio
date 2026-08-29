@@ -3,8 +3,6 @@ import React from "react";
 import {
   Container,
   Box,
-  Divider,
-  TextIntro,
   ContainerInfo,
   ContainerTimeline,
   ExperienceItem,
@@ -29,7 +27,12 @@ import {
   TextCertificateYear,
   CertificateLink,
 } from "./styles/experiences";
-import { TextEyebrow, TextTitle } from "../../globalComponents";
+import {
+  TextEyebrow,
+  TextTitle,
+  Divider,
+  TextIntro,
+} from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 

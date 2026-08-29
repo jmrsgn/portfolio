@@ -12,17 +12,20 @@ import {
   ContainerStatus,
   ContainerStatusIndicator,
   ContainerStatusText,
-  Divider,
   ItemButton,
   ItemContact,
   ItemContactIcon,
   TextContactLabel,
   TextCopyright,
-  TextIntro,
   TextStatus,
   TextStatusTitle,
 } from "./styles/contact";
-import { TextEyebrow, TextTitle } from "../../globalComponents";
+import {
+  TextEyebrow,
+  TextTitle,
+  Divider,
+  TextIntro,
+} from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 

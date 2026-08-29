@@ -235,30 +235,6 @@ export const _TextTitleOther = styled(TextMedium)`
 
 // -------------------------------------------
 
-export const Divider = styled.div<MarginProps>`
-  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "0")};
-  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0")};
-  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "0")};
-  width: 30px;
-  height: 7px;
-  border-radius: 50px;
-  background-color: ${COLORS.PRIMARY};
-
-  @media ${VIEWPORT.tabletUp} {
-    width: 50px;
-    height: 9px;
-  }
-`;
-
-export const MiniDivider = styled(Divider)`
-  height: 2px;
-  border-radius: 10px;
-  width: 50px;
-  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "0")};
-`;
-
-// -------------------------------------------
-
 export const _Container = styled.div`
   min-height: 100vh;
   background-color: ${COLORS.TEXT_PRIMARY};
@@ -572,6 +548,10 @@ export const _Button = styled(Link)`
 `;
 
 // V3
+/**
+ * Texts
+ */
+
 export const TextEyebrow = styled.div`
   margin-bottom: 1.5rem;
 
@@ -616,4 +596,32 @@ export const TextTitle = styled.h2`
 
     line-height: 0.85;
   }
+`;
+
+export const TextIntro = styled.p`
+  margin: 0;
+
+  font-family: ${FONTS.calibreRegular};
+
+  color: ${COLORS.TEXT_SECONDARY};
+
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+
+  line-height: 1.45;
+`;
+
+/**
+ * Dividers
+ */
+
+export const Divider = styled.div`
+  width: 52px;
+  height: 5px;
+
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+
+  border-radius: 2px;
+
+  background: ${COLORS.PRIMARY};
 `;

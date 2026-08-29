@@ -44,18 +44,6 @@ export const Box = styled.div`
   }
 `;
 
-export const Divider = styled.div`
-  width: 52px;
-  height: 5px;
-
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-
-  border-radius: 2px;
-
-  background: ${COLORS.PRIMARY};
-`;
-
 /**
  * Introduction
  */
@@ -86,18 +74,6 @@ export const ContainerAboutMeText = styled.div`
   gap: 1.5rem;
 
   max-width: 680px;
-`;
-
-export const TextIntro = styled.p`
-  margin: 0;
-
-  font-family: ${FONTS.calibreRegular};
-
-  color: ${COLORS.TEXT_SECONDARY};
-
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
-
-  line-height: 1.45;
 `;
 
 export const TextDescription = styled.p`
