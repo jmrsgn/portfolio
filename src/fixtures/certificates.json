@@ -1,15 +1,26 @@
 [
     {
         "id": 1,
-        "title": "CompTIA IT Fundamentals Certification",
+        "title": "CompTIA IT Fundamentals",
+        "issued_by": "CompTIA",
         "year": "2018",
-        "src": "../images/certificates/comptia.png"
+        "href": "",
+        "badge": "../images/badges/comptia.png"
     },
-
     {
         "id": 2,
+        "title": "MTA: Introduction to Programming using Java",
+        "issued_by": "Microsoft",
+        "year": "2019",
+        "href": "https://www.credly.com/badges/cfb7e342-8195-4c5f-aa42-9c01b3a0b422/public_url",
+        "badge": "../images/badges/mta.png"
+    },
+    {
+        "id": 3,
         "title": "AWS Academy Graduate",
+        "issued_by": "Amazon Web Services (AWS)",
         "year": "2022",
-        "src": "../images/certificates/aws.png"
+        "href": "https://www.credly.com/badges/8ef9350f-1934-4907-b22b-c3cf8630ffcb/public_url",
+        "badge": "../images/badges/aws.png"
     }
 ]
