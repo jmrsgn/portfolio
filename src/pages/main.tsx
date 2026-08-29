@@ -30,7 +30,23 @@ export default function Main() {
 }
 
 const MainWrapper = styled.div`
-  > div:not(:first-child) {
-    border-top: 1px solid ${COLORS.BORDER};
+  > * {
+    position: relative;
+  }
+
+  > * + *::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: ${COLORS.BORDER};
+
+    z-index: 10;
   }
 `;

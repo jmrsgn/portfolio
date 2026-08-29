@@ -254,9 +254,10 @@ export const Box = styled.div`
   padding: 5rem 0 2rem;
 
   @media ${VIEWPORT.mobileUp} {
-    width: calc(100% - 32px);
-
-    padding: 4rem 0 1.5rem;
+    /*
+     * Reserve space for the fixed mobile navigation.
+     */
+    padding: 4rem 0 5rem;
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -304,19 +305,37 @@ export const TextStatus = styled.span`
 `;
 
 export const TextCopyright = styled.p`
-  margin: 3rem 0 0;
+  position: absolute;
+
+  left: 50%;
+  bottom: 2rem;
+
+  transform: translateX(-50%);
+
+  width: max-content;
+
+  margin: 0;
 
   color: ${COLORS.TEXT_TERTIARY};
 
   font-family: ${FONTS.sfMonoLight};
+
   font-size: 0.65rem;
 
   letter-spacing: 0.02em;
 
   text-align: center;
 
+  white-space: nowrap;
+
+  @media ${VIEWPORT.mobileUp} {
+    bottom: 1.5rem;
+
+    font-size: 0.6rem;
+  }
+
   @media ${VIEWPORT.desktopUp} {
-    margin-top: 3.5rem;
+    bottom: 2rem;
 
     font-size: 0.7rem;
   }
