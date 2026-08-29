@@ -26,7 +26,7 @@ export function SpotifyPlayer() {
       const response = await fetch("/api/spotify");
 
       if (!response.ok) {
-        throw new Error("Unable to fetch Spotify track.");
+        throw new Error(`Spotify API returned ${response.status}`);
       }
 
       const data: SpotifyResponse = await response.json();
@@ -39,7 +39,6 @@ export function SpotifyPlayer() {
       setTrack(data.track);
     } catch (error) {
       console.error("Error fetching Spotify track:", error);
-
       setTrack(null);
     }
   }, []);

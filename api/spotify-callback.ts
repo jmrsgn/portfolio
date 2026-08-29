@@ -5,6 +5,15 @@ const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const REDIRECT_URI =
   "https://marasiganjohnmartin.vercel.app/api/spotify-callback";
 
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const code = req.query.code;
 
@@ -48,7 +57,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       return res.status(response.status).json({
         error: "Spotify authorization failed.",
+        spotify: data,
       });
+    }
+
+    const refreshToken = data.refresh_token;
+
+    if (!refreshToken) {
+      return res.status(500).send("Spotify did not return a refresh token.");
     }
 
     return res.status(200).send(`
@@ -62,17 +78,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           <h1>Spotify Authorization Successful</h1>
 
           <p>
-            Copy the refresh token below and add it to
-            Vercel as <strong>SPOTIFY_REFRESH_TOKEN</strong>.
+            Copy this refresh token and save it in Vercel as
+            <strong>SPOTIFY_REFRESH_TOKEN</strong>.
           </p>
 
           <textarea
-            style="width: 100%; max-width: 700px; height: 120px;"
-          >${data.refresh_token ?? ""}</textarea>
+            style="
+              width: 100%;
+              max-width: 700px;
+              height: 120px;
+            "
+          >${escapeHtml(refreshToken)}</textarea>
 
           <p>
-            Once you've saved it in Vercel, you can remove
-            this temporary token display.
+            This page can be closed after saving the token.
           </p>
         </body>
       </html>
