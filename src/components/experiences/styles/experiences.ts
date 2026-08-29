@@ -74,8 +74,7 @@ export const TextTitle = styled.h2`
   font-weight: normal;
 
   line-height: 0.9;
-
-  letter-spacing: -0.04em;
+  letter-spacing: 0.01em;
 `;
 
 export const Divider = styled.div`

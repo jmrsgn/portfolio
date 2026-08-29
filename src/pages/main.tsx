@@ -65,9 +65,9 @@ export default function Main() {
           <ExperiencesContainer />
         </div>
 
-        {/*  <div ref={contactRef}>
+        <div ref={contactRef}>
           <ContactContainer />
-        </div> */}
+        </div>
       </MainWrapper>
     </>
   );

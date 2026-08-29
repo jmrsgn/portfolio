@@ -123,7 +123,7 @@ export function AboutContainer() {
               </About.ProfileItem>
 
               <About.ProfileItem>
-                <About.ProfileLabel>FOCUS</About.ProfileLabel>
+                <About.ProfileLabel>SERVICE</About.ProfileLabel>
                 <About.ProfileValue>Full-stack Development</About.ProfileValue>
               </About.ProfileItem>
 
