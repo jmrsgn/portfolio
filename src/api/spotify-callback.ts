@@ -18,20 +18,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const redirectUri =
-    "https://marasiganjohnmartin.vercel.app/api/spotify/callback";
+    "https://marasiganjohnmartin.vercel.app/api/spotify-callback";
 
   try {
     const response = await fetch(TOKEN_ENDPOINT, {
       method: "POST",
+
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-
         Authorization:
           "Basic " +
           Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString(
             "base64",
           ),
       },
+
       body: new URLSearchParams({
         grant_type: "authorization_code",
         code,
@@ -49,37 +50,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    /**
-     * IMPORTANT:
-     * Do not return the refresh token in production.
-     *
-     * We're temporarily displaying it so you can
-     * copy it into Vercel Environment Variables.
-     */
     return res.status(200).send(`
       <html>
         <body style="font-family: sans-serif; padding: 40px;">
           <h1>Spotify Authorization Successful</h1>
 
-          <p>Your refresh token was generated.</p>
-
-          <p><strong>Copy it and store it securely.</strong></p>
+          <p>Copy this refresh token into Vercel:</p>
 
           <textarea
             style="width: 100%; height: 120px;"
           >${data.refresh_token ?? ""}</textarea>
 
           <p>
-            Add this value to your Vercel environment
-            variable:
+            Environment variable:
+            <strong>SPOTIFY_REFRESH_TOKEN</strong>
           </p>
-
-          <pre>SPOTIFY_REFRESH_TOKEN</pre>
         </body>
       </html>
     `);
   } catch (error) {
-    console.error(error);
+    console.error("Spotify callback error:", error);
 
     return res
       .status(500)
