@@ -7,67 +7,23 @@ import { ProjectsContainer } from "../containers/projects";
 import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
 import { AboutContainer } from "../containers/about";
-import { useInView } from "react-intersection-observer";
-import { SpotifyPlayer } from "../spotify/spotify";
 import { NavBarContainer } from "../containers/navbar";
 
 export default function Main() {
-  const { ref: homeRef, inView: isHomeVisible } = useInView({
-    threshold: 0.35,
-  });
-  const { ref: aboutRef, inView: isAboutActive } = useInView({
-    threshold: 0.35,
-  });
-  const { ref: projectsRef, inView: isProjectsVisible } = useInView({
-    threshold: 0.35,
-  });
-  const { ref: experiencesRef, inView: isExperiencesVisible } = useInView({
-    threshold: 0.35,
-  });
-  const { ref: contactRef, inView: isContactVisible } = useInView({
-    threshold: 0.35,
-  });
-
-  const homeActive = isHomeVisible ? "home" : "";
-  const aboutActive = isAboutActive ? "about" : "";
-  const projectsActive = isProjectsVisible ? "projects" : "";
-  const experiencesActive = isExperiencesVisible ? "experiences" : "";
-  const contactActive = isContactVisible ? "contact" : "";
-
   return (
     <>
-      {/* <NavBarContainer
-        visibleTab={
-          homeActive ||
-          aboutActive ||
-          projectsActive ||
-          experiencesActive ||
-          contactActive
-        }
-      /> */}
-
-      {/* <SpotifyPlayer /> */}
+      <NavBarContainer />
 
       <MainWrapper>
-        <div ref={homeRef}>
-          <HomeContainer />
-        </div>
+        <HomeContainer />
 
-        <div ref={aboutRef}>
-          <AboutContainer />
-        </div>
+        <AboutContainer />
 
-        <div ref={projectsRef}>
-          <ProjectsContainer />
-        </div>
+        <ProjectsContainer />
 
-        <div ref={experiencesRef}>
-          <ExperiencesContainer />
-        </div>
+        <ExperiencesContainer />
 
-        <div ref={contactRef}>
-          <ContactContainer />
-        </div>
+        <ContactContainer />
       </MainWrapper>
     </>
   );
