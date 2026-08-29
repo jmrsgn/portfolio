@@ -2,6 +2,9 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
+const REDIRECT_URI =
+  "https://marasiganjohnmartin.vercel.app/api/spotify-callback";
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const code = req.query.code;
 
@@ -17,15 +20,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .send("Spotify environment variables are not configured.");
   }
 
-  const redirectUri =
-    "https://marasiganjohnmartin.vercel.app/api/spotify-callback";
-
   try {
     const response = await fetch(TOKEN_ENDPOINT, {
       method: "POST",
 
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
+
         Authorization:
           "Basic " +
           Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString(
@@ -36,7 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: new URLSearchParams({
         grant_type: "authorization_code",
         code,
-        redirect_uri: redirectUri,
+        redirect_uri: REDIRECT_URI,
       }),
     });
 
@@ -51,19 +52,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     return res.status(200).send(`
+      <!DOCTYPE html>
       <html>
+        <head>
+          <title>Spotify Authorization</title>
+        </head>
+
         <body style="font-family: sans-serif; padding: 40px;">
           <h1>Spotify Authorization Successful</h1>
 
-          <p>Copy this refresh token into Vercel:</p>
+          <p>
+            Copy the refresh token below and add it to
+            Vercel as <strong>SPOTIFY_REFRESH_TOKEN</strong>.
+          </p>
 
           <textarea
-            style="width: 100%; height: 120px;"
+            style="width: 100%; max-width: 700px; height: 120px;"
           >${data.refresh_token ?? ""}</textarea>
 
           <p>
-            Environment variable:
-            <strong>SPOTIFY_REFRESH_TOKEN</strong>
+            Once you've saved it in Vercel, you can remove
+            this temporary token display.
           </p>
         </body>
       </html>
