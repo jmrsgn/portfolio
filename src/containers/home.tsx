@@ -29,7 +29,7 @@ export function HomeContainer() {
                   rel="noopener noreferrer"
                 >
                   <Home.ButtonArrow>&gt;_</Home.ButtonArrow>
-                  VIEW WORK
+                  VIEW RESUME
                 </Home.ButtonResume>
 
                 <Home.ButtonAbout href="#about">ABOUT ME</Home.ButtonAbout>
