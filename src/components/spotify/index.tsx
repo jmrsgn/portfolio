@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ImgHTMLAttributes, ReactNode } from "react";
+import type { FC, HTMLAttributes, ImgHTMLAttributes, ReactNode } from "react";
 
 import {
   Container,
@@ -14,18 +14,16 @@ interface SpotifyProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
-interface SpotifyImageProps extends ImgHTMLAttributes<HTMLImageElement> {}
-
-interface SpotifyComponent extends React.FC<SpotifyProps> {
-  ContainerTrackInfo: React.FC<SpotifyProps>;
-  BoxSpotifyIcon: React.FC<SpotifyProps>;
-  Image: React.FC<SpotifyImageProps>;
-  TextNowPlaying: React.FC<SpotifyProps>;
-  TextTrackInfo: React.FC<SpotifyProps>;
-  TextTrackName: React.FC<SpotifyProps>;
+interface SpotifyComponent extends FC<SpotifyProps> {
+  ContainerTrackInfo: FC<SpotifyProps>;
+  BoxSpotifyIcon: FC<SpotifyProps>;
+  Image: FC<ImgHTMLAttributes<HTMLImageElement>>;
+  TextNowPlaying: FC<SpotifyProps>;
+  TextTrackInfo: FC<SpotifyProps>;
+  TextTrackName: FC<SpotifyProps>;
 }
 
-const SpotifyRoot: React.FC<SpotifyProps> = ({ children, ...restProps }) => {
+const SpotifyRoot: FC<SpotifyProps> = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
