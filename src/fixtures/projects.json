@@ -87,6 +87,14 @@
       {
         "name": "Kubernetes",
         "src": ""
+      },
+      {
+        "name": "MongoDB",
+        "src": ""
+      },
+      {
+        "name": "PostgreSQL",
+        "src": ""
       }
     ],
     "screenshots": []
