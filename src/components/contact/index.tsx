@@ -10,7 +10,6 @@ import {
   ContainerIntro,
   ContainerContactContent,
   ContainerDescription,
-  ContainerAction,
   ContainerContacts,
   ContainerContactItem,
   ContainerContactText,
@@ -21,8 +20,8 @@ import {
   BoxContact,
   TextLabel,
   TextTitle,
-  TextAccent,
-  TextDescription,
+  Divider,
+  TextIntro,
   TextContactLabel,
   TextStatusTitle,
   TextStatus,
@@ -50,7 +49,6 @@ type ContainerInfoProps = StyledProps<typeof ContainerInfo>;
 type ContainerIntroProps = StyledProps<typeof ContainerIntro>;
 type ContainerContactContentProps = StyledProps<typeof ContainerContactContent>;
 type ContainerDescriptionProps = StyledProps<typeof ContainerDescription>;
-type ContainerActionProps = StyledProps<typeof ContainerAction>;
 type ContainerContactsProps = StyledProps<typeof ContainerContacts>;
 type ContainerContactItemProps = StyledProps<typeof ContainerContactItem>;
 type ContainerContactTextProps = StyledProps<typeof ContainerContactText>;
@@ -73,8 +71,8 @@ type BoxContactProps = StyledProps<typeof BoxContact>;
 
 type TextLabelProps = StyledProps<typeof TextLabel>;
 type TextTitleProps = StyledProps<typeof TextTitle>;
-type TextAccentProps = StyledProps<typeof TextAccent>;
-type TextDescriptionProps = StyledProps<typeof TextDescription>;
+type DividerProps = StyledProps<typeof Divider>;
+type TextIntroProps = StyledProps<typeof TextIntro>;
 type TextContactLabelProps = StyledProps<typeof TextContactLabel>;
 type TextStatusTitleProps = StyledProps<typeof TextStatusTitle>;
 type TextStatusProps = StyledProps<typeof TextStatus>;
@@ -147,13 +145,6 @@ Contact.ContainerDescription = function Component({
   ...restProps
 }: ContainerDescriptionProps) {
   return <ContainerDescription {...restProps}>{children}</ContainerDescription>;
-};
-
-Contact.ContainerAction = function Component({
-  children,
-  ...restProps
-}: ContainerActionProps) {
-  return <ContainerAction {...restProps}>{children}</ContainerAction>;
 };
 
 Contact.ContainerContacts = function Component({
@@ -230,15 +221,15 @@ Contact.TextTitle = function Component({
   return <TextTitle {...restProps}>{children}</TextTitle>;
 };
 
-Contact.TextAccent = function Component({ ...restProps }: TextAccentProps) {
-  return <TextAccent {...restProps} />;
+Contact.Divider = function Component({ ...restProps }: DividerProps) {
+  return <Divider {...restProps} />;
 };
 
-Contact.TextDescription = function Component({
+Contact.TextIntro = function Component({
   children,
   ...restProps
-}: TextDescriptionProps) {
-  return <TextDescription {...restProps}>{children}</TextDescription>;
+}: TextIntroProps) {
+  return <TextIntro {...restProps}>{children}</TextIntro>;
 };
 
 Contact.TextContactLabel = function Component({

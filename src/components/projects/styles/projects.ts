@@ -100,8 +100,6 @@ export const TextIntro = styled.p`
   font-size: clamp(1.25rem, 1.7vw, 1.55rem);
 
   line-height: 1.45;
-
-  letter-spacing: -0.01em;
 `;
 
 /**

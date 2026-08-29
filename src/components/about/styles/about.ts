@@ -82,15 +82,11 @@ export const Divider = styled.div`
   height: 5px;
 
   margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
   border-radius: 2px;
 
   background: ${COLORS.PRIMARY};
-
-  @media ${VIEWPORT.desktopUp} {
-    margin-bottom: 4rem;
-  }
 `;
 
 /**

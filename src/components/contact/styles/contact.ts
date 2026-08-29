@@ -46,7 +46,7 @@ export const ItemButton = styled.a`
 
   @media ${VIEWPORT.mobileUp} {
     width: 100%;
-    max-width: 220px;
+    max-width: 180px;
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -104,7 +104,6 @@ export const Container = styled.section`
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
 `;
 
@@ -137,15 +136,6 @@ export const ContainerDescription = styled.div`
   max-width: 650px;
 `;
 
-export const ContainerAction = styled.div`
-  display: flex;
-  flex-shrink: 0;
-
-  @media ${VIEWPORT.tabletUp} {
-    padding-bottom: 0.25rem;
-  }
-`;
-
 export const ContainerContacts = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -157,12 +147,14 @@ export const ContainerContacts = styled.div`
   border-top: 1px solid ${COLORS.BORDER};
 
   @media ${VIEWPORT.tabletUp} {
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-    align-items: center;
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 3rem;
+    row-gap: 2.5rem;
   }
 
   @media ${VIEWPORT.desktopUp} {
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
     margin-top: 7rem;
     padding-top: 2.5rem;
     gap: 2.5rem;
@@ -217,7 +209,7 @@ export const ContactDivider = styled.div`
 
   background: ${COLORS.BORDER};
 
-  @media ${VIEWPORT.tabletUp} {
+  @media ${VIEWPORT.desktopUp} {
     display: block;
   }
 `;
@@ -361,27 +353,19 @@ export const TextTitle = styled.h2`
   }
 `;
 
-export const TextAccent = styled.span`
-  display: block;
-
-  width: 44px;
+export const Divider = styled.div`
+  width: 52px;
   height: 5px;
 
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 
-  border-radius: 999px;
+  border-radius: 2px;
 
   background: ${COLORS.PRIMARY};
-
-  box-shadow: ${COLORS.SHADOW_GLOW_PRIMARY};
-
-  @media ${VIEWPORT.desktopUp} {
-    width: 48px;
-    height: 6px;
-  }
 `;
 
-export const TextDescription = styled.p`
+export const TextIntro = styled.p`
   margin: 0;
 
   color: ${COLORS.TEXT_SECONDARY};
@@ -393,14 +377,6 @@ export const TextDescription = styled.p`
   line-height: 1.35;
 
   letter-spacing: -0.01em;
-
-  @media ${VIEWPORT.mobileUp} {
-    font-size: 1.25rem;
-  }
-
-  @media ${VIEWPORT.desktopUp} {
-    font-size: 1.5rem;
-  }
 `;
 
 export const TextContactLabel = styled.span`

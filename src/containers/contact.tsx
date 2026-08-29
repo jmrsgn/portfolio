@@ -15,36 +15,29 @@ export function ContactContainer() {
         <Contact.Box>
           <Contact.BoxContact>
             <Contact.ContainerInfo>
-              <Contact.ContainerIntro>
-                <Contact.TextLabel>// CONTACT</Contact.TextLabel>
+              <Contact.TextLabel>// CONTACT</Contact.TextLabel>
 
-                <Contact.TextTitle>
-                  Let&apos;s build
-                  <br />
-                  something.
-                </Contact.TextTitle>
+              <Contact.TextTitle>
+                Let&apos;s build
+                <br />
+                something.
+              </Contact.TextTitle>
 
-                <Contact.TextAccent />
-              </Contact.ContainerIntro>
+              <Contact.Divider />
 
               <Contact.ContainerContactContent>
                 <Contact.ContainerDescription>
-                  <Contact.TextDescription>
+                  <Contact.TextIntro>
                     Have an idea, project, or just want to talk tech? I&apos;m
                     always open to interesting projects, engineering
                     conversations, and new ideas.
-                  </Contact.TextDescription>
+                  </Contact.TextIntro>
                 </Contact.ContainerDescription>
 
-                <Contact.ContainerAction>
-                  <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
-                    LET&apos;S TALK
-                    <FiArrowUpRight
-                      size={15}
-                      style={{ marginLeft: "0.6rem" }}
-                    />
-                  </Contact.ItemButton>
-                </Contact.ContainerAction>
+                <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
+                  LET&apos;S TALK
+                  <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />
+                </Contact.ItemButton>
               </Contact.ContainerContactContent>
 
               <Contact.ContainerContacts>
