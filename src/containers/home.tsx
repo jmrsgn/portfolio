@@ -14,7 +14,7 @@ export function HomeContainer() {
             transition={{ duration: 0.6 }}
           >
             <Home.ContainerGreetings>
-              <Home.TextEyebrow>// SOFTWARE ENGINEER</Home.TextEyebrow>
+              <Home.TextEyebrow>{"// SOFTWARE ENGINEER"}</Home.TextEyebrow>
 
               <Home.TextGreeting>
                 JOHN MARTIN
@@ -23,7 +23,11 @@ export function HomeContainer() {
               </Home.TextGreeting>
 
               <Home.ContainerActions>
-                <Home.ButtonResume href="/resume/Resume_JohnMartinMarasigan.pdf" target="_blank" rel="noopener noreferrer">
+                <Home.ButtonResume
+                  href="/resume/Resume_JohnMartinMarasigan.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Home.ButtonArrow>&gt;_</Home.ButtonArrow>
                   VIEW WORK
                 </Home.ButtonResume>
@@ -170,7 +174,7 @@ export function HomeContainer() {
                 <Home.LineNumber>11</Home.LineNumber>
                 <Home.CodeIndent />
                 <Home.CodeIndent />
-                <Home.CodeComment>// more...</Home.CodeComment>
+                <Home.CodeComment>{"// more..."}</Home.CodeComment>
               </Home.CodeLine>
 
               <Home.CodeLine>
@@ -206,7 +210,7 @@ export function HomeContainer() {
               <Home.CodeLine>
                 <Home.LineNumber>17</Home.LineNumber>
                 <Home.CodeIndent />
-                <Home.CodeComment>// em.sleep();</Home.CodeComment>
+                <Home.CodeComment>{"// em.sleep();"}</Home.CodeComment>
               </Home.CodeLine>
 
               <Home.CodeLine>

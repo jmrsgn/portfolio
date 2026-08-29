@@ -14,7 +14,7 @@ export function ContactContainer() {
       <MotionWrap whileInView={{ y: [100, 0], opacity: [0, 1] }}>
         <Contact.Box>
           <Contact.BoxContact>
-            <Contact.TextEyebrow>// CONTACT</Contact.TextEyebrow>
+            <Contact.TextEyebrow>{"// CONTACT"}</Contact.TextEyebrow>
 
             <Contact.TextTitle>
               Let&apos;s build

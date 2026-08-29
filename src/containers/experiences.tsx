@@ -39,7 +39,7 @@ export function ExperiencesContainer() {
         <Experiences.Box>
           {/* Header */}
 
-          <Experiences.TextEyebrow>// EXPERIENCE</Experiences.TextEyebrow>
+          <Experiences.TextEyebrow>{"// EXPERIENCE"}</Experiences.TextEyebrow>
 
           <Experiences.TextTitle>Experiences</Experiences.TextTitle>
 
@@ -56,42 +56,42 @@ export function ExperiencesContainer() {
             {/* Experience Timeline */}
 
             <Experiences.ContainerTimeline>
-                {experiences.map((experience) => (
-                  <Experiences.ExperienceItem key={experience.id}>
-                    <Experiences.TimelineDate>
-                      {experience.date}
-                    </Experiences.TimelineDate>
+              {experiences.map((experience) => (
+                <Experiences.ExperienceItem key={experience.id}>
+                  <Experiences.TimelineDate>
+                    {experience.date}
+                  </Experiences.TimelineDate>
 
-                    <Experiences.TimelineMarker>
-                      <Experiences.TimelineDot />
-                    </Experiences.TimelineMarker>
+                  <Experiences.TimelineMarker>
+                    <Experiences.TimelineDot />
+                  </Experiences.TimelineMarker>
 
-                    <Experiences.ExperienceContent>
-                      <Experiences.TextPosition>
-                        {experience.position}
-                        <Experiences.TextCompany>
-                          {" "}
-                          @ {experience.company}
-                        </Experiences.TextCompany>
-                      </Experiences.TextPosition>
+                  <Experiences.ExperienceContent>
+                    <Experiences.TextPosition>
+                      {experience.position}
+                      <Experiences.TextCompany>
+                        {" "}
+                        @ {experience.company}
+                      </Experiences.TextCompany>
+                    </Experiences.TextPosition>
 
-                      {experience.current && (
-                        <Experiences.CurrentBadge>
-                          <Experiences.CurrentDot />
-                          Current
-                        </Experiences.CurrentBadge>
-                      )}
+                    {experience.current && (
+                      <Experiences.CurrentBadge>
+                        <Experiences.CurrentDot />
+                        Current
+                      </Experiences.CurrentBadge>
+                    )}
 
-                      <Experiences.ContainerExperienceText>
-                        {experience.learnings.map((learning, index) => (
-                          <Experiences.TextDescription key={index}>
-                            {learning}
-                          </Experiences.TextDescription>
-                        ))}
-                      </Experiences.ContainerExperienceText>
-                    </Experiences.ExperienceContent>
-                  </Experiences.ExperienceItem>
-                ))}
+                    <Experiences.ContainerExperienceText>
+                      {experience.learnings.map((learning, index) => (
+                        <Experiences.TextDescription key={index}>
+                          {learning}
+                        </Experiences.TextDescription>
+                      ))}
+                    </Experiences.ContainerExperienceText>
+                  </Experiences.ExperienceContent>
+                </Experiences.ExperienceItem>
+              ))}
             </Experiences.ContainerTimeline>
 
             {/* Certificates */}

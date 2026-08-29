@@ -72,7 +72,7 @@ export function AboutContainer() {
       >
         <About.Box>
           {/* Header */}
-          <About.TextEyebrow>// ABOUT ME</About.TextEyebrow>
+          <About.TextEyebrow>{"// ABOUT ME"}</About.TextEyebrow>
 
           <About.TextTitle>Who am I</About.TextTitle>
 
@@ -111,7 +111,9 @@ export function AboutContainer() {
             <About.ProfileCard>
               <About.ProfileItem>
                 <About.ProfileLabel>LOCATION</About.ProfileLabel>
-                <About.ProfileValue>Mandaluyong, Philippines 🇵🇭</About.ProfileValue>
+                <About.ProfileValue>
+                  Mandaluyong, Philippines 🇵🇭
+                </About.ProfileValue>
               </About.ProfileItem>
 
               <About.ProfileItem>
@@ -136,7 +138,7 @@ export function AboutContainer() {
 
           {/* What I Do */}
           <About.SectionHeader>
-            <About.SectionEyebrow>// WHAT I DO</About.SectionEyebrow>
+            <About.SectionEyebrow>{"// WHAT I DO"}</About.SectionEyebrow>
           </About.SectionHeader>
 
           <About.ContainerTech>
@@ -164,7 +166,7 @@ export function AboutContainer() {
           {/* Tech Stack */}
           <About.TechStack>
             <About.TechStackHeader>
-              <About.SectionEyebrow>// TECH STACK</About.SectionEyebrow>
+              <About.SectionEyebrow>{"// TECH STACK"}</About.SectionEyebrow>
             </About.TechStackHeader>
 
             <About.TechStackGrid>

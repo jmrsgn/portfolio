@@ -29,7 +29,7 @@ export function ProjectsContainer() {
         <Projects.Box>
           {/* Header */}
 
-          <Projects.TextEyebrow>// SELECTED WORK</Projects.TextEyebrow>
+          <Projects.TextEyebrow>{"// SELECTED WORK"}</Projects.TextEyebrow>
 
           <Projects.TextTitle>Stuff I&apos;ve built</Projects.TextTitle>
 
@@ -94,7 +94,9 @@ export function ProjectsContainer() {
 
                 <Projects.ContainerTags>
                   {item.tech.map((tech) => (
-                    <Projects.ItemTag key={tech.name}>{tech.name}</Projects.ItemTag>
+                    <Projects.ItemTag key={tech.name}>
+                      {tech.name}
+                    </Projects.ItemTag>
                   ))}
                 </Projects.ContainerTags>
               </Projects.ItemProject>
@@ -105,7 +107,7 @@ export function ProjectsContainer() {
 
           <Projects.GithubCta>
             <Projects.GithubCtaContent>
-              <Projects.TextEyebrow>// MORE ON GITHUB</Projects.TextEyebrow>
+              <Projects.TextEyebrow>{"// MORE ON GITHUB"}</Projects.TextEyebrow>
 
               <Projects.GithubCtaTitle>
                 Want to see more?
