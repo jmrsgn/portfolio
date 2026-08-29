@@ -279,32 +279,6 @@ export const BoxContact = styled.div`
  * Texts
  */
 
-export const TextTitle = styled.h2`
-  margin: 0;
-
-  color: ${COLORS.TEXT_PRIMARY};
-
-  font-family: ${FONTS.calibreBlack};
-
-  font-size: clamp(4rem, 10vw, 7rem);
-
-  font-weight: normal;
-  line-height: 0.85;
-  letter-spacing: -0.015em;
-
-  @media ${VIEWPORT.mobileUp} {
-    font-size: clamp(3.5rem, 16vw, 5rem);
-
-    line-height: 0.88;
-  }
-
-  @media ${VIEWPORT.desktopUp} {
-    font-size: clamp(5rem, 7vw, 7rem);
-
-    line-height: 0.85;
-  }
-`;
-
 export const Divider = styled.div`
   width: 52px;
   height: 5px;

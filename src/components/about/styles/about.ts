@@ -44,21 +44,6 @@ export const Box = styled.div`
   }
 `;
 
-export const TextTitle = styled.h2`
-  margin: 0;
-
-  font-family: ${FONTS.calibreBlack};
-
-  color: ${COLORS.TEXT_PRIMARY};
-
-  font-size: clamp(3.5rem, 7vw, 6rem);
-
-  font-weight: normal;
-
-  line-height: 0.9;
-  letter-spacing: 0.01em;
-`;
-
 export const Divider = styled.div`
   width: 52px;
   height: 5px;

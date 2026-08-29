@@ -21,9 +21,8 @@ import {
   TextIntro,
   TextStatus,
   TextStatusTitle,
-  TextTitle,
 } from "./styles/contact";
-import { TextEyebrow } from "../../globalComponents";
+import { TextEyebrow, TextTitle } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 

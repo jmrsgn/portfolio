@@ -23,11 +23,10 @@ import {
   TextDescription,
   TextIntro,
   TextHighlight,
-  TextTitle,
   TextTitleOther,
   BoxProfile,
 } from "./styles/about";
-import { TextEyebrow } from "../../globalComponents";
+import { TextEyebrow, TextTitle } from "../../globalComponents";
 
 type StyledProps<T extends React.ElementType> = React.ComponentProps<T>;
 
@@ -146,6 +145,10 @@ About.ProfileValue = ({ children, ...restProps }) => (
 
 About.SectionHeader = ({ children, ...restProps }) => (
   <SectionHeader {...restProps}>{children}</SectionHeader>
+);
+
+About.SectionEyebrow = ({ children, ...restProps }) => (
+  <TextEyebrow {...restProps}>{children}</TextEyebrow>
 );
 
 /**

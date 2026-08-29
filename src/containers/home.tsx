@@ -23,7 +23,7 @@ export function HomeContainer() {
               </Home.TextGreeting>
 
               <Home.ContainerActions>
-                <Home.ButtonResume href="#projects">
+                <Home.ButtonResume href="/resume/Resume_JohnMartinMarasigan.pdf" target="_blank" rel="noopener noreferrer">
                   <Home.ButtonArrow>&gt;_</Home.ButtonArrow>
                   VIEW WORK
                 </Home.ButtonResume>

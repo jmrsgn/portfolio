@@ -18,8 +18,8 @@
     "company": "Infor",
     "current": false,
     "learnings": [
-      "PLACEHOLDER: Add description of my experience as a Software Engineer at Infor.",
-      "PLACEHOLDER: Add responsibilities, technologies, projects, and key contributions."
+      "Worked on the MSCM Android Team, contributing to the development, enhancement, and maintenance of enterprise-scale mobile applications.",
+      "Collaborated with senior engineers, QA, cross-functional teams, and product stakeholders to deliver reliable and scalable solutions while contributing to code reviews, architectural discussions, and continuous improvement initiatives."
     ],
     "link": "#"
   },
@@ -30,8 +30,9 @@
     "company": "Infor",
     "current": false,
     "learnings": [
-      "Developed and maintained a native Android application using Java, implementing MVVM architecture and clean code principles to improve code readability, maintainability, and integration with RESTful APIs supporting core business functionality.",
-      "Worked closely with experienced engineers in a collaborative team environment, gaining strong foundations in enterprise mobile development, coding standards, and professional software workflows."
+      "Developed and maintained native Android and hybrid enterprise mobile applications supporting critical business operations.",
+      "Worked extensively with Java, MVVM, MVC, REST APIs, SOAP-based services, and Ionic/Cordova while applying OOP principles and design patterns to build clean, modular, and maintainable solutions.",
+      "Collaborated with backend engineers, QA, and product teams on feature development, debugging, production issues, code reviews, and refactoring."
     ],
     "link": "#"
   },
@@ -42,7 +43,7 @@
     "company": "Miyens",
     "current": false,
     "learnings": [
-      "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance. This role provided early exposure to professional workflows and team collaboration."
+      "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance while gaining early exposure to professional workflows and team collaboration."
     ],
     "link": "#"
   }

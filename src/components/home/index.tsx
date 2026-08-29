@@ -113,12 +113,12 @@ Home.ContainerSocials = ({ children, ...restProps }) => {
  * Text
  */
 
-Home.TextEyebrow = ({ children, ...restProps }) => {
-  return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
-};
-
 Home.TextGreeting = ({ children, ...restProps }) => {
   return <TextGreeting {...restProps}>{children}</TextGreeting>;
+};
+
+Home.TextEyebrow = ({ children, ...restProps }) => {
+  return <TextEyebrow {...restProps}>{children}</TextEyebrow>;
 };
 
 Home.TextDescription = ({ children, ...restProps }) => {

@@ -65,7 +65,7 @@ export function ContactContainer() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    github.com/jmrsgn
+                    jmrsgn
                   </Contact.ItemContact>
                 </Contact.ContainerContactText>
               </Contact.ContainerContactItem>
@@ -80,11 +80,11 @@ export function ContactContainer() {
                 <Contact.ContainerContactText>
                   <Contact.TextContactLabel>LINKEDIN</Contact.TextContactLabel>
                   <Contact.ItemContact
-                    href="#"
+                    href="https://www.linkedin.com/in/marasiganjohnmartin/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    linkedin.com/in/jmrsgn
+                    marasiganjohnmartin
                   </Contact.ItemContact>
                 </Contact.ContainerContactText>
               </Contact.ContainerContactItem>

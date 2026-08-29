@@ -111,7 +111,7 @@ export function AboutContainer() {
             <About.ProfileCard>
               <About.ProfileItem>
                 <About.ProfileLabel>LOCATION</About.ProfileLabel>
-                <About.ProfileValue>Philippines 🇵🇭</About.ProfileValue>
+                <About.ProfileValue>Mandaluyong, Philippines 🇵🇭</About.ProfileValue>
               </About.ProfileItem>
 
               <About.ProfileItem>
