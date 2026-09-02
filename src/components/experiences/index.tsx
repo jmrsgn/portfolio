@@ -24,8 +24,19 @@ import {
   ItemBadge,
   ContainerCertificateInfo,
   TextCertificateTitle,
-  TextCertificateYear,
-  CertificateLink,
+  TextCertificateIssuer,
+  TextCertificateDate,
+  BadgeButton,
+  GenericCertificateIcon,
+  CertificateTextContainer,
+  ContainerCertificateActions,
+  CertificateAction,
+  CertificateModalOverlay,
+  CertificateModal,
+  CertificateModalHeader,
+  TextModalTitle,
+  CertificateModalClose,
+  CertificateModalImage,
 } from "./styles/experiences";
 import {
   TextEyebrow,
@@ -95,9 +106,37 @@ type ExperiencesComponent = React.FC<ExperiencesProps> & {
 
   TextCertificateTitle: React.FC<StyledProps<typeof TextCertificateTitle>>;
 
-  TextCertificateYear: React.FC<StyledProps<typeof TextCertificateYear>>;
+  TextCertificateIssuer: React.FC<StyledProps<typeof TextCertificateIssuer>>;
 
-  CertificateLink: React.FC<StyledProps<typeof CertificateLink>>;
+  TextCertificateDate: React.FC<StyledProps<typeof TextCertificateDate>>;
+
+  BadgeButton: React.FC<StyledProps<typeof BadgeButton>>;
+
+  GenericCertificateIcon: React.FC<StyledProps<typeof GenericCertificateIcon>>;
+
+  CertificateTextContainer: React.FC<
+    StyledProps<typeof CertificateTextContainer>
+  >;
+
+  ContainerCertificateActions: React.FC<
+    StyledProps<typeof ContainerCertificateActions>
+  >;
+
+  CertificateAction: React.FC<StyledProps<typeof CertificateAction>>;
+
+  CertificateModalOverlay: React.FC<
+    StyledProps<typeof CertificateModalOverlay>
+  >;
+
+  CertificateModal: React.FC<StyledProps<typeof CertificateModal>>;
+
+  CertificateModalHeader: React.FC<StyledProps<typeof CertificateModalHeader>>;
+
+  TextModalTitle: React.FC<StyledProps<typeof TextModalTitle>>;
+
+  CertificateModalClose: React.FC<StyledProps<typeof CertificateModalClose>>;
+
+  CertificateModalImage: React.FC<StyledProps<typeof CertificateModalImage>>;
 };
 
 const Experiences = function Experiences({
@@ -235,12 +274,74 @@ Experiences.TextCertificateTitle = ({ children, ...restProps }) => {
   return <TextCertificateTitle {...restProps}>{children}</TextCertificateTitle>;
 };
 
-Experiences.TextCertificateYear = ({ children, ...restProps }) => {
-  return <TextCertificateYear {...restProps}>{children}</TextCertificateYear>;
+Experiences.TextCertificateIssuer = ({ children, ...restProps }) => {
+  return (
+    <TextCertificateIssuer {...restProps}>{children}</TextCertificateIssuer>
+  );
 };
 
-Experiences.CertificateLink = ({ children, ...restProps }) => {
-  return <CertificateLink {...restProps}>{children}</CertificateLink>;
+Experiences.TextCertificateDate = ({ children, ...restProps }) => {
+  return <TextCertificateDate {...restProps}>{children}</TextCertificateDate>;
+};
+
+Experiences.BadgeButton = ({ children, ...restProps }) => {
+  return <BadgeButton {...restProps}>{children}</BadgeButton>;
+};
+
+Experiences.GenericCertificateIcon = ({ children, ...restProps }) => {
+  return (
+    <GenericCertificateIcon {...restProps}>{children}</GenericCertificateIcon>
+  );
+};
+
+Experiences.CertificateTextContainer = ({ children, ...restProps }) => {
+  return (
+    <CertificateTextContainer {...restProps}>
+      {children}
+    </CertificateTextContainer>
+  );
+};
+
+Experiences.ContainerCertificateActions = ({ children, ...restProps }) => {
+  return (
+    <ContainerCertificateActions {...restProps}>
+      {children}
+    </ContainerCertificateActions>
+  );
+};
+
+Experiences.CertificateAction = ({ children, ...restProps }) => {
+  return <CertificateAction {...restProps}>{children}</CertificateAction>;
+};
+
+Experiences.CertificateModalOverlay = ({ children, ...restProps }) => {
+  return (
+    <CertificateModalOverlay {...restProps}>{children}</CertificateModalOverlay>
+  );
+};
+
+Experiences.CertificateModal = ({ children, ...restProps }) => {
+  return <CertificateModal {...restProps}>{children}</CertificateModal>;
+};
+
+Experiences.CertificateModalHeader = ({ children, ...restProps }) => {
+  return (
+    <CertificateModalHeader {...restProps}>{children}</CertificateModalHeader>
+  );
+};
+
+Experiences.TextModalTitle = ({ children, ...restProps }) => {
+  return <TextModalTitle {...restProps}>{children}</TextModalTitle>;
+};
+
+Experiences.CertificateModalClose = ({ children, ...restProps }) => {
+  return (
+    <CertificateModalClose {...restProps}>{children}</CertificateModalClose>
+  );
+};
+
+Experiences.CertificateModalImage = ({ src, ...restProps }) => {
+  return <CertificateModalImage src={src} {...restProps} />;
 };
 
 export default Experiences;

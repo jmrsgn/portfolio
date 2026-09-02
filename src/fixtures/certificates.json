@@ -1,27 +1,38 @@
 [
   {
     "id": 1,
-    "title": "AWS Academy Graduate",
-    "issued_by": "Amazon Web Services (AWS)",
-    "year": "2022",
-    "href": "https://www.credly.com/badges/8ef9350f-1934-4907-b22b-c3cf8630ffcb/public_url",
-    "badge": "../images/badges/aws.png"
+    "title": "OpenAI - Agents and Workflows",
+    "issued_by": "OpenAI",
+    "date": "Sep - 2026",
+    "badge": "",
+    "badge_link": "",
+    "certificate": "../images/certificates/openAI-agents-and-workflows-certificate.png"
   },
   {
     "id": 2,
-    "title": "MTA: Introduction to Programming using Java",
-    "issued_by": "Microsoft",
-    "year": "2019",
-    "href": "https://www.credly.com/badges/cfb7e342-8195-4c5f-aa42-9c01b3a0b422/public_url",
-    "badge": "../images/badges/mta.png"
+    "title": "AWS Academy Graduate",
+    "issued_by": "Amazon Web Services (AWS)",
+    "date": "Mar - 2022",
+    "badge": "../images/badges/aws-academy-graduate-badge.png",
+    "badge_link": "https://www.credly.com/badges/8ef9350f-1934-4907-b22b-c3cf8630ffcb/public_url",
+    "certificate": "../images/certificates/aws-academy-graduate-certificate.png"
   },
   {
     "id": 3,
-
-    "title": "CompTIA IT Fundamentals",
+    "title": "MTA - Introduction to Programming using Java",
+    "issued_by": "Microsoft",
+    "date": "Oct - 2019",
+    "badge": "../images/badges/microsoft-introduction-to-prog-using-java-badge.png",
+    "badge_link": "https://www.credly.com/badges/cfb7e342-8195-4c5f-aa42-9c01b3a0b422/public_url",
+    "certificate": ""
+  },
+  {
+    "id": 4,
+    "title": "CompTIA - IT Fundamentals",
     "issued_by": "CompTIA",
-    "year": "2018",
-    "href": "",
-    "badge": "../images/badges/comptia.png"
+    "date": "Oct - 2018",
+    "badge": "../images/badges/comptia-it-fundamentals-badge.png",
+    "badge_link": "",
+    "certificate": "../images/certificates/comptia-it-fundamentals-certificate.png"
   }
 ]

@@ -334,6 +334,44 @@ export const ContainerCertificate = styled.div`
 
     transform: translateY(-2px);
   }
+
+  @media (max-width: 767px) {
+    align-items: flex-start;
+
+    padding: 0.85rem;
+
+    min-height: 0;
+  }
+`;
+
+export const BadgeButton = styled.button`
+  flex-shrink: 0;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  @media ${VIEWPORT.desktopUp} {
+    width: 64px;
+    height: 64px;
+  }
+
+  @media (max-width: 767px) {
+    width: 52px;
+    height: 52px;
+  }
 `;
 
 export const ItemBadge = styled.img`
@@ -356,6 +394,67 @@ export const ItemBadge = styled.img`
     width: 64px;
     height: 64px;
   }
+
+  @media (max-width: 767px) {
+    width: 52px;
+    height: 52px;
+  }
+`;
+
+export const GenericCertificateIcon = styled.div`
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: ${COLORS.PRIMARY_LIGHT};
+
+  border: 1px solid ${COLORS.BORDER};
+
+  border-radius: 8px;
+
+  background: ${COLORS.BACKGROUND};
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  ${ContainerCertificate}:hover & {
+    color: ${COLORS.PRIMARY};
+
+    border-color: ${COLORS.PRIMARY};
+  }
+
+  @media ${VIEWPORT.desktopUp} {
+    width: 64px;
+    height: 64px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
 export const ContainerCertificateInfo = styled.div`
@@ -372,6 +471,22 @@ export const ContainerCertificateInfo = styled.div`
   gap: 1rem;
 
   margin-left: 1rem;
+
+  @media (max-width: 767px) {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.6rem;
+
+    margin-left: 0.75rem;
+  }
+`;
+
+export const CertificateTextContainer = styled.div`
+  min-width: 0;
+
+  flex: 1;
 `;
 
 export const TextCertificateTitle = styled.p`
@@ -388,9 +503,29 @@ export const TextCertificateTitle = styled.p`
   @media ${VIEWPORT.desktopUp} {
     font-size: 1.1rem;
   }
+
+  @media (max-width: 767px) {
+    font-size: 0.95rem;
+
+    line-height: 1.2;
+  }
 `;
 
-export const TextCertificateYear = styled.span`
+export const TextCertificateIssuer = styled.span`
+  display: block;
+
+  margin-top: 0.2rem;
+
+  font-family: ${FONTS.calibreRegular};
+
+  color: ${COLORS.TEXT_SECONDARY};
+
+  font-size: 0.8rem;
+
+  line-height: 1.2;
+`;
+
+export const TextCertificateDate = styled.span`
   display: block;
 
   margin-top: 0.35rem;
@@ -402,7 +537,170 @@ export const TextCertificateYear = styled.span`
   font-size: 0.7rem;
 `;
 
-export const CertificateLink = styled.a`
+export const ContainerCertificateActions = styled.div`
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 0.35rem;
+
+  flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+  }
+`;
+
+export const CertificateAction = styled.button`
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  min-height: 28px;
+
+  padding: 0.35rem 0.55rem;
+
+  border: 1px solid ${COLORS.BORDER};
+
+  border-radius: 4px;
+
+  background: transparent;
+
+  color: ${COLORS.TEXT_TERTIARY};
+
+  font-family: ${FONTS.sfMonoRegular};
+
+  font-size: 0.55rem;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    color: ${COLORS.PRIMARY_LIGHT};
+
+    border-color: ${COLORS.PRIMARY};
+
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  @media ${VIEWPORT.tabletUp} {
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 30px;
+
+    padding: 0.4rem 0.55rem;
+
+    font-size: 0.55rem;
+  }
+`;
+
+/**
+ * Certificate Popup
+ */
+
+export const CertificateModalOverlay = styled.div`
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  @media (max-width: 767px) {
+    align-items: center;
+
+    padding: 1rem;
+  }
+`;
+
+export const CertificateModal = styled.div`
+  position: relative;
+
+  width: min(900px, 100%);
+
+  max-height: calc(100vh - 3rem);
+
+  overflow: auto;
+
+  padding: 1rem;
+
+  border: 1px solid ${COLORS.BORDER};
+
+  border-radius: 10px;
+
+  background: ${COLORS.SURFACE};
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  @media (max-width: 767px) {
+    max-height: calc(100vh - 2rem);
+
+    padding: 0.75rem;
+  }
+`;
+
+export const CertificateModalHeader = styled.div`
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+`;
+
+export const TextModalTitle = styled.h3`
+  margin: 0;
+
+  font-family: ${FONTS.calibreBold};
+
+  color: ${COLORS.TEXT_PRIMARY};
+
+  font-size: 1.4rem;
+
+  font-weight: normal;
+
+  line-height: 1.1;
+`;
+
+export const CertificateModalClose = styled.button`
   width: 32px;
   height: 32px;
 
@@ -413,22 +711,48 @@ export const CertificateLink = styled.a`
   align-items: center;
   justify-content: center;
 
+  padding: 0;
+
+  border: 1px solid ${COLORS.BORDER};
+
+  border-radius: 4px;
+
+  background: transparent;
+
   color: ${COLORS.TEXT_TERTIARY};
 
-  text-decoration: none;
+  cursor: pointer;
 
   transition:
     color 0.2s ease,
-    transform 0.2s ease;
+    border-color 0.2s ease;
 
   svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   &:hover {
-    color: ${COLORS.PRIMARY_LIGHT};
+    color: ${COLORS.TEXT_PRIMARY};
 
-    transform: translate(2px, -2px);
+    border-color: ${COLORS.PRIMARY};
+  }
+`;
+
+export const CertificateModalImage = styled.img`
+  display: block;
+
+  width: 100%;
+
+  max-height: calc(100vh - 9rem);
+
+  object-fit: contain;
+
+  border-radius: 5px;
+
+  background: ${COLORS.BACKGROUND};
+
+  @media (max-width: 767px) {
+    max-height: calc(100vh - 8rem);
   }
 `;
