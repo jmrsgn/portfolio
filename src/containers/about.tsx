@@ -6,7 +6,9 @@ import {
   SiFigma,
   SiFlutter,
   SiGit,
-  SiGithub,
+  SiAndroid,
+  SiPython,
+  SiTypescript,
   SiJavascript,
   SiKubernetes,
   SiMongodb,
@@ -19,16 +21,18 @@ import { FaJava } from "react-icons/fa";
 
 const TECH_STACK = [
   { name: "Java", icon: FaJava },
-  { name: "Spring Boot", icon: SiSpringboot },
-  { name: "Flutter", icon: SiFlutter },
-  { name: "React", icon: SiReact },
+  { name: "Python", icon: SiPython },
+  { name: "TypeScript", icon: SiTypescript },
   { name: "JavaScript", icon: SiJavascript },
+  { name: "Spring Boot", icon: SiSpringboot },
+  { name: "React", icon: SiReact },
+  { name: "Flutter", icon: SiFlutter },
+  { name: "Android", icon: SiAndroid },
   { name: "MongoDB", icon: SiMongodb },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Docker", icon: SiDocker },
   { name: "Kubernetes", icon: SiKubernetes },
   { name: "Git", icon: SiGit },
-  { name: "GitHub", icon: SiGithub },
   { name: "Figma", icon: SiFigma },
 ];
 
@@ -37,29 +41,29 @@ const WHAT_I_DO = [
     number: "01",
     title: "Web Development",
     description:
-      "I build clean and responsive web applications with a focus on reusable components, performance, and modern development practices.",
-    tech: ["React JS", "styled-components"],
+      "I develop responsive web applications with a focus on reusable components, maintainable code, and user experience.",
+    tech: ["React", "TypeScript", "JavaScript"],
   },
   {
     number: "02",
-    title: "UI/UX Design",
+    title: "Mobile Development",
     description:
-      "I design simple and modern user interfaces with a focus on clarity, usability, and consistency across screens.",
-    tech: ["Figma"],
+      "I build native and cross-platform mobile applications, applying clean architecture and established design patterns.",
+    tech: ["Android", "Flutter"],
   },
   {
     number: "03",
-    title: "Mobile Development",
+    title: "Backend Development",
     description:
-      "I build cross-platform mobile applications using Flutter, applying clean architecture and best practices to deliver reliable experiences.",
-    tech: ["Flutter", "Java"],
+      "I develop backend services and APIs, focusing on system integration, data processing, and maintainable software architecture.",
+    tech: ["Java", "Spring Boot", "REST APIs"],
   },
   {
     number: "04",
-    title: "Backend Development",
+    title: "AI-Assisted Development",
     description:
-      "I build robust backend systems using Java and Spring Boot, focusing on clean architecture, RESTful APIs, and scalable solutions.",
-    tech: ["Java", "Spring Boot"],
+      "I incorporate AI tools into my development workflow to support coding, debugging, code analysis, and continuous learning.",
+    tech: ["Codex", "AI Agents"],
   },
 ];
 

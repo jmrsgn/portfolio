@@ -24,7 +24,7 @@ export function HomeContainer() {
 
               <Home.ContainerActions>
                 <Home.ButtonResume
-                  href="/resume/Resume_JohnMartinMarasigan.pdf"
+                  href="/resume/RESUME_JohnMartinMarasigan.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -6,8 +6,8 @@
     "company": "Stratpoint Technologies",
     "current": true,
     "learnings": [
-      "PLACEHOLDER: Add description of my current role and responsibilities at Stratpoint Technologies.",
-      "PLACEHOLDER: Add technologies, projects, engineering responsibilities, and key things I am learning."
+      "Developing Java-based microservices using Spring Boot for enterprise banking systems, focusing on event-driven architecture, data integration, and processing workflows using Apache Kafka, Confluent Cloud, and MongoDB.",
+      "Contributing to the modernization of Apache Flink streaming pipelines into Java microservices, while collaborating with engineering teams on system integration, troubleshooting, and deployment."
     ],
     "link": "#"
   },
@@ -18,8 +18,8 @@
     "company": "Infor",
     "current": false,
     "learnings": [
-      "Worked on the MSCM Android Team, contributing to the development, enhancement, and maintenance of enterprise-scale mobile applications.",
-      "Collaborated with senior engineers, QA, cross-functional teams, and product stakeholders to deliver reliable and scalable solutions while contributing to code reviews, architectural discussions, and continuous improvement initiatives."
+      "Contributed to the development and maintenance of enterprise mobile applications using native Android (Java) and hybrid technologies.",
+      "Collaborated with cross-functional teams on feature development, code reviews, troubleshooting, and continuous improvements to application performance and maintainability."
     ],
     "link": "#"
   },
@@ -30,9 +30,8 @@
     "company": "Infor",
     "current": false,
     "learnings": [
-      "Developed and maintained native Android and hybrid enterprise mobile applications supporting critical business operations.",
-      "Worked extensively with Java, MVVM, MVC, REST APIs, SOAP-based services, and Ionic/Cordova while applying OOP principles and design patterns to build clean, modular, and maintainable solutions.",
-      "Collaborated with backend engineers, QA, and product teams on feature development, debugging, production issues, code reviews, and refactoring."
+      "Developed and maintained native Android and hybrid mobile applications using Java, Ionic, and Cordova, applying MVVM, MVC, and object-oriented design principles.",
+      "Integrated RESTful APIs and SOAP-based services while collaborating with backend engineers and QA teams to deliver reliable enterprise solutions."
     ],
     "link": "#"
   },
@@ -43,7 +42,7 @@
     "company": "Miyens",
     "current": false,
     "learnings": [
-      "Worked as an IT Specialist Intern, assisting with WordPress website creation, basic UI/UX design tasks, and general IT maintenance while gaining early exposure to professional workflows and team collaboration."
+      "Assisted in WordPress website development, basic UI/UX design, and IT maintenance while gaining hands-on experience in software development and team collaboration."
     ],
     "link": "#"
   }

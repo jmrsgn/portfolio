@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Expresso",
-    "description": "An Android application built with Java that helps students learn Object-Oriented Programming through interactive lessons and machine-learning–driven personalization.",
+    "description": "An Android-based educational application designed to help students learn Object-Oriented Programming through interactive lessons and personalized learning experiences powered by machine learning.",
     "filter": "Mobile",
     "development": false,
     "src": "../images/projects/expresso-1.png",
@@ -40,7 +40,7 @@
   {
     "id": 2,
     "title": "Carkilahan",
-    "description": "An Android application built with Java and Firebase that allows users to easily book cars for trips. This project represents my first complete mobile application.",
+    "description": "A car rental booking application developed using native Android and Firebase, allowing users to browse and reserve vehicles. My first end-to-end mobile development project.",
     "filter": "Mobile",
     "development": false,
     "src": "../images/projects/carkilahan-1.png",
@@ -61,7 +61,7 @@
   {
     "id": 3,
     "title": "Pump",
-    "description": "A Flutter-based social fitness application designed for bodybuilding enthusiasts, combining progress tracking, coach-client interactions, and community engagement. The backend is being developed using Java Spring, Docker, and Kubernetes.",
+    "description": "An ongoing full-stack fitness platform built with Flutter and Spring Boot microservices, integrating social interactions, workout tracking, and coach-client management. Designed with a focus on scalable architecture, maintainability, and cloud-native deployment.",
     "filter": "Mobile",
     "development": true,
     "src": "",
@@ -101,8 +101,47 @@
   },
   {
     "id": 4,
+    "title": "Forge",
+    "description": "An ongoing AI-assisted software engineering toolkit built with Python, exploring context-aware AI agents, codebase analysis, structured development workflows, and automated implementation planning to improve developer productivity.",
+    "filter": "Other",
+    "development": true,
+    "src": "",
+    "github": "https://github.com/jmrsgn/forge",
+    "href": "",
+
+    "tech": [
+      {
+        "name": "Python",
+        "src": ""
+      },
+      {
+        "name": "AI Agents",
+        "src": ""
+      },
+      {
+        "name": "Pydantic",
+        "src": ""
+      },
+      {
+        "name": "LLMs",
+        "src": ""
+      },
+      {
+        "name": "CLI",
+        "src": ""
+      },
+      {
+        "name": "Git",
+        "src": ""
+      }
+    ],
+
+    "screenshots": []
+  },
+  {
+    "id": 5,
     "title": "Portfolio",
-    "description": "A personal portfolio website built with React and TypeScript to showcase my projects, experience, and technical skills, styled with styled-components and deployed on Vercel.",
+    "description": "A personal portfolio developed using React and TypeScript, showcasing my software engineering experience, technical skills, and projects through a responsive, component-based interface.",
     "filter": "Web",
     "development": false,
     "src": "",
