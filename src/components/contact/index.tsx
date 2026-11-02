@@ -9,16 +9,11 @@ import {
   ContainerContactItem,
   ContainerContacts,
   ContainerContactText,
-  ContainerStatus,
-  ContainerStatusIndicator,
-  ContainerStatusText,
   ItemButton,
   ItemContact,
   ItemContactIcon,
   TextContactLabel,
   TextCopyright,
-  TextStatus,
-  TextStatusTitle,
 } from "./styles/contact";
 import {
   TextEyebrow,
@@ -46,11 +41,6 @@ type ContactComponent = React.FC<ContactProps> & {
   ContainerContacts: React.FC<StyledProps<typeof ContainerContacts>>;
   ContainerContactItem: React.FC<StyledProps<typeof ContainerContactItem>>;
   ContainerContactText: React.FC<StyledProps<typeof ContainerContactText>>;
-  ContainerStatus: React.FC<StyledProps<typeof ContainerStatus>>;
-  ContainerStatusIndicator: React.FC<
-    StyledProps<typeof ContainerStatusIndicator>
-  >;
-  ContainerStatusText: React.FC<StyledProps<typeof ContainerStatusText>>;
 
   ItemButton: React.FC<StyledProps<typeof ItemButton>>;
   ItemContact: React.FC<StyledProps<typeof ItemContact>>;
@@ -58,8 +48,6 @@ type ContactComponent = React.FC<ContactProps> & {
   ContactDivider: React.FC<StyledProps<typeof ContactDivider>>;
 
   TextContactLabel: React.FC<StyledProps<typeof TextContactLabel>>;
-  TextStatusTitle: React.FC<StyledProps<typeof TextStatusTitle>>;
-  TextStatus: React.FC<StyledProps<typeof TextStatus>>;
   TextCopyright: React.FC<StyledProps<typeof TextCopyright>>;
 };
 
@@ -121,18 +109,6 @@ Contact.ContainerContactText = ({ children, ...restProps }) => {
   return <ContainerContactText {...restProps}>{children}</ContainerContactText>;
 };
 
-Contact.ContainerStatus = ({ children, ...restProps }) => {
-  return <ContainerStatus {...restProps}>{children}</ContainerStatus>;
-};
-
-Contact.ContainerStatusIndicator = ({ children, ...restProps }) => {
-  return <ContainerStatusIndicator {...restProps} />;
-};
-
-Contact.ContainerStatusText = ({ children, ...restProps }) => {
-  return <ContainerStatusText {...restProps}>{children}</ContainerStatusText>;
-};
-
 Contact.ItemButton = ({ children, ...restProps }) => {
   return <ItemButton {...restProps}>{children}</ItemButton>;
 };
@@ -151,14 +127,6 @@ Contact.ContactDivider = ({ children, ...restProps }) => {
 
 Contact.TextContactLabel = ({ children, ...restProps }) => {
   return <TextContactLabel {...restProps}>{children}</TextContactLabel>;
-};
-
-Contact.TextStatusTitle = ({ children, ...restProps }) => {
-  return <TextStatusTitle {...restProps}>{children}</TextStatusTitle>;
-};
-
-Contact.TextStatus = ({ children, ...restProps }) => {
-  return <TextStatus {...restProps}>{children}</TextStatus>;
 };
 
 Contact.TextCopyright = ({ children, ...restProps }) => {

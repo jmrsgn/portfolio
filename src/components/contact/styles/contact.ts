@@ -134,7 +134,7 @@ export const ContainerContacts = styled.div`
   }
 
   @media ${VIEWPORT.desktopUp} {
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
     align-items: center;
     margin-top: 7rem;
     padding-top: 2.5rem;
@@ -195,46 +195,6 @@ export const ContactDivider = styled.div`
   }
 `;
 
-export const ContainerStatusText = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const TextStatusTitle = styled.span`
-  margin-bottom: 0.75rem;
-
-  color: #10b981;
-
-  font-family: ${FONTS.sfMonoRegular};
-  font-size: 0.75rem;
-
-  letter-spacing: 0.06em;
-`;
-
-export const ContainerStatus = styled.div`
-  display: flex;
-  align-items: center;
-
-  margin-top: 1.5rem;
-
-  @media ${VIEWPORT.tabletUp} {
-    margin-top: 0;
-  }
-`;
-
-export const ContainerStatusIndicator = styled.span`
-  width: 7px;
-  height: 7px;
-
-  margin-right: 0.65rem;
-
-  border-radius: 50%;
-
-  background: ${COLORS.PRIMARY};
-
-  box-shadow: ${COLORS.SHADOW_GLOW_PRIMARY};
-`;
-
 /**
  * Boxes
  */
@@ -289,19 +249,6 @@ export const TextContactLabel = styled.span`
   letter-spacing: 0.08em;
 
   text-transform: uppercase;
-`;
-
-export const TextStatus = styled.span`
-  color: ${COLORS.TEXT_SECONDARY};
-
-  font-family: ${FONTS.sfMonoRegular};
-  font-size: 0.65rem;
-
-  letter-spacing: 0.03em;
-
-  @media ${VIEWPORT.desktopUp} {
-    font-size: 0.7rem;
-  }
 `;
 
 export const TextCopyright = styled.p`

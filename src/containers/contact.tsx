@@ -88,26 +88,6 @@ export function ContactContainer() {
                   </Contact.ItemContact>
                 </Contact.ContainerContactText>
               </Contact.ContainerContactItem>
-
-              <Contact.ContactDivider />
-
-              <Contact.ContainerStatus>
-                <Contact.ContainerStatusIndicator />
-
-                <Contact.ContainerStatusText>
-                  <Contact.TextStatusTitle>
-                    OPEN TO TALK
-                  </Contact.TextStatusTitle>
-
-                  <Contact.TextStatus>
-                    Available for a conversation
-                    <br />
-                    about new opportunities
-                    <br />
-                    and collaboration.
-                  </Contact.TextStatus>
-                </Contact.ContainerStatusText>
-              </Contact.ContainerStatus>
             </Contact.ContainerContacts>
 
             <Contact.TextCopyright>
