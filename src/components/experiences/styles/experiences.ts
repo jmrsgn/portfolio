@@ -18,7 +18,7 @@ export const Container = styled.section`
 
   color: ${COLORS.TEXT_PRIMARY};
 
-  overflow: hidden;
+  overflow: visible;
 `;
 
 /**
@@ -40,6 +40,7 @@ export const Box = styled.div`
   }
 
   @media ${VIEWPORT.desktopUp} {
+    width: min(1280px, calc(100% - 160px));
     padding: 9rem 0 8rem;
   }
 `;
@@ -53,14 +54,14 @@ export const ContainerInfo = styled.div`
 
   grid-template-columns: 1fr;
 
-  gap: 4rem;
+  gap: 5rem;
 
   margin-top: 4rem;
 
   @media ${VIEWPORT.desktopUp} {
     grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.8fr);
 
-    gap: 5rem;
+    gap: 6rem;
 
     margin-top: 5rem;
   }
@@ -78,6 +79,8 @@ export const ContainerTimeline = styled.div`
   display: flex;
 
   flex-direction: column;
+
+  border-top: 1px solid ${COLORS.BORDER};
 `;
 
 export const ExperienceItem = styled.article`
@@ -87,16 +90,12 @@ export const ExperienceItem = styled.article`
 
   grid-template-columns: 100px 28px minmax(0, 1fr);
 
-  padding-bottom: 3rem;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
+  padding: 2rem 0;
+  border-bottom: 1px solid ${COLORS.BORDER};
 
   @media ${VIEWPORT.tabletUp} {
     grid-template-columns: 130px 32px minmax(0, 1fr);
-
-    padding-bottom: 4rem;
+    padding: 2.5rem 0;
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -163,7 +162,7 @@ export const TimelineDot = styled.span`
 
   border-radius: 50%;
 
-  background: ${COLORS.PRIMARY};
+  background: ${COLORS.PRIMARY_LIGHT};
 
   box-shadow: 0 0 0 1px ${COLORS.PRIMARY_DARK};
 `;
@@ -185,23 +184,31 @@ export const TextPosition = styled.h3`
 
   color: ${COLORS.TEXT_PRIMARY};
 
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 
   font-weight: normal;
 
   line-height: 1.1;
 
   @media ${VIEWPORT.tabletUp} {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
 export const TextCompany = styled.span`
   color: ${COLORS.PRIMARY_LIGHT};
+
+  overflow-wrap: anywhere;
+
+  @media (max-width: 479px) {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85em;
+  }
 `;
 
 export const CurrentBadge = styled.span`
@@ -215,11 +222,11 @@ export const CurrentBadge = styled.span`
 
   padding: 0.25rem 0.5rem;
 
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid ${COLORS.PRIMARY_DARK};
 
   border-radius: 4px;
 
-  background: rgba(16, 185, 129, 0.06);
+  background: rgba(201, 175, 232, 0.05);
 
   color: ${COLORS.SUCCESS};
 
@@ -273,6 +280,12 @@ export const TextDescription = styled.p`
 
 export const BoxCertificates = styled.aside`
   min-width: 0;
+
+  @media ${VIEWPORT.desktopUp} {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+  }
 `;
 
 export const TextSubTitle = styled.h3`
@@ -290,14 +303,13 @@ export const TextSubTitle = styled.h3`
 `;
 
 export const CertificateDivider = styled.div`
-  width: 34px;
-  height: 3px;
+  width: 100%;
+  height: 1px;
 
   margin-top: 1rem;
 
   background: ${COLORS.PRIMARY};
 
-  border-radius: 2px;
 `;
 
 export const ContainerCertificates = styled.div`
@@ -305,7 +317,7 @@ export const ContainerCertificates = styled.div`
 
   flex-direction: column;
 
-  gap: 0.75rem;
+  gap: 0;
 
   margin-top: 2rem;
 `;
@@ -317,28 +329,21 @@ export const ContainerCertificate = styled.div`
 
   min-height: 92px;
 
-  padding: 1rem;
-
-  border: 1px solid ${COLORS.BORDER};
-
-  border-radius: 8px;
-
-  background: ${COLORS.SURFACE};
+  padding: 1rem 0;
+  border-bottom: 1px solid ${COLORS.BORDER};
+  background: transparent;
 
   transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    background-color 0.2s ease;
 
   &:hover {
-    border-color: ${COLORS.PRIMARY};
-
-    transform: translateY(-2px);
+    background: rgba(201, 175, 232, 0.04);
   }
 
   @media (max-width: 767px) {
     align-items: flex-start;
 
-    padding: 0.85rem;
+    padding: 0.85rem 0;
 
     min-height: 0;
   }
@@ -416,7 +421,7 @@ export const GenericCertificateIcon = styled.div`
 
   border: 1px solid ${COLORS.BORDER};
 
-  border-radius: 8px;
+  border-radius: 0;
 
   background: ${COLORS.BACKGROUND};
 
@@ -565,13 +570,13 @@ export const CertificateAction = styled.button`
 
   gap: 0.35rem;
 
-  min-height: 28px;
+  min-height: 48px;
 
   padding: 0.35rem 0.55rem;
 
   border: 1px solid ${COLORS.BORDER};
 
-  border-radius: 4px;
+  border-radius: 0;
 
   background: transparent;
 
@@ -610,7 +615,7 @@ export const CertificateAction = styled.button`
   }
 
   @media (max-width: 767px) {
-    min-height: 30px;
+    min-height: 48px;
 
     padding: 0.4rem 0.55rem;
 
@@ -638,8 +643,6 @@ export const CertificateModalOverlay = styled.div`
 
   background: rgba(0, 0, 0, 0.82);
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 
   @media (max-width: 767px) {
     align-items: center;
@@ -661,7 +664,7 @@ export const CertificateModal = styled.div`
 
   border: 1px solid ${COLORS.BORDER};
 
-  border-radius: 10px;
+  border-radius: 0;
 
   background: ${COLORS.SURFACE};
 
@@ -715,7 +718,7 @@ export const CertificateModalClose = styled.button`
 
   border: 1px solid ${COLORS.BORDER};
 
-  border-radius: 4px;
+  border-radius: 0;
 
   background: transparent;
 

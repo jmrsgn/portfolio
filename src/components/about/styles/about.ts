@@ -40,6 +40,7 @@ export const Box = styled.div`
   }
 
   @media ${VIEWPORT.desktopUp} {
+    width: min(1280px, calc(100% - 160px));
     padding: 9rem 0 8rem;
   }
 `;
@@ -57,12 +58,12 @@ export const BoxProfile = styled.div`
 
   @media ${VIEWPORT.desktopUp} {
     grid-template-columns:
-      minmax(0, 1.15fr)
-      minmax(360px, 0.85fr);
+      minmax(0, 1.3fr)
+      minmax(320px, 0.7fr);
 
     align-items: start;
 
-    gap: clamp(4rem, 7vw, 8rem);
+    gap: clamp(4rem, 8vw, 10rem);
   }
 `;
 
@@ -74,6 +75,13 @@ export const ContainerAboutMeText = styled.div`
   gap: 1.5rem;
 
   max-width: 680px;
+
+  & > p:first-child {
+    color: ${COLORS.TEXT_PRIMARY};
+    font-size: clamp(2rem, 3vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
 `;
 
 export const TextDescription = styled.p`
@@ -101,23 +109,16 @@ export const TextHighlight = styled.span`
 export const ProfileCard = styled.div`
   width: 100%;
 
-  border: 1px solid ${COLORS.BORDER};
-
-  border-radius: 10px;
-
-  background: ${COLORS.SURFACE};
+  border-top: 1px solid ${COLORS.BORDER};
 
   overflow: hidden;
 `;
 
 export const ProfileItem = styled.div`
   display: flex;
-
-  flex-direction: column;
-
-  gap: 0.45rem;
-
-  padding: 1.25rem 1.5rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
 
   border-bottom: 1px solid ${COLORS.BORDER};
 
@@ -126,7 +127,7 @@ export const ProfileItem = styled.div`
   }
 
   @media ${VIEWPORT.desktopUp} {
-    padding: 1.4rem 1.75rem;
+    padding: 1.25rem 0;
   }
 `;
 
@@ -138,6 +139,8 @@ export const ProfileLabel = styled.span`
   font-size: 0.65rem;
 
   letter-spacing: 0.08em;
+
+  flex-shrink: 0;
 `;
 
 export const ProfileValue = styled.span`
@@ -148,6 +151,8 @@ export const ProfileValue = styled.span`
   font-size: 0.85rem;
 
   line-height: 1.6;
+
+  text-align: right;
 
   @media ${VIEWPORT.desktopUp} {
     font-size: 0.9rem;
@@ -174,63 +179,47 @@ export const SectionHeader = styled.div`
 
 export const ContainerTech = styled.div`
   display: grid;
-
   grid-template-columns: 1fr;
 
-  gap: 1rem;
-
-  @media ${VIEWPORT.tabletUp} {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media ${VIEWPORT.desktopUp} {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    gap: 1.25rem;
-  }
+  border-top: 1px solid ${COLORS.BORDER};
 `;
 
 export const ContainerTechInfo = styled.article`
-  min-height: 390px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid ${COLORS.BORDER};
+  transition: background-color 0.2s ease;
 
-  display: flex;
+  > p {
+    grid-column: 2;
+  }
 
-  flex-direction: column;
-
-  padding: 1.5rem;
-
-  border: 1px solid ${COLORS.BORDER};
-
-  border-radius: 10px;
-
-  background: ${COLORS.SURFACE};
-
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-
-  &:hover {
-    border-color: ${COLORS.PRIMARY};
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(201, 175, 232, 0.035);
+    }
   }
 
   @media ${VIEWPORT.desktopUp} {
-    min-height: 420px;
+    grid-template-columns: 56px minmax(200px, 0.75fr) minmax(0, 1.25fr);
+    gap: 0.75rem 2rem;
+    padding: 2.1rem 0;
 
-    padding: 1.75rem;
+    > p {
+      grid-column: 3;
+    }
   }
 `;
 
 export const TechCardHeader = styled.div`
-  display: flex;
+  grid-row: 1 / 4;
+  padding-top: 0.3rem;
 
-  justify-content: flex-end;
-
-  margin-bottom: 2.5rem;
+  @media ${VIEWPORT.desktopUp} {
+    grid-row: 1 / 3;
+  }
 `;
 
 export const TechNumber = styled.span`
@@ -254,6 +243,8 @@ export const TextTitleOther = styled.h3`
 
   line-height: 1.05;
 
+  grid-column: 2;
+
   @media ${VIEWPORT.desktopUp} {
     font-size: 1.9rem;
   }
@@ -266,11 +257,12 @@ export const ContainerTechUsed = styled.div`
 
   gap: 0.5rem;
 
-  margin-top: auto;
+  grid-column: 2;
+  margin-top: 0.5rem;
 
-  padding-top: 1.5rem;
-
-  border-top: 1px solid ${COLORS.BORDER};
+  @media ${VIEWPORT.desktopUp} {
+    grid-column: 2 / 4;
+  }
 `;
 
 export const TechTag = styled.span`
@@ -286,7 +278,7 @@ export const TechTag = styled.span`
 
   border-radius: 4px;
 
-  background: rgba(37, 99, 235, 0.06);
+  background: rgba(201, 175, 232, 0.05);
 
   color: ${COLORS.PRIMARY_LIGHT};
 
@@ -302,15 +294,8 @@ export const TechTag = styled.span`
  */
 
 export const TechStack = styled.section`
-  margin-top: 1.25rem;
-
-  border: 1px solid ${COLORS.BORDER};
-
-  border-radius: 10px;
-
-  background: ${COLORS.SURFACE};
-
-  overflow: hidden;
+  margin-top: 5rem;
+  border-top: 1px solid ${COLORS.BORDER};
 `;
 
 export const TechStackHeader = styled.div`
@@ -320,41 +305,37 @@ export const TechStackHeader = styled.div`
 
   justify-content: space-between;
 
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 0;
 
   border-bottom: 1px solid ${COLORS.BORDER};
 
   @media ${VIEWPORT.desktopUp} {
-    padding: 1.5rem 1.75rem;
+    padding: 1.5rem 0;
   }
 `;
 
 export const TechStackGrid = styled.div`
   display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  padding: 0.5rem;
+  grid-template-columns: 1fr;
+  counter-reset: tech;
+  border-top: 1px solid ${COLORS.BORDER};
 
   @media ${VIEWPORT.tabletUp} {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  @media ${VIEWPORT.desktopUp} {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
   }
 `;
 
 export const TechStackItem = styled.div`
-  min-height: 72px;
+  min-height: 64px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 0.85rem;
+  gap: 1rem;
 
-  padding: 1rem;
+  padding: 0.75rem 0.4rem;
 
   border-bottom: 1px solid ${COLORS.BORDER};
 
@@ -364,6 +345,23 @@ export const TechStackItem = styled.div`
 
   font-size: 0.75rem;
 
+  small {
+    margin-left: auto;
+    color: ${COLORS.TEXT_TERTIARY};
+    font: 0.65rem ${FONTS.sfMonoRegular};
+  }
+
+  &::before {
+    counter-increment: tech;
+    content: counter(tech, decimal-leading-zero);
+    width: 2.5rem;
+    flex-shrink: 0;
+    color: ${COLORS.TEXT_TERTIARY};
+    font-size: 0.6rem;
+  }
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+
   svg {
     width: 22px;
     height: 22px;
@@ -371,10 +369,23 @@ export const TechStackItem = styled.div`
     flex-shrink: 0;
 
     color: ${COLORS.PRIMARY_LIGHT};
+
+    transition: transform 0.25s ease, color 0.2s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      background: rgba(201, 175, 232, 0.045);
+
+      svg {
+        color: ${COLORS.PRIMARY_LIGHT};
+        transform: translateX(3px);
+      }
+    }
   }
 
   @media ${VIEWPORT.desktopUp} {
-    padding: 1.25rem;
+    padding: 1.1rem 0.6rem;
 
     font-size: 0.8rem;
 

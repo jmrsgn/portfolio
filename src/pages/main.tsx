@@ -8,14 +8,15 @@ import { ExperiencesContainer } from "../containers/experiences";
 import { ContactContainer } from "../containers/contact";
 import { AboutContainer } from "../containers/about";
 import { NavBarContainer } from "../containers/navbar";
+import { SpotifyPlayer } from "../containers/spotify";
 
 export default function Main() {
   return (
     <>
-      {/* <SpotifyPlayer /> */}
+      <SpotifyPlayer />
       <NavBarContainer />
 
-      <MainWrapper>
+      <MainWrapper id="main-content">
         <HomeContainer />
 
         <AboutContainer />
@@ -30,7 +31,8 @@ export default function Main() {
   );
 }
 
-const MainWrapper = styled.div`
+const MainWrapper = styled.main`
+
   > * {
     position: relative;
   }

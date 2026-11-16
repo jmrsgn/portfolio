@@ -137,8 +137,12 @@ export function NavBarContainer() {
       return;
     }
 
+    setActiveSection(id);
+
     section.scrollIntoView({
-      behavior: "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
       block: "start",
     });
 
@@ -147,11 +151,12 @@ export function NavBarContainer() {
 
   return (
     <NavBar>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       {/* =========================================
           Desktop
           ========================================= */}
 
-      <NavBar.DesktopContainer>
+      <NavBar.DesktopContainer role="navigation" aria-label="Primary">
         <NavBar.DesktopNavigation>
           {navigation.map((item) => {
             const Icon = item.icon;
@@ -161,6 +166,7 @@ export function NavBarContainer() {
                 key={item.id}
                 href={`#${item.id}`}
                 $active={activeSection === item.id}
+                aria-current={activeSection === item.id ? "location" : undefined}
                 onClick={(event: MouseEvent<HTMLAnchorElement>) =>
                   scrollToSection(event, item.id)
                 }
@@ -177,20 +183,23 @@ export function NavBarContainer() {
           })}
         </NavBar.DesktopNavigation>
 
-        <NavBar.Version>v3.0</NavBar.Version>
+        <NavBar.Version>
+          <a href="/resume/RESUME_JohnMartinMarasigan.pdf" target="_blank" rel="noopener noreferrer">View resume ↗</a>
+        </NavBar.Version>
       </NavBar.DesktopContainer>
 
       {/* =========================================
           Tablet
           ========================================= */}
 
-      <NavBar.TabletContainer>
+      <NavBar.TabletContainer role="navigation" aria-label="Primary">
         <NavBar.TabletNavigation>
           {navigation.map((item) => (
             <NavBar.NavigationItem
               key={item.id}
               href={`#${item.id}`}
               $active={activeSection === item.id}
+              aria-current={activeSection === item.id ? "location" : undefined}
               onClick={(event: MouseEvent<HTMLAnchorElement>) =>
                 scrollToSection(event, item.id)
               }
@@ -199,13 +208,14 @@ export function NavBarContainer() {
             </NavBar.NavigationItem>
           ))}
         </NavBar.TabletNavigation>
+        <a className="nav-resume" href="/resume/RESUME_JohnMartinMarasigan.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
       </NavBar.TabletContainer>
 
       {/* =========================================
           Mobile
           ========================================= */}
 
-      <NavBar.MobileContainer>
+      <NavBar.MobileContainer role="navigation" aria-label="Primary">
         {navigation.map((item) => {
           const Icon = item.icon;
 
@@ -214,6 +224,8 @@ export function NavBarContainer() {
               key={item.id}
               href={`#${item.id}`}
               $active={activeSection === item.id}
+              aria-current={activeSection === item.id ? "location" : undefined}
+              aria-label={item.label}
               onClick={(event: MouseEvent<HTMLAnchorElement>) =>
                 scrollToSection(event, item.id)
               }

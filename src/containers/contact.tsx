@@ -11,7 +11,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 export function ContactContainer() {
   return (
     <Contact id="contact">
-      <MotionWrap whileInView={{ y: [100, 0], opacity: [0, 1] }}>
+      <MotionWrap
+        initial={{ y: 24, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         <Contact.Box>
           <Contact.BoxContact>
             <Contact.TextEyebrow>{"// CONTACT"}</Contact.TextEyebrow>
@@ -31,10 +35,13 @@ export function ContactContainer() {
                 and new ideas.
               </Contact.TextIntro>
 
-              <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
-                LET&apos;S TALK
-                <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />
-              </Contact.ItemButton>
+              <Contact.ContactActionGroup>
+                <Contact.TextContactLabel>PROJECT INQUIRIES</Contact.TextContactLabel>
+                <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
+                  Let&apos;s talk
+                  <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />
+                </Contact.ItemButton>
+              </Contact.ContactActionGroup>
             </Contact.ContainerContactContent>
 
             <Contact.ContainerContacts>

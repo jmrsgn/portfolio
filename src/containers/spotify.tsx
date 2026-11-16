@@ -69,7 +69,11 @@ export function SpotifyPlayer() {
     track.name.length > 15 ? `${track.name.substring(0, 15)}...` : track.name;
 
   return (
-    <Spotify onClick={openSpotify}>
+    <Spotify
+      type="button"
+      onClick={openSpotify}
+      aria-label={`Now playing ${track.name} by ${track.artists.join(", ")}. Open in Spotify`}
+    >
       {track.albumImage && (
         <Spotify.Image src={track.albumImage} alt="Album cover" />
       )}

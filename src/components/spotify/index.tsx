@@ -1,4 +1,10 @@
-import type { FC, HTMLAttributes, ImgHTMLAttributes, ReactNode } from "react";
+import type {
+  ButtonHTMLAttributes,
+  FC,
+  HTMLAttributes,
+  ImgHTMLAttributes,
+  ReactNode,
+} from "react";
 
 import {
   Container,
@@ -10,17 +16,19 @@ import {
   TextTrackName,
 } from "./styles/spotify";
 
-interface SpotifyProps extends HTMLAttributes<HTMLDivElement> {
+interface SpotifyProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
 }
 
+type SpotifyPartProps = HTMLAttributes<HTMLDivElement>;
+
 interface SpotifyComponent extends FC<SpotifyProps> {
-  ContainerTrackInfo: FC<SpotifyProps>;
-  BoxSpotifyIcon: FC<SpotifyProps>;
+  ContainerTrackInfo: FC<SpotifyPartProps>;
+  BoxSpotifyIcon: FC<SpotifyPartProps>;
   Image: FC<ImgHTMLAttributes<HTMLImageElement>>;
-  TextNowPlaying: FC<SpotifyProps>;
-  TextTrackInfo: FC<SpotifyProps>;
-  TextTrackName: FC<SpotifyProps>;
+  TextNowPlaying: FC<SpotifyPartProps>;
+  TextTrackInfo: FC<SpotifyPartProps>;
+  TextTrackName: FC<SpotifyPartProps>;
 }
 
 const SpotifyRoot: FC<SpotifyProps> = ({ children, ...restProps }) => {

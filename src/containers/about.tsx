@@ -20,20 +20,20 @@ import {
 import { FaJava } from "react-icons/fa";
 
 const TECH_STACK = [
-  { name: "Java", icon: FaJava },
-  { name: "Python", icon: SiPython },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "Spring Boot", icon: SiSpringboot },
-  { name: "React", icon: SiReact },
-  { name: "Flutter", icon: SiFlutter },
-  { name: "Android", icon: SiAndroid },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "PostgreSQL", icon: SiPostgresql },
-  { name: "Docker", icon: SiDocker },
-  { name: "Kubernetes", icon: SiKubernetes },
-  { name: "Git", icon: SiGit },
-  { name: "Figma", icon: SiFigma },
+  { name: "Java", icon: FaJava, group: "Languages" },
+  { name: "Python", icon: SiPython, group: "Languages" },
+  { name: "TypeScript", icon: SiTypescript, group: "Languages" },
+  { name: "JavaScript", icon: SiJavascript, group: "Languages" },
+  { name: "Spring Boot", icon: SiSpringboot, group: "Frameworks" },
+  { name: "React", icon: SiReact, group: "Frameworks" },
+  { name: "Flutter", icon: SiFlutter, group: "Frameworks" },
+  { name: "Android", icon: SiAndroid, group: "Platforms" },
+  { name: "MongoDB", icon: SiMongodb, group: "Data" },
+  { name: "PostgreSQL", icon: SiPostgresql, group: "Data" },
+  { name: "Docker", icon: SiDocker, group: "Infrastructure" },
+  { name: "Kubernetes", icon: SiKubernetes, group: "Infrastructure" },
+  { name: "Git", icon: SiGit, group: "Tools" },
+  { name: "Figma", icon: SiFigma, group: "Tools" },
 ];
 
 const WHAT_I_DO = [
@@ -71,8 +71,9 @@ export function AboutContainer() {
   return (
     <About id="about">
       <MotionWrap
-        whileInView={{ y: [60, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        initial={{ y: 24, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <About.Box>
           {/* Header */}
@@ -174,10 +175,11 @@ export function AboutContainer() {
             </About.TechStackHeader>
 
             <About.TechStackGrid>
-              {TECH_STACK.map(({ name, icon: Icon }) => (
+              {TECH_STACK.map(({ name, icon: Icon, group }) => (
                 <About.TechStackItem key={name}>
-                  <Icon />
+                  <Icon aria-hidden="true" />
                   <span>{name}</span>
+                  <small>{group}</small>
                 </About.TechStackItem>
               ))}
             </About.TechStackGrid>

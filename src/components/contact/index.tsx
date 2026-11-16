@@ -6,6 +6,7 @@ import {
   ContactDivider,
   Container,
   ContainerContactContent,
+  ContactActionGroup,
   ContainerContactItem,
   ContainerContacts,
   ContainerContactText,
@@ -38,6 +39,7 @@ type ContactComponent = React.FC<ContactProps> & {
   ContainerContactContent: React.FC<
     StyledProps<typeof ContainerContactContent>
   >;
+  ContactActionGroup: React.FC<StyledProps<typeof ContactActionGroup>>;
   ContainerContacts: React.FC<StyledProps<typeof ContainerContacts>>;
   ContainerContactItem: React.FC<StyledProps<typeof ContainerContactItem>>;
   ContainerContactText: React.FC<StyledProps<typeof ContainerContactText>>;
@@ -95,6 +97,10 @@ Contact.ContainerContactContent = ({ children, ...restProps }) => {
   return (
     <ContainerContactContent {...restProps}>{children}</ContainerContactContent>
   );
+};
+
+Contact.ContactActionGroup = ({ children, ...restProps }) => {
+  return <ContactActionGroup {...restProps}>{children}</ContactActionGroup>;
 };
 
 Contact.ContainerContacts = ({ children, ...restProps }) => {

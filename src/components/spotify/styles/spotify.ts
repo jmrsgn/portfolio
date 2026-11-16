@@ -1,26 +1,20 @@
 import styled from "styled-components";
 
 import * as COLORS from "../../../constants/styles/colors";
-import { DescriptionText } from "../../../globalComponents";
 import { VIEWPORT } from "../../../constants/viewports";
+import { FONTS } from "../../../fonts/fonts";
 
 /**
  * Spotify Now Playing
  *
- * Design:
- * - Dark glass surface
- * - Subtle portfolio-green accent
- * - Strong visual hierarchy
- * - Responsive on mobile
- * - Always above page content
- * - Safe-area aware
+ * Compact status module, positioned above the mobile navigation.
  */
 
 /**
  * * Container
  */
 
-export const Container = styled.div`
+export const Container = styled.button`
   position: fixed;
 
   right: 1rem;
@@ -31,43 +25,30 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  width: min(320px, calc(100vw - 2rem));
-  min-height: 72px;
+  width: min(300px, calc(100vw - 2rem));
+  min-height: 64px;
 
   padding: 0.65rem 0.75rem;
 
   box-sizing: border-box;
 
-  background: linear-gradient(
-    135deg,
-    rgba(28, 28, 28, 0.96),
-    rgba(14, 14, 14, 0.96)
-  );
+  background: ${COLORS.SURFACE};
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid ${COLORS.BORDER};
 
-  border-radius: 12px;
+  border-radius: 0;
 
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    0 0 25px rgba(30, 215, 96, 0.08);
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.22);
+  color: ${COLORS.TEXT_PRIMARY};
+  text-align: left;
+  font: inherit;
 
   cursor: pointer;
 
   overflow: hidden;
 
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+  transition: border-color 180ms ease, transform 180ms ease;
 
-  /*
-   * Subtle Spotify-green accent line.
-   */
   &::before {
     content: "";
 
@@ -79,19 +60,14 @@ export const Container = styled.div`
     width: 100%;
     height: 2px;
 
-    background: ${COLORS.TEXT_PRIMARY};
+    background: ${COLORS.PRIMARY_LIGHT};
 
     opacity: 0.8;
   }
 
   &:hover {
-    transform: translateY(-3px);
-
-    border-color: rgba(255, 255, 255, 0.16);
-
-    box-shadow:
-      0 16px 40px rgba(0, 0, 0, 0.5),
-      0 0 30px rgba(30, 215, 96, 0.12);
+    border-color: ${COLORS.PRIMARY_LIGHT};
+    transform: translateY(-2px);
   }
 
   &:active {
@@ -102,8 +78,8 @@ export const Container = styled.div`
     right: 2rem;
     bottom: 2rem;
 
-    width: 320px;
-    min-height: 78px;
+    width: 300px;
+    min-height: 68px;
 
     padding: 0.75rem;
   }
@@ -115,14 +91,11 @@ export const Container = styled.div`
     right: 0.75rem;
     bottom: calc(0.75rem + env(safe-area-inset-bottom));
 
-    width: calc(100vw - 1.5rem);
-    max-width: 360px;
+    width: min(280px, calc(100vw - 1.5rem));
 
     min-height: 68px;
 
     padding: 0.6rem 0.65rem;
-
-    border-radius: 11px;
   }
 `;
 
@@ -171,9 +144,9 @@ export const BoxSpotifyIcon = styled.div`
   width: 38px;
   height: 38px;
 
-  color: ${COLORS.TEXT_PRIMARY};
+  color: ${COLORS.PRIMARY_LIGHT};
 
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid ${COLORS.BORDER};
 
   padding-left: 0.75rem;
 
@@ -181,15 +154,11 @@ export const BoxSpotifyIcon = styled.div`
     width: 28px;
     height: 28px;
 
-    transition:
-      transform 180ms ease,
-      filter 180ms ease;
+    transition: transform 180ms ease;
   }
 
   ${Container}:hover & svg {
-    transform: scale(1.08);
-
-    filter: drop-shadow(0 0 8px rgba(30, 215, 96, 0.35));
+    transform: translateX(2px);
   }
 
   @media ${VIEWPORT.desktopUp} {
@@ -225,22 +194,16 @@ export const Image = styled.img`
 
   object-fit: cover;
 
-  border-radius: 7px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  border-radius: 0;
 
   @media ${VIEWPORT.desktopUp} {
     width: 58px;
     height: 58px;
-
-    border-radius: 8px;
   }
 
   @media (max-width: 600px) {
     width: 50px;
     height: 50px;
-
-    border-radius: 6px;
   }
 `;
 
@@ -248,34 +211,29 @@ export const Image = styled.img`
  * * Track Name
  */
 
-export const TextTrackName = styled(DescriptionText)`
+export const TextTrackName = styled.span`
   display: block;
 
   width: 100%;
 
   margin: 0;
 
-  color: #f5f5f5;
+  color: ${COLORS.TEXT_PRIMARY};
 
-  font-size: 15px !important;
-  font-weight: 600;
-
-  line-height: 18px;
+  font-family: ${FONTS.calibreBold};
+  font-size: 1.05rem;
+  line-height: 1.1;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: 16px !important;
-
-    line-height: 19px;
+    font-size: 1.1rem;
   }
 
   @media (max-width: 600px) {
-    font-size: 14px !important;
-
-    line-height: 17px;
+    font-size: 1rem;
   }
 `;
 
@@ -283,34 +241,29 @@ export const TextTrackName = styled(DescriptionText)`
  * * Artist
  */
 
-export const TextTrackInfo = styled(DescriptionText)`
+export const TextTrackInfo = styled.span`
   display: block;
 
   width: 100%;
 
   margin: 2px 0 0;
 
-  color: #9b9b9b;
+  color: ${COLORS.TEXT_SECONDARY};
 
-  font-size: 12px !important;
-  font-weight: 400;
-
-  line-height: 15px;
+  font-family: ${FONTS.sfMonoRegular};
+  font-size: 0.67rem;
+  line-height: 1.3;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: 13px !important;
-
-    line-height: 16px;
+    font-size: 0.7rem;
   }
 
   @media (max-width: 600px) {
-    font-size: 11px !important;
-
-    line-height: 14px;
+    font-size: 0.64rem;
   }
 `;
 
@@ -318,18 +271,17 @@ export const TextTrackInfo = styled(DescriptionText)`
  * * Now Playing
  */
 
-export const TextNowPlaying = styled(DescriptionText)`
+export const TextNowPlaying = styled.span`
   display: flex;
   align-items: center;
 
   margin: 3px 0 0;
 
-  color: ${COLORS.TEXT_PRIMARY};
+  color: ${COLORS.PRIMARY_LIGHT};
 
-  font-size: 9px !important;
-  font-weight: 600;
-
-  line-height: 12px;
+  font-family: ${FONTS.sfMonoRegular};
+  font-size: 0.58rem;
+  line-height: 1.3;
 
   letter-spacing: 0.12em;
 
@@ -345,14 +297,10 @@ export const TextNowPlaying = styled(DescriptionText)`
 
     border-radius: 50%;
 
-    background: ${COLORS.TEXT_PRIMARY};
-
-    box-shadow: 0 0 6px ${COLORS.TEXT_PRIMARY};
+    background: ${COLORS.PRIMARY_LIGHT};
   }
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: 10px !important;
-
-    line-height: 13px;
+    font-size: 0.6rem;
   }
 `;

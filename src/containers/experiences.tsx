@@ -44,8 +44,9 @@ export function ExperiencesContainer() {
   return (
     <Experiences id="experiences">
       <MotionWrap
-        whileInView={{ y: [60, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        initial={{ y: 24, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <Experiences.Box>
           {/* Header */}

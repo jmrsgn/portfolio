@@ -15,6 +15,9 @@ import {
   ItemProject,
   ItemTag,
   ProjectGithub,
+  ProjectPreview,
+  ProjectSelect,
+  ProjectWorkspace,
   ProjectHeader,
   ProjectHeaderRight,
   ProjectNumber,
@@ -49,6 +52,9 @@ type ProjectsComponent = React.FC<ProjectsProps> & {
   FilterButton: React.FC<StyledProps<typeof FilterButton>>;
 
   ContainerProjects: React.FC<StyledProps<typeof ContainerProjects>>;
+  ProjectWorkspace: React.FC<StyledProps<typeof ProjectWorkspace>>;
+  ProjectPreview: React.FC<StyledProps<typeof ProjectPreview>>;
+  ProjectSelect: React.FC<StyledProps<typeof ProjectSelect>>;
 
   ItemProject: React.FC<StyledProps<typeof ItemProject>>;
 
@@ -131,6 +137,18 @@ Projects.FilterButton = ({ children, ...restProps }) => {
 
 Projects.ContainerProjects = ({ children, ...restProps }) => {
   return <ContainerProjects {...restProps}>{children}</ContainerProjects>;
+};
+
+Projects.ProjectWorkspace = ({ children, ...restProps }) => {
+  return <ProjectWorkspace {...restProps}>{children}</ProjectWorkspace>;
+};
+
+Projects.ProjectPreview = ({ children, ...restProps }) => {
+  return <ProjectPreview {...restProps}>{children}</ProjectPreview>;
+};
+
+Projects.ProjectSelect = ({ children, ...restProps }) => {
+  return <ProjectSelect {...restProps}>{children}</ProjectSelect>;
 };
 
 Projects.ItemProject = ({ children, ...restProps }) => {

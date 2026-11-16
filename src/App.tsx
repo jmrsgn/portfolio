@@ -8,14 +8,14 @@ import { ProjectsExpressoContainer } from './containers/projects-expresso';
 import { ProjectsCarkilahanContainer } from './containers/projects-carkilahan';
 import ScrollToTop from './helpers/scroll-to-top';
 import { CertificatesAllContainer } from './containers/certificates-all';
+import { MotionConfig } from 'framer-motion';
 
 export default function App() {
-  document.title = "John Martin Marasigan"; 
-
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <ScrollToTop />
+        <Routes>
         <Route
           path={ROUTES.HOME}
           element={ <Main /> }
@@ -40,8 +40,8 @@ export default function App() {
           path={ROUTES.ALL_CERTIFICATES}
           element={ <CertificatesAllContainer /> }
         />
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </MotionConfig>
   );
 }
-  

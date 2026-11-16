@@ -13,13 +13,17 @@ export const ItemButton = styled.a`
   align-items: center;
   justify-content: center;
 
-  width: 200px;
-  height: 54px;
+  width: fit-content;
+  height: 48px;
+  gap: 0.6rem;
+  padding: 0 1.25rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 
-  border: 1px solid ${COLORS.PRIMARY};
+  border: 0;
 
-  color: ${COLORS.PRIMARY};
-  background: transparent;
+  color: ${COLORS.TEXT_INVERSE};
+  background: ${COLORS.PRIMARY};
 
   font-family: ${FONTS.sfMonoRegular};
   font-size: 0.75rem;
@@ -35,23 +39,28 @@ export const ItemButton = styled.a`
     transform 0.2s ease,
     box-shadow 0.2s ease;
 
+  svg {
+    transition: transform 0.2s ease;
+  }
+
   &:hover {
     color: ${COLORS.TEXT_INVERSE};
     background: ${COLORS.PRIMARY};
+  }
 
-    transform: translateY(-2px);
-
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover svg {
+      transform: translate(2px, -2px);
+    }
   }
 
   @media ${VIEWPORT.mobileUp} {
-    width: 100%;
-    max-width: 180px;
+    width: fit-content;
   }
 
   @media ${VIEWPORT.desktopUp} {
     width: 210px;
-    height: 56px;
+    height: 48px;
 
     font-size: 0.8rem;
   }
@@ -60,6 +69,7 @@ export const ItemButton = styled.a`
 export const ItemContact = styled.a`
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   margin-top: 0.25rem;
 
   color: ${COLORS.TEXT_SECONDARY};
@@ -96,24 +106,36 @@ export const Container = styled.section`
 
   overflow: hidden;
 
-  background: ${COLORS.BACKGROUND};
+  background: ${COLORS.SURFACE_ELEVATED};
 
   color: ${COLORS.TEXT_PRIMARY};
 `;
 
 export const ContainerContactContent = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+
+  @media ${VIEWPORT.desktopUp} {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+`;
+
+export const ContactActionGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.65rem;
 
-  width: 100%;
-  gap: 2rem;
-
-  @media ${VIEWPORT.desktopUp} {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 4rem;
+  @media (max-width: 767px) {
+    width: 100%;
+    ${ItemButton} { width: 100%; }
   }
 `;
 
@@ -122,8 +144,8 @@ export const ContainerContacts = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  margin-top: 5rem;
-  padding-top: 2rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
 
   border-top: 1px solid ${COLORS.BORDER};
 
@@ -134,10 +156,10 @@ export const ContainerContacts = styled.div`
   }
 
   @media ${VIEWPORT.desktopUp} {
-    grid-template-columns: 1fr auto 1fr auto 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
-    margin-top: 7rem;
-    padding-top: 2.5rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
     gap: 2.5rem;
   }
 `;
@@ -161,24 +183,24 @@ export const ItemContactIcon = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 66px;
-  height: 66px;
+  width: 44px;
+  height: 44px;
 
   flex-shrink: 0;
 
   border: 1px solid ${COLORS.BORDER};
-  border-radius: 12px;
+  border-radius: 0;
 
   color: ${COLORS.PRIMARY};
 
   svg {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
   }
 
   @media ${VIEWPORT.desktopUp} {
-    width: 68px;
-    height: 68px;
+    width: 44px;
+    height: 44px;
   }
 `;
 
@@ -190,10 +212,8 @@ export const ContactDivider = styled.div`
 
   background: ${COLORS.BORDER};
 
-  @media ${VIEWPORT.desktopUp} {
-    display: block;
-  }
 `;
+
 
 /**
  * Boxes
@@ -211,19 +231,16 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 5rem 0 2rem;
+  padding: 7rem 0 6rem;
 
   @media ${VIEWPORT.mobileUp} {
-    /*
-     * Reserve space for the fixed mobile navigation.
-     */
-    padding: 4rem 0 5rem;
+    padding: 5rem 0 4rem;
   }
 
   @media ${VIEWPORT.desktopUp} {
-    width: min(1400px, calc(100% - 80px));
+    width: min(1280px, calc(100% - 160px));
 
-    padding: 5rem 0 2rem;
+    padding: 8rem 0 6rem;
   }
 `;
 
@@ -232,8 +249,20 @@ export const BoxContact = styled.div`
   flex-direction: column;
 
   flex: 1;
+  justify-content: flex-start;
 
-  justify-content: center;
+  > h2 {
+    max-width: 800px;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+  }
+
+  @media ${VIEWPORT.desktopUp} {
+    > h2 {
+      font-size: clamp(5.5rem, 7vw, 7rem);
+    }
+  }
 `;
 
 /**
@@ -255,7 +284,7 @@ export const TextCopyright = styled.p`
   position: absolute;
 
   left: 50%;
-  bottom: 2rem;
+  bottom: 1.5rem;
 
   transform: translateX(-50%);
 
