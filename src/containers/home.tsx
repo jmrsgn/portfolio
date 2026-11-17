@@ -127,7 +127,7 @@ export function HomeContainer() {
               <span className="line-number">04</span>
               <code className="comment-line">
                 <span className="comment">// em.sleep();</span>
-                <span className="inline-hint">uncomment this block of code</span>
+                <span className="inline-hint">uncomment this block</span>
               </code>
             </CodeSnippet>
           </CodeEditor>
