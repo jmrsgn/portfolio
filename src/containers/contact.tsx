@@ -36,7 +36,6 @@ export function ContactContainer() {
               </Contact.TextIntro>
 
               <Contact.ContactActionGroup>
-                <Contact.TextContactLabel>PROJECT INQUIRIES</Contact.TextContactLabel>
                 <Contact.ItemButton href="mailto:marasiganjohnmartin@gmail.com">
                   Let&apos;s talk
                   <FiArrowUpRight size={15} style={{ marginLeft: "0.6rem" }} />

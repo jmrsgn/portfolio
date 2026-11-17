@@ -191,13 +191,6 @@ export function AboutMoreContainer() {
 
                             <SpaceHeightSmall />
 
-                            <About.TextDescription>
-                                Here are some of my playlists.
-                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
-                                        <BsArrowUpRight />    
-                                    </About.ItemSocialIconNavigation>
-                            </About.TextDescription>
-
                             {/* business */}
 
                             <SpaceHeightMedium />
@@ -235,18 +228,12 @@ export function AboutMoreContainer() {
 
                             <About.TextDescription>
                                 Food Shop
-                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
-                                        <BsArrowUpRight />    
-                                    </About.ItemSocialIconNavigation>
                             </About.TextDescription>
 
                             <SpaceHeightSmall />
 
                             <About.TextDescription>
                                 Health & Wellness Shop
-                                    <About.ItemSocialIconNavigation href="https://open.spotify.com/user/aefmkewrqb1omnoiqyqg3wjh2" target={"_blank"}> 
-                                        <BsArrowUpRight />    
-                                    </About.ItemSocialIconNavigation>
                             </About.TextDescription>
 
                             <SpaceHeightSmall />
