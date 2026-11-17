@@ -101,12 +101,12 @@ export function HomeContainer() {
             <span>Projects and experiments</span>
             <a href="#projects">View the collection ↗</a>
           </IndexFoot>
-          <CodeEditor aria-label="profile.java code sample">
+          <CodeEditor aria-label="me.java code sample">
             <div className="file-tab">
               <span className="file-mark" aria-hidden="true">
                 ◆
               </span>
-              <span>profile.java</span>
+              <span>me.java</span>
               <span className="file-state" aria-hidden="true" />
             </div>
             <CodeSnippet>
@@ -118,14 +118,17 @@ export function HomeContainer() {
               </code>
               <span className="line-number">02</span>
               <code>
-                em.<span className="method">code</span>()
+                em.<span className="method">code</span>();
               </code>
               <span className="line-number">03</span>
               <code>
-                em.<span className="method">goGym</span>()
+                em.<span className="method">goGym</span>();
               </code>
               <span className="line-number">04</span>
-              <code className="comment">// em.sleep()</code>
+              <code className="comment-line">
+                <span className="comment">// em.sleep();</span>
+                <span className="inline-hint">uncomment this block of code</span>
+              </code>
             </CodeSnippet>
           </CodeEditor>
           <Status>compiling personality</Status>

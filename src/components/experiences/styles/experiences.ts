@@ -282,8 +282,6 @@ export const BoxCertificates = styled.aside`
   min-width: 0;
 
   @media ${VIEWPORT.desktopUp} {
-    position: sticky;
-    top: 5rem;
     align-self: start;
   }
 `;

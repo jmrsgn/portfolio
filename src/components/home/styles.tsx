@@ -196,6 +196,28 @@ export const CodeSnippet = styled.div`
   .type { color: ${COLORS.PRIMARY_LIGHT}; }
   .keyword, .method { color: ${COLORS.TEXT_PRIMARY}; }
   .comment { color: ${COLORS.TEXT_TERTIARY}; }
+
+  .comment-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .comment-line .comment {
+    flex-shrink: 0;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: color-mix(in srgb, ${COLORS.WARNING} 55%, ${COLORS.BACKGROUND});
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 3px;
+  }
+
+  .inline-hint {
+    color: ${COLORS.WARNING};
+    font-size: 0.6rem;
+  }
 `;
 
 export const WorkIndex = styled.aside`
