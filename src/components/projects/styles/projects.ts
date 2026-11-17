@@ -154,14 +154,14 @@ export const ItemProject = styled.article`
     background-color 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
-  cursor: pointer;
+  cursor: default;
 
   &:focus-visible {
     outline: 2px solid ${COLORS.PRIMARY_LIGHT};
     outline-offset: 3px;
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @media ${VIEWPORT.desktopUp} and (hover: hover) and (pointer: fine) {
     &:hover {
       background: rgba(201, 175, 232, 0.05);
       border-color: ${COLORS.PRIMARY};
@@ -182,6 +182,7 @@ export const ItemProject = styled.article`
   @media ${VIEWPORT.desktopUp} {
     min-height: 114px;
     padding: 1.25rem 0.75rem;
+    cursor: pointer;
 
     .project-select p,
     .project-select > div:last-child {
@@ -200,7 +201,7 @@ export const ProjectSelect = styled.button`
   background: transparent;
   color: inherit;
   text-align: left;
-  cursor: pointer;
+  cursor: default;
 
   &:focus-visible {
     outline: 2px solid ${COLORS.PRIMARY_LIGHT};
@@ -209,6 +210,7 @@ export const ProjectSelect = styled.button`
   }
 
   .select-indicator {
+    display: none;
     position: absolute;
     top: 0.2rem;
     right: 0.15rem;
@@ -225,6 +227,9 @@ export const ProjectSelect = styled.button`
 
   @media ${VIEWPORT.desktopUp} {
     padding-right: 2rem;
+    cursor: pointer;
+
+    .select-indicator { display: block; }
   }
 `;
 

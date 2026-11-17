@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { KeyboardEvent, MouseEvent } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { motion, useReducedMotion } from "framer-motion";
@@ -6,15 +6,29 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Projects } from "../components";
 import ProjectsData from "../fixtures/projects.json";
 import MotionWrap from "../wrapper/motion-wrap";
+import { BREAKPOINTS } from "../constants/viewports";
 
 type ProjectFilter = "All" | "Mobile" | "Web" | "Other";
 
 const FILTERS: ProjectFilter[] = ["All", "Mobile", "Web", "Other"];
+const DESKTOP_QUERY = `(min-width: ${BREAKPOINTS.desktop}px)`;
 
 export function ProjectsContainer() {
   const reduceMotion = useReducedMotion();
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>("All");
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia(DESKTOP_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(DESKTOP_QUERY);
+    const updateLayout = () => setIsDesktop(mediaQuery.matches);
+
+    updateLayout();
+    mediaQuery.addEventListener("change", updateLayout);
+    return () => mediaQuery.removeEventListener("change", updateLayout);
+  }, []);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") {
@@ -24,7 +38,7 @@ export function ProjectsContainer() {
     return ProjectsData.filter((project) => project.filter === activeFilter);
   }, [activeFilter]);
 
-  const selectedProject = selectedProjectId === null
+  const selectedProject = !isDesktop || selectedProjectId === null
     ? null
     : filteredProjects.find((project) => project.id === selectedProjectId) ?? null;
 
@@ -76,20 +90,20 @@ export function ProjectsContainer() {
                   transition={{ duration: 0.35, ease: "easeOut" }}
                 >
                   <Projects.ItemProject
-                    data-selected={selectedProjectId === item.id}
-                    tabIndex={0}
-                    aria-label={`${item.title} project details`}
-                    onClick={(event: MouseEvent<HTMLElement>) => {
+                    data-selected={isDesktop && selectedProjectId === item.id}
+                    tabIndex={isDesktop ? 0 : undefined}
+                    aria-label={isDesktop ? `${item.title} project details` : undefined}
+                    onClick={isDesktop ? (event: MouseEvent<HTMLElement>) => {
                       if ((event.target as HTMLElement).closest("a")) return;
                       setSelectedProjectId((current) => current === item.id ? null : item.id);
-                    }}
-                    onKeyDown={(event: KeyboardEvent<HTMLElement>) => {
+                    } : undefined}
+                    onKeyDown={isDesktop ? (event: KeyboardEvent<HTMLElement>) => {
                       if (event.target !== event.currentTarget) return;
                       if (event.key === "Enter" || event.key === " ") {
                         event.preventDefault();
                         setSelectedProjectId((current) => current === item.id ? null : item.id);
                       }
-                    }}
+                    } : undefined}
                   >
                     <Projects.ProjectHeader>
                       <Projects.ProjectNumber>
@@ -117,10 +131,11 @@ export function ProjectsContainer() {
                     </Projects.ProjectHeader>
 
                     <Projects.ProjectSelect
+                      as={isDesktop ? "button" : "div"}
                       className="project-select"
-                      type="button"
-                      aria-expanded={selectedProjectId === item.id}
-                      aria-controls="project-detail"
+                      type={isDesktop ? "button" : undefined}
+                      aria-expanded={isDesktop ? selectedProjectId === item.id : undefined}
+                      aria-controls={isDesktop ? "project-detail" : undefined}
                     >
                       <Projects.TextProjectTitle>{item.title}</Projects.TextProjectTitle>
                       <span className="select-indicator" aria-hidden="true">
