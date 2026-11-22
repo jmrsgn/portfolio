@@ -198,7 +198,7 @@ export const ContainerTechInfo = styled.article`
 
   @media (hover: hover) {
     &:hover {
-      background: rgba(201, 175, 232, 0.035);
+      background: ${COLORS.HOVER_TINT};
     }
   }
 
@@ -278,7 +278,7 @@ export const TechTag = styled.span`
 
   border-radius: 4px;
 
-  background: rgba(201, 175, 232, 0.05);
+  background: ${COLORS.HOVER_TINT};
 
   color: ${COLORS.PRIMARY_LIGHT};
 
@@ -375,7 +375,7 @@ export const TechStackItem = styled.div`
 
   @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     &:hover {
-      background: rgba(201, 175, 232, 0.045);
+      background: ${COLORS.HOVER_TINT};
 
       svg {
         color: ${COLORS.PRIMARY_LIGHT};

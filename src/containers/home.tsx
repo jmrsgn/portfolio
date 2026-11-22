@@ -112,17 +112,18 @@ export function HomeContainer() {
             <CodeSnippet>
               <span className="line-number">01</span>
               <code>
-                <span className="type">Dev</span> em ={" "}
+                <span className="type">Dev</span>{" "}
+                <span className="variable">em</span> ={" "}
                 <span className="keyword">new</span>{" "}
                 <span className="type">Dev</span>();
               </code>
               <span className="line-number">02</span>
               <code>
-                em.<span className="method">code</span>();
+                <span className="variable">em</span>.<span className="method">code</span>();
               </code>
               <span className="line-number">03</span>
               <code>
-                em.<span className="method">goGym</span>();
+                <span className="variable">em</span>.<span className="method">goGym</span>();
               </code>
               <span className="line-number">04</span>
               <code className="comment-line">

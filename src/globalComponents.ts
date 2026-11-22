@@ -178,7 +178,7 @@ export const SocialIcon = styled.a`
     background-color: ${COLORS.PRIMARY};
 
     svg {
-      color: ${COLORS.TEXT_PRIMARY};
+      color: ${COLORS.TEXT_INVERSE};
     }
   }
 

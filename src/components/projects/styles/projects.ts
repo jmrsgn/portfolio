@@ -163,14 +163,14 @@ export const ItemProject = styled.article`
 
   @media ${VIEWPORT.desktopUp} and (hover: hover) and (pointer: fine) {
     &:hover {
-      background: rgba(201, 175, 232, 0.05);
+      background: ${COLORS.HOVER_TINT};
       border-color: ${COLORS.PRIMARY};
       box-shadow: inset 2px 0 ${COLORS.PRIMARY};
     }
   }
 
   &[data-selected="true"] {
-    background: rgba(201, 175, 232, 0.05);
+    background: ${COLORS.HOVER_TINT};
     border-color: ${COLORS.PRIMARY_LIGHT};
     box-shadow: inset 2px 0 ${COLORS.PRIMARY_LIGHT};
   }

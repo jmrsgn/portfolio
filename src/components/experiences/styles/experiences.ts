@@ -226,7 +226,7 @@ export const CurrentBadge = styled.span`
 
   border-radius: 4px;
 
-  background: rgba(201, 175, 232, 0.05);
+  background: ${COLORS.HOVER_TINT};
 
   color: ${COLORS.SUCCESS};
 
@@ -335,7 +335,7 @@ export const ContainerCertificate = styled.div`
     background-color 0.2s ease;
 
   &:hover {
-    background: rgba(201, 175, 232, 0.04);
+    background: ${COLORS.HOVER_TINT};
   }
 
   @media (max-width: 767px) {

@@ -45,7 +45,7 @@ export const ItemButton = styled.a`
 
   &:hover {
     color: ${COLORS.TEXT_INVERSE};
-    background: ${COLORS.PRIMARY};
+    background: ${COLORS.PRIMARY_HOVER};
   }
 
   @media (hover: hover) and (pointer: fine) {

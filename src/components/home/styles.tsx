@@ -3,6 +3,10 @@ import styled from "styled-components";
 import * as COLORS from "../../constants/styles/colors";
 import { FONTS } from "../../fonts/fonts";
 
+const CODE_TYPE = "#87B8E7";
+const CODE_VARIABLE = "#9CC7BC";
+const CODE_METHOD = "#E3C979";
+
 export const Hero = styled.section`
   min-height: 100svh;
   background: ${COLORS.BACKGROUND};
@@ -193,8 +197,10 @@ export const CodeSnippet = styled.div`
 
   code { white-space: pre; }
   .line-number { color: ${COLORS.TEXT_TERTIARY}; user-select: none; }
-  .type { color: ${COLORS.PRIMARY_LIGHT}; }
-  .keyword, .method { color: ${COLORS.TEXT_PRIMARY}; }
+  .type { color: ${CODE_TYPE}; }
+  .variable { color: ${CODE_VARIABLE}; }
+  .method { color: ${CODE_METHOD}; }
+  .keyword { color: ${COLORS.TEXT_PRIMARY}; }
   .comment { color: ${COLORS.TEXT_TERTIARY}; }
 
   .comment-line {
