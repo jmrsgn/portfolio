@@ -7,6 +7,10 @@ import {
   ContainerTech,
   ContainerTechInfo,
   ContainerTechUsed,
+  EngineeringFocus,
+  EngineeringFocusAreas,
+  EngineeringFocusIntro,
+  EngineeringFocusTitle,
   ProfileCard,
   ProfileItem,
   ProfileLabel,
@@ -18,6 +22,7 @@ import {
   TechStackGrid,
   TechStackHeader,
   TechStackItem,
+  TechStackToggle,
   TechTag,
   TextDescription,
   TextHighlight,
@@ -64,10 +69,16 @@ type AboutComponent = React.FC<AboutProps> & {
   ContainerTechUsed: React.FC<StyledProps<typeof ContainerTechUsed>>;
   TechTag: React.FC<StyledProps<typeof TechTag>>;
 
+  EngineeringFocus: React.FC<StyledProps<typeof EngineeringFocus>>;
+  EngineeringFocusAreas: React.FC<StyledProps<typeof EngineeringFocusAreas>>;
+  EngineeringFocusTitle: React.FC<StyledProps<typeof EngineeringFocusTitle>>;
+  EngineeringFocusIntro: React.FC<StyledProps<typeof EngineeringFocusIntro>>;
+
   TechStack: React.FC<StyledProps<typeof TechStack>>;
   TechStackHeader: React.FC<StyledProps<typeof TechStackHeader>>;
   TechStackGrid: React.FC<StyledProps<typeof TechStackGrid>>;
   TechStackItem: React.FC<StyledProps<typeof TechStackItem>>;
+  TechStackToggle: React.FC<StyledProps<typeof TechStackToggle>>;
 };
 
 const About = function About({ children, ...restProps }: AboutProps) {
@@ -187,6 +198,26 @@ About.TechTag = ({ children, ...restProps }) => (
 );
 
 /**
+ * Engineering Focus
+ */
+
+About.EngineeringFocus = ({ children, ...restProps }) => (
+  <EngineeringFocus {...restProps}>{children}</EngineeringFocus>
+);
+
+About.EngineeringFocusAreas = ({ children, ...restProps }) => (
+  <EngineeringFocusAreas {...restProps}>{children}</EngineeringFocusAreas>
+);
+
+About.EngineeringFocusTitle = ({ children, ...restProps }) => (
+  <EngineeringFocusTitle {...restProps}>{children}</EngineeringFocusTitle>
+);
+
+About.EngineeringFocusIntro = ({ children, ...restProps }) => (
+  <EngineeringFocusIntro {...restProps}>{children}</EngineeringFocusIntro>
+);
+
+/**
  * Tech Stack
  */
 
@@ -204,6 +235,10 @@ About.TechStackGrid = ({ children, ...restProps }) => (
 
 About.TechStackItem = ({ children, ...restProps }) => (
   <TechStackItem {...restProps}>{children}</TechStackItem>
+);
+
+About.TechStackToggle = ({ children, ...restProps }) => (
+  <TechStackToggle {...restProps}>{children}</TechStackToggle>
 );
 
 export default About;

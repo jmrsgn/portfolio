@@ -290,6 +290,162 @@ export const TechTag = styled.span`
 `;
 
 /**
+ * Engineering Focus
+ */
+
+export const EngineeringFocus = styled.section`
+  display: grid;
+  gap: 1.25rem 3rem;
+  margin-top: 5rem;
+
+  > :first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  @media ${VIEWPORT.tabletUp} {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+`;
+
+export const EngineeringFocusTitle = styled.h2`
+  margin: 0;
+  color: ${COLORS.TEXT_PRIMARY};
+  font: normal clamp(2.6rem, 4.5vw, 4.25rem)/0.98 ${FONTS.calibreBold};
+  letter-spacing: -0.02em;
+`;
+
+export const EngineeringFocusIntro = styled.p`
+  max-width: 42rem;
+  margin: 0;
+  color: ${COLORS.TEXT_SECONDARY};
+  font: clamp(1.15rem, 1.5vw, 1.35rem)/1.45 ${FONTS.calibreRegular};
+`;
+
+export const EngineeringFocusAreas = styled.div`
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 2.25rem;
+  margin-top: 2.25rem;
+
+  @media ${VIEWPORT.tabletUp} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media ${VIEWPORT.desktopUp} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+`;
+
+export const EngineeringFocusArea = styled.article`
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 1rem 0.25rem 1.6rem;
+  border-top: 1px solid ${COLORS.BORDER};
+  transition: border-color 0.35s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: radial-gradient(
+      ellipse 47% 50% at 50% 47%,
+      rgba(74, 150, 255, 0.13) 0%,
+      rgba(74, 150, 255, 0.045) 48%,
+      transparent 100%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  > svg {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.75rem;
+    filter: brightness(0.88);
+    transition: filter 0.35s ease;
+  }
+
+  > span {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: ${COLORS.TEXT_TERTIARY};
+    font: 0.65rem ${FONTS.sfMonoRegular};
+  }
+
+  h3 {
+    margin: 0;
+    color: #B8B8B8;
+    font: 600 clamp(1.4rem, 1.8vw, 1.65rem)/1.1 ${FONTS.calibreRegular};
+    transition: color 0.35s ease;
+  }
+
+  p {
+    max-width: 28rem;
+    margin: 0.55rem 0 0;
+    color: #919191;
+    font: 1.05rem/1.35 ${FONTS.calibreRegular};
+    transition: color 0.35s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-top-color: ${COLORS.TEXT_SECONDARY};
+
+      h3 { color: #F5F5F5; }
+      p { color: ${COLORS.TEXT_SECONDARY}; }
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-top-color: ${COLORS.TEXT_PRIMARY};
+
+    h3 { color: #F5F5F5; }
+    p { color: ${COLORS.TEXT_SECONDARY}; }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::before { opacity: 1; }
+    &:hover > svg { filter: brightness(1.1); }
+  }
+
+  &:focus-visible::before { opacity: 1; }
+  &:focus-visible > svg { filter: brightness(1.1); }
+
+  @media (max-width: 767px) {
+    &[data-in-view="true"] {
+      border-top-color: ${COLORS.TEXT_SECONDARY};
+
+      h3 { color: #F5F5F5; }
+      p { color: ${COLORS.TEXT_SECONDARY}; }
+    }
+
+    &[data-in-view="true"]::before { opacity: 1; }
+    &[data-in-view="true"] > svg { filter: brightness(1.1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &::before,
+    > svg,
+    h3,
+    p {
+      transition: none;
+    }
+  }
+`;
+
+/**
  * Tech Stack
  */
 
@@ -317,10 +473,16 @@ export const TechStackHeader = styled.div`
   }
 `;
 
-export const TechStackGrid = styled.div`
+export const TechStackGrid = styled.div<{ $expanded: boolean }>`
   display: grid;
   grid-template-columns: 1fr;
   counter-reset: tech;
+
+  @media (max-width: 767px) {
+    > :nth-child(n + 9) {
+      display: ${({ $expanded }) => ($expanded ? "flex" : "none")};
+    }
+  }
 
   @media ${VIEWPORT.tabletUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -395,5 +557,39 @@ export const TechStackItem = styled.div`
       width: 24px;
       height: 24px;
     }
+  }
+`;
+
+export const TechStackToggle = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 0.4rem;
+  border: 0;
+  border-bottom: 1px solid ${COLORS.BORDER};
+  background: transparent;
+  color: ${COLORS.TEXT_SECONDARY};
+  font: 0.7rem ${FONTS.sfMonoRegular};
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  span {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    color: ${COLORS.TEXT_PRIMARY};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${COLORS.TEXT_PRIMARY};
+    outline-offset: 2px;
+  }
+
+  @media ${VIEWPORT.tabletUp} {
+    display: none;
   }
 `;

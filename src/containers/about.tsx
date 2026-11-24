@@ -1,9 +1,12 @@
 import { About } from "../components";
 import MotionWrap from "../wrapper/motion-wrap";
+import { useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import { ENGINEERING_FOCUS_AREAS } from "../fixtures/engineering-focus";
+import { EngineeringFocusItem } from "../components/about/engineering-focus-item";
 
 import {
   SiDocker,
-  SiFigma,
   SiFlutter,
   SiGit,
   SiAndroid,
@@ -33,16 +36,15 @@ const TECH_STACK = [
   { name: "Docker", icon: SiDocker, group: "Infrastructure" },
   { name: "Kubernetes", icon: SiKubernetes, group: "Infrastructure" },
   { name: "Git", icon: SiGit, group: "Tools" },
-  { name: "Figma", icon: SiFigma, group: "Tools" },
 ];
 
 const WHAT_I_DO = [
   {
     number: "01",
-    title: "Web Development",
+    title: "Backend Development",
     description:
-      "I develop responsive web applications with a focus on reusable components, maintainable code, and user experience.",
-    tech: ["React", "TypeScript", "JavaScript"],
+      "I develop backend services and APIs, focusing on system integration, data processing, and maintainable software architecture.",
+    tech: ["Java", "Spring Boot", "REST APIs"],
   },
   {
     number: "02",
@@ -53,13 +55,6 @@ const WHAT_I_DO = [
   },
   {
     number: "03",
-    title: "Backend Development",
-    description:
-      "I develop backend services and APIs, focusing on system integration, data processing, and maintainable software architecture.",
-    tech: ["Java", "Spring Boot", "REST APIs"],
-  },
-  {
-    number: "04",
     title: "AI-Assisted Development",
     description:
       "I incorporate AI tools into my development workflow to support coding, debugging, code analysis, and continuous learning.",
@@ -68,6 +63,9 @@ const WHAT_I_DO = [
 ];
 
 export function AboutContainer() {
+  const reduceMotion = useReducedMotion();
+  const [showAllTech, setShowAllTech] = useState(false);
+
   return (
     <About id="about">
       <MotionWrap
@@ -168,13 +166,34 @@ export function AboutContainer() {
             ))}
           </About.ContainerTech>
 
+          <About.EngineeringFocus>
+            <About.SectionEyebrow>{"// ENGINEERING FOCUS"}</About.SectionEyebrow>
+            <About.EngineeringFocusTitle>
+              Beyond writing code.
+            </About.EngineeringFocusTitle>
+            <About.EngineeringFocusIntro>
+              As AI transforms software development, I&apos;m focusing on
+              understanding the systems behind the code.
+            </About.EngineeringFocusIntro>
+            <About.EngineeringFocusAreas>
+              {ENGINEERING_FOCUS_AREAS.map((area, index) => (
+                <EngineeringFocusItem
+                  key={area.number}
+                  area={area}
+                  index={index}
+                  reduceMotion={reduceMotion}
+                />
+              ))}
+            </About.EngineeringFocusAreas>
+          </About.EngineeringFocus>
+
           {/* Tech Stack */}
           <About.TechStack>
             <About.TechStackHeader>
               <About.SectionEyebrow>{"// TECH STACK"}</About.SectionEyebrow>
             </About.TechStackHeader>
 
-            <About.TechStackGrid>
+            <About.TechStackGrid id="tech-stack-list" $expanded={showAllTech}>
               {TECH_STACK.map(({ name, icon: Icon, group }) => (
                 <About.TechStackItem key={name}>
                   <Icon aria-hidden="true" />
@@ -183,6 +202,15 @@ export function AboutContainer() {
                 </About.TechStackItem>
               ))}
             </About.TechStackGrid>
+            <About.TechStackToggle
+              type="button"
+              aria-controls="tech-stack-list"
+              aria-expanded={showAllTech}
+              onClick={() => setShowAllTech((current) => !current)}
+            >
+              {showAllTech ? "Show less" : "Read more"}
+              <span aria-hidden="true">{showAllTech ? "−" : "+"}</span>
+            </About.TechStackToggle>
           </About.TechStack>
         </About.Box>
       </MotionWrap>
