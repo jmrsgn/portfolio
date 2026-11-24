@@ -208,7 +208,7 @@ export function AboutContainer() {
               aria-expanded={showAllTech}
               onClick={() => setShowAllTech((current) => !current)}
             >
-              {showAllTech ? "Show less" : "Read more"}
+              {showAllTech ? "Show less" : "View more"}
               <span aria-hidden="true">{showAllTech ? "−" : "+"}</span>
             </About.TechStackToggle>
           </About.TechStack>

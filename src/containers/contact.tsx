@@ -95,7 +95,7 @@ export function ContactContainer() {
             </Contact.ContainerContacts>
 
             <Contact.TextCopyright>
-              Designed and developed by John Martin
+              © 2026 John Martin Marasigan
             </Contact.TextCopyright>
           </Contact.BoxContact>
         </Contact.Box>
