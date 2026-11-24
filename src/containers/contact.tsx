@@ -21,9 +21,7 @@ export function ContactContainer() {
             <Contact.TextEyebrow>{"// CONTACT"}</Contact.TextEyebrow>
 
             <Contact.TextTitle>
-              Let&apos;s build
-              <br />
-              something.
+              Reach out.
             </Contact.TextTitle>
 
             <Contact.Divider />

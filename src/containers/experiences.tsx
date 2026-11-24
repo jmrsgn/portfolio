@@ -5,7 +5,7 @@ import certificatesData from "../fixtures/certificates.json";
 
 import MotionWrap from "../wrapper/motion-wrap";
 
-import { BsArrowUpRight, BsPatchCheck, BsX } from "react-icons/bs";
+import { BsArrowUpRight, BsBuilding, BsPatchCheck, BsX } from "react-icons/bs";
 
 import { useState } from "react";
 
@@ -58,41 +58,30 @@ export function ExperiencesContainer() {
           <Experiences.Divider />
 
           <Experiences.TextIntro>
-            My professional journey as a software engineer, building software
+            My professional journey as a developer, building software
             and learning along the way.
           </Experiences.TextIntro>
 
           {/* Main Content */}
 
           <Experiences.ContainerInfo>
-            {/* Experience Timeline */}
+            {/* Experience cards */}
 
             <Experiences.ContainerTimeline>
               {experiences.map((experience) => (
-                <Experiences.ExperienceItem key={experience.id}>
+                <Experiences.ExperienceItem key={experience.id} data-current={experience.current}>
                   <Experiences.TimelineDate>
                     {experience.date}
                   </Experiences.TimelineDate>
 
-                  <Experiences.TimelineMarker>
-                    <Experiences.TimelineDot />
-                  </Experiences.TimelineMarker>
-
                   <Experiences.ExperienceContent>
                     <Experiences.TextPosition>
                       {experience.position}
-                      <Experiences.TextCompany>
-                        {" "}
-                        @ {experience.company}
-                      </Experiences.TextCompany>
                     </Experiences.TextPosition>
-
-                    {experience.current && (
-                      <Experiences.CurrentBadge>
-                        <Experiences.CurrentDot />
-                        Current
-                      </Experiences.CurrentBadge>
-                    )}
+                    <Experiences.TextCompany>
+                      <BsBuilding aria-hidden="true" />
+                      {experience.company}
+                    </Experiences.TextCompany>
 
                     <Experiences.ContainerExperienceText>
                       {experience.learnings.map((learning, index) => (

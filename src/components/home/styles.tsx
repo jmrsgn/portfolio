@@ -6,6 +6,8 @@ import { FONTS } from "../../fonts/fonts";
 const CODE_TYPE = "#87B8E7";
 const CODE_VARIABLE = "#9CC7BC";
 const CODE_METHOD = "#E3C979";
+const TERMINAL_CURRENT_DIRECTORY = "#5FAEFF";
+const TERMINAL_BRANCH = "#8FCFA3";
 
 export const Hero = styled.section`
   min-height: 100svh;
@@ -140,7 +142,8 @@ export const SocialLinks = styled.div`
 `;
 
 export const Status = styled.p`
-  margin-top: 0.5rem;
+  margin: 0;
+  padding: 1.15rem 1rem 0.85rem;
   color: ${COLORS.TEXT_TERTIARY};
   font: 0.65rem ${FONTS.sfMonoRegular};
 
@@ -158,40 +161,18 @@ export const Status = styled.p`
 `;
 
 export const CodeEditor = styled.div`
-  margin-top: 1.25rem;
-  border: 1px solid ${COLORS.BORDER};
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
   background: ${COLORS.BACKGROUND};
-
-  .file-tab {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    min-height: 32px;
-    padding: 0 0.75rem;
-    border-bottom: 1px solid ${COLORS.BORDER};
-    color: ${COLORS.TEXT_SECONDARY};
-    font: 0.6rem ${FONTS.sfMonoRegular};
-  }
-
-  .file-mark { color: ${COLORS.PRIMARY_LIGHT}; font-size: 0.55rem; }
-
-  .file-state {
-    width: 6px;
-    height: 6px;
-    margin-left: auto;
-    border-radius: 50%;
-    background: ${COLORS.PRIMARY};
-  }
-
-  @media (max-width: 767px) { margin-top: 1rem; }
 `;
 
 export const CodeSnippet = styled.div`
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr);
   align-items: center;
-  row-gap: 0.2rem;
-  padding: 0.7rem 0.75rem;
+  row-gap: 0.45rem;
+  padding: 1.25rem 1rem;
   color: ${COLORS.TEXT_SECONDARY};
   font: 0.65rem/1.55 ${FONTS.sfMonoRegular};
 
@@ -226,82 +207,168 @@ export const CodeSnippet = styled.div`
   }
 `;
 
-export const WorkIndex = styled.aside`
+export const IdeWindow = styled.aside`
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-width: 0;
-  padding: 2.5rem;
+  min-height: 540px;
   border: 1px solid ${COLORS.BORDER};
   background: ${COLORS.SURFACE};
 
-  @media (max-width: 767px) { padding: 1rem; }
+  @media (max-width: 767px) { min-height: 410px; }
 `;
 
-export const IndexHeading = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  color: ${COLORS.TEXT_TERTIARY};
-  font: 0.7rem ${FONTS.sfMonoRegular};
-`;
-
-export const WorkRow = styled.a`
-  min-height: 94px;
+export const IdeTitleBar = styled.div`
   display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr) auto 1rem;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 0.75rem;
-  border-top: 1px solid ${COLORS.BORDER};
-  color: ${COLORS.TEXT_PRIMARY};
-  text-decoration: none;
-  transition: padding-left 0.2s ease, color 0.2s ease;
+  gap: 0.5rem;
+  min-height: 38px;
+  padding: 0 0.8rem;
+  border-bottom: 1px solid ${COLORS.BORDER};
+  color: ${COLORS.TEXT_TERTIARY};
+  font: 0.58rem ${FONTS.sfMonoRegular};
 
-  &:hover, &:focus-visible { padding-left: 0.5rem; color: ${COLORS.PRIMARY_LIGHT}; }
+  .window-controls { display: flex; gap: 0.35rem; }
+  .window-controls span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .window-controls span:nth-child(1) { background: #FF5F57; }
+  .window-controls span:nth-child(2) { background: #FEBC2E; }
+  .window-controls span:nth-child(3) { background: #28C840; }
+`;
 
-  @media (max-width: 1023px) {
-    min-height: 72px;
-    grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+export const IdeWorkspace = styled.div`
+  display: grid;
+  grid-template-columns: 36px 108px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 32px minmax(0, 1fr);
   }
 `;
 
-export const WorkNumber = styled.span`
+export const IdeActivityBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-right: 1px solid ${COLORS.BORDER};
+  color: ${COLORS.TEXT_DISABLED};
+
+  svg { width: 16px; height: 16px; }
+  svg.active { color: ${COLORS.PRIMARY_LIGHT}; }
+`;
+
+export const IdeExplorer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.9rem 0;
+  border-right: 1px solid ${COLORS.BORDER};
   color: ${COLORS.TEXT_TERTIARY};
-  font: 0.7rem ${FONTS.sfMonoRegular};
+  font: 0.56rem ${FONTS.sfMonoRegular};
+
+  .explorer-heading { padding: 0 0.7rem 0.65rem; letter-spacing: 0.06em; }
+  .folder { padding: 0 0.7rem; color: ${COLORS.TEXT_SECONDARY}; }
+  .file {
+    padding: 0.4rem 0.4rem 0.4rem 1.25rem;
+    background: ${COLORS.SURFACE_ELEVATED};
+    color: ${COLORS.TEXT_PRIMARY};
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767px) { display: none; }
 `;
 
-export const WorkName = styled.span`
-  font: normal clamp(1.8rem, 2.5vw, 2.5rem)/1 ${FONTS.calibreBold};
+export const IdeMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
 `;
 
-export const WorkType = styled.span`
-  color: ${COLORS.TEXT_TERTIARY};
-  font: 0.65rem ${FONTS.sfMonoRegular};
+export const IdeTabBar = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  min-height: 36px;
+  padding: 0 0.85rem;
+  border-top: 2px solid ${COLORS.PRIMARY_LIGHT};
+  border-right: 1px solid ${COLORS.BORDER};
+  border-bottom: 1px solid ${COLORS.BACKGROUND};
+  color: ${COLORS.TEXT_PRIMARY};
+  font: 0.6rem ${FONTS.sfMonoRegular};
 
-  @media (max-width: 1023px) { display: none; }
+  .file-mark { color: ${COLORS.PRIMARY_LIGHT}; font-size: 0.55rem; }
+  .file-state {
+    width: 5px;
+    height: 5px;
+    margin-left: 0.8rem;
+    border-radius: 50%;
+    background: ${COLORS.PRIMARY_LIGHT};
+  }
 `;
 
-export const IndexFoot = styled.div`
+export const IdeOutput = styled.div`
+  min-height: 148px;
+  border-top: 1px solid ${COLORS.BORDER};
+  background: ${COLORS.BACKGROUND};
+
+  .output-heading {
+    display: block;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid ${COLORS.BORDER};
+    color: ${COLORS.TEXT_SECONDARY};
+    font: 0.57rem ${FONTS.sfMonoRegular};
+    letter-spacing: 0.07em;
+  }
+
+  .terminal-directory,
+  .terminal-command {
+    display: block;
+    padding: 0.55rem 1rem 0;
+    color: ${COLORS.TEXT_PRIMARY};
+    font: 0.65rem ${FONTS.sfMonoRegular};
+  }
+
+  .terminal-directory {
+    padding-top: 0.8rem;
+    overflow-wrap: anywhere;
+
+    .terminal-parent-path { color: ${CODE_TYPE}; }
+    .terminal-current-directory {
+      color: ${TERMINAL_CURRENT_DIRECTORY};
+      font-weight: 700;
+    }
+    .terminal-branch { color: ${TERMINAL_BRANCH}; }
+  }
+
+  .terminal-command {
+    padding-top: 0.15rem;
+
+    span { color: ${COLORS.TEXT_TERTIARY}; }
+  }
+
+  @media (max-width: 767px) { min-height: 136px; }
+`;
+
+export const IdeStatusBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-top: 1.25rem;
+  min-height: 26px;
+  padding: 0 0.7rem;
   border-top: 1px solid ${COLORS.BORDER};
+  background: ${COLORS.SURFACE_ELEVATED};
   color: ${COLORS.TEXT_TERTIARY};
-  font: 0.65rem ${FONTS.sfMonoRegular};
-
-  a {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    color: ${COLORS.PRIMARY_LIGHT};
-    text-decoration: none;
-  }
-
-  a:hover { text-decoration: underline; }
-
-  @media (max-width: 479px) { span { display: none; } }
+  font: 0.55rem ${FONTS.sfMonoRegular};
 `;

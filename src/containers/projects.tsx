@@ -12,6 +12,7 @@ type ProjectFilter = "All" | "Mobile" | "Web" | "Other";
 
 const FILTERS: ProjectFilter[] = ["All", "Mobile", "Web", "Other"];
 const DESKTOP_QUERY = `(min-width: ${BREAKPOINTS.desktop}px)`;
+const FEATURED_PROJECTS = ProjectsData.filter((project) => project.featured);
 
 export function ProjectsContainer() {
   const reduceMotion = useReducedMotion();
@@ -32,10 +33,10 @@ export function ProjectsContainer() {
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") {
-      return ProjectsData;
+      return FEATURED_PROJECTS;
     }
 
-    return ProjectsData.filter((project) => project.filter === activeFilter);
+    return FEATURED_PROJECTS.filter((project) => project.filter === activeFilter);
   }, [activeFilter]);
 
   const selectedProject = !isDesktop || selectedProjectId === null
@@ -157,7 +158,7 @@ export function ProjectsContainer() {
               <div className="preview-bar">
                 <span>PROJECT DETAILS</span>
                 <span>
-                  {String(selectedProject.id).padStart(2, "0")} / {String(ProjectsData.length).padStart(2, "0")}
+                  {String(selectedProject.id).padStart(2, "0")} / {String(FEATURED_PROJECTS.length).padStart(2, "0")}
                 </span>
               </div>
               <motion.div

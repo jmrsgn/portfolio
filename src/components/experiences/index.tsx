@@ -7,13 +7,9 @@ import {
   ContainerTimeline,
   ExperienceItem,
   TimelineDate,
-  TimelineMarker,
-  TimelineDot,
   ExperienceContent,
   TextPosition,
   TextCompany,
-  CurrentBadge,
-  CurrentDot,
   ContainerExperienceText,
   TextDescription,
   BoxCertificates,
@@ -68,19 +64,11 @@ type ExperiencesComponent = React.FC<ExperiencesProps> & {
 
   TimelineDate: React.FC<StyledProps<typeof TimelineDate>>;
 
-  TimelineMarker: React.FC<StyledProps<typeof TimelineMarker>>;
-
-  TimelineDot: React.FC<StyledProps<typeof TimelineDot>>;
-
   ExperienceContent: React.FC<StyledProps<typeof ExperienceContent>>;
 
   TextPosition: React.FC<StyledProps<typeof TextPosition>>;
 
   TextCompany: React.FC<StyledProps<typeof TextCompany>>;
-
-  CurrentBadge: React.FC<StyledProps<typeof CurrentBadge>>;
-
-  CurrentDot: React.FC<StyledProps<typeof CurrentDot>>;
 
   ContainerExperienceText: React.FC<
     StyledProps<typeof ContainerExperienceText>
@@ -194,14 +182,6 @@ Experiences.TimelineDate = ({ children, ...restProps }) => {
   return <TimelineDate {...restProps}>{children}</TimelineDate>;
 };
 
-Experiences.TimelineMarker = ({ children, ...restProps }) => {
-  return <TimelineMarker {...restProps}>{children}</TimelineMarker>;
-};
-
-Experiences.TimelineDot = ({ children, ...restProps }) => {
-  return <TimelineDot {...restProps}>{children}</TimelineDot>;
-};
-
 Experiences.ExperienceContent = ({ children, ...restProps }) => {
   return <ExperienceContent {...restProps}>{children}</ExperienceContent>;
 };
@@ -212,14 +192,6 @@ Experiences.TextPosition = ({ children, ...restProps }) => {
 
 Experiences.TextCompany = ({ children, ...restProps }) => {
   return <TextCompany {...restProps}>{children}</TextCompany>;
-};
-
-Experiences.CurrentBadge = ({ children, ...restProps }) => {
-  return <CurrentBadge {...restProps}>{children}</CurrentBadge>;
-};
-
-Experiences.CurrentDot = ({ children, ...restProps }) => {
-  return <CurrentDot {...restProps}>{children}</CurrentDot>;
 };
 
 Experiences.ContainerExperienceText = ({ children, ...restProps }) => {

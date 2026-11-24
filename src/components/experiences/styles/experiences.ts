@@ -4,6 +4,8 @@ import * as COLORS from "../../../constants/styles/colors";
 import { VIEWPORT } from "../../../constants/viewports";
 import { FONTS } from "../../../fonts/fonts";
 
+const CURRENT_BLUE = "#4A96FF";
+
 /**
  * Base
  */
@@ -68,112 +70,64 @@ export const ContainerInfo = styled.div`
 `;
 
 /**
- * Experience Timeline
+ * Experience entries
  */
 
 export const ContainerTimeline = styled.div`
-  position: relative;
-
   min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  border-top: 1px solid ${COLORS.BORDER};
+  display: grid;
 `;
 
 export const ExperienceItem = styled.article`
-  position: relative;
-
   display: grid;
-
-  grid-template-columns: 100px 28px minmax(0, 1fr);
-
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.15rem 1rem;
+  min-width: 0;
   padding: 2rem 0;
   border-bottom: 1px solid ${COLORS.BORDER};
 
-  @media ${VIEWPORT.tabletUp} {
-    grid-template-columns: 130px 32px minmax(0, 1fr);
-    padding: 2.5rem 0;
+  &:first-child {
+    padding-top: 0;
   }
 
-  @media ${VIEWPORT.desktopUp} {
-    grid-template-columns: 135px 32px minmax(0, 1fr);
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @media ${VIEWPORT.tabletUp} {
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
+
+    &:first-child {
+      padding-top: 0;
+    }
   }
 `;
 
 export const TimelineDate = styled.div`
-  padding-top: 0.3rem;
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  color: ${COLORS.PRIMARY_LIGHT};
-
-  font-size: 0.65rem;
-
-  line-height: 1.6;
-
+  min-width: 0;
+  color: ${COLORS.TEXT_TERTIARY};
+  font: 0.7rem/1.4 ${FONTS.sfMonoRegular};
   letter-spacing: 0.03em;
 
-  @media ${VIEWPORT.tabletUp} {
-    font-size: 0.7rem;
+  ${ExperienceItem}[data-current="true"] & {
+    color: color-mix(in srgb, ${CURRENT_BLUE} 82%, ${COLORS.TEXT_PRIMARY});
+    font-weight: 700;
   }
-`;
-
-export const TimelineMarker = styled.div`
-  position: relative;
-
-  display: flex;
-
-  justify-content: center;
-
-  min-height: 100%;
-
-  &::after {
-    content: "";
-
-    position: absolute;
-
-    top: 18px;
-    bottom: -4px;
-
-    width: 1px;
-
-    background: ${COLORS.BORDER};
-  }
-
-  ${ExperienceItem}:last-child &::after {
-    display: none;
-  }
-`;
-
-export const TimelineDot = styled.span`
-  position: relative;
-
-  z-index: 2;
-
-  width: 11px;
-  height: 11px;
-
-  margin-top: 0.35rem;
-
-  border: 2px solid ${COLORS.BACKGROUND};
-
-  border-radius: 50%;
-
-  background: ${COLORS.PRIMARY_LIGHT};
-
-  box-shadow: 0 0 0 1px ${COLORS.PRIMARY_DARK};
 `;
 
 export const ExperienceContent = styled.div`
+  grid-column: 1 / -1;
   min-width: 0;
+  padding-left: 1.15rem;
+  border-left: 2px solid ${COLORS.BORDER};
 
-  padding: 0 0 0 1.25rem;
+  ${ExperienceItem}[data-current="true"] & {
+    border-left-color: color-mix(in srgb, ${CURRENT_BLUE} 75%, ${COLORS.BORDER});
+  }
 
-  @media ${VIEWPORT.tabletUp} {
-    padding-left: 1.5rem;
+  @media (max-width: 479px) {
+    padding-left: 1rem;
   }
 `;
 
@@ -184,78 +138,43 @@ export const TextPosition = styled.h3`
 
   color: ${COLORS.TEXT_PRIMARY};
 
-  font-size: 1.8rem;
-
+  font-size: 1.5rem;
   font-weight: normal;
-
-  line-height: 1.1;
+  line-height: 1.15;
 
   @media ${VIEWPORT.tabletUp} {
-    font-size: 2.2rem;
-  }
-
-  @media ${VIEWPORT.desktopUp} {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
   }
 `;
 
 export const TextCompany = styled.span`
-  color: ${COLORS.PRIMARY_LIGHT};
-
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
+  color: color-mix(in srgb, ${COLORS.TEXT_PRIMARY} 35%, ${COLORS.TEXT_SECONDARY});
+  font: 600 1rem/1.35 ${FONTS.calibreRegular};
   overflow-wrap: anywhere;
 
-  @media (max-width: 479px) {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.85em;
+  svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: ${COLORS.TEXT_TERTIARY};
   }
-`;
 
-export const CurrentBadge = styled.span`
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 0.4rem;
-
-  margin-top: 0.7rem;
-
-  padding: 0.25rem 0.5rem;
-
-  border: 1px solid ${COLORS.PRIMARY_DARK};
-
-  border-radius: 4px;
-
-  background: ${COLORS.HOVER_TINT};
-
-  color: ${COLORS.SUCCESS};
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  font-size: 0.6rem;
-
-  letter-spacing: 0.04em;
-`;
-
-export const CurrentDot = styled.span`
-  width: 5px;
-  height: 5px;
-
-  border-radius: 50%;
-
-  background: ${COLORS.SUCCESS};
+  @media ${VIEWPORT.tabletUp} {
+    font-size: 1.125rem;
+  }
 `;
 
 export const ContainerExperienceText = styled.div`
   display: flex;
-
   flex-direction: column;
-
-  gap: 1rem;
-
-  max-width: 760px;
-
+  gap: 0.85rem;
   margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid ${COLORS.BORDER};
 `;
 
 export const TextDescription = styled.p`
@@ -265,12 +184,11 @@ export const TextDescription = styled.p`
 
   color: ${COLORS.TEXT_SECONDARY};
 
-  font-size: 1.05rem;
-
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
 
   @media ${VIEWPORT.desktopUp} {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 `;
 

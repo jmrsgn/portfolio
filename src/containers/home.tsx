@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { FiFileText, FiGitBranch, FiSearch } from "react-icons/fi";
 
-import projects from "../fixtures/projects.json";
 import {
   Actions,
   CodeEditor,
@@ -8,8 +8,15 @@ import {
   Hero,
   HeroInner,
   Identity,
-  IndexFoot,
-  IndexHeading,
+  IdeActivityBar,
+  IdeExplorer,
+  IdeMain,
+  IdeOutput,
+  IdeStatusBar,
+  IdeTabBar,
+  IdeTitleBar,
+  IdeWindow,
+  IdeWorkspace,
   Introduction,
   Kicker,
   PrimaryAction,
@@ -17,14 +24,7 @@ import {
   SocialLinks,
   Status,
   Title,
-  WorkIndex,
-  WorkName,
-  WorkNumber,
-  WorkRow,
-  WorkType,
 } from "../components/home/styles";
-
-const featured = [projects[2], projects[0], projects[3]];
 
 export function HomeContainer() {
   return (
@@ -36,7 +36,7 @@ export function HomeContainer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
-          <Kicker>Hello, I&apos;m</Kicker>
+          <Kicker>HELLO, I&apos;M</Kicker>
           <Title>
             John Martin
             <br />
@@ -79,61 +79,79 @@ export function HomeContainer() {
           </SocialLinks>
         </Identity>
 
-        <WorkIndex aria-label="Selected projects">
-          <IndexHeading>
-            <span>Selected work</span>
-            <span>{featured.length} projects</span>
-          </IndexHeading>
-          {featured.map((project, index) => (
-            <WorkRow
-              key={project.id}
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WorkNumber>{String(index + 1).padStart(2, "0")}</WorkNumber>
-              <WorkName>{project.title}</WorkName>
-              <WorkType>{project.filter}</WorkType>
-              <span aria-hidden="true">↗</span>
-            </WorkRow>
-          ))}
-          <IndexFoot>
-            <span>Projects and experiments</span>
-            <a href="#projects">View the collection ↗</a>
-          </IndexFoot>
-          <CodeEditor aria-label="me.java code sample">
-            <div className="file-tab">
-              <span className="file-mark" aria-hidden="true">
-                ◆
-              </span>
-              <span>me.java</span>
-              <span className="file-state" aria-hidden="true" />
-            </div>
-            <CodeSnippet>
-              <span className="line-number">01</span>
-              <code>
-                <span className="type">Dev</span>{" "}
-                <span className="variable">em</span> ={" "}
-                <span className="keyword">new</span>{" "}
-                <span className="type">Dev</span>();
-              </code>
-              <span className="line-number">02</span>
-              <code>
-                <span className="variable">em</span>.<span className="method">code</span>();
-              </code>
-              <span className="line-number">03</span>
-              <code>
-                <span className="variable">em</span>.<span className="method">goGym</span>();
-              </code>
-              <span className="line-number">04</span>
-              <code className="comment-line">
-                <span className="comment">// em.sleep();</span>
-                <span className="inline-hint">uncomment this block</span>
-              </code>
-            </CodeSnippet>
-          </CodeEditor>
-          <Status>compiling personality</Status>
-        </WorkIndex>
+        <IdeWindow aria-label="me.java IDE preview">
+          <IdeTitleBar>
+            <span className="window-controls" aria-hidden="true">
+              <span /><span /><span />
+            </span>
+            <span>me.java — portfolio</span>
+          </IdeTitleBar>
+
+          <IdeWorkspace>
+            <IdeActivityBar aria-hidden="true">
+              <FiFileText className="active" />
+              <FiSearch />
+              <FiGitBranch />
+            </IdeActivityBar>
+
+            <IdeExplorer aria-hidden="true">
+              <span className="explorer-heading">EXPLORER</span>
+              <span className="folder">⌄ src</span>
+              <span className="file">◆ me.java</span>
+            </IdeExplorer>
+
+            <IdeMain>
+              <IdeTabBar>
+                <span className="file-mark" aria-hidden="true">◆</span>
+                <span>me.java</span>
+                <span className="file-state" aria-hidden="true" />
+              </IdeTabBar>
+
+              <CodeEditor>
+                <CodeSnippet>
+                  <span className="line-number">01</span>
+                  <code>
+                    <span className="type">Dev</span>{" "}
+                    <span className="variable">em</span> ={" "}
+                    <span className="keyword">new</span>{" "}
+                    <span className="type">Dev</span>();
+                  </code>
+                  <span className="line-number">02</span>
+                  <code>
+                    <span className="variable">em</span>.<span className="method">code</span>();
+                  </code>
+                  <span className="line-number">03</span>
+                  <code>
+                    <span className="variable">em</span>.<span className="method">goGym</span>();
+                  </code>
+                  <span className="line-number">04</span>
+                  <code className="comment-line">
+                    <span className="comment">// em.sleep();</span>
+                    <span className="inline-hint">uncomment this block</span>
+                  </code>
+                </CodeSnippet>
+              </CodeEditor>
+
+              <IdeOutput>
+                <span className="output-heading">TERMINAL</span>
+                <code className="terminal-directory">
+                  <span className="terminal-parent-path">~/Documents/dev/Projects/</span>
+                  <span className="terminal-current-directory">portfolio</span>{" "}
+                  <span className="terminal-branch">main</span>
+                </code>
+                <code className="terminal-command">
+                  <span>&gt;</span> javac me.java
+                </code>
+                <Status>compiling personality</Status>
+              </IdeOutput>
+            </IdeMain>
+          </IdeWorkspace>
+
+          <IdeStatusBar>
+            <span>○ Java</span>
+            <span>Ln 4, Col 16&nbsp;&nbsp; UTF-8</span>
+          </IdeStatusBar>
+        </IdeWindow>
       </HeroInner>
     </Hero>
   );

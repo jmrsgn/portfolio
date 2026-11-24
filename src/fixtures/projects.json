@@ -1,65 +1,44 @@
 [
   {
     "id": 1,
-    "title": "Expresso",
-    "description": "An Android-based educational application designed to help students learn Object-Oriented Programming through interactive lessons and personalized learning experiences powered by machine learning.",
-    "filter": "Mobile",
-    "development": false,
-    "src": "../images/projects/expresso-1.png",
+    "title": "Forge",
+    "description": "An ongoing AI-assisted software engineering toolkit built with Python, exploring context-aware AI agents, codebase analysis, structured development workflows, and automated implementation planning to improve developer productivity.",
+    "filter": "Other",
+    "development": true,
+    "src": "",
+    "github": "https://github.com/jmrsgn/forge",
     "href": "",
-    "github": "https://github.com/jmrsgn/expresso",
     "tech": [
       {
-        "name": "Java",
-        "src": "../images/tech/java.svg"
+        "name": "Python",
+        "src": ""
       },
       {
-        "name": "PHP",
-        "src": "../images/tech/php.svg"
+        "name": "AI Agents",
+        "src": ""
       },
       {
-        "name": "PlantUML",
-        "src": "../images/tech/plantuml.svg"
+        "name": "Pydantic",
+        "src": ""
       },
       {
-        "name": "Microsoft Personalizer",
-        "src": "../images/tech/microsoft.svg"
+        "name": "LLMs",
+        "src": ""
       },
       {
-        "name": "Material Design",
-        "src": "../images/tech/material-design.svg"
+        "name": "CLI",
+        "src": ""
+      },
+      {
+        "name": "Git",
+        "src": ""
       }
     ],
-    "screenshots": [
-      "../images/projects/expresso-1.png",
-      "../images/projects/expresso-2.png",
-      "../images/projects/expresso-3.png",
-      "../images/projects/expresso-4.png"
-    ]
+    "screenshots": [],
+    "featured": true
   },
   {
     "id": 2,
-    "title": "Carkilahan",
-    "description": "A car rental booking application developed using native Android and Firebase, allowing users to browse and reserve vehicles. My first end-to-end mobile development project.",
-    "filter": "Mobile",
-    "development": false,
-    "src": "../images/projects/carkilahan-1.png",
-    "href": "",
-    "github": "https://github.com/jmrsgn/carkilahan",
-    "tech": [
-      {
-        "name": "Java",
-        "src": "../images/tech/java.svg"
-      },
-      {
-        "name": "Firebase",
-        "src": "../images/tech/firebase.svg"
-      }
-    ],
-    "screenshots": []
-  },
-  {
-    "id": 3,
     "title": "Pump",
     "description": "An ongoing full-stack fitness platform built with Flutter and Spring Boot microservices, integrating social interactions, workout tracking, and coach-client management. Designed with a focus on scalable architecture, maintainability, and cloud-native deployment.",
     "filter": "Mobile",
@@ -97,49 +76,11 @@
         "src": ""
       }
     ],
-    "screenshots": []
+    "screenshots": [],
+    "featured": true
   },
   {
-    "id": 4,
-    "title": "Forge",
-    "description": "An ongoing AI-assisted software engineering toolkit built with Python, exploring context-aware AI agents, codebase analysis, structured development workflows, and automated implementation planning to improve developer productivity.",
-    "filter": "Other",
-    "development": true,
-    "src": "",
-    "github": "https://github.com/jmrsgn/forge",
-    "href": "",
-
-    "tech": [
-      {
-        "name": "Python",
-        "src": ""
-      },
-      {
-        "name": "AI Agents",
-        "src": ""
-      },
-      {
-        "name": "Pydantic",
-        "src": ""
-      },
-      {
-        "name": "LLMs",
-        "src": ""
-      },
-      {
-        "name": "CLI",
-        "src": ""
-      },
-      {
-        "name": "Git",
-        "src": ""
-      }
-    ],
-
-    "screenshots": []
-  },
-  {
-    "id": 5,
+    "id": 3,
     "title": "Portfolio",
     "description": "A personal portfolio developed using React and TypeScript, showcasing my software engineering experience, technical skills, and projects through a responsive, component-based interface.",
     "filter": "Web",
@@ -169,6 +110,68 @@
         "src": ""
       }
     ],
-    "screenshots": []
+    "screenshots": [],
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Expresso",
+    "description": "An Android-based educational application designed to help students learn Object-Oriented Programming through interactive lessons and personalized learning experiences powered by machine learning.",
+    "filter": "Mobile",
+    "development": false,
+    "src": "../images/projects/expresso-1.png",
+    "href": "",
+    "github": "https://github.com/jmrsgn/expresso",
+    "tech": [
+      {
+        "name": "Java",
+        "src": "../images/tech/java.svg"
+      },
+      {
+        "name": "PHP",
+        "src": "../images/tech/php.svg"
+      },
+      {
+        "name": "PlantUML",
+        "src": "../images/tech/plantuml.svg"
+      },
+      {
+        "name": "Microsoft Personalizer",
+        "src": "../images/tech/microsoft.svg"
+      },
+      {
+        "name": "Material Design",
+        "src": "../images/tech/material-design.svg"
+      }
+    ],
+    "screenshots": [
+      "../images/projects/expresso-1.png",
+      "../images/projects/expresso-2.png",
+      "../images/projects/expresso-3.png",
+      "../images/projects/expresso-4.png"
+    ],
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Carkilahan",
+    "description": "A car rental booking application developed using native Android and Firebase, allowing users to browse and reserve vehicles. My first end-to-end mobile development project.",
+    "filter": "Mobile",
+    "development": false,
+    "src": "../images/projects/carkilahan-1.png",
+    "href": "",
+    "github": "https://github.com/jmrsgn/carkilahan",
+    "tech": [
+      {
+        "name": "Java",
+        "src": "../images/tech/java.svg"
+      },
+      {
+        "name": "Firebase",
+        "src": "../images/tech/firebase.svg"
+      }
+    ],
+    "screenshots": [],
+    "featured": false
   }
 ]

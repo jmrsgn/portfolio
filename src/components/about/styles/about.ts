@@ -295,7 +295,6 @@ export const TechTag = styled.span`
 
 export const TechStack = styled.section`
   margin-top: 5rem;
-  border-top: 1px solid ${COLORS.BORDER};
 `;
 
 export const TechStackHeader = styled.div`
@@ -305,12 +304,16 @@ export const TechStackHeader = styled.div`
 
   justify-content: space-between;
 
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 0.5rem;
 
   border-bottom: 1px solid ${COLORS.BORDER};
 
+  > :first-child {
+    margin-bottom: 1rem;
+  }
+
   @media ${VIEWPORT.desktopUp} {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0.65rem;
   }
 `;
 
@@ -318,7 +321,6 @@ export const TechStackGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   counter-reset: tech;
-  border-top: 1px solid ${COLORS.BORDER};
 
   @media ${VIEWPORT.tabletUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
