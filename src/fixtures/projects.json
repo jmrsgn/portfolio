@@ -111,12 +111,12 @@
       }
     ],
     "screenshots": [],
-    "featured": true
+    "featured": false
   },
   {
     "id": 4,
     "title": "Expresso",
-    "description": "An Android-based educational application designed to help students learn Object-Oriented Programming through interactive lessons and personalized learning experiences powered by machine learning.",
+    "description": "An Android-based educational application designed to help students learn Object-Oriented Programming through interactive lessons and personalized learning experiences powered by machine learning. Built as a college capstone project.",
     "filter": "Mobile",
     "development": false,
     "src": "../images/projects/expresso-1.png",

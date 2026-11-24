@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { KeyboardEvent, MouseEvent } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { motion, useReducedMotion } from "framer-motion";
@@ -8,15 +8,11 @@ import ProjectsData from "../fixtures/projects.json";
 import MotionWrap from "../wrapper/motion-wrap";
 import { BREAKPOINTS } from "../constants/viewports";
 
-type ProjectFilter = "All" | "Mobile" | "Web" | "Other";
-
-const FILTERS: ProjectFilter[] = ["All", "Mobile", "Web", "Other"];
 const DESKTOP_QUERY = `(min-width: ${BREAKPOINTS.desktop}px)`;
 const FEATURED_PROJECTS = ProjectsData.filter((project) => project.featured);
 
 export function ProjectsContainer() {
   const reduceMotion = useReducedMotion();
-  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("All");
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(() =>
     typeof window !== "undefined" && window.matchMedia(DESKTOP_QUERY).matches,
@@ -31,17 +27,9 @@ export function ProjectsContainer() {
     return () => mediaQuery.removeEventListener("change", updateLayout);
   }, []);
 
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === "All") {
-      return FEATURED_PROJECTS;
-    }
-
-    return FEATURED_PROJECTS.filter((project) => project.filter === activeFilter);
-  }, [activeFilter]);
-
   const selectedProject = !isDesktop || selectedProjectId === null
     ? null
-    : filteredProjects.find((project) => project.id === selectedProjectId) ?? null;
+    : FEATURED_PROJECTS.find((project) => project.id === selectedProjectId) ?? null;
 
   return (
     <Projects id="projects">
@@ -63,27 +51,11 @@ export function ProjectsContainer() {
             A collection of projects I&apos;ve worked on.
           </Projects.TextIntro>
 
-          {/* Filters */}
-
-          <Projects.ContainerFilters>
-            {FILTERS.map((filter) => (
-              <Projects.FilterButton
-                key={filter}
-                type="button"
-                $active={activeFilter === filter}
-                aria-pressed={activeFilter === filter}
-                onClick={() => setActiveFilter(filter)}
-              >
-                {filter}
-              </Projects.FilterButton>
-            ))}
-          </Projects.ContainerFilters>
-
           {/* Projects */}
 
           <Projects.ProjectWorkspace $hasSelection={selectedProject !== null}>
             <Projects.ContainerProjects>
-              {filteredProjects.map((item, index) => (
+              {FEATURED_PROJECTS.map((item, index) => (
                 <MotionWrap
                   key={item.id}
                   initial={{ y: 16, opacity: 0 }}
@@ -158,7 +130,7 @@ export function ProjectsContainer() {
               <div className="preview-bar">
                 <span>PROJECT DETAILS</span>
                 <span>
-                  {String(selectedProject.id).padStart(2, "0")} / {String(FEATURED_PROJECTS.length).padStart(2, "0")}
+                  {String(FEATURED_PROJECTS.indexOf(selectedProject) + 1).padStart(2, "0")} / {String(FEATURED_PROJECTS.length).padStart(2, "0")}
                 </span>
               </div>
               <motion.div
@@ -170,9 +142,6 @@ export function ProjectsContainer() {
                 animate={{ opacity: 1, rotateX: 0, y: 0 }}
                 transition={{ duration: 0.28, ease: "easeOut" }}
               >
-                <span className="preview-label">
-                  // {selectedProject.filter.toUpperCase()} PROJECT
-                </span>
                 <h3>{selectedProject.title}</h3>
                 <p>{selectedProject.description}</p>
               </motion.div>

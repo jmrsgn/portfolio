@@ -3,10 +3,8 @@ import React from "react";
 import {
   Box,
   Container,
-  ContainerFilters,
   ContainerProjects,
   ContainerTags,
-  FilterButton,
   GithubCta,
   GithubCtaButton,
   GithubCtaContent,
@@ -46,10 +44,6 @@ type ProjectsComponent = React.FC<ProjectsProps> & {
   TextIntro: React.FC<StyledProps<typeof TextIntro>>;
 
   Divider: React.FC<StyledProps<typeof Divider>>;
-
-  ContainerFilters: React.FC<StyledProps<typeof ContainerFilters>>;
-
-  FilterButton: React.FC<StyledProps<typeof FilterButton>>;
 
   ContainerProjects: React.FC<StyledProps<typeof ContainerProjects>>;
   ProjectWorkspace: React.FC<StyledProps<typeof ProjectWorkspace>>;
@@ -117,18 +111,6 @@ Projects.TextIntro = ({ children, ...restProps }) => {
 
 Projects.Divider = ({ children, ...restProps }) => {
   return <Divider {...restProps}>{children}</Divider>;
-};
-
-/**
- * Filters
- */
-
-Projects.ContainerFilters = ({ children, ...restProps }) => {
-  return <ContainerFilters {...restProps}>{children}</ContainerFilters>;
-};
-
-Projects.FilterButton = ({ children, ...restProps }) => {
-  return <FilterButton {...restProps}>{children}</FilterButton>;
 };
 
 /**

@@ -46,69 +46,6 @@ export const Box = styled.div`
 `;
 
 /**
- * Filters
- */
-
-export const ContainerFilters = styled.div`
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.5rem;
-
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-
-  @media ${VIEWPORT.desktopUp} {
-    margin-top: 3rem;
-  }
-`;
-
-export const FilterButton = styled.button<{ $active: boolean }>`
-  min-height: 44px;
-
-  padding: 0.35rem 0.75rem;
-
-  border: 1px solid
-    ${({ $active }) => ($active ? COLORS.PRIMARY : COLORS.BORDER)};
-
-  border-radius: 0;
-
-  background: ${({ $active }) =>
-    $active ? COLORS.PRIMARY : "transparent"};
-
-  color: ${({ $active }) =>
-    $active ? COLORS.TEXT_INVERSE : COLORS.TEXT_SECONDARY};
-
-  font-family: ${FONTS.sfMonoRegular};
-
-  font-size: 0.65rem;
-
-  cursor: pointer;
-
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background-color 0.2s ease;
-
-  &:hover {
-    border-color: ${COLORS.PRIMARY};
-
-    color: ${COLORS.PRIMARY_LIGHT};
-  }
-
-  &[aria-pressed="true"]:hover {
-    color: ${COLORS.TEXT_INVERSE};
-  }
-
-  &:focus-visible {
-    outline: 2px solid ${COLORS.PRIMARY_LIGHT};
-    outline-offset: 3px;
-    box-shadow: 0 0 0 5px ${COLORS.PRIMARY_DARK};
-  }
-`;
-
-/**
  * Projects
  */
 
@@ -265,14 +202,8 @@ export const ProjectPreview = styled.aside`
     backface-visibility: hidden;
   }
 
-  .preview-label {
-    color: ${COLORS.PRIMARY_LIGHT};
-    font: 0.65rem ${FONTS.sfMonoRegular};
-    letter-spacing: 0.08em;
-  }
-
   h3 {
-    margin: 1rem 0 1.25rem;
+    margin: 0 0 1.25rem;
     color: ${COLORS.TEXT_PRIMARY};
     font: normal clamp(3rem, 4vw, 5rem)/0.9 ${FONTS.calibreBlack};
     overflow-wrap: anywhere;
